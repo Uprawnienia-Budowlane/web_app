@@ -3,7 +3,7 @@ import {
     Chart2Icon,
     ChildWithBookIcon,
     DocumentsIcon,
-    DocumentWithHeartIcon,
+    DocumentWithHeartIcon, DownArrow2Icon,
     HandWithGearIcon,
     SaleIcon,
     TestIcon
@@ -18,7 +18,7 @@ class DesktopMain extends React.Component {
         return (
             <div className="h-full w-full rounded-3xl bg-white flex flex-row justify-between flex-wrap">
                 <div className="flex flex-col mx-auto px-2 my-8 sm:mx-8">
-                    <p className="text-blue-600">Uprawnienia budowlane</p>
+                    <p className="text-blue-500">Uprawnienia budowlane</p>
                     <h1 className="font-bold text-2xl">Witaj Adam</h1>
 
                     <div className=" mt-6 shadow-md rounded-3xl bg-blue-500 flex flex-row justify-between">
@@ -32,32 +32,32 @@ class DesktopMain extends React.Component {
                     <div className="mt-6 mb-3 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                         <div className="bg-blue-100 rounded-3xl flex flex-col">
                             <div className="ml-12 mr-8 mt-8 mb-4"><TestIcon/></div>
-                            <p className="mb-4 text-blue-600 text-center font-medium">Egzamin pisemny</p>
+                            <p className="mb-4 text-blue-500 text-center font-medium">Egzamin pisemny</p>
                         </div>
 
                         <div className="bg-blue-100 rounded-3xl flex flex-col">
                             <div className="ml-8 mr-12 mt-8 mb-4"><ChildWithBookIcon/></div>
-                            <p className="mb-4 text-blue-600 text-center font-medium">Egzamin ustny</p>
+                            <p className="mb-4 text-blue-500 text-center font-medium">Egzamin ustny</p>
                         </div>
 
                         <div className="bg-blue-100 rounded-3xl flex flex-col">
                             <div className="ml-12 mr-8 mt-8 mb-4"><DocumentsIcon/></div>
-                            <p className="mb-4 text-blue-600 text-center font-medium">Akty prawne</p>
+                            <p className="mb-4 text-blue-500 text-center font-medium">Akty prawne</p>
                         </div>
 
                         <div className="bg-blue-100 rounded-3xl flex flex-col">
                             <div className="ml-12 mr-8 mt-8 mb-4"><Chart2Icon/></div>
-                            <p className="mb-4 text-blue-600 text-center font-medium">Statystyki</p>
+                            <p className="mb-4 text-blue-500 text-center font-medium">Statystyki</p>
                         </div>
 
                         <div className="bg-blue-100 rounded-3xl flex flex-col">
                             <div className="ml-16 mr-4 mt-8 mb-4"><DocumentWithHeartIcon/></div>
-                            <p className="mb-4 text-blue-600 text-center font-medium">Ulubione pytania</p>
+                            <p className="mb-4 text-blue-500 text-center font-medium">Ulubione pytania</p>
                         </div>
 
                         <div className="bg-blue-100 rounded-3xl flex flex-col">
                             <div className="ml-12 mr-8 mt-8 mb-4"><SaleIcon/></div>
-                            <p className="mb-4 text-blue-600 text-center font-medium">Pakiety promocyjne</p>
+                            <p className="mb-4 text-blue-500 text-center font-medium">Pakiety promocyjne</p>
                         </div>
 
                     </div>
@@ -79,8 +79,13 @@ class DesktopMain extends React.Component {
                             </div>
                             <div className="mx-4 mt-2">
                                 <button
-                                    className="rounded-2xl border border-blue-500 text-blue-500 font-medium text-lg py-3 px-4 flex-row  w-full">
-a
+                                    className="rounded-2xl border border-blue-500 font-medium text-lg py-3 w-full">
+                                    <div className="px-4 flex flex-row justify-between">
+                                        <p>Wybierz specjalność</p>
+                                        <div className="my-auto">
+                                            <DownArrow2Icon/>
+                                        </div>
+                                    </div>
                                 </button>
                             </div>
                         </div>

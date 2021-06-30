@@ -18,14 +18,14 @@ class Reset extends React.Component {
                     <div className="mx-2 sm:mx-8 md:mx-16 mt-24 flex flex-col">
                         <div className="mx-auto w-72 flex flex-col">
                             <div className="w-full">
-                                <p className="text-blue-600">Adres e-mail:</p>
+                                <p className="text-blue-500">Adres e-mail:</p>
                                 <input
-                                    className="border-blue-600 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
+                                    className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
                         </div>
                         <button
-                            className="bg-blue-600 mt-3 mx-auto h-12 w-72 rounded-2xl text-white font-medium px-10 focus:outline-none">Zresetuj hasło
+                            className="bg-blue-500 mt-3 mx-auto h-12 w-72 rounded-2xl text-white font-medium px-10 focus:outline-none">Zresetuj hasło
                         </button>
                         <p className="mt-36 mb-14 sm:text-lg font-light text-center">Powróć do logowania</p>
                     </div>

@@ -23,24 +23,24 @@ class Register extends React.Component {
                     <div className="mx-2 sm:mx-8 md:mx-16 my-10 flex flex-col">
                         <div className="w-full flex flex-col md:flex-row">
                             <div className="w-full">
-                                <p className="text-blue-600">Imie:</p>
+                                <p className="text-blue-500">Imie:</p>
                                 <input
-                                    className="border-blue-600 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
+                                    className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
                             <div className="sm:w-10"/>
                             <div className="w-full">
-                                <p className="text-blue-600 mt-6 md:mt-0">Nazwisko:</p>
+                                <p className="text-blue-500 mt-6 md:mt-0">Nazwisko:</p>
                                 <input
-                                    className="border-blue-600 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
+                                    className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
                         </div>
                         <div className="w-full flex flex-col-reverse md:flex-row mt-6">
                             <div className="w-full">
-                                <p className="text-blue-600 mt-6 md:mt-0">Hasło:</p>
+                                <p className="text-blue-500 mt-6 md:mt-0">Hasło:</p>
                                 <input
-                                    className="border-blue-600 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
+                                    className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     type="password" placeholder=""/>
                                 <div className="mt-1 flex flex-row">
                                     <div
@@ -50,17 +50,17 @@ class Register extends React.Component {
                             </div>
                             <div className="md:w-10"/>
                             <div className="w-full">
-                                <p className="text-blue-600 my-auto">Adres e-mail:</p>
+                                <p className="text-blue-500 my-auto">Adres e-mail:</p>
                                 <input
-                                    className="border-blue-600 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
+                                    className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     type="email" placeholder=""/>
                             </div>
                         </div>
                         <div className="w-full flex flex-col md:flex-row">
                             <div className="w-full">
-                                <p className="text-blue-600 mt-6 md:mt-0">Powtóż hasło:</p>
+                                <p className="text-blue-500 mt-6 md:mt-0">Powtóż hasło:</p>
                                 <input
-                                    className="border-blue-600 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
+                                    className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     type="password" placeholder=""/>
                                 <div className="mt-1 flex flex-row">
                                     <div
@@ -70,14 +70,14 @@ class Register extends React.Component {
                             </div>
                             <div className="md:w-10"/>
                             <div className="w-full">
-                                <p className="text-blue-600 mt-6 md:my-auto">Klucz:</p>
+                                <p className="text-blue-500 mt-6 md:my-auto">Klucz:</p>
                                 <input
-                                    className="border-blue-600 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
+                                    className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
                         </div>
                         <button
-                            className="bg-blue-600 mt-6 mx-auto h-12 rounded-2xl text-white font-medium px-10 focus:outline-none">Rejestruj
+                            className="bg-blue-500 mt-6 mx-auto h-12 rounded-2xl text-white font-medium px-10 focus:outline-none">Rejestruj
                             konto i aktywuj klucz
                         </button>
                         <div className="mt-3 flex flex-row mx-auto">

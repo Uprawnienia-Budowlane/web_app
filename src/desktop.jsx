@@ -11,7 +11,7 @@ import {
     PenIcon, ShoopingCartIcon
 } from "./Icons";
 import MenuItem from "./components/MenuItem";
-import DesktopMain from "./DesktopMain";
+import DesktopProfile from "./desktop-profile.jsx";
 
 class Desktop extends React.Component {
     constructor(props) {
@@ -154,7 +154,7 @@ class Desktop extends React.Component {
                     </div>
 
                     <div className="h-full w-full mx-4 sm:ml-5 sm:mr-12">
-                        <DesktopMain/>
+                        <DesktopProfile />
                     </div>
                 </div>
 

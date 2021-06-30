@@ -1,8 +1,8 @@
 import React from "react";
-import Login from "./Login.jsx";
-import Register from "./Register.jsx";
-import Reset from "./Reset.jsx";
-import Desktop from "./Desktop.jsx";
+import Login from "./login.jsx";
+import Register from "./register.jsx";
+import Reset from "./reset.jsx";
+import Desktop from "./desktop.jsx";
 
 class App extends React.PureComponent {
     render(props) {

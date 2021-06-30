@@ -33,20 +33,20 @@ class Login extends React.Component {
                     <div className="mx-2 sm:mx-8 md:mx-16 my-10 flex flex-col">
                         <div className="mx-auto w-72 flex flex-col">
                             <div className="w-full">
-                                <p className="text-blue-600">Adres e-mail:</p>
+                                <p className="text-blue-500">Adres e-mail:</p>
                                 <input
-                                    className="border-blue-600 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
+                                    className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
                             <div className="mt-6 w-full">
-                                <p className="text-blue-600 mt-6 md:mt-0">Hasło:</p>
+                                <p className="text-blue-500 mt-6 md:mt-0">Hasło:</p>
                                 <input
-                                    className="border-blue-600 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
+                                    className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     type="password" placeholder=""/>
                             </div>
                         </div>
                         <button
-                            className="bg-blue-600 mt-12 mx-auto h-12 w-72 rounded-2xl text-white font-medium px-10 focus:outline-none">Zaloguj
+                            className="bg-blue-500 mt-12 mx-auto h-12 w-72 rounded-2xl text-white font-medium px-10 focus:outline-none">Zaloguj
                         </button>
                         <p className="mt-12 sm:text-lg font-light text-center">Nie pamiętasz hasła?</p>
                         <p className="mt-3 sm:text-lg font-light text-center">Sprawdź jak odzyskać dostęp</p>
