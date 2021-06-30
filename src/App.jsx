@@ -1,14 +1,10 @@
 import React from "react";
-import Login from "./login.jsx";
-import Register from "./register.jsx";
-import Reset from "./reset.jsx";
-import Desktop from "./desktop.jsx";
+import Login from "./Login.jsx";
+import Register from "./Register.jsx";
+import Reset from "./Reset.jsx";
+import Desktop from "./Desktop.jsx";
 
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
+class App extends React.PureComponent {
     render(props) {
         return (
             <div className="App min-h-screen w-full flex bg-blue-100">

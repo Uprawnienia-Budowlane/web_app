@@ -5,12 +5,13 @@ import {
     DownArrowIcon,
     HeartIcon,
     HomeIcon,
-    ListIcon,
+    ListIcon, MenuIcon,
     MessageIcon,
     NotyficationIcon,
     PenIcon, ShoopingCartIcon
 } from "./Icons";
-import DesktopMain from "./desktop-main";
+import MenuItem from "./components/MenuItem";
+import DesktopMain from "./DesktopMain";
 
 class Desktop extends React.Component {
     constructor(props) {
@@ -38,25 +39,25 @@ class Desktop extends React.Component {
                                 fill="#3B82F6"/>
                             <path
                                 d="M30.7698 24.9408L31.1734 22.6548C31.1882 22.5707 31.2106 22.4882 31.2402 22.4081L31.8931 20.6458C31.9227 20.5658 31.9607 20.4891 32.0063 20.4171L32.8489 19.0885C32.8947 19.0163 32.9436 18.9461 32.9955 18.8782L33.9594 17.6148C34.0111 17.5469 34.0693 17.4843 34.1331 17.4276L35.3965 16.3067C35.4604 16.25 35.5278 16.1974 35.5983 16.1491L36.8096 15.3202C36.8801 15.272 36.9536 15.2283 37.0297 15.1893L38.1833 14.5988C38.2594 14.5598 38.3375 14.525 38.4173 14.4944L40.3442 13.7561"
-                                stroke="#17282F" stroke-width="0.999996"/>
+                                stroke="#17282F" strokeWidth="0.999996"/>
                             <path
                                 d="M45.433 13.8186L47.4506 14.4827C47.5316 14.5093 47.6097 14.5441 47.6837 14.5866L49.3127 15.5209C49.3868 15.5633 49.4573 15.6117 49.5237 15.6654L50.7404 16.6507C50.8068 16.7045 50.8701 16.762 50.93 16.823L52.0436 17.9566C52.1034 18.0176 52.1588 18.0827 52.2093 18.1516L53.1975 19.5001C53.248 19.5689 53.2928 19.6418 53.3316 19.7179L53.9941 21.019C54.0328 21.0951 54.0665 21.1737 54.095 21.2543L54.5306 22.4894C54.5591 22.57 54.5828 22.6522 54.6016 22.7356L54.7981 23.6043C54.817 23.6876 54.8298 23.7722 54.8365 23.8573L54.9277 25.0096"
-                                stroke="#17282F" stroke-width="0.999996"/>
+                                stroke="#17282F" strokeWidth="0.999996"/>
                             <path d="M40.2584 21.7206L40.2495 13.353L45.4996 13.3615L45.5117 21.7396" stroke="#17282F"
-                                  stroke-width="0.999996"/>
+                                  strokeWidth="0.999996"/>
                             <path d="M35.9639 20.6109V22.3434H37.6964V20.6109H35.9639Z" stroke="#17282F"
-                                  stroke-width="0.999996"/>
+                                  strokeWidth="0.999996"/>
                             <path d="M48.0907 20.6109H49.8233V22.3434H48.0907V20.6109Z" stroke="#17282F"
-                                  stroke-width="0.999996"/>
+                                  strokeWidth="0.999996"/>
                             <path
                                 d="M32.5836 28.335L32.5961 35.4552L33.5906 37.8043L34.9452 39.6561L37.6716 42.2453L38.8546 43.3598L39.3862 43.7885L40.5865 44.0457H45.6276C45.6276 44.0457 46.4335 43.6856 46.5878 43.6341C46.7422 43.5827 47.428 42.9826 47.428 42.9826L51.2689 39.0903L52.1605 37.8557L52.6235 36.6554L53.1378 35.4552L53.2579 34.6493L53.3093 28.5279V28.2808"
-                                stroke="#17282F" stroke-width="0.999996"/>
+                                stroke="#17282F" strokeWidth="0.999996"/>
                             <path
                                 d="M53.4108 28.3792C53.4108 28.3792 56.8754 29.3165 56.6867 32.1628C56.4981 35.0092 53.3851 35.2757 53.3851 35.2757L53.1373 35.2964"
-                                stroke="#17282F" stroke-width="0.999996"/>
+                                stroke="#17282F" strokeWidth="0.999996"/>
                             <path
                                 d="M32.2163 28.3306C32.2163 28.3306 28.7839 29.2451 28.9726 32.0914C29.1612 34.9378 32.2742 35.2043 32.2742 35.2043L32.522 35.225"
-                                stroke="#17282F" stroke-width="0.999996"/>
+                                stroke="#17282F" strokeWidth="0.999996"/>
                             <path d="M29.1256 55.4325L27.3649 69.4353" stroke="#17282F"/>
                             <path
                                 d="M36.0546 43.6343L37.8968 50.5324L42.1491 45.5492L43.9264 45.516L48.2618 50.7816L50.0392 43.7719"
@@ -75,7 +76,7 @@ class Desktop extends React.Component {
                                 stroke="#17282F"/>
                             <path
                                 d="M28.6327 28.3611L56.9985 28.3134C57.0321 28.3134 57.0654 28.3067 57.0964 28.2937C57.1274 28.2807 57.1556 28.2618 57.1792 28.2379C57.2029 28.214 57.2216 28.1857 57.2343 28.1545C57.2469 28.1234 57.2533 28.0901 57.2531 28.0564L57.2316 25.2838C57.2311 25.2156 57.2036 25.1503 57.1551 25.1022C57.1067 25.0542 57.0413 25.0272 56.973 25.0272L28.7373 25.0169C28.6685 25.0169 28.6024 25.0436 28.553 25.0915C28.5036 25.1393 28.4748 25.2045 28.4727 25.2732L28.3842 28.105C28.3831 28.1383 28.3888 28.1715 28.4008 28.2025C28.4128 28.2336 28.431 28.2619 28.4542 28.2857C28.4774 28.3096 28.5051 28.3286 28.5358 28.3416C28.5665 28.3545 28.5994 28.3611 28.6327 28.3611Z"
-                                fill="#3B82F6" stroke="#17282F" stroke-width="1.03117"/>
+                                fill="#3B82F6" stroke="#17282F" strokeWidth="1.03117"/>
                         </svg>
                         <svg className="my-auto ml-2" width="163" height="46" viewBox="0 0 163 46" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
@@ -84,14 +85,14 @@ class Desktop extends React.Component {
                                 fill="#3B82F6"/>
                         </svg>
                     </div>
-                    <div className="flex flex-row">
+                    <div className="hidden sm:flex sm:flex-row">
 
                         <div className="my-auto mr-6"><NotyficationIcon/></div>
 
                         <svg className="my-auto mr-4" width="57" height="57" viewBox="0 0 57 57" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="28.5" cy="28.5" r="27" stroke="#3B82F6" stroke-width="3"/>
-                            <g clip-path="url(#clip0)">
+                            <circle cx="28.5" cy="28.5" r="27" stroke="#3B82F6" strokeWidth="3"/>
+                            <g clipPath="url(#clip0)">
                                 <path
                                     d="M43.8766 45.6529V49.573C43.8766 50.0143 43.5191 50.3717 43.0778 50.3717H13.9223C13.481 50.3717 13.1235 50.0143 13.1235 49.573V45.6529C13.1235 41.5402 16.4574 38.2083 20.5712 38.2073C22.0249 38.2063 23.305 37.4585 24.0419 36.3242C24.7821 35.1865 24.7059 34.1972 24.7059 33.3976L24.7208 33.3607C21.1363 31.877 18.6152 28.3454 18.6152 24.2247V23.9121C17.1918 23.9121 16.119 22.7873 16.119 21.4619V17.3122C16.087 15.8674 16.1529 10.7722 19.8333 7.22461C24.1128 3.0999 30.8944 3.43739 35.8069 5.64402C35.9667 5.71591 35.9617 5.94456 35.7999 6.01146L34.5189 6.53865C34.3272 6.61753 34.3681 6.9001 34.5738 6.92207L35.1958 6.98897C38.5427 7.34642 41.3275 9.34437 42.7164 11.7118C42.7293 11.7347 42.7253 11.7647 42.7064 11.7846C41.6001 12.9129 40.981 14.4316 40.981 16.0132V21.3171C40.981 22.7479 39.8218 23.9121 38.385 23.9121V24.2247C38.385 28.3454 35.8638 31.877 32.2793 33.3607L32.2943 33.3976C32.2943 34.1746 32.2118 35.177 32.9583 36.3242C33.6951 37.4585 34.9752 38.2063 36.429 38.2073C40.5427 38.2083 43.8766 41.5402 43.8766 45.6529Z"
                                     fill="#D1E7FF"/>
@@ -132,23 +133,27 @@ class Desktop extends React.Component {
                         </svg>
                         <div className="my-auto mr-12"><DownArrowIcon/></div>
                     </div>
+
+                    <div className="mt-10 mr-6 sm:hidden">
+                        <MenuIcon/>
+                    </div>
                 </div>
 
                 <div className="flex flex-row mt-10">
-                    <div className="flex flex-col mt-8 ml-3 w-28">
+                    <div className="hidden sm:flex sm:flex-col mt-8 ml-3 w-28">
                         <div className="mx-auto flex flex-col space-y-16">
-                            <HomeIcon/>
-                            <ListIcon/>
-                            <PenIcon/>
-                            <MessageIcon/>
-                            <BookIcon/>
-                            <ChartIcon/>
-                            <HeartIcon/>
-                            <ShoopingCartIcon/>
+                            <MenuItem icon={HomeIcon} active={true}/>
+                            <MenuItem icon={ListIcon}/>
+                            <MenuItem icon={PenIcon}/>
+                            <MenuItem icon={MessageIcon}/>
+                            <MenuItem icon={BookIcon}/>
+                            <MenuItem icon={ChartIcon}/>
+                            <MenuItem icon={HeartIcon}/>
+                            <MenuItem icon={ShoopingCartIcon}/>
                         </div>
                     </div>
 
-                    <div className="h-full w-full ml-5 mr-12">
+                    <div className="h-full w-full mx-4 sm:ml-5 sm:mr-12">
                         <DesktopMain/>
                     </div>
                 </div>
