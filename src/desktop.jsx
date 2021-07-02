@@ -11,7 +11,10 @@ import {
     PenIcon, ShoopingCartIcon
 } from "./Icons";
 import MenuItem from "./components/MenuItem";
-import DesktopProfile from "./desktop-profile.jsx";
+import DesktopProfile from "./DesktopProfile.jsx";
+import DesktopSpecialty from "./DesktopSpecialty";
+import DesktopMain from "./DesktopMain";
+import DesktopSettings from "./DesktopSettings";
 
 class Desktop extends React.Component {
     constructor(props) {
@@ -85,7 +88,7 @@ class Desktop extends React.Component {
                                 fill="#3B82F6"/>
                         </svg>
                     </div>
-                    <div className="hidden sm:flex sm:flex-row">
+                    <div className="hidden md:flex md:flex-row">
 
                         <div className="my-auto mr-6"><NotyficationIcon/></div>
 
@@ -134,13 +137,13 @@ class Desktop extends React.Component {
                         <div className="my-auto mr-12"><DownArrowIcon/></div>
                     </div>
 
-                    <div className="mt-10 mr-6 sm:hidden">
+                    <div className="mt-10 mr-6 md:hidden">
                         <MenuIcon/>
                     </div>
                 </div>
 
                 <div className="flex flex-row mt-10">
-                    <div className="hidden sm:flex sm:flex-col mt-8 ml-3 w-28">
+                    <div className="hidden md:flex mdd:flex-col mt-8 ml-3 w-28">
                         <div className="mx-auto flex flex-col space-y-16">
                             <MenuItem icon={HomeIcon} active={true}/>
                             <MenuItem icon={ListIcon}/>
@@ -153,8 +156,9 @@ class Desktop extends React.Component {
                         </div>
                     </div>
 
-                    <div className="h-full w-full mx-4 sm:ml-5 sm:mr-12">
-                        <DesktopProfile />
+                    <div className="h-full w-full mx-4 md:ml-5 md:mr-12">
+                        <DesktopSettings />
+
                     </div>
                 </div>
 

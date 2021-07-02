@@ -8,7 +8,7 @@ import {
     InstagramIcon,
     MailIcon,
     PinterestIcon,
-    QuestrionMarkInCirceIcon,
+    QuestionMarkInCirceIcon,
     ShareIcon
 } from "./Icons";
 
@@ -20,8 +20,8 @@ class DesktopProfile extends React.Component {
 
     render(props) {
         return (
-            <div className="h-full w-full rounded-3xl bg-white flex flex-row">
-                <div className="border-r border-gray-300">
+            <div className="h-full w-full rounded-3xl bg-white flex flex-col xl:flex-row">
+                <div className="xl:border-r border-gray-300">
                     <div className="m-8 flex flex-col">
                         <div>
                             <div className="flex flex-row">
@@ -39,19 +39,19 @@ class DesktopProfile extends React.Component {
                             <div className="flex flex-row justify-between border-b border-opacity-10">
                                 <p className="pl-6 my-6 text-gray-500 font-medium text">Stopień zdawalności
                                     egzaminów</p>
-                                <p className="pl-32 my-auto pr-6 text-green-600 font-bold">80%</p>
+                                <p className=" my-auto pr-6 text-green-600 font-bold">80%</p>
                             </div>
                             <div className="flex flex-row justify-between border-b border-opacity-10">
                                 <p className="pl-6 my-6 text-gray-500 font-medium text">Stopień zdawalności z nauki</p>
-                                <p className="pl-32 my-auto pr-6 text-green-600 font-bold">80%</p>
+                                <p className=" my-auto pr-6 text-green-600 font-bold">80%</p>
                             </div>
                             <div className="flex flex-row justify-between">
                                 <div className="my-6 flex flex-row ml-6">
-                                    <ClockIcon/>
+                                    <div className="flex-shrink-0"><ClockIcon/></div>
                                     <p className="pl-6 my-auto text-gray-500 font-medium text">Czas spędzony w
                                         aplikacji:</p>
-                                    <p className="pl-32 my-auto pr-6 text-blue-500 font-bold">34 godziny</p>
                                 </div>
+                                <p className=" my-auto pr-6 text-blue-500 font-bold">34 godziny</p>
                             </div>
 
                             <div className="bg-blue-200 h-full">
@@ -65,7 +65,7 @@ class DesktopProfile extends React.Component {
                             </div>
                             <div className="flex flex-row justify-between border-b border-opacity-10">
                                 <div className="my-6 flex flex-row ml-6">
-                                    <QuestrionMarkInCirceIcon/>
+                                    <QuestionMarkInCirceIcon/>
                                     <p className="pl-6 my-auto text-gray-500 font-medium text">Pomoc</p>
                                 </div>
                             </div>
@@ -85,15 +85,15 @@ class DesktopProfile extends React.Component {
 
                 <div className="m-8 flex flex-col flex-grow">
                     <p className="font-medium text-blue-500">Edycja profilu</p>
-                    <div className="mt-12 flex flex-row">
+                    <div className="mt-12 flex flex-col md:flex-row">
                         <div className="flex flex-shrink-0">
                             <img src={PFP} alt="ProfilePhoto" className="w-28 h-28"/>
                             <div className="ml-16 mt-3 absolute"><BlueImgIcon/></div>
                         </div>
 
-                        <div className="ml-8 w-full mr-24">
+                        <div className="mx-auto md:ml-8 w-full md:mr-24">
 
-                            <div className="flex flex-row space-x-8 my-6">
+                            <div className="flex flex-col md:flex-row md:space-x-8 my-6">
                                 <div className="w-full">
                                     <p className="ml-2 mb-1 text-sm">Imię:</p>
                                     <input
@@ -101,7 +101,7 @@ class DesktopProfile extends React.Component {
                                         placeholder=""/>
                                 </div>
                                 <div className="w-full">
-                                    <p className="ml-2 mb-1 text-sm">Nazwisko:</p>
+                                    <p className="mt-6 md:mt-0 ml-2 mb-1 text-sm">Nazwisko:</p>
                                     <input
                                         className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
                                         placeholder=""/>
@@ -110,7 +110,7 @@ class DesktopProfile extends React.Component {
 
                             <div className="flex flex-col my-6">
                                 <p className="ml-2 mb-1 text-sm">Płeć:</p>
-                                <div className="flex flex-row space-x-4">
+                                <div className="flex flex-col md:flex-row md:space-x-4">
                                     <button
                                         className="mt-2 rounded-2xl border border-blue-500 text-blue-500 flex flex-row justify-between text-sm py-3 px-4 w-32 focus:outline-none">
                                         <p>Mężczyzna</p>
@@ -133,7 +133,7 @@ class DesktopProfile extends React.Component {
                                 </div>
                             </div>
 
-                            <div className="flex flex-row space-x-8 my-6">
+                            <div className="flex flex-col md:flex-row md:space-x-8 my-6">
                                 <div className="w-full">
                                     <p className="ml-2 mb-1 text-sm">Nowe hasło:</p>
                                     <input
@@ -141,29 +141,31 @@ class DesktopProfile extends React.Component {
                                         placeholder=""/>
                                 </div>
                                 <div className="w-full">
-                                    <p className="ml-2 mb-1 text-sm">Potwierdź nowe hasło:</p>
+                                    <p className="mt-6 md:mt-0 ml-2 mb-1 text-sm">Potwierdź nowe hasło:</p>
                                     <input
                                         className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
                                         placeholder=""/>
                                 </div>
                             </div>
-                            <div className="flex flex-row space-x-8 my-6">
+                            <div className="flex flex-col md:flex-row md:space-x-8 my-6">
                                 <div className="w-full">
                                     <p className="ml-2 mb-1 text-sm">Zmień e-mail:</p>
                                     <input
                                         className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
                                         placeholder=""/>
-                                    <button
-                                        className="mt-20 bg-blue-500 mt-12 mx-auto h-12 w-full rounded-2xl text-white font-medium px-10 focus:outline-none">Zaloguj
-                                    </button>
 
                                 </div>
                                 <div className="w-full">
-                                    <p className="ml-2 mb-1 text-sm">Potwierdź nowy e-mail:</p>
+                                    <p className="mt-6 md:mt-0 ml-2 mb-1 text-sm">Potwierdź nowy e-mail:</p>
                                     <input
                                         className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
                                         placeholder=""/>
                                 </div>
+                            </div>
+                            <div className="mr-8 flex flex-row justify-start">
+                                <button
+                                    className="mt-20 bg-blue-500 h-12 w-full md:w-1/2 rounded-2xl text-white font-medium px-10 focus:outline-none">Zaloguj
+                                </button>
                             </div>
 
                         </div>
