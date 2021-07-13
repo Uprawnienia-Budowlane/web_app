@@ -5,14 +5,16 @@ import {
     DownArrowIcon,
     HeartIcon,
     HomeIcon,
-    ListIcon, MenuIcon,
+    ListIcon,
+    MenuIcon,
     MessageIcon,
     NotificationIcon,
-    PenIcon, ShoppingCartIcon
+    PenIcon,
+    ShoppingCartIcon
 } from "./Icons";
+import {Link, Route, Switch} from "react-router-dom";
 import MenuItem from "./components/MenuItem";
 import DesktopProfile from "./DesktopProfile.jsx";
-import DesktopSpecialty from "./DesktopSpecialty";
 import DesktopMain from "./DesktopMain";
 import DesktopSettings from "./DesktopSettings";
 
@@ -24,10 +26,10 @@ class Desktop extends React.Component {
     render(props) {
         return (
             <div className="h-full w-full flex flex-col">
-
                 <div className="flex flex-row justify-between">
                     <div className="ml-6 mt-6 flex flex-row">
-                        <svg width="85" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="85" height="85" viewBox="0 0 85 85" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M37.4755 1.46533C40.1274 1.53512 45.7662 1.63282 47.1061 1.46533L52.3401 7.74614L60.7145 11.5146L68.6702 10.0491L74.951 16.7486L73.2761 24.9137L77.2539 33.9162L83.5347 37.4753V46.059L78.5101 50.665L73.2761 60.5049L74.951 67.4138L67.8327 74.9508L61.5519 72.8571L50.8745 77.6724L47.1061 83.5345H37.4755L34.5445 77.6724L23.8671 72.8571L16.9582 74.9508L10.2587 67.4138L11.7242 60.5049L7.11827 50.665C5.44339 49.6182 2.09363 47.399 2.09363 46.8965V37.4753L7.74635 33.9162L11.7242 23.8669L10.2587 16.7486L16.9582 10.0491L24.7045 11.5146L34.5445 7.74614L37.4755 1.46533Z"
                                 fill="#A4C2F7" stroke="#C4D9FC"/>
@@ -46,7 +48,8 @@ class Desktop extends React.Component {
                             <path
                                 d="M45.433 13.8186L47.4506 14.4827C47.5316 14.5093 47.6097 14.5441 47.6837 14.5866L49.3127 15.5209C49.3868 15.5633 49.4573 15.6117 49.5237 15.6654L50.7404 16.6507C50.8068 16.7045 50.8701 16.762 50.93 16.823L52.0436 17.9566C52.1034 18.0176 52.1588 18.0827 52.2093 18.1516L53.1975 19.5001C53.248 19.5689 53.2928 19.6418 53.3316 19.7179L53.9941 21.019C54.0328 21.0951 54.0665 21.1737 54.095 21.2543L54.5306 22.4894C54.5591 22.57 54.5828 22.6522 54.6016 22.7356L54.7981 23.6043C54.817 23.6876 54.8298 23.7722 54.8365 23.8573L54.9277 25.0096"
                                 stroke="#17282F" strokeWidth="0.999996"/>
-                            <path d="M40.2584 21.7206L40.2495 13.353L45.4996 13.3615L45.5117 21.7396" stroke="#17282F"
+                            <path d="M40.2584 21.7206L40.2495 13.353L45.4996 13.3615L45.5117 21.7396"
+                                  stroke="#17282F"
                                   strokeWidth="0.999996"/>
                             <path d="M35.9639 20.6109V22.3434H37.6964V20.6109H35.9639Z" stroke="#17282F"
                                   strokeWidth="0.999996"/>
@@ -145,23 +148,32 @@ class Desktop extends React.Component {
                 <div className="flex flex-row mt-10">
                     <div className="hidden md:flex mdd:flex-col mt-8 ml-3 w-28">
                         <div className="mx-auto flex flex-col space-y-16">
-                            <MenuItem icon={HomeIcon} active={true}/>
-                            <MenuItem icon={ListIcon}/>
-                            <MenuItem icon={PenIcon}/>
-                            <MenuItem icon={MessageIcon}/>
-                            <MenuItem icon={BookIcon}/>
-                            <MenuItem icon={ChartIcon}/>
-                            <MenuItem icon={HeartIcon}/>
-                            <MenuItem icon={ShoppingCartIcon}/>
+                            <Link to="/"> <MenuItem icon={HomeIcon} active={true}/></Link>
+                            <Link to="/settings"> <MenuItem icon={ListIcon}/></Link>
+                            <Link to="/profile"> <MenuItem icon={PenIcon}/></Link>
+                            <Link to="/"> <MenuItem icon={MessageIcon}/></Link>
+                            <Link to="/"> <MenuItem icon={BookIcon}/></Link>
+                            <Link to="/"> <MenuItem icon={ChartIcon}/></Link>
+                            <Link to="/"> <MenuItem icon={HeartIcon}/></Link>
+                            <Link to="/"> <MenuItem icon={ShoppingCartIcon}/></Link>
+
                         </div>
                     </div>
 
                     <div className="h-full w-full mx-4 md:ml-5 md:mr-12">
-                        <DesktopSettings />
-
+                        <Switch>
+                            <Route exact path="/">
+                                <DesktopMain/>
+                            </Route>
+                            <Route path="/profile">
+                                <DesktopProfile/>
+                            </Route>
+                            <Route path="/settings">
+                                <DesktopSettings/>
+                            </Route>
+                        </Switch>
                     </div>
                 </div>
-
             </div>
         )
     }
