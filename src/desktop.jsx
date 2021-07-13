@@ -7,8 +7,8 @@ import {
     HomeIcon,
     ListIcon, MenuIcon,
     MessageIcon,
-    NotyficationIcon,
-    PenIcon, ShoopingCartIcon
+    NotificationIcon,
+    PenIcon, ShoppingCartIcon
 } from "./Icons";
 import MenuItem from "./components/MenuItem";
 import DesktopProfile from "./DesktopProfile.jsx";
@@ -90,7 +90,7 @@ class Desktop extends React.Component {
                     </div>
                     <div className="hidden md:flex md:flex-row">
 
-                        <div className="my-auto mr-6"><NotyficationIcon/></div>
+                        <div className="my-auto mr-6"><NotificationIcon/></div>
 
                         <svg className="my-auto mr-4" width="57" height="57" viewBox="0 0 57 57" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
@@ -152,7 +152,7 @@ class Desktop extends React.Component {
                             <MenuItem icon={BookIcon}/>
                             <MenuItem icon={ChartIcon}/>
                             <MenuItem icon={HeartIcon}/>
-                            <MenuItem icon={ShoopingCartIcon}/>
+                            <MenuItem icon={ShoppingCartIcon}/>
                         </div>
                     </div>
 
