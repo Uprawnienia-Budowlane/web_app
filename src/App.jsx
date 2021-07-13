@@ -12,6 +12,7 @@ class App extends React.PureComponent {
                     <Desktop/>
                 </div>
             </div>
+
         )
     }
 }
