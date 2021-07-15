@@ -8,6 +8,7 @@ import {
     SaleIcon,
     TestIcon
 } from "./Icons";
+import DesktopMainCharts from "./DesktopMainCharts";
 
 class DesktopMain extends React.Component {
     constructor(props) {
@@ -63,21 +64,21 @@ class DesktopMain extends React.Component {
                     </div>
                 </div>
 
-                <div className="my-6 mr-8 shadow-md rounded-3xl bg-blue-500 flex-col">
+                <div className="my-6 mx-2 md:mr-8 shadow-md rounded-3xl bg-blue-500 flex-col">
                     <div className="flex-col mx-6 my-8">
                         <p className="text-white">Podgląd</p>
                         <h1 className="font-bold text-white text-2xl">Twoich Statystyk</h1>
 
                         <div className="mt-8 py-4 rounded-3xl bg-white flex-col">
-                            <div className="mx-4 flex-row">
+                            <div className="mx-4 flex flex-col md:flex-row">
                                 <button
-                                    className="mr-1 rounded-2xl border border-blue-500 text-blue-500 font-medium text-center text-lg py-3 px-4 w-72">Nauka
+                                    className="md:mr-1 rounded-2xl border border-blue-500 text-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-72">Nauka
                                 </button>
                                 <button
-                                    className="ml-1 rounded-2xl bg-blue-500 border border-blue-500 text-white font-medium text-center text-lg py-3 px-4 w-72">Egzamin
+                                    className="mt-4 md:mt-0 md:ml-1 rounded-2xl bg-blue-500 border border-blue-500 text-white font-medium text-center text-lg py-3 px-4 w-full md:w-72">Egzamin
                                 </button>
                             </div>
-                            <div className="mx-4 mt-2">
+                            <div className="mx-4 mt-4 md:mt-2">
                                 <button
                                     className="rounded-2xl border border-blue-500 font-medium text-lg py-3 w-full">
                                     <div className="px-4 flex flex-row justify-between">
@@ -88,9 +89,23 @@ class DesktopMain extends React.Component {
                                     </div>
                                 </button>
                             </div>
+
+                            <div className="flex flex-col mt-4">
+                                <div className="flex flex-row justify-between mx-4">
+                                    <p className="my-auto">Wyniki</p>
+                                    <div className="flex flex-row space-x-4">
+                                        <div className="my-auto"><p className="my-auto">Dzień</p></div>
+                                        <div className="rounded-xl bg-blue-500"><p className="mx-4 my-2 text-white text-sm">Tydzień</p></div>
+                                        <div className="my-auto"><p>Miesiąc</p></div>
+                                    </div>
+                                </div>
+                                <DesktopMainCharts />
+                            </div>
+
                         </div>
                     </div>
                 </div>
+
             </div>
         )
     }
