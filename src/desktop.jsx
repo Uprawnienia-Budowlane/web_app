@@ -17,9 +17,7 @@ import MenuItem from "./components/MenuItem";
 import DesktopProfile from "./DesktopProfile.jsx";
 import DesktopMain from "./DesktopMain";
 import DesktopSettings from "./DesktopSettings";
-import LicenseActive from "./LicenseActive";
-import LicenseInactive from "./LicenseInactive";
-import DesktopExamStats from "./DesktopExamStats";
+import DesktopActs from "./DesktopActs";
 
 class Desktop extends React.Component {
     constructor(props) {
@@ -166,7 +164,7 @@ class Desktop extends React.Component {
                     <div className="h-full w-full mx-4 md:ml-5 md:mr-12">
                         <Switch>
                             <Route exact path="/">
-                                <DesktopExamStats />
+                                <DesktopActs />
                             </Route>
                             <Route path="/profile">
                                 <DesktopProfile/>
