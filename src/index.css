@@ -83,13 +83,13 @@ body{
 }
 
 .rc-switch:focus {
-    box-shadow: 0 0 0 2px tint(#2db7f5, 80%);
+    box-shadow: 0 0 0 2px tint(#3B82F6, 80%);
     outline: 0
 }
 
 .rc-switch-checked {
-    border: 1px solid #448ccb !important;
-    background-color: #448ccb !important
+    border: 1px solid #3B82F6 !important;
+    background-color: #3B82F6 !important
 }
 
 .rc-switch-checked .rc-switch-inner {

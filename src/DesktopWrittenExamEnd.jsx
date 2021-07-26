@@ -81,22 +81,22 @@ class DesktopWrittenExamEnd extends React.Component {
                 </div>
 
                 <div className="flex flex-row mb-8 mx-8 justify-between">
-                    <div className="">
-                        <button className="rounded-2xl border border-blue-500 p-1"><ArrowXIcon/></button>
+                    <div className="my-auto">
+                        <button className="rounded-2xl border border-blue-500 p-0.5"><ArrowXIcon/></button>
                     </div>
-                    <div className="flex flex-row space-x-3 md:space-x-8">
+                    <div className="flex flex-row space-x-1 md:space-x-8">
                         <div className="my-auto ">
-                            <button className="rounded-2xl border border-blue-500 p-2"><HeartFill2Icon/></button>
+                            <button className="rounded-2xl border border-blue-500 p-3"><HeartFill2Icon/></button>
                         </div>
                         <div className="my-auto">
-                            <button className="rounded-2xl border border-blue-500 p-2"><QuestionmarkIcon/></button>
+                            <button className="rounded-2xl border border-blue-500 p-3"><QuestionmarkIcon/></button>
                         </div>
                         <div className="my-auto">
-                            <button className="rounded-2xl border border-blue-500 p-1.5"><EyeIcon/></button>
+                            <button className="rounded-2xl border border-blue-500 p-2.5"><EyeIcon/></button>
                         </div>
                     </div>
-                    <div className="transform rotate-180 ">
-                        <button className="rounded-2xl border border-blue-500 p-1"><ArrowXIcon/></button>
+                    <div className="transform rotate-180 my-auto">
+                        <button className="rounded-2xl border border-blue-500 p-0.5"><ArrowXIcon/></button>
                     </div>
                 </div>
 
