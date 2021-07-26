@@ -17,10 +17,16 @@ import MenuItem from "./components/MenuItem";
 import DesktopProfile from "./DesktopProfile.jsx";
 import DesktopMain from "./DesktopMain";
 import DesktopSettings from "./DesktopSettings";
+import DesktopChooseMode from "./DesktopChooseMode";
+import DesktopShop from "./DesktopShop";
+import DesktopFavoriteQuestions from "./DesktopFavoriteQuestions";
 import DesktopActs from "./DesktopActs";
 import DesktopWrittenExam from "./DesktopWrittenExam";
 import DesktopWrittenExamEnd from "./DesktopWrittenExamEnd";
 import DesktopOralExam from "./DesktopOralExam";
+import DesktopLearnMode2 from "./DesktopLearnMode2";
+import DesktopLearnMode5 from "./DesktopLearnMode5";
+import DesktopActMode from "./DesktopActMode";
 
 class Desktop extends React.Component {
     constructor(props) {
@@ -167,7 +173,7 @@ class Desktop extends React.Component {
                     <div className="h-full w-full mx-4 md:ml-5 md:mr-12">
                         <Switch>
                             <Route exact path="/">
-                                <DesktopOralExam />
+                                <DesktopActMode />
                             </Route>
                             <Route path="/profile">
                                 <DesktopProfile/>
