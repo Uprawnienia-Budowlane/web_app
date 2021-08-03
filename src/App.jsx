@@ -1,20 +1,28 @@
 import React from "react";
-import Login from "./login.jsx";
-import Register from "./register.jsx";
-import Reset from "./reset.jsx";
-import Desktop from "./desktop.jsx";
+import Desktop from "./Desktop.jsx";
+import {Switch, Route} from "react-router-dom";
+import Login from "./Login";
+import Register from "./Register";
+import ResetPassword from "./ResetPassword";
 
-class App extends React.PureComponent {
-    render(props) {
-        return (
-            <div className="App min-h-screen w-full flex bg-blue-100">
-                <div className="h-full w-full">
+const App = () =>
+    <div className="App min-h-screen w-full flex bg-blueGray-100">
+        <div className="h-full w-full flex justify-center items-center">
+            <Switch>
+                <Route exact path="/login">
+                    <Login/>
+                </Route>
+                <Route exact path="/register">
+                    <Register/>
+                </Route>
+                <Route exact path="/reset">
+                    <ResetPassword/>
+                </Route>
+                <Route>
                     <Desktop/>
-                </div>
-            </div>
-
-        )
-    }
-}
+                </Route>
+            </Switch>
+        </div>
+    </div>;
 
 export default App;

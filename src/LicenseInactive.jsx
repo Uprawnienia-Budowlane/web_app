@@ -10,7 +10,7 @@ class LicenseInactive extends React.Component {
         return (
             <div className="h-full w-full rounded-3xl bg-white flex flex-col justify-between flex-wrap">
 
-                <div className="border-b border-opacity-10 my-8 flex flex-col md:flex-row justify-between">
+                <div className="border-b border-opacity-50 my-8 flex flex-col md:flex-row justify-between">
                     <div className="ml-8 flex flex-col mb-8">
                         <p className="text-blue-500">Sprawdź licencje</p>
                         <h1 className="font-bold text-2xl ">Aktualne licencje</h1>
@@ -30,7 +30,7 @@ class LicenseInactive extends React.Component {
                     </div>
                 </div>
 
-                <div className="mt-4 md:mt-16 flex flex-col md:flex-row flex-wrap space-x-8 justify-center md:justify-between border-b border-opacity-10">
+                <div className="mt-4 md:mt-16 flex flex-col md:flex-row flex-wrap space-x-8 justify-center md:justify-between border-b border-opacity-50">
 
                     <div className="flex flex-col mx-8">
                         <p className="text-lg text-blue-500 font-bold text-center">Licencja do nauki na Egzamin Pisemny</p>

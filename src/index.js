@@ -4,6 +4,12 @@ import './index.css';
 import App from './App.jsx';
 import {BrowserRouter} from "react-router-dom";
 
+window.config = {
+  settings: {
+      pageLayout: 0,
+  }
+};
+
 ReactDOM.render(
     <BrowserRouter>
         <App/>

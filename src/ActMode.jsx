@@ -2,7 +2,7 @@ import React from "react";
 import {ExchangeDolarIcon, FullScreenIcon, LoupeIcon} from "./Icons";
 
 
-class DesktopActMode extends React.Component {
+class ActMode extends React.Component {
 
     render(props) {
         return (
@@ -142,4 +142,4 @@ class DesktopActMode extends React.Component {
     }
 }
 
-export default DesktopActMode
+export default ActMode
