@@ -19,12 +19,9 @@ const Acts = () => {
                 <p className="text-blue-500">Inżynieryjna drogowa</p>
                 <h1 className="font-bold text-2xl">Wybierz akty do nauki</h1>
             </div>
-
-
             <div className="mx-8 flex flex-col overflow-hidden">
-
                 <div className="flex flex-row">
-                    <CheckBox/>
+                    <CheckBox onChecked={() => {}}/>
                     <h1 className="font-bold text-2xl my-auto">Wszystkie przepisy</h1>
                 </div>
 

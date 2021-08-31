@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {DownArrow2Icon} from "./Icons";
 import MainCharts from "./MainCharts";
+import Dropdown from "./components/Dropdown";
 
 const ExamStats = () => {
     const [category, setCategory] = useState(0);
@@ -17,15 +18,9 @@ const ExamStats = () => {
 
             <div className="px-4 md:px-12 xl:px-0 xl:ml-12 xl:flex-grow">
                 <div className="mx-4 mt-4 md:mt-2">
-                    <button
-                        className="rounded-2xl border border-blue-500 font-medium text-lg py-3 w-full">
-                        <div className="px-4 flex flex-row justify-between">
-                            <p>Wybierz specjalność</p>
-                            <div className="my-auto">
-                                <DownArrow2Icon/>
-                            </div>
-                        </div>
-                    </button>
+                    <Dropdown name={'Wybierz specjalność'} options={[{
+                        name: 'Test'
+                    }]}/>
                 </div>
 
                 <div className="flex flex-col mt-4">

@@ -42,6 +42,12 @@ const Settings = () => {
                         ograniczonym zakresie)</p>
                 </div>
             </div>
+            <div className="flex flex-row border-b border-opacity-50 w-full justify-between">
+                <p className="px-2 sm:mx-8 my-6 font-medium text-lg">Wyświetlanie podpowiedzi</p>
+                <div className="my-auto sm:mr-8 pr-2 flex flex-col">
+                    <p className="text-right font-medium">Tylko tekst / Tekst+grafika</p>
+                </div>
+            </div>
 
             <div className="flex flex-row border-b border-opacity-50 w-full justify-between">
                 <p className="px-2 sm:mx-8 mt-5 mb-4 font-semibold text-lg">Powiadomienia</p>

@@ -16,6 +16,10 @@ import LearnMode from "./LearnMode";
 import ChooseMode from "./ChooseMode";
 import WrittenExam from "./WrittenExam";
 import WrittenExamEnd from "./WrittenExamEnd";
+import Licenses from "./Licenses";
+import ActMode from "./ActMode";
+
+import licenseModel from './models/License';
 
 const Desktop = () => {
     let [loc, setLoc] = useState('/');
@@ -24,6 +28,9 @@ const Desktop = () => {
     React.useEffect(() => {
         setLoc(location.pathname);
     }, [location]);
+
+    const { loading, error, ...result } = licenseModel.useGetPopulated();
+    if(!loading ) console.log(result);
 
     return (<div className="h-full w-full flex flex-col max-w-screen-3xl" style={{maxWidth: 1650}}>
             <NavBar/>
@@ -83,6 +90,9 @@ const Desktop = () => {
                         </Route>
                         <Route exact path="/profile">
                             <Profile/>
+                        </Route>
+                        <Route exact path="/licenses">
+                            <ActMode/>
                         </Route>
                     </Switch>
                 </div>
