@@ -2,8 +2,8 @@ import React from 'react'
 
 const PaymentForm = () => {
     return (
-        <div>
-            
+        <div className="--form">
+            <h1>Szczegóły dotyczące płatności</h1>
         </div>
     )
 }
