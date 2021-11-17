@@ -1,8 +1,8 @@
 import React from "react";
 import Desktop from './desktop'
 import {Switch, Route} from "react-router-dom";
-import Login from "./Login";
-import Register from "./Register";
+import Login from "./login";
+import Register from "./register";
 import ResetPassword from "./ResetPassword";
 
 const App = () =>
