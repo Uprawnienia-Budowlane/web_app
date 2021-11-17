@@ -1,0 +1,21 @@
+@import './checkout/checkout.scss';
+
+#cart_btn {
+    display: flex;
+}
+
+.circle-with-product-quantity {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    background: rgb(59, 130, 246);
+    margin-left: 10px;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+}
+
+.circle-with-product-quantity p {
+    color: #fff;
+    font-size: 12px;
+}

@@ -1,7 +1,9 @@
 import { ThreeInOneIcon } from "../../../Icons";
 import {CheckboxCircleIcon, TagIcon} from "../../../Icons";
 
-const Product = ({ product }) => {
+import { Link, useLocation } from "react-router-dom";
+
+const Product = ({ product, onAddToCart }) => {
 
     console.log(product)
 
@@ -24,9 +26,8 @@ const Product = ({ product }) => {
      
 
     <div className="mx-auto mt-4"></div>
-    <button
-        className="mx-4 my-6 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Zakup
-        produkt
+    <button className="mx-4 my-6 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4" component={Link} to="/cart" onClick={() => onAddToCart(product.id, 1)}>
+        Zakup produkt
     </button>
     </div>
         </> 
