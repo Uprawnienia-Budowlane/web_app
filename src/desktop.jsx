@@ -49,7 +49,7 @@ const Desktop = () => {
                     </div>
                 </div>
 
-                <div className="h-full w-full mx-4 md:pl-5 md:mr-12" style={{maxWidth: 'calc(100% - 11rem)'}}>
+                <div className="h-full w-full mx-4 md:pl-5 md:mr-12" >
                     <Switch>
                         <Route exact path="/">
                             <Main/>
