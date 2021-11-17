@@ -6,7 +6,7 @@ import Profile from "./Profile";
 import Settings from "./Settings";
 import Main from "./Main";
 import NavBar from "./components/NavBar";
-import Shop from "./Shop";
+import Shop from "./Shop-complete/Shop";
 import Acts from "./Acts";
 import ExamStats from "./ExamStats";
 import OralExam from "./OralExam";

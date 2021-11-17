@@ -1,5 +1,5 @@
-import {ThreeInOneIcon} from "./Icons";
-import ShopPanel from "./components/ShopPanel";
+import {ThreeInOneIcon} from "../Icons";
+import ShopPanel from "../components/ShopPanel";
 import {useState} from "react";
 
 const Shop = () => {
