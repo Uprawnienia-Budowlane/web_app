@@ -5,6 +5,7 @@ import { ThreeInOneIcon } from "../../../Icons";
 const Products = ({ products, onAddToCart, totalItems  }) => {
 
     return (
+        <>
            <div className="flex flex-row flex-nowrap overflow-x-scroll gap-8 max-w-full px-10 mb-3 hidden-scrollbar" style={{minHeight: 'min-content'}}>
 
      
@@ -12,7 +13,7 @@ const Products = ({ products, onAddToCart, totalItems  }) => {
                         <Product product={product} onAddToCart={onAddToCart}/>   
                     ))} 
           
-
+          </div>
             <div className="mx-auto mb-8 flex flex-col space-y-3 md:space-y-0 md:flex-row w-5/6">
                 <button
                     /* onClick={() => setCategory(0)} */
@@ -30,17 +31,16 @@ const Products = ({ products, onAddToCart, totalItems  }) => {
                     2x
                 </button>
 
-            <div className="mx-auto mb-8 flex flex-col space-y-3 md:space-y-0 md:flex-row w-/6">
-            <button id="cart_btn" className={"rounded-2xl border border-blue-500 font-medium text-center text-xl py-3 px-6 mx-2 w-full "/* + (category === 2 ? 'bg-blue-500 text-white' : 'text-blue-500')*/}>Koszyk
-                    <div className="circle-with-product-quantity">
-                    <p id="cart">{ totalItems }</p>
-                    </div>
-                </button> 
-            </div>
-
             </div> 
-
-        </div> 
+           
+         <div className="mx-auto mb-8 flex flex-col space-y-3 md:space-y-0 md:flex-row w-/6">
+         <button id="cart_btn" className={"rounded-2xl border border-blue-500 font-medium text-center text-xl py-3 px-6 mx-2 w-full "/* + (category === 2 ? 'bg-blue-500 text-white' : 'text-blue-500')*/}>Koszyk
+                 <div className="circle-with-product-quantity">
+                 <p id="cart">{ totalItems }</p>
+                 </div>
+             </button> 
+         </div>
+         </>
     )
 }
 

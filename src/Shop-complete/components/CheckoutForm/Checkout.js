@@ -6,7 +6,7 @@ import PaymentForm from './PaymentForm';
 
 const steps = ['Adres dostawy', 'Szczegóły dotyczące płatności'];
 
-const Checkout = () => {
+const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
 
   
 
@@ -18,7 +18,7 @@ const Checkout = () => {
                 <label>{label}</label>
               </div>
             ))}
-            
+            <AddressForm />
         </div>
       </div>
     )
