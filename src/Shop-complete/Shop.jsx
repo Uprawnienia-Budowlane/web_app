@@ -2,8 +2,12 @@ import {ThreeInOneIcon} from "../Icons";
 import ShopPanel from "../components/ShopPanel";
 import {useState} from "react";
 
+import { commerce } from "./lib/commerce";
+
 const Shop = () => {
+
     const [category, setCategory] = useState(0);
+    
     return (
         <div className="h-full w-full rounded-3xl bg-white flex flex-col overflow-hidden border-box">
             <div className="flex flex-col mx-auto px-2 my-8 sm:mx-8">
