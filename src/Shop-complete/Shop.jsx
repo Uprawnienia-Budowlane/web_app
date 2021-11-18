@@ -60,7 +60,7 @@ const Shop = () => {
                 <p className="text-blue-500">Uprawnienia budowlane</p>
                 <h1 className="font-bold text-2xl">Promocyjne pakiety</h1>
             </div>
-
+        
         <Products products={products} 
         onAddToCart={handleAddToCart} 
         totalItems={cart.total_items}/>

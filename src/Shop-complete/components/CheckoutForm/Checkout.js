@@ -5,14 +5,17 @@ import { commerce } from '../../lib/commerce';
 import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 
-
-
 const steps = ['Adres dostawy', 'Szczegóły dotyczące płatności'];
 
 const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
 
   const [checkoutToken, setCheckoutToken] = useState(null);
   const [activeStep, setActiveStep] = useState(0);
+
+
+  const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
+
 
   const Confirmation = () => (
 
@@ -23,8 +26,8 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
   )
 
   const Form = () => activeStep == 0 
-    ? <AddressForm />
-    : <PaymentForm />
+    ? <AddressForm checkoutToken={checkoutToken}/>
+    : <PaymentForm checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} onCaptureCheckout={onCaptureCheckout} />
 
 
     return (

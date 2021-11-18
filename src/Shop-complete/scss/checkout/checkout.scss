@@ -32,7 +32,23 @@
 
 .--form {
     display:flex;
+    flex-direction: column;
     justify-content: center;
     margin: 10px;
     height: 450px;
+}
+
+.--form h1 {
+    margin: 10px;
+}
+
+.address-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-btn {
+    padding: 10px;
+    margin: 10px;
+    background: rgba(59, 131, 246, 0.589);
 }
