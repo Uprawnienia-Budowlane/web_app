@@ -94,7 +94,8 @@ const Shop = () => {
         
         </div>
 
-        <Cart cart={cart} 
+        <Cart 
+        cart={cart} 
         handleEmptyCart={handleEmptyCart}
         />
 
