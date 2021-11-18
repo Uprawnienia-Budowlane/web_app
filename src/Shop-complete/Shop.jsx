@@ -1,4 +1,5 @@
 import {ThreeInOneIcon} from "../Icons";
+import Cart from './components/Cart/Cart'
 import Products from "./components/Products/Products";
 import Checkout from './components/CheckoutForm/Checkout'
 import React, {useState, useEffect} from "react";
@@ -12,6 +13,7 @@ import { commerce } from "./lib/commerce";
 const Shop = () => {
 
     const [products, setProducts] = useState([])
+    const [order,  setOrder] = useState({})
     const [cart, setCart] = useState({})
 
     const fetchProducts = async () => {
@@ -31,11 +33,32 @@ const Shop = () => {
         setCart(item.cart);
       };
     
+
     const handleEmptyCart = async () => {
         const response = await commerce.cart.empty();
     
         setCart(response.cart);
       };
+
+    const refreshCart = async() => {
+        const newCart = await commerce.cart.refresh()
+
+        setCart(newCart)
+
+    }
+      
+    const handleCaptureCheckout = async( checkoutTokenId, newOrder ) => {
+
+      try{
+          const incomingOrder = await commerce.checkout.capture(checkoutTokenId, newOrder)
+
+         
+          setOrder(incomingOrder)
+          refreshCart()
+      } catch (error) {
+          
+      }
+  }
 
     useEffect(() => {
         fetchProducts()
@@ -61,16 +84,24 @@ const Shop = () => {
                 <h1 className="font-bold text-2xl">Promocyjne pakiety</h1>
             </div>
         
-        <Products products={products} 
+        <Products 
+        products={products} 
         onAddToCart={handleAddToCart} 
-        totalItems={cart.total_items}/>
+        totalItems={cart.total_items}
+        />
   
         
         
         </div>
 
+        <Cart cart={cart} 
+        handleEmptyCart={handleEmptyCart}
+        />
+
         <Checkout
-        
+        cart={cart}
+        order={order}
+        onCaptureCheckout={handleCaptureCheckout}
         />
 
         </>

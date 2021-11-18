@@ -10,8 +10,30 @@ const steps = ['Adres dostawy', 'Szczegóły dotyczące płatności'];
 const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
 
   const [checkoutToken, setCheckoutToken] = useState(null);
+  const [shippingData, setshippingData] = useState({})
   const [activeStep, setActiveStep] = useState(0);
 
+  useEffect(() => {
+    if (cart.id) {
+      const generateToken = async () => {
+        try {
+          const token = await commerce.checkout.generateToken(cart.id, { type: 'cart' });
+
+          setCheckoutToken(token);
+        } catch (error) {
+          
+        }
+      };
+
+      generateToken();
+    }
+  }, [cart]);
+
+  const next = (data) => {
+    setshippingData(data)
+
+    nextStep()
+}
 
   const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
   const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
@@ -25,9 +47,18 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
 
   )
 
-  const Form = () => activeStep == 0 
-    ? <AddressForm checkoutToken={checkoutToken}/>
-    : <PaymentForm checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} onCaptureCheckout={onCaptureCheckout} />
+  const Form = () => activeStep === 0 
+    ? <AddressForm 
+      checkoutToken={checkoutToken} 
+      next={next}
+      />
+    : <PaymentForm 
+      checkoutToken={checkoutToken} 
+      shippingData={shippingData}
+      nextStep={nextStep} 
+      backStep={backStep} 
+      onCaptureCheckout={onCaptureCheckout} 
+      />
 
 
     return (
@@ -39,7 +70,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
               </div>
             ))}
         </div>
-        {activeStep === steps.length ? <Confirmation /> :  <Form />}
+        {activeStep === steps.length ? <Confirmation /> : checkoutToken &&  <Form />}
       </div>
     )
 }
