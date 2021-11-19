@@ -12,7 +12,7 @@ import ExamStats from "./ExamStats";
 import OralExam from "./OralExam";
 import FavoriteQuestions from "./FavoriteQuestions";
 import Specialty from "./Specialty";
-import LearnMode from "./LearnMode";
+import LearnMode from "./Learn-mode-complete/LearnMode";
 import ChooseMode from "./ChooseMode";
 import WrittenExam from "./WrittenExam";
 import WrittenExamEnd from "./WrittenExamEnd";
