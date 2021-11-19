@@ -1,13 +1,19 @@
 import { FormControl, TextField } from '@material-ui/core'
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { handleAmountChange } from "../redux/actions";
+
 
 const TextFieldComponent = () => {
-
-    const handleChange = () => {
-
-    }
+    const dispatch = useDispatch();
+    const handleChange = (e) => {
+      dispatch(handleAmountChange(e.target.value));
+    };
+  
 
     return (
+
+        
         <div>
             <FormControl>
                 <TextField 

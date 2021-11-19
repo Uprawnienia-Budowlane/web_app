@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,cAAc,CAAC;EACX,OAAO,EAAE,IAAI;EACb,QAAQ,EAAE,QAAQ;EAClB,eAAe,EAAE,aAAa;EAC9B,cAAc,EAAE,MAAM;EACtB,MAAM,EAAE,KAAK;CAChB;;AAED,AAAA,gBAAgB,CAAC;EACb,QAAQ,EAAE,QAAQ;CACrB",
+    "sources": [
+        "questions.scss"
+    ],
+    "names": [],
+    "file": "questions.css"
+}
