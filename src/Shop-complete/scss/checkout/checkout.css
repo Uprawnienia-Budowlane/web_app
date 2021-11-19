@@ -36,6 +36,7 @@
 
 /* address */
 .--form {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -47,7 +48,20 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin: 10px;
-  height: 450px;
+}
+
+.--form div {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 100%;
+  margin: 2.5px;
+}
+
+.--form label {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .--form h1 {

@@ -31,11 +31,20 @@
 /* address */
 
 .--form {
+    position: relative;
     display:flex;
     flex-direction: column;
     justify-content: center;
     margin: 10px;
-    height: 450px;
+}
+
+.--form div {
+    align-self: center;
+    width: 100%;
+    margin: 2.5px;
+}
+.--form label {
+    align-self: center;
 }
 
 .--form h1 {

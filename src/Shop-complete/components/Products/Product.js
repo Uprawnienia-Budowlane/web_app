@@ -11,7 +11,7 @@ const Product = ({ product, onAddToCart }) => {
         <>
     <div className="mb-3 rounded-2xl bg-blue-50 flex flex-col w-80" style={{minWidth: '300px'}}>
     <div className="mx-4 mt-8 flex flex-row justify-between">
-        <p className="text-blue-500 opacity-60 my-auto">PAKIET</p>
+        <p className="text-blue-500 opacity-60 my-auto">{product.name}</p>
         <div className="my-auto"><TagIcon/></div>
     </div>
     <p className="mx-4 mt-4 text-xl text-blue-500 font-semibold">{product.name}</p>
