@@ -15,6 +15,7 @@ const Shop = () => {
     const [products, setProducts] = useState([])
     const [order,  setOrder] = useState({})
     const [cart, setCart] = useState({})
+    const [errorMessage,  setErrorMessage] = useState('')
 
     const fetchProducts = async () => {
         const { data } = await commerce.products.list();
@@ -56,8 +57,8 @@ const Shop = () => {
           setOrder(incomingOrder)
           refreshCart()
       } catch (error) {
-          
-      }
+        setErrorMessage(error.data.error.message)
+    }
   }
 
     useEffect(() => {
@@ -103,6 +104,7 @@ const Shop = () => {
         cart={cart}
         order={order}
         onCaptureCheckout={handleCaptureCheckout}
+        error={errorMessage}
         />
 
         </>

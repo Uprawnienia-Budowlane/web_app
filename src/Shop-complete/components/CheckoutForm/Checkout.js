@@ -10,7 +10,7 @@ const steps = ['Adres dostawy', 'Szczegóły dotyczące płatności'];
 const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
 
   const [checkoutToken, setCheckoutToken] = useState(null);
-  const [shippingData, setshippingData] = useState({})
+   const [shippingData, setShippingData] = useState({});
   const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
   }, [cart]);
 
   const next = (data) => {
-    setshippingData(data)
+    setShippingData(data)
 
     nextStep()
 }
@@ -39,17 +39,33 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
   const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
 
 
-  const Confirmation = () => (
-
+  let Confirmation = ()  => (order.customer ? (
+  <>
     <div className="--form">
       <h1>Potwierdzenie</h1>
     </div>
+  </>
+  ): (
+    <div className="--form">
+      <h1>error</h1>
+    </div>
+  ));
 
-  )
+  if (error) {
+    Confirmation = () => (
+      <>
+        <div className="--form">
+        <h1>error {error}</h1>
+        </div>
+        
+      </>
+    );
+  }
 
   const Form = () => activeStep === 0 
     ? <AddressForm 
       checkoutToken={checkoutToken} 
+      setShippingData={setShippingData}
       next={next}
       />
     : <PaymentForm 
