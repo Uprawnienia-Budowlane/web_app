@@ -19,8 +19,12 @@ import {
 
 import React from 'react'
 import useAxios from '../../Learn-mode-complete/components/hooks/useAxios'
+import { useDispatch } from "react-redux";
+import { handleScoreChange } from "../redux/actions";
 
 import { useSelector } from "react-redux";
+
+import { decode } from "html-entities";
 
 import { useState, useEffect } from "react";
 
@@ -58,6 +62,8 @@ const Questions = () => {
     const [questionIndex, setQuestionIndex] = useState(0);
     const [options, setOptions] = useState([]);
 
+    const dispatch = useDispatch();
+
     useEffect(() => {
         if(response?.results.length) {
             const question = response.results[questionIndex]
@@ -79,10 +85,16 @@ const Questions = () => {
         )
     }
 
-    const handleClickAnswer = () => {
-        if(questionIndex + 1 < response.results.lenght) {
-            setQuestionIndex(questionIndex + 1)
+    const handleClickAnswer = (e) => {
+        const question = response.results[questionIndex];
+        if (e.target.textContent === question.correct_answer) {
+          dispatch(handleScoreChange(score + 1));
         }
+
+        if (questionIndex + 1 < response.results.length) {
+            setQuestionIndex(questionIndex + 1);
+          }
+
     }
 
     return (
@@ -90,7 +102,7 @@ const Questions = () => {
 
             <div className="flex flex-col px-2 ml-2 xl:ml-8 my-5">
                         <p className="text-blue-500">Tryb egzaminu pisemnego</p>
-                        <h1 className="font-bold "> {response.results[questionIndex].question}</h1>
+                        <h1 className="font-bold "> {decode(response.results[questionIndex].question)}</h1>
                         
                     </div>
                     <div id="question-paragraph" className="border-b border-opacity-50 flex">
@@ -121,7 +133,7 @@ const Questions = () => {
                         <button 
                         Style="margin: 10px; background: red; height: 50px;"
                         onClick={handleClickAnswer}
-                        >{data}
+                        >{decode(data)}
                         </button>
                         ))}
 

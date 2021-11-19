@@ -52,8 +52,8 @@ const LearnMode = () => {
             </div>
             <SubSpeciality visible={subspecialiyModal} speciality={speciality} onClose={() => setSubspecialiyModal(false)}/>
         </div>
-        
-        <FinalScreen/>
+
+        <FinalScreen />
         <Questions />
         <Settings />
 
