@@ -10,17 +10,28 @@ import {
     TeletechnicalIcon,
     TrainStationIcon,
     TrainSwitchIcon,
+    QuestionmarkIcon,
+    HeartFill2Icon,
     LightbulbIcon,
     SettingsIcon,
     ArrowXIcon, 
     EyeIcon,
+    
 
 } from "../../Icons";
+
+import { Link } from 'react-router-dom'
+
+import { CircularProgress } from "@material-ui/core";
+
+import { Button } from '@material-ui/core'
 
 import React from 'react'
 import useAxios from '../../Learn-mode-complete/components/hooks/useAxios'
 import { useDispatch } from "react-redux";
 import { handleScoreChange } from "../redux/actions";
+
+import { useHistory } from "react-router";
 
 import { useSelector } from "react-redux";
 
@@ -35,6 +46,7 @@ const getRandomInt = (max) => {
   };
 
 const Questions = () => {
+    const history = useHistory();
     const {
         question_category,
         question_difficulty,
@@ -80,7 +92,7 @@ const Questions = () => {
     if(loading) {
         return (
             <div>
-                <h1>ładowanie</h1>
+                <CircularProgress />
             </div>
         )
     }
@@ -98,22 +110,38 @@ const Questions = () => {
     }
 
     return (
-        <div className="question-page">
+        <>
+        
+        <div className="h-full w-full flex flex-col xl:flex-row">
+            <div className="rounded-3xl bg-white flex flex-col overflow-hidden">
 
-            <div className="flex flex-col px-2 ml-2 xl:ml-8 my-5">
+                <div className="border-b border-opacity-50 flex flex-col xl:flex-row justify-between">
+                    <div className="flex flex-col px-2 ml-2 xl:ml-8 my-5">
                         <p className="text-blue-500">Tryb egzaminu pisemnego</p>
-                        <h1 className="font-bold "> {decode(response.results[questionIndex].question)}</h1>
-                        
+                        <h1 className="font-bold ">Inżynieria hydrotechniczna - Projektowanie oraz kierowanie
+                            robotami w
+                            ograniczonym zakresie</h1>
                     </div>
-                    <div id="question-paragraph" className="border-b border-opacity-50 flex">
+
+                    <div className="flex flex-col md:flex-row mx-4 md:mr-8 justify-end">
+                        <div className="my-auto flex flex-row">
+                            <div className="my-auto ml-auto md:ml-8 cursor-pointer"><LightbulbIcon/></div>
+                            <div className="my-auto ml-8 cursor-pointer" onClick={() => history.push('/learn')}>
+                                <SettingsIcon/></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="border-b border-opacity-50 flex">
                     <h1 className="font-bold p-5 md:px-8">Rozporządzenie Ministra Rozwoju, Pracy i Technologii
                         z dnia 27.10.2020 r. w sprawie ewidencji nabytych, zużytych, przechowywanych i zbytych
                         materiałów wybuchowych przeznaczonych do użytku cywilnego oraz materiałów wybuchowych
                         znalezionych i zniszczonych podczas wykonywania działalności gospodarczej w zakresie
                         oczyszczania terenów.</h1>
                 </div>
-                    <div
-                    className="border-b border-opacity-50 bg-warmGray-100 flex flex-col md:flex-row justify-center md:space-x-16 question-form__">
+
+                <div
+                    className="border-b border-opacity-50 bg-warmGray-100 flex flex-col md:flex-row justify-center md:space-x-16">
                     <div className="flex flex-row mx-auto md:mx-0 my-2 md:my-5">
                         <p className="mr-6 font-bold text-blue-500">Pytanie</p>
                         <p className="font-bold">{questionIndex + 1}</p>
@@ -124,39 +152,60 @@ const Questions = () => {
                     </div>
                     <div className="flex flex-row mx-auto md:mx-0 my-2 md:my-5">
                         <p className="mr-6 font-bold text-blue-500">Błędne</p>
-                        <p className="font-bold text-red-500"></p>
+                        <p className="font-bold text-red-500">4</p>
                     </div>
-                    <div className="flex flex-column mx-auto md:mx-0 my-2 md:my-5">
+                    <div className="flex flex-row mx-auto md:mx-0 my-2 md:my-5">
                         <p className="mr-6 font-bold text-blue-500">Wynik</p>
-                        
-                        {options.map((data, id) => (
-                        <button 
-                        Style="margin: 10px; background: red; height: 50px;"
-                        onClick={handleClickAnswer}
-                        >{decode(data)}
-                        </button>
-                        ))}
-
-                        <div className="test"
-                     style={{height: "calc(100vh - 20rem)"}}>
-                    <div className="flex flex-row px-6 border-b pb-2">
-                        <div className="h-6 w-6 cursor-pointer hover:text-gray-600">
-                            <ArrowXIcon/>
-                        </div>
-                        <div className="flex-1"/>
-                        
-                        
-                        <div className="flex-1"/>
-                        <div className="h-6 w-6 transform rotate-180 cursor-pointer hover:text-gray-600">
-                            <ArrowXIcon/>
-                        </div>
-                    </div>
-                    </div>
-
-
+                        <p className="font-bold">%</p>
                     </div>
                 </div>
-        </div>
+
+                <div className="bg-blue-200">
+                    <p className="p-8 text-sm">{decode(response.results[questionIndex].question)}</p>
+                </div>
+
+                {options.map((data, id) => (
+                        <Button variant="contained"
+                        onClick={handleClickAnswer}
+                        >{decode(data)}
+                        </Button>
+                        ))}
+
+                <div className="flex flex-row my-4 mx-8 justify-between">
+                    <div className="my-auto text-blue-500">
+                        <div
+                            className="rounded-2xl border border-blue-500 p-0.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200">
+                            <ArrowXIcon/></div>
+                    </div>
+                    <div className="flex flex-row space-x-1 md:space-x-8">
+                        <div className="my-auto ">
+                            <div
+                                className="rounded-2xl border border-blue-500 p-3 h-14 w-14 hover:bg-blue-50 transition-colors duration-200">
+                                <HeartFill2Icon/></div>
+                        </div>
+                        <div className="my-auto">
+                            <div
+                                className="rounded-2xl border border-blue-500 p-3 h-14 w-14 hover:bg-blue-50 transition-colors duration-200">
+                                <QuestionmarkIcon/></div>
+                        </div>
+                        <div className="my-auto">
+                            <div
+                                className="rounded-2xl border border-blue-500 p-2.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200">
+                                <EyeIcon/></div>
+                        </div>
+                    </div>
+                    <div className="transform rotate-180 my-auto text-blue-500">
+                        <div
+                            className="rounded-2xl border border-blue-500 p-0.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200">
+                            <Link to="/learn/score"><ArrowXIcon/></Link>
+                            </div>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+        </>
     )
 }
 

@@ -5,8 +5,7 @@
 .steps {
     display: flex;
     height: 50px;
-    width: 95%;
-    margin: 10px;
+    width: 100%;
 }
 
 .step {
@@ -14,14 +13,12 @@
     justify-content: center;
     height: 100%;
     width: 50%;
-    margin-top: 10px;
     background: rgb(59, 130, 246);
 }
 
 .step label {
     margin: 10px;
     color: #fff;
-    text-align: center;
 }
 
 .step:nth-child(2) {
@@ -44,7 +41,7 @@
     margin: 2.5px;
 }
 .--form label {
-    align-self: center;
+
 }
 
 .--form h1 {

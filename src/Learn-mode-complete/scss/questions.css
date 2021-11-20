@@ -16,4 +16,13 @@
 .question-form__ {
   position: relative;
 }
+
+.learn-page {
+  position: relative;
+  width: 80%;
+}
+
+.learn-page div {
+  margin: 2.5px;
+}
 /*# sourceMappingURL=questions.css.map */

@@ -79,33 +79,33 @@ const Shop = () => {
     
     return (
       <>
-        <div className="h-full w-full rounded-3xl bg-white flex flex-col overflow-hidden border-box">
-            <div className="flex flex-col mx-auto px-2 my-8 sm:mx-8">
-                <p className="text-blue-500">Uprawnienia budowlane</p>
-                <h1 className="font-bold text-2xl">Promocyjne pakiety</h1>
-            </div>
+        <Router>
+          <Switch>
+          <Route exact path='/shop'>
+          <Products 
+          products={products} 
+          onAddToCart={handleAddToCart} 
+          totalItems={cart.total_items}
+          />
+          </Route>
+          <Route exact path='/shop/checkout'>
+          <Cart 
+          cart={cart} 
+          handleEmptyCart={handleEmptyCart}
+          />
+          <Checkout
+          cart={cart}
+          order={order}
+          onCaptureCheckout={handleCaptureCheckout}
+          error={errorMessage}
+          />
+          </Route>
+          </Switch>
+        </Router>
         
-        <Products 
-        products={products} 
-        onAddToCart={handleAddToCart} 
-        totalItems={cart.total_items}
-        />
-  
-        </div>
-
-        <Cart 
-        cart={cart} 
-        handleEmptyCart={handleEmptyCart}
-        />
-
-        <Checkout
-        cart={cart}
-        order={order}
-        onCaptureCheckout={handleCaptureCheckout}
-        error={errorMessage}
-        />
 
         </>
+        
         
     );
 }

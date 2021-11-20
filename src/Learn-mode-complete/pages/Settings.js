@@ -5,7 +5,7 @@ import TextFieldComponent from '../components/TextFieldComponent'
 import useAxios from '../../Learn-mode-complete/components/hooks/useAxios'
 import { Link } from 'react-router-dom'
 import { useHistory } from "react-router-dom";
-
+import { BrowserRouter as Router } from 'react-router-dom'
 import { Button } from '@material-ui/core'
 import { FormControl } from '@material-ui/core'
 import { CircularProgress } from '@material-ui/core'
@@ -27,7 +27,7 @@ const Settings = () => {
         return (
         <div>
           <h2>
-            Some Went Wrong!
+            Coś poszło nie tak :/
           </h2>
         </div>
         );
@@ -46,17 +46,22 @@ const Settings = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        history.push("/questions");
+        history.push("/learn/questions");
     }
 
     return (
-        <div>
+        <div  className="h-full w-full rounded-3xl bg-white flex flex-col">
+          <div className="flex flex-col px-2 my-8 sm:mx-8">
+                <p className="text-blue-500">Uprawnienia budowlane</p>
+                <h1 className="font-bold text-2xl">Wybierz specjalność</h1>
+            </div>
+
            <FormControl size="small" fullWidth onSubmit={handleSubmit}>
                <SelectField options={response.trivia_categories} label="Specjalność"/>
                <SelectField options={difficultyOptions} label="Podkategoria"/>
                <SelectField options={typeOptions} label="Poziom trudności"/>
                <TextFieldComponent />
-               <Button variant="outlined">Zacznij próbny test</Button>
+               <Button variant="outlined"><Link to="/learn/questions">Zacznij egzamin próbny</Link></Button>
            </FormControl>
         </div>
     )

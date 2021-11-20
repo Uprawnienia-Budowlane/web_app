@@ -66,7 +66,7 @@ const Desktop = () => {
                         <Route exact path="/exam-end">
                             <WrittenExamEnd/>
                         </Route>
-                        <Route exact path={["/learn", "/questions", "/score"]} >
+                        <Route exact path={["/learn", "/learn/questions", "/learn/score"]} >
                             <LearnMode/>
                         </Route>
                         <Route exact path="/oral">
@@ -81,7 +81,7 @@ const Desktop = () => {
                         <Route exact path="/favorite">
                             <FavoriteQuestions/>
                         </Route>
-                        <Route exact path="/shop">
+                        <Route exact path={["/shop", "/shop/checkout"]}>
                             <Shop/>
                         </Route>
 

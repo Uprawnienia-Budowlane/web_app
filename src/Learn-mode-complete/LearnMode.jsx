@@ -44,19 +44,14 @@ const LearnMode = () => {
     return (
         <>
         <div className="h-full w-full rounded-3xl bg-white flex flex-col">
-            <div className="flex flex-col px-2 my-8 sm:mx-8">
-                <p className="text-blue-500">Uprawnienia budowlane</p>
-                <h1 className="font-bold text-2xl">Wybierz specjalność</h1>
-            </div>
-
-            <div className="flex mx-auto justify-center mt-16 mb-24">
+            <div className="flex mx-auto justify-center mt-16 mb-24 learn-page">
 
                     <Router history={history}>
                         <Switch>
                             
                             <Route path='/learn' exact component={Settings}/>
-                            <Route path='/questions' exact component={Questions} />
-                            <Route path='/score' exact component={FinalScreen}/>
+                            <Route path='/learn/questions' exact component={Questions} />
+                            <Route path='/learn/score' exact component={FinalScreen}/>
                             
                         </Switch>
                     </Router>
