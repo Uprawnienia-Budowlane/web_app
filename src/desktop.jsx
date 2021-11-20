@@ -66,7 +66,7 @@ const Desktop = () => {
                         <Route exact path="/exam-end">
                             <WrittenExamEnd/>
                         </Route>
-                        <Route exact path="/learn">
+                        <Route exact path={["/learn", "/questions", "/score"]} >
                             <LearnMode/>
                         </Route>
                         <Route exact path="/oral">

@@ -91,8 +91,6 @@ const Shop = () => {
         totalItems={cart.total_items}
         />
   
-        
-        
         </div>
 
         <Cart 

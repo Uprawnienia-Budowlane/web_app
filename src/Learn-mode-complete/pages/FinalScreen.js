@@ -12,13 +12,14 @@ const FinalScreen = () => {
     const handleBackToSettings = () => {
       disptach(handleScoreChange(0));
       disptach(handleAmountChange(50));
+      history.push("/learn");
     };
 
     return (
         <div>
-            <h1>Final Score {score}</h1>
+            <h1>Twój wynik egzaminu próbnego: {score}</h1>
             <button onClick={handleBackToSettings} variant="outlined">
-            back to settings!
+            Rozwiąż ponownie
         </button>
         </div>
     )

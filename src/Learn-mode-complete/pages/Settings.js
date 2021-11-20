@@ -3,6 +3,8 @@ import React from 'react'
 import SelectField from '../components/SelectField'
 import TextFieldComponent from '../components/TextFieldComponent'
 import useAxios from '../../Learn-mode-complete/components/hooks/useAxios'
+import { Link } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 
 import { Button } from '@material-ui/core'
 import { FormControl } from '@material-ui/core'
@@ -10,6 +12,8 @@ import { CircularProgress } from '@material-ui/core'
 
 const Settings = () => {
     const { response, error, loading } = useAxios({url: "/api_category.php"})
+
+    const history = useHistory();
     
     if (loading) {
         return (
@@ -42,7 +46,7 @@ const Settings = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        history.push("/questions");
     }
 
     return (
