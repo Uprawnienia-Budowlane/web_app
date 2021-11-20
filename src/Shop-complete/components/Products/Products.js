@@ -40,11 +40,9 @@ const Products = ({ products, onAddToCart, totalItems  }) => {
             </div> 
            
          <div className="mx-auto mb-8 flex flex-col space-y-3 md:space-y-0 md:flex-row w-/6">
-         <button id="cart_btn" className={"rounded-2xl border border-blue-500 font-medium text-center text-xl py-3 px-6 mx-2 w-full "/* + (category === 2 ? 'bg-blue-500 text-white' : 'text-blue-500')*/}>Koszyk
-                 <div className="circle-with-product-quantity">
-                 <p id="cart"><Link to="/shop/checkout">ds</Link>{ totalItems }</p>
-                 </div>
-             </button> 
+         <button id="cart_btn" className={"rounded-2xl border border-blue-500 font-medium text-center text-xl py-3 px-24 mx-2 w-full "/* + (category === 2 ? 'bg-blue-500 text-white' : 'text-blue-500')*/}>
+         <Link to="/shop/checkout">Przejdź do finalizacji zakupu</Link>
+         </button> 
          </div>
          </div>
          </>

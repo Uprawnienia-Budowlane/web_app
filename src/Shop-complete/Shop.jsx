@@ -89,10 +89,6 @@ const Shop = () => {
           />
           </Route>
           <Route exact path='/shop/checkout'>
-          <Cart 
-          cart={cart} 
-          handleEmptyCart={handleEmptyCart}
-          />
           <Checkout
           cart={cart}
           order={order}
@@ -102,8 +98,6 @@ const Shop = () => {
           </Route>
           </Switch>
         </Router>
-        
-
         </>
         
         

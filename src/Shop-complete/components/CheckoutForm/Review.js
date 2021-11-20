@@ -3,9 +3,9 @@ import React from 'react'
 const Review = ({ checkoutToken }) => {
     return (
         <>
-            <ul>
+            <ul style={{ margin: '15px', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
                 {checkoutToken.live.line_items.map((product) => (
-                    <li key={product.name}>
+                    <li style={{ alignSelf: 'center', textAlign: 'center' }} key={product.name}>
                         <ul>
                             <li>{product.name}</li>
                             <li>{`ilość: ${product.quantity}`}</li>
@@ -15,9 +15,9 @@ const Review = ({ checkoutToken }) => {
                     </li>
                     
                 ))}
-                <span>
-                <h1>Calosc:</h1>
-                <p>{checkoutToken.live.subtotal.formatted_with_symbol}</p>
+                <span style={{ margin: '15px', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
+                <h1 style={{ alignSelf: 'center', textAlign: 'center' }}>Calosc:</h1>
+                <p style={{ alignSelf: 'center', textAlign: 'center' }}>{checkoutToken.live.subtotal.formatted_with_symbol}</p>
                 </span>
             </ul>
         </>

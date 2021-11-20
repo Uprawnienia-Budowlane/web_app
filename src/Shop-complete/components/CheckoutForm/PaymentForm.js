@@ -43,17 +43,17 @@ const PaymentForm = ({ checkoutToken, nextStep, backStep, shippingData, onCaptur
   return (
     <>
       <Review checkoutToken={checkoutToken} />
-      <Divider />
-      <Typography variant="h6" gutterBottom style={{ margin: '20px 0' }}>Metoda płatności</Typography>
+      <br />
+      <h2 style={{ margin: '15px' }}>Zapłać za pomocą karty kredytowej</h2>
       <Elements stripe={stripePromise}>
         <ElementsConsumer>{({ elements, stripe }) => (
-          <form onSubmit={(e) => handleSubmit(e, elements, stripe)}>
+          <form style={{ margin: '15px' }} onSubmit={(e) => handleSubmit(e, elements, stripe)}>
             <CardElement />
             <br /> <br />
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <Button variant="outlined" onClick={backStep}>Back</Button>
-              <Button type="submit" variant="contained" disabled={!stripe} color="primary">
-                Pay {checkoutToken.live.subtotal.formatted_with_symbol}
+              <Button style={{ margin: '15px' }}  variant="outlined" onClick={backStep}>Wróć do formularza adresowego</Button>
+              <Button style={{ margin: '15px' }} type="submit" variant="contained" disabled={!stripe} color="primary">
+                Zapłać {checkoutToken.live.subtotal.formatted_with_symbol}
               </Button>
             </div>
           </form>

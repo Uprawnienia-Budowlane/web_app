@@ -3,6 +3,8 @@ import { InputLabel, Select, MenuItem, Button, Grid, Typography } from '@materia
 import { useForm, FormProvider } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
+import Cart from '../Cart/Cart';
+
 import { commerce } from '../../lib/commerce';
 import FormInput from './CustomTextField';
 
@@ -14,6 +16,31 @@ const AddressForm = ({ checkoutToken, next }) => {
   const [shippingOptions, setShippingOptions] = useState([]);
   const [shippingOption, setShippingOption] = useState('');
   const methods = useForm();
+
+  const [products, setProducts] = useState([])
+  const [cart, setCart] = useState({})
+  
+  const fetchCart = async () => {
+    setCart(await commerce.cart.retrieve());
+
+  };
+  const handleEmptyCart = async () => {
+    const response = await commerce.cart.empty();
+
+    setCart(response.cart);
+  };
+  
+  const fetchProducts = async () => {
+    const { data } = await commerce.products.list();
+
+    setProducts(data);
+  };
+
+
+  useEffect(() => {
+    fetchProducts()
+    fetchCart()
+}, [])
 
   const fetchShippingCountries = async (checkoutTokenId) => {
     const { countries } = await commerce.services.localeListShippingCountries(checkoutTokenId);
@@ -98,8 +125,11 @@ const AddressForm = ({ checkoutToken, next }) => {
           </form>
           <br />
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Button component={Link} variant="outlined" to="/shop">Back to Cart</Button>
-            <Button type="submit" variant="contained" color="primary">Next</Button>
+            <Cart 
+            cart={cart} 
+            handleEmptyCart={handleEmptyCart}
+            />
+            <Button style={{ margin: '15px' }} type="submit" variant="contained" color="primary">Dalej</Button>
           </div>
         </form>
       </FormProvider>

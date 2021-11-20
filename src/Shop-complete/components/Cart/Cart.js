@@ -4,6 +4,8 @@ import {Link}  from 'react-router-dom'
 
 import CartItem from './CartItem'
 
+import { Button } from '@material-ui/core'
+
 const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart }) => {
 
     const EmptyCart = () => (
@@ -21,27 +23,11 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
     )
 
     if(!cart.line_items) return <div className="else-message-container">
-        <h1>Możliwe, że zapomniałeś czegoś dodać do koszyka ;)</h1>
+        <Button variant="contained" onClick={handleEmptyCart}><Link to="/shop">Wróc do produktów i usług</Link></Button>
         </div>
 
-    return (
-        <div>
-            <div className="cart-itself">
-            <img className="product-image" />
-            
-            <h1>Twój koszyk</h1>
-            {!cart.line_items ? <EmptyCart/> : <FilledCart /> }
-            <h1>Całość: 
-                <p>
-                {cart.subtotal.formatted_with_symbol}
-                </p>
-            </h1>
-            <div className="container-for-a-cart-options">
-            <button className="checkout-btns first" onClick={handleEmptyCart}>pusty koszyk</button>
-           
-            </div>
-        </div>
-        </div>
+    return (    
+            <Button variant="contained" style={{ margin: '15px' }} onClick={handleEmptyCart}><Link to="/shop">Wróc do produktów i usług</Link></Button>
     )
 }
 
