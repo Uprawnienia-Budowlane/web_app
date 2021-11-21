@@ -57,11 +57,11 @@ const Settings = () => {
             </div>
 
            <FormControl size="small" fullWidth onSubmit={handleSubmit}>
-               <SelectField options={response.trivia_categories} label="Specjalność"/>
-               <SelectField options={difficultyOptions} label="Podkategoria"/>
-               <SelectField options={typeOptions} label="Poziom trudności"/>
-               <TextFieldComponent />
-               <Button variant="outlined"><Link to="/learn/questions">Zacznij egzamin próbny</Link></Button>
+               <SelectField options={response.trivia_categories} label="Specjalizacja"/>
+               <SelectField options={difficultyOptions} label="Poziom trudności"/>
+               <SelectField options={typeOptions} label="Typ pytań"/>
+               <TextFieldComponent fullWidth/>
+               <Button variant="outlined"><Link to="/learn/questions">Zacznij się uczyć</Link></Button>
            </FormControl>
         </div>
     )

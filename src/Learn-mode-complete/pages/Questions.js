@@ -162,14 +162,18 @@ const Questions = () => {
 
                 <div className="bg-blue-200">
                     <p className="p-8 text-sm">{decode(response.results[questionIndex].question)}</p>
-                </div>
+                </div>                
 
+                <div className="flex flex-row my-4 mx-8 justify-center">
+                   
                 {options.map((data, id) => (
-                        <Button variant="contained"
+                        <Button style={{ margin: '10px' }} variant="contained"
                         onClick={handleClickAnswer}
                         >{decode(data)}
                         </Button>
                         ))}
+
+                </div>
 
                 <div className="flex flex-row my-4 mx-8 justify-between">
                     <div className="my-auto text-blue-500">

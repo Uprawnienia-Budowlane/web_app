@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useRef } from "react";
 import HeroImage from "./components/HeroImage";
 import {Link} from "react-router-dom";
+/* import { useAuth } from './context/AuthContext' */
 
-class Register extends React.Component {
-    render(props) {
+export default function Register() {
+
+        /* const EmailRef = useRef()
+        const PasswordRef = useRef()
+        const PasswordConfirmRef = useRef()
+        const { signup } = useAuth() */
+
+       /* function handleSubmit(e) {
+            e.preventDefault()
+
+            signup(EmailRef.current.value, PasswordRef.current.value)
+        } */
+
         return (
             <div className="h-full w-full flex flex-row max-w-screen-2xl">
                 <div className="flex flex-col rounded-3xl bg-white mx-4 sm:ml-16 sm:mr-10 my-20 h-full w-full">
@@ -17,14 +29,14 @@ class Register extends React.Component {
                         <div className="w-full flex flex-col md:flex-row">
                             <div className="w-full">
                                 <p className="text-blue-500 text-sm mb-2">Imię:</p>
-                                <input
+                                <input /*ref={EmailRef}*/
                                     className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
                             <div className="sm:w-10"/>
                             <div className="w-full">
                                 <p className="text-blue-500 mt-6 md:mt-0 text-sm mb-2">Nazwisko:</p>
-                                <input
+                                <input /*ref={PasswordRef}*/
                                     className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
@@ -32,7 +44,7 @@ class Register extends React.Component {
                         <div className="w-full flex flex-col-reverse md:flex-row mt-6">
                             <div className="w-full">
                                 <p className="text-blue-500 mt-6 md:mt-0 text-sm mb-2">Hasło:</p>
-                                <input
+                                <input /*ref={PasswordConfirmRef}*/
                                     className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     type="password" placeholder=""/>
                                 <div className="mt-1 flex flex-row">
@@ -80,7 +92,5 @@ class Register extends React.Component {
                 <HeroImage />
             </div>
         )
-    }
+    
 }
-
-export default Register;

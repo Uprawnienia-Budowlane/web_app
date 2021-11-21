@@ -15,7 +15,7 @@ const TextFieldComponent = () => {
 
         
         <div>
-            <FormControl>
+            <FormControl fullWidth>
                 <TextField 
                 onChange={handleChange}
                 variant="outlined"
