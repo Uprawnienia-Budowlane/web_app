@@ -173,7 +173,7 @@ const Profile = () => {
                             </div>
                         </div>
                         <div className="mr-8 flex flex-row justify-start">
-                            <button
+                            <button disabled={loading}
                                 className="mt-20 bg-blue-500 h-12 w-full md:w-1/2 rounded-2xl text-white font-medium px-10 focus:outline-none">Zapisz
                                 dane
                             </button>
