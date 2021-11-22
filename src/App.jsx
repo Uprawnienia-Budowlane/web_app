@@ -23,7 +23,7 @@ const App = () =>
                 <Route path="/reset">
                     <ResetPassword/>
                 </Route>
-                <PrivateRoute exact path="/">
+                <PrivateRoute>
                     <Desktop/>
                 </PrivateRoute>
             </Switch>
