@@ -1,7 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
+import { useAuth } from './context/AuthContext' 
 
 import PFP from './photos/ProfilePhoto.png';
 import {BlueImgIcon, ClockIcon, QuestionMarkInCirceIcon, ShareIcon} from "./Icons";
+import { useHistory } from "react-router";
 
 
 const GenderSelector = (props) => <button
@@ -12,7 +14,46 @@ const GenderSelector = (props) => <button
 ;
 
 const Profile = () => {
+
+    const emailRef = useRef()
+    const passwordRef = useRef()
+    const passwordConfirmRef = useRef()
+
+    const { signup, currentUser, updatePassword, updateEmail } = useAuth()
+
+    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(false)
+
+    const history = useHistory()
+
+     function handleSubmit(e) {
+        e.preventDefault()
+
+        if(passwordRef.current.value !== passwordConfirmRef.current.value) {
+            return setError('Hasło jest nie prawidłowe')
+        }
+
+        const promises = []
+        if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+            promises.push(updateEmail(emailRef.current.value))
+        }
+        if (passwordRef.current.value) {
+            promises.push(updatePassword(passwordRef.current.value))
+        }
+
+        Promise.all(promises).then(() => {
+            history.push('/')
+        }).catch(() => {
+            setError('Wystąpił błąd podczas aktualizacji profilu')
+        }).finally(() => {
+            setLoading(false)
+        })
+
+        
+    }
+
     const [gender, setGender] = useState(0);
+
     return (
         <div className="h-full w-full rounded-3xl bg-white flex flex-col xl:flex-row">
             <div className="xl:border-r border-gray-300">
@@ -101,17 +142,17 @@ const Profile = () => {
 
                             </div>
                         </div>
-
+                        <form onSubmit={handleSubmit}>
                         <div className="flex flex-col md:flex-row md:space-x-8 my-6">
                             <div className="w-full">
                                 <p className="ml-2 mb-1 text-sm">Nowe hasło:</p>
-                                <input
+                                <input ref={passwordRef}
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
                             <div className="w-full">
                                 <p className="mt-6 md:mt-0 ml-2 mb-1 text-sm">Potwierdź nowe hasło:</p>
-                                <input
+                                <input ref={passwordConfirmRef}
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
@@ -119,7 +160,7 @@ const Profile = () => {
                         <div className="flex flex-col md:flex-row md:space-x-8 my-6">
                             <div className="w-full">
                                 <p className="ml-2 mb-1 text-sm">Zmień e-mail:</p>
-                                <input
+                                <input ref={emailRef}
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
 
@@ -137,7 +178,7 @@ const Profile = () => {
                                 dane
                             </button>
                         </div>
-
+                        </form>
                     </div>
 
                 </div>
