@@ -1,30 +1,34 @@
 import React from "react";
 import Desktop from './desktop'
 import {Switch, Route} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Login from "./login";
 import Register from "./register";
 import ResetPassword from "./ResetPassword";
 import { AuthProvider } from "../src/context/AuthContext"
+import PrivateRoute from "./PrivateRoute";
 
 const App = () =>
     <div className="App min-h-screen w-full flex bg-blueGray-100">
         <div className="h-full w-full flex justify-center items-center">
+            <Router>
             <AuthProvider>
             <Switch>
-                <Route exact path="/login">
+                <Route path="/login">
                     <Login/>
                 </Route>
-                <Route exact path="/register">
+                <Route path="/register">
                     <Register/>
                 </Route>
-                <Route exact path="/reset">
+                <Route path="/reset">
                     <ResetPassword/>
                 </Route>
-                <Route>
+                <PrivateRoute exact path="/">
                     <Desktop/>
-                </Route>
+                </PrivateRoute>
             </Switch>
             </AuthProvider>
+            </Router>
         </div>
     </div>;
 

@@ -3,6 +3,7 @@ import HeroImage from "./components/HeroImage";
 import {Link} from "react-router-dom";
 import { useAuth } from './context/AuthContext' 
 import { AddAlertRounded } from "@material-ui/icons";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function Register() {
 
@@ -10,7 +11,7 @@ export default function Register() {
         const passwordRef = useRef()
         const passwordConfirmRef = useRef()
 
-        const { signup } = useAuth()
+        const { signup, currentUser } = useAuth()
 
         const [error, setError] = useState('')
         const [loading, setLoading] = useState(false)
@@ -18,7 +19,7 @@ export default function Register() {
         async function handleSubmit(e) {
             e.preventDefault()
 
-            if(passwordRef.current.value !== passwordConfirmRef) {
+            if(passwordRef.current.value !== passwordConfirmRef.current.value) {
                 return setError('Hasło jest nie prawidłowe')
             }
 
@@ -46,14 +47,14 @@ export default function Register() {
                         <div className="w-full flex flex-col md:flex-row">
                             <div className="w-full">
                                 <p className="text-blue-500 text-sm mb-2">Imię:</p>
-                                <input
+                                <input type='text'
                                     className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
                             <div className="sm:w-10"/>
                             <div className="w-full">
                                 <p className="text-blue-500 mt-6 md:mt-0 text-sm mb-2">Nazwisko:</p>
-                                <input
+                                <input type='text'
                                     className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
@@ -73,7 +74,7 @@ export default function Register() {
                             <div className="md:w-10"/>
                             <div className="w-full">
                                 <p className="text-blue-500 my-auto text-sm mb-2">Adres e-mail:</p>
-                                <input ref={emailRef}
+                                <input type='email' ref={emailRef}
                                     className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     type="email" placeholder=""/>
                             </div>

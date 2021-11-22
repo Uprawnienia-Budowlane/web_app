@@ -1,8 +1,10 @@
 import {DownArrowIcon, MenuIcon, NotificationIcon} from "../Icons";
 import React, {useEffect, useRef, useState} from "react";
-import {Link} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { useAuth } from '../context/AuthContext'
 
 const useOutsideAlerter = (ref, props) => {
+
     useEffect(() => {
         const handleClickOutside = event => {
             if (ref.current && !ref.current.contains(event.target) && props.visible) props.onClose();
@@ -13,9 +15,27 @@ const useOutsideAlerter = (ref, props) => {
     }, [ref, props]);
 }
 
-const DropDown = (props) => {
+function DropDown(props) {
+
+    const [error, setError] = useState("")
+    const { currentUser, logout } = useAuth()
+    const history = useHistory()
+    
     const wrapperRef = useRef(null);
     useOutsideAlerter(wrapperRef, props);
+
+    async function handleLogout() {
+
+        setError('')
+
+        try {
+            await logout()
+            history.push('/login')
+        } catch {
+            setError('')
+        }
+
+    }
 
     return (<div
         className={"absolute bg-white rounded-2xl shadow-xl w-64 right-0 mt-4 z-50" + (props.visible ? '' : ' hidden')}
@@ -23,7 +43,7 @@ const DropDown = (props) => {
         <Link to={'/profile'} className="block py-3 px-4 border-b font-light hover:bg-gray-50">Edytuj profil</Link>
         <Link to={'/settings'} className="block py-3 px-4 border-b font-light hover:bg-gray-50">Ustawienia</Link>
         <Link to={'/licenses'} className="block py-3 px-4 border-b font-light hover:bg-gray-50">Twoje licencje</Link>
-        <Link to={''} className="block py-3 px-4 font-light hover:bg-gray-50">Wyloguj</Link>
+        <Link onClick={handleLogout} className="block py-3 px-4 font-light hover:bg-gray-50">Wyloguj</Link>
     </div>);
 }
 
