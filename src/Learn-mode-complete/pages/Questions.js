@@ -55,7 +55,7 @@ const Questions = () => {
         score
     } = useSelector(state => state)
     console.log(amount_of_question)
-    let apiUrl = `/api.php?amount=${amount_of_question}`
+    let apiUrl = `/api.php?amount=30&category=18&difficulty=medium`
     if(question_category) {
         apiUrl = apiUrl.concat(`&category=${question_category}`)
     }

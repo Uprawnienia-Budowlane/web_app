@@ -4,7 +4,9 @@ import Products from "./components/Products/Products";
 import Checkout from './components/CheckoutForm/Checkout'
 import React, {useState, useEffect} from "react";
 import { BrowserRouter as Router } from 'react-router-dom'
-import { Route, Switch } from "react-router-dom";
+import {Prompt, Route, Switch } from "react-router-dom";
+
+import ExamEnd from '../modals/ExamEnd'
 
 import './scss/shop.css'
 
@@ -16,6 +18,17 @@ const Shop = () => {
     const [order,  setOrder] = useState({})
     const [cart, setCart] = useState({})
     const [errorMessage,  setErrorMessage] = useState('')
+
+    const [modal, setModal] = useState(false);
+    const [nextLocation, setNextLocation] = useState('');
+    const [shouldBlockNavigation, setShouldBlockNavigation] = useState(true);
+  
+    const handleBlockedNavigation = (next) => {
+      if (!shouldBlockNavigation) return true;
+      setModal(true);
+      setNextLocation(next);
+      return false;
+  }
 
     const fetchProducts = async () => {
         const { data } = await commerce.products.list();
@@ -79,6 +92,10 @@ const Shop = () => {
     
     return (
       <>
+        <Prompt
+                when={true}
+                message={handleBlockedNavigation}
+            />
         <Router>
           <Switch>
           <Route exact path='/shop'>
@@ -98,9 +115,11 @@ const Shop = () => {
           </Route>
           </Switch>
         </Router>
-        </>
-        
-        
+        <ExamEnd visible={modal} onClose={(e) => {
+                setModal(false);
+                setShouldBlockNavigation(e)
+            }} nextLocation={nextLocation}/>
+        </>        
     );
 }
 

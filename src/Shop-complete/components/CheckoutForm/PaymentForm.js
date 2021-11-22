@@ -51,10 +51,10 @@ const PaymentForm = ({ checkoutToken, nextStep, backStep, shippingData, onCaptur
             <CardElement />
             <br /> <br />
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <Button style={{ margin: '15px' }}  variant="outlined" onClick={backStep}>Wróć do formularza adresowego</Button>
-              <Button style={{ margin: '15px' }} type="submit" variant="contained" disabled={!stripe} color="primary">
+              <button className="uppercase rounded-2xl border border-blue-500 text-center py-1.5 px-2 w-full text-blue-500" style={{ margin: '15px' }} onClick={backStep}>Wróć do formularza adresowego</button>
+              <button className="uppercase rounded-2xl border border-blue-500 text-center py-1.5 px-2 w-full text-blue-500" style={{ margin: '15px' }} type="submit" disabled={!stripe}>
                 Zapłać {checkoutToken.live.subtotal.formatted_with_symbol}
-              </Button>
+              </button>
             </div>
           </form>
         )}

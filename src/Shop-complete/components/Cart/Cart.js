@@ -23,11 +23,11 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
     )
 
     if(!cart.line_items) return <div className="else-message-container">
-        <Button variant="contained" onClick={handleEmptyCart}><Link to="/shop">Wróc do produktów i usług</Link></Button>
+        <button className="uppercase rounded-2xl border border-blue-500 text-center py-1.5 px-2 w-full text-blue-500" style={{ margin: '15px' }} onClick={handleEmptyCart}><Link style={{ display: 'block' }} to="/shop">Wróc do produktów i usług</Link></button>
         </div>
 
     return (    
-            <Button variant="contained" style={{ margin: '15px' }} onClick={handleEmptyCart}><Link to="/shop">Wróc do produktów i usług</Link></Button>
+            <button className="uppercase rounded-2xl border border-blue-500 text-center py-1.5 px-2 w-full text-blue-500" style={{ margin: '15px' }} onClick={handleEmptyCart}><Link style={{ display: 'block' }} to="/shop">Wróc do produktów i usług</Link></button>
     )
 }
 

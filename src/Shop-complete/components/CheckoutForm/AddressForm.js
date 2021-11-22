@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { InputLabel, Select, MenuItem, Button, Grid, Typography } from '@material-ui/core';
 import { useForm, FormProvider } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Prompt, Link } from 'react-router-dom';
 
 import Cart from '../Cart/Cart';
 
@@ -129,7 +129,7 @@ const AddressForm = ({ checkoutToken, next }) => {
             cart={cart} 
             handleEmptyCart={handleEmptyCart}
             />
-            <Button style={{ margin: '15px' }} type="submit" variant="contained" color="primary">Dalej</Button>
+            <button className="uppercase rounded-2xl border border-blue-500 text-center py-1.5 px-2 w-full text-blue-500" style={{ margin: '15px' }} type="submit" variant="contained" color="primary">Dalej</button>
           </div>
         </form>
       </FormProvider>
