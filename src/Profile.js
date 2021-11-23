@@ -154,15 +154,18 @@ function Profile() {
                         <div className="flex flex-col md:flex-row md:space-x-8 my-6">
                             <div className="w-full">
                                 <p className="ml-2 mb-1 text-sm">Imię:</p>
-                                <input key=""
+                                {loader === false && (data.map((ActualUser) => (
+                                <input 
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
-                                    placeholder=""/>
+                                    placeholder={ActualUser.Imię}/>)))}
                             </div>
                             <div className="w-full">
                                 <p className="mt-6 md:mt-0 ml-2 mb-1 text-sm">Nazwisko:</p>
+                                {loader === false && (data.map((ActualUser) => (
                                 <input
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
-                                    placeholder=""/>
+                                    placeholder={ActualUser.Nazwisko}/>
+                                )))}
                             </div>
                         </div>
 

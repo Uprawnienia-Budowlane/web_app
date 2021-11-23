@@ -1,6 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import HeroImage from "./components/HeroImage";
 import {Link} from "react-router-dom";
+import firebase from "./firebase";
 import { useAuth } from './context/AuthContext' 
 import { AddAlertRounded } from "@material-ui/icons";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -17,6 +18,37 @@ export default function Register() {
         const [error, setError] = useState('')
         const [loading, setLoading] = useState(false)
       
+        const [newName, setNewName] = useState("")
+        const [newUsername, setNewUsername] = useState("")
+        const [newEmailAddress, setnewEmailAddress] = useState("")
+        const [newPassword, setnewPassword] = useState("")
+
+        const [data, setdata] = useState([])
+        const [loader, setloader] = useState(true)
+
+        const createUser = async () => {
+            
+          await firebase.db.add({Imię: newName, Nazwisko: newUsername, email: newEmailAddress, haslo: newPassword})
+
+        }
+
+        function getData() {
+        firebase.db.onSnapshot((querySnapshot) => {
+            const items = []
+            querySnapshot.forEach((doc) => {
+                items.push(doc.data())
+            })
+            setdata(items)
+            setloader(false)
+        })
+    }
+
+    useEffect(() => {
+
+        getData()
+
+    }, [])
+
         async function handleSubmit(e) {
             e.preventDefault()
 
@@ -52,14 +84,18 @@ export default function Register() {
                         <div className="w-full flex flex-col md:flex-row">
                             <div className="w-full">
                                 <p className="text-blue-500 text-sm mb-2">Imię:</p>
-                                <input type='text'
+                                <input type='text' onChange={(event) => {
+                                    setNewName(event.target.value)
+                                }}
                                     className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
                             <div className="sm:w-10"/>
                             <div className="w-full">
                                 <p className="text-blue-500 mt-6 md:mt-0 text-sm mb-2">Nazwisko:</p>
-                                <input type='text'
+                                <input type='text' onChange={(event) => {
+                                    setNewUsername(event.target.value)
+                                }}
                                     className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
@@ -67,7 +103,9 @@ export default function Register() {
                         <div className="w-full flex flex-col-reverse md:flex-row mt-6">
                             <div className="w-full">
                                 <p className="text-blue-500 mt-6 md:mt-0 text-sm mb-2">Hasło:</p>
-                                <input ref={passwordRef}
+                                <input  onChange={(event) => {
+                                    setnewPassword(event.target.value)
+                                }} ref={emailRef} ref={passwordRef}
                                     className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     type="password" placeholder=""/>
                                 <div className="mt-1 flex flex-row">
@@ -79,7 +117,9 @@ export default function Register() {
                             <div className="md:w-10"/>
                             <div className="w-full">
                                 <p className="text-blue-500 my-auto text-sm mb-2">Adres e-mail:</p>
-                                <input type='email' ref={emailRef}
+                                <input type='email' onChange={(event) => {
+                                    setnewEmailAddress(event.target.value)
+                                }} ref={emailRef}
                                     className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     type="email" placeholder=""/>
                             </div>
@@ -99,7 +139,7 @@ export default function Register() {
                                     placeholder=""/>
                             </div>
                         </div>
-                        <button disabled={loading}
+                        <button onClick={createUser} disabled={loading}
                             className="bg-blue-500 mt-8 mx-auto h-12 rounded-2xl text-white font-medium px-10 focus:outline-none">Rejestruj
                             konto i aktywuj klucz
                         </button>
