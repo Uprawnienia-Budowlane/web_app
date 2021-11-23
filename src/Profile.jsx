@@ -1,11 +1,14 @@
 import React, {useState, useRef} from "react";
 import { useAuth } from './context/AuthContext' 
-
+import firebase from "./firebase";
+import 'firebase/firestore'
+import 'firebase/analytics'
 import PFP from './photos/ProfilePhoto.png';
 import {BlueImgIcon, ClockIcon, QuestionMarkInCirceIcon, ShareIcon} from "./Icons";
 import { useHistory } from "react-router";
 
 import '../src/scss/profile.css'
+
 
 const GenderSelector = (props) => <button
         className={"mt-2 rounded-2xl border border-blue-500 flex flex-row justify-between text-sm py-3 px-4 focus:outline-none" + (props.selected ? ' text-blue-500' : ' text-black')} onClick={() => props.onClick()}>
@@ -124,7 +127,7 @@ const Profile = () => {
                         <div className="flex flex-col md:flex-row md:space-x-8 my-6">
                             <div className="w-full">
                                 <p className="ml-2 mb-1 text-sm">Imię:</p>
-                                <input
+                                <input key=""
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
