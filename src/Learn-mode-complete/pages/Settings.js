@@ -34,14 +34,14 @@ const Settings = () => {
       }
 
       const difficultyOptions = [
-        { id: "easy", name: "Easy" },
-        { id: "medium", name: "Medium" },
-        { id: "hard", name: "Hard" },
+        { id: "easy", name: "Łatwy" },
+        { id: "medium", name: "Średni" },
+        { id: "hard", name: "Trudny" },
       ];
 
       const typeOptions = [
-        { id: "multiple", name: "Multiple Choise" },
-        { id: "boolean", name: "True/False" },
+        { id: "multiple", name: "Wielokrotny wybór" },
+        { id: "boolean", name: "Prawda/Fałsz" },
       ];    
 
     const handleSubmit = (e) => {
@@ -61,7 +61,7 @@ const Settings = () => {
                <SelectField options={difficultyOptions} label="Poziom trudności"/>
                <SelectField options={typeOptions} label="Typ pytań"/>
                <TextFieldComponent fullWidth/>
-               <Button variant="outlined"><Link to="/learn/questions">Zacznij się uczyć</Link></Button>
+               <Button variant="outlined"><Link style={{ display: 'block', width: '120%' }} to="/learn/questions">Zacznij się uczyć</Link></Button>
            </FormControl>
         </div>
     )
