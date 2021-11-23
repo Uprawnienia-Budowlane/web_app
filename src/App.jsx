@@ -11,7 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 const App = () =>
     <div className="App min-h-screen w-full flex bg-blueGray-100">
         <div className="h-full w-full flex justify-center items-center">
-            <HashRouter>
+            <Router>
             <AuthProvider>
             <Switch>
                 <Route path="/login">
@@ -28,7 +28,7 @@ const App = () =>
                 </PrivateRoute>
             </Switch>
             </AuthProvider>
-            </HashRouter>
+            </Router>
         </div>
     </div>;
 
