@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+import { CircularProgress } from '@material-ui/core'
 
 import { commerce } from '../../lib/commerce';
 import AddressForm from './AddressForm';
@@ -47,7 +48,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
   </>
   ): (
     <div className="--form">
-      <h1>error</h1>
+      <CircularProgress/>
     </div>
   ));
 
@@ -55,7 +56,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
     Confirmation = () => (
       <>
         <div className="--form">
-        <h1>error {error}</h1>
+        <h1 style={{ textAlign: 'center' }}>Niestety możemy zrelizować twojego zamównienia :/ {error}</h1>
         </div>
         
       </>
