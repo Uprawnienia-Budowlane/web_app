@@ -5,6 +5,7 @@ import PFP from './photos/ProfilePhoto.png';
 import {BlueImgIcon, ClockIcon, QuestionMarkInCirceIcon, ShareIcon} from "./Icons";
 import { useHistory } from "react-router";
 
+import '../src/scss/profile.css'
 
 const GenderSelector = (props) => <button
         className={"mt-2 rounded-2xl border border-blue-500 flex flex-row justify-between text-sm py-3 px-4 focus:outline-none" + (props.selected ? ' text-blue-500' : ' text-black')} onClick={() => props.onClick()}>
@@ -19,7 +20,7 @@ const Profile = () => {
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
 
-    const { signup, currentUser, updatePassword, updateEmail } = useAuth()
+    const { currentUser, updatePassword, updateEmail, token, TokenCheck, tokenc, } = useAuth()
 
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
@@ -54,6 +55,8 @@ const Profile = () => {
 
     const [gender, setGender] = useState(0);
 
+    console.log(currentUser)
+
     return (
         <div className="h-full w-full rounded-3xl bg-white flex flex-col xl:flex-row">
             <div className="xl:border-r border-gray-300">
@@ -62,11 +65,11 @@ const Profile = () => {
                         <div className="flex flex-row">
                             <img src={PFP} alt="ProfilePhoto" className="w-28 h-28"/>
                             <div className="ml-4 mt-7 flex flex-col">
-                                <h1 className="font-medium text-2xl">Adam Kowalski</h1>
+                                <h1 className="font-medium text-2xl">{currentUser && currentUser.email}</h1>
                                 <p className="text-blue-500">Edytuj profil</p>
+                                <p></p>
                             </div>
                         </div>
-
                         <div className="bg-blue-200 h-full">
                             <p className="font-medium text-blue-500 px-6 py-5">Personalne Statystyki</p>
                         </div>
@@ -138,37 +141,30 @@ const Profile = () => {
                             <div className="flex flex-col md:flex-row md:space-x-4">
                                 <GenderSelector gender={'Mężczyzna'} selected={gender === 0} onClick={() => setGender(0)}/>
                                 <GenderSelector gender={'Kobieta'} selected={gender === 1} onClick={() => setGender(1)}/>
-                                <GenderSelector gender={'Śmigłowiec szturmowy AH-64 Apache'} selected={gender === 2} onClick={() => setGender(2)}/>
-
                             </div>
                         </div>
                         <form onSubmit={handleSubmit}>
                         <div className="flex flex-col md:flex-row md:space-x-8 my-6">
                             <div className="w-full">
+                                <p className="ml-2 mb-1 text-sm">Zmień e-mail:</p>
+                                <input ref={emailRef}
+                                    className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
+                                    placeholder={currentUser && currentUser.email}/>
+                            </div>
+                        </div>
+                        <div className="flex flex-col md:flex-row md:space-x-8 my-6">
+                            <div className="w-full">
                                 <p className="ml-2 mb-1 text-sm">Nowe hasło:</p>
                                 <input ref={passwordRef}
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
-                                    placeholder=""/>
+                                    type="password" placeholder=""
+                                    placeholder={currentUser && currentUser.passwordRef}/>
                             </div>
                             <div className="w-full">
                                 <p className="mt-6 md:mt-0 ml-2 mb-1 text-sm">Potwierdź nowe hasło:</p>
                                 <input ref={passwordConfirmRef}
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
-                                    placeholder=""/>
-                            </div>
-                        </div>
-                        <div className="flex flex-col md:flex-row md:space-x-8 my-6">
-                            <div className="w-full">
-                                <p className="ml-2 mb-1 text-sm">Zmień e-mail:</p>
-                                <input ref={emailRef}
-                                    className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
-                                    placeholder=""/>
-
-                            </div>
-                            <div className="w-full">
-                                <p className="mt-6 md:mt-0 ml-2 mb-1 text-sm">Potwierdź nowy e-mail:</p>
-                                <input
-                                    className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
+                                    type="password" placeholder=""
                                     placeholder=""/>
                             </div>
                         </div>

@@ -12,6 +12,10 @@ export function AuthProvider({ children }) {
     const [currentUser, setCurrentUser] = useState()
     const [Loading, setLoading] = useState(true)
 
+    function token(token) {
+        auth.signInWithCustomToken(token)
+    }
+
     function signup(email, password) {
         auth.createUserWithEmailAndPassword(email, password)
     }
@@ -52,9 +56,10 @@ export function AuthProvider({ children }) {
         login,
         signup,
         logout,
+        token,
         resetPassword,
         updateEmail,
-        updatePassword
+        updatePassword,
     }
 
     return (

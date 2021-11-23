@@ -9,9 +9,10 @@ export default function Register() {
 
         const emailRef = useRef()
         const passwordRef = useRef()
+        const tokenRef = useRef()
         const passwordConfirmRef = useRef()
 
-        const { signup, currentUser } = useAuth()
+        const { signup, token } = useAuth()
 
         const [error, setError] = useState('')
         const [loading, setLoading] = useState(false)
@@ -21,6 +22,10 @@ export default function Register() {
 
             if(passwordRef.current.value !== passwordConfirmRef.current.value) {
                 return setError('Hasło jest nie prawidłowe')
+            }
+
+            if(tokenRef.current.value == '') {
+                return setError('Proszę wprowadzić token')
             }
 
             try {
@@ -89,7 +94,7 @@ export default function Register() {
                             <div className="md:w-10"/>
                             <div className="w-full">
                                 <p className="text-blue-500 mt-6 md:mt-0 text-sm mb-2">Klucz:</p>
-                                <input
+                                <input ref={tokenRef}
                                     className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>

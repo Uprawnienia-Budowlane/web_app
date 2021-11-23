@@ -43,7 +43,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
   let Confirmation = ()  => (order.customer ? (
   <>
     <div className="--form">
-      <h1>Potwierdzenie</h1>
+      <h1 style={{ textAlign: 'center', margin: '25px' }}>Potwierdzenie</h1>
     </div>
   </>
   ): (
@@ -56,7 +56,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
     Confirmation = () => (
       <>
         <div className="--form">
-        <h1 style={{ textAlign: 'center' }}>Niestety możemy zrelizować twojego zamównienia :/ {error}</h1>
+        <h1 style={{ textAlign: 'center', margin: '25px' }}>Niestety możemy zrelizować twojego zamównienia :/ {error}</h1>
         </div>
         
       </>
