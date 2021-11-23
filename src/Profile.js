@@ -190,15 +190,15 @@ function Profile() {
                                 <p className="ml-2 mb-1 text-sm">Nowe hasło:</p>
                                 <input ref={passwordRef}
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
-                                    type="password" placeholder=""
+                                    type="password"
                                     placeholder={currentUser && currentUser.passwordRef}/>
                             </div>
                             <div className="w-full">
                                 <p className="mt-6 md:mt-0 ml-2 mb-1 text-sm">Potwierdź nowe hasło:</p>
                                 <input ref={passwordConfirmRef}
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
-                                    type="password" placeholder=""
-                                    placeholder=""/>
+                                    type="password"
+                                    placeholder={currentUser && currentUser.passwordRef}/>
                             </div>
                         </div>
                         <div className="mr-8 flex flex-row justify-start">
