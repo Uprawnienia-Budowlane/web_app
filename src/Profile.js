@@ -1,14 +1,19 @@
-import React, {useState, useRef} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import { useAuth } from './context/AuthContext' 
+import {
+    collection,
+    getDocs,
+    addDoc,
+    updateDoc,
+    deleteDoc,
+    doc,
+  } from '@google-cloud/firestore';
 import firebase from "./firebase";
-import 'firebase/firestore'
-import 'firebase/analytics'
 import PFP from './photos/ProfilePhoto.png';
 import {BlueImgIcon, ClockIcon, QuestionMarkInCirceIcon, ShareIcon} from "./Icons";
 import { useHistory } from "react-router";
 
 import '../src/scss/profile.css'
-
 
 const GenderSelector = (props) => <button
         className={"mt-2 rounded-2xl border border-blue-500 flex flex-row justify-between text-sm py-3 px-4 focus:outline-none" + (props.selected ? ' text-blue-500' : ' text-black')} onClick={() => props.onClick()}>
@@ -17,16 +22,38 @@ const GenderSelector = (props) => <button
     </button>
 ;
 
-const Profile = () => {
+function Profile() {
 
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
 
-    const { currentUser, updatePassword, updateEmail, token, TokenCheck, tokenc, } = useAuth()
+    const { currentUser, updatePassword, updateEmail } = useAuth()
 
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
+
+    const [data, setdata] = useState([])
+    const [loader, setloader] = useState(true)
+
+    function getData() {
+        firebase.db.onSnapshot((querySnapshot) => {
+            const items = []
+            querySnapshot.forEach((doc) => {
+                items.push(doc.data())
+            })
+            setdata(items)
+            setloader(false)
+        })
+    }
+
+    useEffect(() => {
+
+        getData()
+
+    }, [])
+
+    console.log(data)
 
     const history = useHistory()
 
@@ -58,8 +85,6 @@ const Profile = () => {
 
     const [gender, setGender] = useState(0);
 
-    console.log(currentUser)
-
     return (
         <div className="h-full w-full rounded-3xl bg-white flex flex-col xl:flex-row">
             <div className="xl:border-r border-gray-300">
@@ -68,7 +93,9 @@ const Profile = () => {
                         <div className="flex flex-row">
                             <img src={PFP} alt="ProfilePhoto" className="w-28 h-28"/>
                             <div className="ml-4 mt-7 flex flex-col">
-                                <h1 className="font-medium text-2xl">{currentUser && currentUser.email}</h1>
+                                {loader === false && (data.map((ActualUser) => (
+                                    <h1 className="font-medium text-2xl">{ActualUser.Imię} {ActualUser.Nazwisko}</h1>
+                                )))}
                                 <p className="text-blue-500">Edytuj profil</p>
                                 <p></p>
                             </div>

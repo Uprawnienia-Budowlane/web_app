@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {
     Chart2Icon,
     ChildWithBookIcon,
@@ -12,8 +12,30 @@ import MainCharts from "./MainCharts";
 import MainCard from "./components/MainCard";
 import {useHistory} from "react-router-dom";
 import Dropdown from "./components/Dropdown";
+import firebase from "./firebase";
 
 const Main = () => {
+
+    const [data, setdata] = useState([])
+    const [loader, setloader] = useState(true)
+
+    function getData() {
+        firebase.db.onSnapshot((querySnapshot) => {
+            const items = []
+            querySnapshot.forEach((doc) => {
+                items.push(doc.data())
+            })
+            setdata(items)
+            setloader(false)
+        })
+    }
+
+    useEffect(() => {
+
+        getData()
+
+    }, [])
+
     const [category, setCategory] = useState(0);
     const [interval, setInterval] = useState(0);
     const [bar, setBar] = useState(false);
@@ -23,7 +45,9 @@ const Main = () => {
         <div className="h-full w-full rounded-3xl bg-white flex flex-row justify-between md:flex-nowrap">
             <div className="flex flex-col mx-auto px-2 my-8 sm:mx-8 w-1/2">
                 <p className="text-blue-500">Uprawnienia budowlane</p>
-                <h1 className="font-bold text-2xl">Witaj Adam</h1>
+                {loader === false && (data.map((ActualUser) => (
+                    <h1 className="font-bold text-2xl">Witaj {ActualUser.Imię}</h1>
+                )))}
 
                 <div className=" mt-6 shadow-md rounded-3xl bg-blue-500 flex flex-row justify-between cursor-pointer"
                      onClick={() => history.push('/speciality')}>

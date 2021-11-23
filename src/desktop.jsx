@@ -18,7 +18,7 @@ import WrittenExam from "./WrittenExam";
 import WrittenExamEnd from "./WrittenExamEnd";
 import Licenses from "./Licenses";
 import ActMode from "./ActMode";
-
+import firebase from "./firebase";
 import licenseModel from './models/License';
 
 const Desktop = () => {
