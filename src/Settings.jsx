@@ -1,8 +1,19 @@
 import React, {useState} from "react";
 import {LightbulbIcon, View1, View2} from "./Icons";
 import KeyShortcuts from "./modals/KeyShortcuts";
+import { lightTheme, darkTheme, GlobalStyles } from './theme'
+import { ThemeProvider } from "styled-components";
 
 const Settings = () => {
+
+    const [theme, setTheme] = useState('light')
+
+    const ThemeToggler = () => {
+
+        theme === 'light' ? setTheme('dark') : setTheme('light') 
+
+    }
+
     const [layout, setLayout] = useState(window.config.settings.pageLayout);
     const [keyboardModal, setKeyboardModal] = useState(false);
     return (
@@ -10,13 +21,6 @@ const Settings = () => {
             <div className="flex flex-col my-8 border-b border-opacity-50 w-full">
                 <p className="text-blue-500 px-2 sm:mx-8 text-xl mb-6">Ustawienia aplikacji</p>
             </div>
-            <div className="flex flex-row border-b border-opacity-50 w-full justify-between">
-                <p className="px-2 sm:mx-8 mb-6 font-medium text-lg">Tryb ciemny/jasny</p>
-                <div className="relative h-6 sm:mr-8 pr-2">
-                    <input type="checkbox"/>
-                </div>
-            </div>
-
             <div className="flex flex-row border-b border-opacity-50 w-full justify-between">
                 <p className="px-2 sm:mx-8 my-6 font-medium text-lg">Podstawowy wyglądu trybu nauki</p>
                 <div className="my-auto sm:mr-8 pr-2 space-x-4 flex flex-row cursor-pointer">
