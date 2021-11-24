@@ -92,7 +92,7 @@ const Shop = () => {
     
     return (
       <>
-        <Prompt
+      <Prompt
                 when={true}
                 message={handleBlockedNavigation}
             />

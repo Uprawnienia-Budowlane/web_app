@@ -75,6 +75,17 @@ const AddressForm = ({ checkoutToken, next }) => {
     if (shippingSubdivision) fetchShippingOptions(checkoutToken.id, shippingCountry, shippingSubdivision);
   }, [shippingSubdivision]);
 
+  const [modal, setModal] = useState(false);
+  const [nextLocation, setNextLocation] = useState('');
+  const [shouldBlockNavigation, setShouldBlockNavigation] = useState(true);
+
+  const handleBlockedNavigation = (next) => {
+    if (!shouldBlockNavigation) return true;
+    setModal(true);
+    setNextLocation(next);
+    return false;
+}
+
   return (
     <>
       <FormProvider {...methods}>

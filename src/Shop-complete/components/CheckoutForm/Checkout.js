@@ -23,6 +23,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
           setCheckoutToken(token);
         } catch (error) {
           
+          
         }
       };
 

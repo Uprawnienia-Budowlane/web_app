@@ -6,7 +6,11 @@ import CartItem from './CartItem'
 
 import { Button } from '@material-ui/core'
 
-const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart }) => {
+import {useHistory} from "react-router-dom";
+
+const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart, props }) => {
+
+    const history = useHistory();
 
     const EmptyCart = () => (
         <h2 style="color:white;">kup se coś, <Link to='/'>ok?</Link></h2>

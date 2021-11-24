@@ -45,6 +45,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin: 10px;
+  height: 775px;
 }
 
 .--form div {
