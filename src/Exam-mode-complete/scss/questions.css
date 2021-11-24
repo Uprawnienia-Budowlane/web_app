@@ -1,0 +1,28 @@
+.question-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 600px;
+}
+
+.question-form__ {
+  position: relative;
+}
+
+.learn-page {
+  position: relative;
+  width: 80%;
+}
+
+.learn-page div {
+  margin: 2.5px;
+}
+/*# sourceMappingURL=questions.css.map */

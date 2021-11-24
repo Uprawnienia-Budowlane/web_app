@@ -14,7 +14,7 @@ import FavoriteQuestions from "./FavoriteQuestions";
 import Specialty from "./Specialty";
 import LearnMode from "./Learn-mode-complete/LearnMode";
 import ChooseMode from "./ChooseMode";
-import WrittenExam from "./WrittenExam";
+import WrittenExam from "./Exam-mode-complete/WrittenExam";
 import WrittenExamEnd from "./WrittenExamEnd";
 import Licenses from "./Licenses";
 import ActMode from "./ActMode";
@@ -60,7 +60,7 @@ const Desktop = () => {
                         <Route exact path="/written">
                             <ChooseMode/>
                         </Route>
-                        <Route exact path="/exam">
+                        <Route exact path={["/exam", "/exam/questions", "/exam/score"]}>
                             <WrittenExam/>
                         </Route>
                         <Route exact path="/exam-end">

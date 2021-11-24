@@ -16,6 +16,7 @@ import {
     SettingsIcon,
     ArrowXIcon, 
     EyeIcon,
+    TimerIcon,
     
 
 } from "../../Icons";
@@ -108,6 +109,37 @@ const Questions = () => {
           }
 
     }
+    
+    const Timer = () => {
+        const [time, setTime] = useState(60 * 90);
+    
+        useEffect(() => {
+            const interval = setInterval(() => setTime(time - 1), 1000);
+            return () => clearInterval(interval);
+        });
+    
+        const parseTime = e => {
+            const h = Math.floor(e / 3600).toString().padStart(2, '0'),
+                m = Math.floor(e % 3600 / 60).toString().padStart(2, '0'),
+                s = Math.floor(e % 60).toString().padStart(2, '0');
+    
+                if(h == '00' && m == '00' && s == '01') {
+                    history.push("/exam/score")
+                }
+
+            if (h === '00')
+                return `${m}:${s}`;
+            else
+                return `${h}:${m}:${s}`;
+
+        };
+    
+        return [<div className="my-auto h-8 w-8">
+            <TimerIcon/>
+        </div>,
+            <p className="my-auto ml-1.5 text-3xl font-bold text-blue-500">{parseTime(time)}</p>
+        ];
+    }
 
     return (
         <>
@@ -122,14 +154,20 @@ const Questions = () => {
                             robotami w
                             ograniczonym zakresie</h1>
                     </div>
-
+                    <div className="flex flex-col md:flex-row mx-4 mb-2 md:mb-0 md:mr-8 justify-between">
+                    <p className="mb-8 mt-auto font-medium">WYMAGANY WYNIK: 45/90</p>
+                    <p className="mb-8 mt-auto md:ml-4 mr-5 font-medium">Czas: 90 minut</p>
+                    <div className="my-auto ml-auto cursor-pointer"
+                         onClick={() => history.push('/exam')}><SettingsIcon/></div>
+                </div>
                     <div className="flex flex-col md:flex-row mx-4 md:mr-8 justify-end">
                         <div className="my-auto flex flex-row">
                             <div className="my-auto ml-auto md:ml-8 cursor-pointer"><LightbulbIcon/></div>
-                            <div className="my-auto ml-8 cursor-pointer" onClick={() => history.push('/learn')}>
-                                <SettingsIcon/></div>
                         </div>
                     </div>
+                </div>
+                <div className="absolute right-0 flex flex-row py-3.5 px-8">
+                    <Timer/>
                 </div>
 
                 <div className="border-b border-opacity-50 flex">
@@ -201,7 +239,7 @@ const Questions = () => {
                     <div className="transform rotate-180 my-auto text-blue-500">
                         <div
                             className="rounded-2xl border border-blue-500 p-0.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200">
-                            <Link to="/learn/score"><ArrowXIcon/></Link>
+                            <Link to="/exam/score"><ArrowXIcon/></Link>
                             </div>
                     </div>
                 </div>
@@ -209,7 +247,7 @@ const Questions = () => {
             </div>
 
             </div>
-            </div>
+        </div>
         </>
     )
 }
