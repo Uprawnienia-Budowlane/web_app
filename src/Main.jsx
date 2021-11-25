@@ -43,13 +43,13 @@ const Main = () => {
 
     return (
         <div className="h-full w-full rounded-3xl bg-white flex flex-row justify-between md:flex-nowrap">
-            <div className="flex flex-col mx-auto px-2 my-8 sm:mx-8 w-1/2">
+            <div className="flex flex-col mx-auto px-2 my-8 sm:mx-8 w-1/2 dashboard-css-fix">
                 <p className="text-blue-500">Uprawnienia budowlane</p>
                 {loader === false && (data.map((ActualUser) => (
                     <h1 className="font-bold text-2xl">Witaj {ActualUser.Imię}</h1>
                 )))}
 
-                <div className=" mt-6 shadow-md rounded-3xl bg-blue-500 flex flex-row justify-between cursor-pointer"
+                <div className=" mt-6 shadow-md rounded-3xl bg-blue-500 flex flex-row justify-between cursor-pointer headbox-dashboard-css-fix"
                      onClick={() => history.push('/speciality')}>
                     <h1 className="text-2xl 2xl:text-3xl text-white font-bold mx-2 sm:mx-10 my-auto">Wybierz swoją
                         specjalność</h1>
@@ -68,7 +68,7 @@ const Main = () => {
                 </div>
             </div>
 
-            <div className="my-6 mx-2 md:mr-8 shadow-md rounded-3xl bg-blue-500 flex-col w-1/2">
+            <div className="my-6 mx-2 md:mr-8 shadow-md rounded-3xl bg-blue-500 flex-col w-1/2 stats-mobile-fix-css">
                 <div className="flex-col mx-6 my-8">
                     <p className="text-white">Podgląd</p>
                     <h1 className="font-bold text-white text-2xl">Twoich Statystyk</h1>
@@ -111,12 +111,12 @@ const Main = () => {
                             <MainCharts period={interval} bar={bar}/>
                             <div className="flex flex-row justify-center gap-4">
                                 <div
-                                    className={"rounded-lg border border-blue-500 cursor-pointer " + (!bar ? "bg-blue-500 text-white" : "text-blue-500")}
+                                    className={"rounded-lg border border-blue-500 cursor-pointer mobile-stat-button-fix " + (!bar ? "bg-blue-500 text-white" : "text-blue-500")}
                                     onClick={() => setBar(false)}>
                                     <p className="mx-4 my-1 text-sm">LINIOWY</p>
                                 </div>
                                 <div
-                                    className={"rounded-lg border border-blue-500 cursor-pointer " + (bar ? "bg-blue-500 text-white" : "text-blue-500")}
+                                    className={"rounded-lg border border-blue-500 cursor-pointer mobile-stat-button-fix " + (bar ? "bg-blue-500 text-white" : "text-blue-500")}
                                     onClick={() => setBar(true)}>
                                     <p className="mx-4 my-1 text-sm">SŁUPKOWY</p>
                                 </div>

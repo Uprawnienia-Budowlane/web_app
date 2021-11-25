@@ -153,22 +153,24 @@ const Questions = () => {
                 </div>
 
                 <div className="flex flex-col md:flex-row mx-4 mb-2 md:mb-0 md:mr-8 justify-between">
-                    <p className="mb-8 mt-auto font-medium">WYMAGANY WYNIK: 45/90</p>
-                    <p className="mb-8 mt-auto md:ml-4 mr-5 font-medium">Czas: 90 minut</p>
+                    <p className="mb-8 mt-auto font-medium" style={{ margin: '10px' }}>WYMAGANY WYNIK: 45/90</p>
+                    <p className="mb-8 mt-auto md:ml-4 mr-5 font-medium" style={{ margin: '10px' }}>Czas: 90 minut</p>
                     <div className="my-auto ml-auto cursor-pointer"
                          onClick={() => history.push('/exam/')}><SettingsIcon/></div>
                 </div>
             </div>
 
             <div className="border-b border-opacity-50 bg-warmGray-100 flex flex-row justify-center h-16 relative">
-                <div className="flex flex-row my-auto">
+                <div className="flex flex-row my-auto" style={{ margin: '20px' }}>
                     <p className="mr-6 font-bold text-blue-500">Pytanie</p>
-                    <p className="font-bold">{score}/{questionIndex + 1}</p>
+                    <p className="font-bold" >{score}/{questionIndex + 1}</p>
                 </div>
                 <div className="absolute right-0 flex flex-row py-3.5 px-8">
                     <Timer/>
                 </div>
             </div>
+
+            <div className="rounded-2xl border bg-200"><img src="" style={{ height: '100%', width: '100%' }}/></div>
 
             <div className="bg-blue-200">
                 <p className="px-8 py-10 text-sm">Organ administracji architektoniczno-budowlanej zamieszcza w

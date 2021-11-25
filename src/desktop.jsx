@@ -37,8 +37,8 @@ const Desktop = () => {
 
             <div className="flex flex-row mt-10 mb-10">
                 <div className="hidden md:flex mdd:flex-col mt-8 ml-3 w-28">
-                    <div className="mx-auto flex flex-col space-y-12 2xl:space-y-16">
-                        <Link to="/"> <MenuItem icon={HomeIcon} active={loc === '/'}/></Link>
+                    <div className="mx-auto flex flex-col space-y-12 2xl:space-y-16" style={{ marginTop: '100px' }}>
+                        <Link to="/" style={{zIndex: '99'}}> <MenuItem icon={HomeIcon} active={loc === '/'}/></Link>
                         <Link to="/speciality"> <MenuItem icon={ListIcon} active={loc === '/speciality'}/></Link>
                         <Link to="/written"> <MenuItem icon={PenIcon} active={loc === '/written'}/></Link>
                         <Link to="/oral"> <MenuItem icon={MessageIcon} active={loc === '/oral'}/></Link>
@@ -49,7 +49,7 @@ const Desktop = () => {
                     </div>
                 </div>
 
-                <div className="h-full w-full mx-4 md:pl-5 md:mr-12" >
+                <div className="h-full w-full mx-4 md:pl-5 md:mr-12 desktop-css-fix">
                     <Switch>
                         <Route exact path="/">
                             <Main/>

@@ -1,0 +1,61 @@
+.change-mode-btn {
+  position: fixed;
+  top: 55px;
+  padding: 14px;
+  right: 230px;
+  z-index: 99;
+}
+
+.desktop-css-fix {
+  margin-top: 120px;
+}
+
+@media (min-width: 0px) and (max-width: 999px) {
+  .mobile-fix-btn {
+    display: none;
+  }
+  .headbox-dashboard-css-fix {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .headbox-dashboard-css-fix h1 {
+    margin: 15px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .headbox-dashboard-css-fix div {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .headline-dashboard-css-fix {
+    margin: 10px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .dashboard-css-fix {
+    width: 100%;
+  }
+  .dashboard-css-fix h1 {
+    text-align: center;
+  }
+  .dashboard-css-fix p {
+    text-align: center;
+  }
+  .stats-mobile-fix-css {
+    display: none;
+  }
+}
+
+@media (min-width: 539px) and (orientation: landscape) {
+  .stats-mobile-fix-css {
+    display: block;
+  }
+}
+/*# sourceMappingURL=app.css.map */

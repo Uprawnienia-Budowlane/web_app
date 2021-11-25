@@ -11,6 +11,8 @@ import PrivateRoute from "./PrivateRoute";
 import { lightTheme, darkTheme, GlobalStyles } from './theme'
 import { ThemeProvider } from "styled-components";
 
+import './scss/app.css'
+
 const App = () => {
 
     const [theme, setTheme] = useState('light')
@@ -26,7 +28,7 @@ const App = () => {
         <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
             <GlobalStyles/>
             <AuthProvider>
-            <input className="mobile-fix-btn" style={{position: 'fixed', height: '31.5px', top: '45px', right: '360px'}} onClick={() => ThemeToggler()} type="checkbox"/>
+            <input className="change-mode-btn mobile-fix-btn" onClick={() => ThemeToggler()} type="checkbox"/>
             <Switch>
                 <Route path="/login">
                     <Login/>

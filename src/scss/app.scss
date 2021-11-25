@@ -1,0 +1,66 @@
+
+.change-mode-btn {
+    position: fixed;
+    top: 55px; 
+    padding: 14px;
+    right:230px; 
+    z-index:99;
+}
+
+.desktop-css-fix {
+    margin-top: 120px;
+}
+
+@media (min-width:0px) and (max-width: 999px) {
+
+    .mobile-fix-btn {
+        display: none;
+    }
+    
+
+.headbox-dashboard-css-fix {
+    justify-content: center;
+    align-self: center;
+}
+
+.headbox-dashboard-css-fix h1 {
+    margin: 15px;
+    align-self: center;
+}
+
+.headbox-dashboard-css-fix div {
+    align-self: center;
+}
+
+.headline-dashboard-css-fix {
+    margin: 10px;
+    align-self: center;
+}
+
+.dashboard-css-fix {
+    width: 100%;
+}
+
+.dashboard-css-fix h1 {
+    text-align: center;
+}
+
+.dashboard-css-fix p {
+    text-align: center;
+}
+
+.stats-mobile-fix-css {
+    display:none;
+}
+
+
+}
+
+@media (min-width:539px) and (orientation:landscape) {
+
+    .stats-mobile-fix-css {
+        display:block;
+    }
+
+}
+
