@@ -25,6 +25,9 @@
   #cart_btn {
     width: 300px;
   }
+  .css-shop-little-fix {
+    margin-right: -70.5px;
+  }
   .mobile-navigation {
     display: -webkit-box;
     display: -ms-flexbox;

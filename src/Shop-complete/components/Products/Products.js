@@ -7,7 +7,7 @@ const Products = ({ products, onAddToCart, totalItems  }) => {
 
     return (
         <>
-        <div className="h-full w-full rounded-3xl bg-white flex flex-col overflow-hidden border-box">
+        <div className="h-full w-full rounded-3xl bg-white flex flex-col overflow-hidden border-box css-shop-little-fix">
         <div className="flex flex-col mx-auto px-2 my-8 sm:mx-8">
                 <p className="text-blue-500">Uprawnienia budowlane</p>
                 <h1 className="font-bold text-2xl">Promocyjne pakiety</h1>
