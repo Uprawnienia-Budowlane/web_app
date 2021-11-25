@@ -35,17 +35,17 @@ const Desktop = () => {
     return (<div className="h-full w-full flex flex-col max-w-screen-3xl" style={{maxWidth: 1650}}>
             <NavBar/>
 
-            <div className="flex flex-row mt-10 mb-10">
-                <div className="hidden md:flex mdd:flex-col mt-8 ml-3 w-28">
-                    <div className="mx-auto flex flex-col space-y-12 2xl:space-y-16" style={{ marginTop: '100px' }}>
-                        <Link to="/" style={{zIndex: '99'}}> <MenuItem icon={HomeIcon} active={loc === '/'}/></Link>
+            <div className="flex flex-row mt-10 mb-10 css-margin-bottom-mobile">
+                <div className="hidden md:flex mdd:flex-col mt-8 ml-3 w-28 mobile-navigation-md-fix">
+                    <div className="mx-auto flex flex-col space-y-12 2xl:space-y-16 mobile-navigation" style={{ marginTop: '100px' }}>
+                        <Link to="/" style={{ marginTop: '20px'}}> <MenuItem icon={HomeIcon} active={loc === '/'}/></Link>
                         <Link to="/speciality"> <MenuItem icon={ListIcon} active={loc === '/speciality'}/></Link>
-                        <Link to="/written"> <MenuItem icon={PenIcon} active={loc === '/written'}/></Link>
-                        <Link to="/oral"> <MenuItem icon={MessageIcon} active={loc === '/oral'}/></Link>
-                        <Link to="/acts"> <MenuItem icon={BookIcon} active={loc === '/acts'}/></Link>
+                        <Link class="mobile-hide-option" to="/written"> <MenuItem icon={PenIcon} active={loc === '/written'}/></Link>
+                        <Link class="mobile-hide-option" to="/oral"> <MenuItem icon={MessageIcon} active={loc === '/oral'}/></Link>
+                        <Link class="mobile-hide-option" to="/acts"> <MenuItem icon={BookIcon} active={loc === '/acts'}/></Link>
                         <Link to="/stats"> <MenuItem icon={ChartIcon} active={loc === '/stats'}/></Link>
-                        <Link to="/favorite"> <MenuItem icon={HeartIcon} active={loc === '/favorite'}/></Link>
-                        <Link to="/shop"> <MenuItem icon={ShoppingCartIcon} active={loc === '/shop'}/></Link>
+                        <Link class="mobile-hide-option" to="/favorite"> <MenuItem icon={HeartIcon} active={loc === '/favorite'}/></Link>
+                        <Link to="/shop" className="desktop-fix-icon"> <MenuItem icon={ShoppingCartIcon} active={loc === '/shop'}/></Link>
                     </div>
                 </div>
 
