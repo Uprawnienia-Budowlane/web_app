@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, {useState} from 'react'
 import SelectField from '../components/SelectField'
 import TextFieldComponent from '../components/TextFieldComponent'
 import useAxios from '../../Learn-mode-complete/components/hooks/useAxios'
@@ -9,8 +9,10 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { Button } from '@material-ui/core'
 import { FormControl } from '@material-ui/core'
 import { CircularProgress } from '@material-ui/core'
+import firebase from '../../firebase'
 
 const Settings = () => {
+
     const { response, error, loading } = useAxios({url: "/api_category.php"})
 
     const history = useHistory();
@@ -56,13 +58,14 @@ const Settings = () => {
                 <h1 className="font-bold text-2xl">Wybierz specjalność</h1>
             </div>
 
-           <FormControl size="small" fullWidth onSubmit={handleSubmit}>
+            <FormControl size="small" fullWidth onSubmit={handleSubmit}>
                <SelectField options={response.trivia_categories} label="Specjalizacja"/>
                <SelectField options={difficultyOptions} label="Poziom trudności"/>
                <SelectField options={typeOptions} label="Typ pytań"/>
                <TextFieldComponent fullWidth/>
                <Button variant="outlined"><Link style={{ display: 'block', width: '120%' }} to="/learn/questions">Zacznij się uczyć</Link></Button>
            </FormControl>
+          
         </div>
     )
 }

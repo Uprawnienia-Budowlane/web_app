@@ -9,13 +9,13 @@ const Product = ({ product, onAddToCart }) => {
 
     return(
         <>
-    <div className="mb-3 rounded-2xl bg-blue-50 flex flex-col w-80" style={{minWidth: '300px'}}>
-    <div className="mx-4 mt-8 flex flex-row justify-between">
+    <div className="mb-3 rounded-2xl bg-blue-50 flex flex-col w-80 main-change-dark-mode" style={{minWidth: '300px'}}>
+    <div className="mx-4 mt-8 flex flex-row justify-between main-change-dark-mode">
         <p className="text-blue-500 opacity-60 my-auto">{product.name}</p>
         <div className="my-auto"><TagIcon/></div>
     </div>
     <p className="mx-4 mt-4 text-xl text-blue-500 font-semibold">{product.name}</p>
-    <div className="mx-4 mt-2 flex flex-row">
+    <div className="mx-4 mt-2 flex flex-row main-change-dark-mode">
         <p className="text-xl text-blue-500 font-medium">{product.price.formatted} zł</p>
         <p className="ml-2 text-blue-500 opacity-60 my-auto font-medium">/ za sztukę</p>
     </div>

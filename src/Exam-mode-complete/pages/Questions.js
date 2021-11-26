@@ -172,7 +172,7 @@ const Questions = () => {
 
             <div className="rounded-2xl border bg-200"><img src="" style={{ height: '100%', width: '100%' }}/></div>
 
-            <div className="bg-blue-200">
+            <div className="bg-blue-200 speciality-change">
                 <p className="px-8 py-10 text-sm">Organ administracji architektoniczno-budowlanej zamieszcza w
                     Biuletynie Informacji Publicznej na stronie podmiotowej obsługującego go urzędu informacje o
                     doręczeniu zgłoszenia dotyczącego wolnostojących budynków mieszkalnych jednorodzinnych,
@@ -194,7 +194,7 @@ const Questions = () => {
                     <ArrowXIcon/></button>
                 <button
                     onClick={() => history.push('/exam/score')}
-                    className="rounded-2xl border border-blue-500 px-2 py-3 md:px-14 text-lg h-full text-blue-500 hover:bg-blue-50 transition-colors duration-200">
+                    className="rounded-2xl border border-blue-500 px-2 py-3 md:px-14 text-lg h-full text-blue-500 hover:bg-blue-50 transition-colors duration-200 night-mode-btn">
                     Zakończ Egzamin
                 </button>
                 <button

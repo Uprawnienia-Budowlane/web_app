@@ -17,5 +17,16 @@ const app = firebase.initializeApp({
 
 const db = firebase.firestore().collection('użytkownicy')
 
+/* const create_quiz = (currentQuizId, tytul, pytanie) => {
+return firestore().collection('quizy').doc(CurrentQuizId).set({
+        currentQuizId,
+        tytul,
+        pytanie,
+})
+
+}*/
+
+const quiz_db = firebase.firestore().collection('quizy')
+
 export const auth = app.auth()
-export default { app, db }
+export default { app, db, quiz_db }

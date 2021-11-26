@@ -10,6 +10,8 @@ export const darkTheme = {
     div_second:'#575757',
     fontColor: '#dedede',
     BgBlueGray: '#1f1f1f',
+    NormalColor:'#3B82F6',
+    WhiteColor:'#fff',
     BgBlueGrayHover: '#2b2b2b',
     SvgChange: 'rgba(255, 255, 255, var(--tw-text-opacity))',
     SvgChangeLight: 'rgba(255, 255, 255, var(--tw-text-opacity))'
@@ -22,7 +24,44 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 .bg-blueGray-100:hover {
-    background-color: ${props => props.theme.BgBlueGrayHover}
+    background-color: ${props => props.theme.BgBlueGray}
+}
+
+svg {
+    color:${props => props.theme.WhiteColor}
+}
+
+svg:hover {
+    color:${props => props.theme.NormalColor}
+}
+
+.main-change-dark-mode {
+    background: ${props => props.theme.BgBlueGrayHover};
+}
+
+.main-change-dark-mode svg {
+    background: ${props => props.theme.BgBlueGray};
+}
+
+.bg-blueGray-100~.main-change-dark-mode svg:hover {
+    background: ${props => props.theme.BgBlueGrayHover};
+}
+
+.speciality-change {
+    background: ${props => props.theme.NormalColor}
+}
+
+.main-stats-dark-mode {
+    background: ${props => props.theme.NormalColor};
+
+}
+
+.mobile-navigation {
+    background: ${props => props.theme.BgBlueGrayHover};
+}
+
+.night-mode-btn {
+    background: ${props => props.theme.WhiteColor};
 }
 
 .mr-4 {

@@ -41,6 +41,10 @@ import { useState, useEffect } from "react";
 
 import '../scss/questions.css'
 
+/* graph's */
+
+/* */
+
 const getRandomInt = (max) => {
     return Math.floor(Math.random() * Math.floor(max));
   };
@@ -109,6 +113,12 @@ const Questions = () => {
 
     }
 
+    /* images */
+
+
+
+    /* */
+
     return (
         <>
         <div className="h-full w-full rounded-3xl bg-white flex flex-col overflow-hidden">
@@ -159,6 +169,8 @@ const Questions = () => {
                         <p className="font-bold">%</p>
                     </div>
                 </div>
+
+                <div className="rounded-2xl border bg-200"><img src="" style={{ height: '100%', width: '100%' }}/></div>
 
                 <div className="bg-blue-200">
                     <p className="p-8 text-sm">{decode(response.results[questionIndex].question)}</p>

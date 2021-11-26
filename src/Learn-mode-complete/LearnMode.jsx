@@ -27,19 +27,10 @@ import { createBrowserHistory } from "history";
 
 export const history = createBrowserHistory();
 
-
-
 const LearnMode = () => {
+
     const [speciality, setSpeciality] = useState("");
     const [subspecialiyModal, setSubspecialiyModal] = useState(false);
-
-    let [loc, setLoc] = useState('/');
-    let location = useLocation();
-
-    React.useEffect(() => {
-        setLoc(location.pathname);
-    }, [location]);
-
 
     return (
         <>

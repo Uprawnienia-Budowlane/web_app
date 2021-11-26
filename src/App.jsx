@@ -1,10 +1,10 @@
 import React from "react";
 import Desktop from './desktop'
-import {Switch, Route} from "react-router-dom";
-import { HashRouter as Router } from "react-router-dom";
+import { HashRouter as Router, Switch, Route} from "react-router-dom";
 import { useState } from "react";
 import Login from "./login";
 import Register from "./register";
+import AdminPanel from './Admin-panel-complete/AdminPanel'
 import ResetPassword from "./ResetPassword";
 import { AuthProvider } from "../src/context/AuthContext"
 import PrivateRoute from "./PrivateRoute";
@@ -39,9 +39,12 @@ const App = () => {
                 <Route path="/reset">
                     <ResetPassword/>
                 </Route>
-                <PrivateRoute>
+                <Route path="/panel-administratora">
+                    <AdminPanel/>
+                </Route>
+                <Route>
                     <Desktop/>
-                </PrivateRoute>
+                </Route>
             </Switch>
             </AuthProvider>
             </ThemeProvider>

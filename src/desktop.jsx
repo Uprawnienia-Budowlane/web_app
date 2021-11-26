@@ -10,12 +10,11 @@ import Shop from "./Shop-complete/Shop";
 import Acts from "./Acts";
 import ExamStats from "./ExamStats";
 import OralExam from "./OralExam";
+import WrittenExam from './Exam-mode-complete/WrittenExam'
 import FavoriteQuestions from "./FavoriteQuestions";
 import Specialty from "./Specialty";
 import LearnMode from "./Learn-mode-complete/LearnMode";
 import ChooseMode from "./ChooseMode";
-import WrittenExam from "./Exam-mode-complete/WrittenExam";
-import WrittenExamEnd from "./WrittenExamEnd";
 import Licenses from "./Licenses";
 import ActMode from "./ActMode";
 import firebase from "./firebase";
@@ -63,9 +62,6 @@ const Desktop = () => {
                         <Route exact path={["/exam", "/exam/questions", "/exam/score"]}>
                             <WrittenExam/>
                         </Route>
-                        <Route exact path="/exam-end">
-                            <WrittenExamEnd/>
-                        </Route>
                         <Route exact path={["/learn", "/learn/questions", "/learn/score"]} >
                             <LearnMode/>
                         </Route>
@@ -84,15 +80,17 @@ const Desktop = () => {
                         <Route exact path={["/shop", "/shop/checkout"]}>
                             <Shop/>
                         </Route>
-
                         <Route exact path="/settings">
                             <Settings/>
                         </Route>
                         <Route exact path="/profile">
                             <Profile/>
                         </Route>
-                        <Route exact path="/licenses">
+                        <Route exact path="/act-mode">
                             <ActMode/>
+                        </Route>
+                        <Route exact path="/licenses">
+                            <Licenses/>
                         </Route>
                     </Switch>
                 </div>

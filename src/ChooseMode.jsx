@@ -13,11 +13,11 @@ const ChooseMode = () => {
 
             <div className="flex flex-col xl:flex-row justify-center mt-6 mb-10 md:mb-40">
                 <div className="mx-4 bg-blue-500 rounded-2xl flex flex-col hover:shadow-lg cursor-pointer" onClick={() => history.push('/learn')}>
-                    <div className="mx-auto xl:mx-16 mt-12 mb-6 h-60 w-60"><ABCPaperIcon/></div>
+                    <div className="mx-auto xl:mx-16 mt-12 mb-6 h-60 w-60 speciality-change"><ABCPaperIcon/></div>
                     <p className="mb-5 text-center text-white text-3xl font-medium">Nauka testów</p>
                 </div>
                 <div className="mx-4 mt-4 xl:mt-0 bg-blue-500 rounded-2xl flex flex-col hover:shadow-lg cursor-pointer" onClick={() => history.push('/exam')}>
-                    <div className="mx-auto xl:mx-16 mt-12 mb-6 h-60 w-60"><ABCClockPaperIcon/></div>
+                    <div className="mx-auto xl:mx-16 mt-12 mb-6 h-60 w-60 speciality-change"><ABCClockPaperIcon/></div>
                     <p className="mb-5 text-center text-white text-3xl font-medium">Egzamin pisemny</p>
                 </div>
             </div>

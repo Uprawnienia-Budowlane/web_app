@@ -69,11 +69,11 @@ const Main = () => {
             </div>
 
             <div className="my-6 mx-2 md:mr-8 shadow-md rounded-3xl bg-blue-500 flex-col w-1/2 stats-mobile-fix-css">
-                <div className="flex-col mx-6 my-8">
+                <div className="flex-col mx-6 my-8 main-stats-dark-mode">
                     <p className="text-white">Podgląd</p>
                     <h1 className="font-bold text-white text-2xl">Twoich Statystyk</h1>
 
-                    <div className="mt-8 py-4 rounded-3xl bg-white flex-col">
+                    <div className="mt-8 py-4 rounded-3xl bg-white flex-col main-stats-dark-mode">
                         <div className="mx-4 flex flex-col md:flex-row justify-between">
                             <button
                                 onClick={() => setCategory(0)}

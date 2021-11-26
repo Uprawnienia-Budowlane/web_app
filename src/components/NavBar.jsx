@@ -70,7 +70,7 @@ const NavBar = () => {
     const [dropdown, setDropdown] = useState(false);
     const [notificationsDropdown, setNotificationsDropdown] = useState(false);
 
-    return (<div className="flex flex-row justify-between" style={{ position: 'fixed', left:'0px', background: 'white', width: '100%', zIndex: '99' }}>
+    return (<div className="flex flex-row justify-between night-mode-navbar" style={{ position: 'fixed', left:'0px', width: '100%', zIndex: '99' }}>
         <div className="ml-6 mt-6 flex flex-row">
             <svg width="85" height="85" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginBottom: '25px'}}>
                 <path
