@@ -8,6 +8,16 @@
     background: #D5E2FF;
 }
 
+.container_for_user_options {
+    display: flex;
+    align-self: center;
+    background: #fff;
+    border-radius: 15px;
+    height: 72px;
+    width: 65pc;
+    margin: 15px 0px 5px;
+}
+
 .container-for-label-user-etc {
     position: relative;
     display: flex;
@@ -35,3 +45,32 @@
     align-self: center;
     text-align: center;
 }
+
+.container_for_user_options {
+    display: flex;
+    justify-content: center;
+}
+
+.add-user-btn {
+position: relative;
+display: flex;
+justify-content: center;
+right: 10px;
+height: 42px;
+width: 42px;
+margin: 15px;
+border-radius: 10px;
+background: #0DA64B;
+}
+
+.delete-user-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    right: 10px;
+    height: 42px;
+    width: 42px;
+    margin: 15px;
+    border-radius: 10px;
+    background: #df0f2b;
+    }

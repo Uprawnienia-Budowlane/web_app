@@ -114,7 +114,7 @@ const MainPanel = () => {
         <div className="google_play_panel_itself">
         <div className="google_play_panel_desc_p">
         <h1 className="font-bold text-black text-2xl m-2" >Satysfakcja z aplikacji</h1>
-        <p className="mx-4 my-1 text-sm">Bazowane na pozytywnych ocenach z GooglePlay</p>
+        <p className="mx-4 my-1 text-sm" style={{ textAlign: 'left' }}>Bazowane na pozytywnych ocenach z GooglePlay</p>
         <div className="container_for_meter" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
         
         <meter class="google_play_meter" style={{ marginTop: '45px', color: 'blue' }} max="1.0" min=".0" value=".9" high=".75" low=".25" optimum=".5"></meter> 

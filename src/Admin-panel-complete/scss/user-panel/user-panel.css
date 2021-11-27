@@ -12,6 +12,19 @@
   background: #D5E2FF;
 }
 
+.container_for_user_options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  background: #fff;
+  border-radius: 15px;
+  height: 72px;
+  width: 65pc;
+  margin: 15px 0px 5px;
+}
+
 .container-for-label-user-etc {
   position: relative;
   display: -webkit-box;
@@ -50,5 +63,46 @@
       -ms-grid-row-align: center;
       align-self: center;
   text-align: center;
+}
+
+.container_for_user_options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.add-user-btn {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  right: 10px;
+  height: 42px;
+  width: 42px;
+  margin: 15px;
+  border-radius: 10px;
+  background: #0DA64B;
+}
+
+.delete-user-btn {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  right: 10px;
+  height: 42px;
+  width: 42px;
+  margin: 15px;
+  border-radius: 10px;
+  background: #df0f2b;
 }
 /*# sourceMappingURL=user-panel.css.map */
