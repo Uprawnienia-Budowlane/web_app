@@ -168,7 +168,7 @@
     background: #fff;
     border-radius: 25px;
     width: 280px;
-    margin: .5%;
+    margin: 2.5%;
     overflow: hidden;
     z-index: 1;
     }
@@ -207,7 +207,7 @@
     background: #fff;
     border-radius: 25px;
     width: 280px;
-    margin: .5%;
+    margin: 4.5%;
     overflow: hidden;
     z-index: 1;
 }
@@ -261,11 +261,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-self: center;
     text-align: center;
     background: #fff;
     border-radius: 25px;
     width: 280px;
-    margin: .5%;
+    margin: 2.5%;
     overflow: hidden;
     z-index: 1;
     }
@@ -293,6 +294,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    margin: 15px;
 }
 
 .notification-list li {
@@ -358,7 +360,7 @@
     background: #fff;
     border-radius: 25px;
     width: 280px;
-    margin: 1%;
+    margin: 4.5%;
     overflow: hidden;
     z-index: 1;
 }
@@ -399,6 +401,7 @@
 .tile-note {
     margin: 5px;
 }
+
 
 /* sixth component */
 
@@ -494,6 +497,14 @@
         text-align: left;
     }
 
+    .shortcode_panel_itself {
+        margin: .5%;
+    }
+
+    .notification-list {
+        margin: 0;
+    }
+    
     .notification-list li {
         width: 523px;
     }
@@ -541,6 +552,7 @@
     .google_play_panel_itself {
         height: 283px;
         width: 333px;
+        margin: .5%;
     }
 
     .shortcode_panel_itself {
@@ -555,8 +567,10 @@
     .calendar_panel_itself {
         flex-direction: row;
         justify-content: space-around;
+        align-self: auto;
         width: 870px;
         height: 365px;
+        margin: .5%;
     }
 
 
@@ -576,6 +590,15 @@
     .others_notes_panel_itself {
         width: 594px;
     }
+
+    .others_notes_panel_itself {
+        margin: .5%;
+    }
+
+    /*.user_stats_panel_itself {
+        height: 152px;
+        width: 333px;
+    }*/
 
 
 }
