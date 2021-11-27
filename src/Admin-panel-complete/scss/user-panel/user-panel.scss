@@ -1,0 +1,37 @@
+
+.main-container_on_panel_site {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 70pc;
+    border-radius: 15px;
+    background: #D5E2FF;
+}
+
+.container-for-label-user-etc {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container-for-label-user-etc label {
+    align-self: center;
+    margin: 15px;
+}
+
+.user-panel-with-infos {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    background: #fff;
+    border-radius: 15px;
+    height: 72px;
+    width: 65pc;
+    margin: 0px 15px 15px;
+}
+
+.user-panel-with-infos p {
+    align-self: center;
+    text-align: center;
+}

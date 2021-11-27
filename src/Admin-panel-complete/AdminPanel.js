@@ -73,9 +73,10 @@ const AdminPanel = () => {
         <Switch>
             <Route exact path="/panel-administratora/">
                 <MainPanel></MainPanel>
-            </Route>
-            <Route exact path="/panel-administratora/zarzadzanie-uzytkownikami">
                 <UserListPage></UserListPage>
+            </Route>
+            <Route exact path="/zarzadzanie-uzytkownikami">
+                
             </Route>
         </Switch>
         </div>

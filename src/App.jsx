@@ -39,9 +39,9 @@ const App = () => {
                 <Route path="/reset">
                     <ResetPassword/>
                 </Route>
-                <Route exact path={[
+                <Route path={[
                 "/panel-administratora", 
-                "/panel-administratora/zarzadzanie-uztykownikami", 
+                "/zarzadzanie-uztykownikami", 
                 "/panel-administratora/statystyki"]} >
                     <AdminPanel/>
                 </Route>
