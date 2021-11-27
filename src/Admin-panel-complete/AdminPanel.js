@@ -182,9 +182,54 @@ const AdminPanel = () => {
 
         </div>
 
+        <div className="container-for-two-last-items">
+
+        <div className="others_notes_panel_itself">
+        <div className="title-and-button-panel">
+        <h1 className="font-bold text-black text-2xl m-2">Moje notatki</h1>
+        <button className="submit-note-btn">Dodaj notatkę</button>
+        </div>
+        <div className="notes_panel_all">
+            
+        <ul className="notes-all-list">
+        <h1 className="font-bold text-black text-xl m-2">Lista notatek</h1>
+            <li>
+            <ul><li className="tile-note">Notatka o dupie maryni i jeżozwierzu.</li><li style={{ margin: '10px' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li></ul>
+            </li>
+            <hr>
+            </hr>
+        </ul>
+
+        </div>
         </div>
 
         </div>
+
+        </div>
+
+        <div className="container-for-last-item">
+
+        <div className="user_stats_panel_itself">
+        <h1 className="font-bold text-black text-2xl m-2">Użytkownicy online</h1>
+       
+        <div className="stats-users-online-container"></div>
+        
+        <div className="information-users-online-container">
+        <h1 className="font-bold text-black text-xl mx-2" style={{textAlign: 'end'}} >Wizytatorzy</h1> 
+        <h1 className="font-bold text-3xl mx-2" style={{ color: '#3B82F6', textAlign: 'end'}}>20.345</h1>
+        <span className="my-1 text-sm mx-2" style={{display: 'flex', textAlign: 'end', alignSelf: 'center'}}>
+            <p style={{alignSelf: 'center', color: 'gray', margin: '2px'}}>Views</p>
+            <p style={{alignSelf: 'center', color: '#00C48C', margin: '2px'}}>53%</p>
+            <div className="arrow-for-last-component"></div>
+        </span> 
+        </div>
+
+        </div>
+
+        </div>
+
+        </div>
+        
         </div>
         </>
         );

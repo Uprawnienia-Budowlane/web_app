@@ -8,7 +8,7 @@
     flex-direction: column;
     align-self: center;
     justify-content: center;
-    margin: 7.5% 1.5%;
+    margin: 5.5% 1.5%;
     overflow: hidden;
     z-index: 1;
     }
@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: center;
     display: flex;
-    background: green;
+    /* background: green; */
     }
 
 /* single component */
@@ -250,8 +250,9 @@
 .container-for-components-bottom {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    background: red;
+    /* background: red; */
 }
 
 /* fifth component */
@@ -260,7 +261,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    align-self: center;
     justify-content: center;
     text-align: center;
     background: #fff;
@@ -341,10 +341,142 @@
 
 /* fifth component */
 
+.container-for-two-last-items {
+    display: flex;
+    flex-direction: column;
+    /* background: gray; */
+}
+
+/* sixth component */
+
+.others_notes_panel_itself {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+    border-radius: 25px;
+    width: 280px;
+    margin: 1%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.title-and-button-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.submit-note-btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 37px;
+    width: 128px;
+    border-radius: 15px;
+    font-size: 12px;
+    margin: .5pc;
+    background: #3B82F6;
+    color: #fff;
+}
+
+.notes_panel_all {
+    position: relative;
+    height: 549px;
+}
+
+.notes-all-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.tile-note {
+    margin: 5px;
+}
+
+/* sixth component */
+
+.container-for-last-item {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    /* background: yellowgreen; */
+    height: 300px;
+}
+
+/* seven component */
+
+.user_stats_panel_itself {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+    border-radius: 25px;
+    width: 280px;
+    margin: 6%;
+}
+
+.stats-users-online-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    background: green;
+    margin: 15px;
+    height: 60px;
+    width: 132px;
+}
+
+.information-users-online-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: flex-end;
+    text-align: center;
+    margin: 15px;
+    height: 100px;
+    width: 132px;
+}
+
+.arrow-for-last-component {
+    position: relative;
+    height: 28px;
+    width: 28px;
+    background: no-repeat url(../Images/arrow_for-last-component.svg);
+}
+
+/* seven component */
+
 @media (min-width: 999px) {
 
     .container-for-components {
         flex-direction: row;
+    }
+
+    .container-for-components-bottom {
+        flex-direction: row;
+    }
+
+    .container-for-two-last-items {
+        flex-direction: row;
+    }
+
+    .container-for-last-item {
+        left:780px;
+        width: 50%;
     }
 
     .admin_panel_itself {
@@ -353,9 +485,9 @@
 
     .admin-bar {
     display: block;
-    position: absolute;
+    position: fixed;
     width: 337px;
-    height: 1080px;
+    height: 100%;
     left: 0px;
     bottom: 0px;
     background: #FFFFFF;
@@ -405,6 +537,14 @@
 
     .notes_container {
         width: 50%;
+    }
+
+    .container-for-two-last-items {
+        width: 600px;
+    }
+
+    .others_notes_panel_itself {
+        width: 594px;
     }
 
 
