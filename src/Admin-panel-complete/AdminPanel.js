@@ -68,8 +68,9 @@ const AdminPanel = () => {
         <div className="hidden md:flex mdd:flex-col w-28 admin-bar" style={{ zIndex: '2' }}>
         <Logo />
         </div>
-        <div className="admin_panel_itself">
 
+        <div className="admin_panel_itself">
+        <h1 className="font-bold text-black text-2xl my-8">Dashboard</h1>
         <div className="container-for-components">
         <div className="stat_panel_itself">
         <div className="stat_panel_desc_p">
@@ -100,7 +101,7 @@ const AdminPanel = () => {
         <div className="licenses_panel_desc_p">
         <img className="img-fix" src={LicenseLogo} style={{ alignSelf: 'center', margin: '30px' }}></img>
         <h1 className="font-bold text-black text-2xl m-2">Aktywne Licencje</h1>
-        <p className="mx-4 my-1 text-sm">Ilość aktywnych licencji</p>
+        <p className="mx-4 my-1 text-sm" style={{ textAlign: 'center' }}>Ilość aktywnych licencji</p>
         <div className="container_for_text_and_icon" style={{ display: 'flex', justifyContent: 'center' }}>
         <span className="arrow_second_comp"></span>
         <span className="text-2xl 2xl:text-3xl font-bold mx-2 my-1" style={{ color: '#00C48C' }}>+3,49%</span>
@@ -113,15 +114,15 @@ const AdminPanel = () => {
 
         <div className="google_play_panel_itself">
         <div className="google_play_panel_desc_p">
-        <h1 className="font-bold text-black text-2xl m-2">Satysfakcja z aplikacji</h1>
-        <p className="mx-4 my-1 text-sm">Bazowane na pozytywnych ocenach z GooglePlay</p>
+        <h1 className="font-bold text-black text-2xl m-2" >Satysfakcja z aplikacji</h1>
+        <p className="mx-4 my-1 text-sm" style={{ textAlign: 'left' }}>Bazowane na pozytywnych ocenach z GooglePlay</p>
         <div className="container_for_meter" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
         
         <meter class="google_play_meter" style={{ marginTop: '45px', color: 'blue' }} max="1.0" min=".0" value=".9" high=".75" low=".25" optimum=".5"></meter> 
 
         <HeartIcon/>
 
-        <h1 className="font-bold text-black text-xl m-2">90%</h1>
+        <h1 className="font-bold text-black text-xl m-2" style={{ textAlign: 'center'}}>90%</h1>
 
         </div>
         </div>
@@ -149,7 +150,7 @@ const AdminPanel = () => {
 
         <div className="calendar_panel_itself">
         <div className="calendar_panel_container">
-        <h1 className="font-bold text-black text-2xl m-2" style={{ margin: '15px' }}>Kalendarz</h1>
+        <h1 className="font-bold text-black text-2xl m-2">Kalendarz</h1>
          
          <div className="calendar_container">
 

@@ -16,7 +16,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 5.5% 1.5%;
+  margin: .5% 1.5%;
   overflow: hidden;
   z-index: 1;
 }
@@ -292,9 +292,6 @@
           flex-direction: column;
   -ms-flex-item-align: center;
       align-self: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   text-align: center;
   background: #fff;
   border-radius: 25px;
@@ -690,6 +687,29 @@
   .admin_panel_itself {
     right: 0px;
   }
+  h1 {
+    text-align: left;
+  }
+  h2 {
+    text-align: left;
+  }
+  p {
+    text-align: left;
+  }
+  .notification-list li {
+    width: 523px;
+  }
+  .shortcode-list {
+    margin: 5px 25px;
+  }
+  .shortcode-list li {
+    margin: 5px -5px;
+    width: 550px;
+  }
+  .shortcode-list hr {
+    position: relative;
+    margin: 0px -35px;
+  }
   .admin-bar {
     display: block;
     position: fixed;
@@ -728,17 +748,19 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     width: 870px;
     height: 365px;
   }
   .calendar_panel_container {
-    width: 50%;
+    -ms-flex-item-align: none;
+        -ms-grid-row-align: none;
+        align-self: none;
+    margin-top: 5px;
   }
   .notes_container {
-    width: 50%;
+    width: 60%;
   }
   .container-for-two-last-items {
     width: 600px;
