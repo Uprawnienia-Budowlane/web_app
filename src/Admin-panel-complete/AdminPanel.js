@@ -30,8 +30,8 @@ SettingsIcon
 import LicenseLogo from './Images/logo_component.svg'
 import Logo from './components/Logo'
 import MainPanel from "./MainPanel";
+import AdminNavbar from "./components/AdminNavbar";
 import UserListPage from './UserListPage'
-
 /* shortcode */
 
 import NewsIcon from './Images/article-line 2.svg'
@@ -54,29 +54,19 @@ import '../Admin-panel-complete/scss/admin-panel.css'
 
 const AdminPanel = () => {
 
-    let [loc, setLoc] = useState('/');
-    let location = useLocation();
-
-    React.useEffect(() => {
-        setLoc(location.pathname);
-    }, [location]);
-
-    const { loading, error, ...result } = licenseModel.useGetPopulated();
-    if(!loading ) console.log(result);
-
     return (
         <>
         <div className="h-full w-full flex flex-col">
         <div className="hidden md:flex mdd:flex-col w-28 admin-bar" style={{ zIndex: '2' }}>
         <Logo />
+        <AdminNavbar />
         </div>
         <Switch>
             <Route exact path="/panel-administratora/">
-                <MainPanel></MainPanel>
-                <UserListPage></UserListPage>
+            <MainPanel />
             </Route>
-            <Route exact path="/zarzadzanie-uzytkownikami">
-                
+            <Route exact path="/panel-administratora/zarzadzanie-uzytkownikami">
+            <UserListPage />
             </Route>
         </Switch>
         </div>

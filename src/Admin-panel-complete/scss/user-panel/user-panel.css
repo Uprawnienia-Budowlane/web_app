@@ -7,7 +7,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 70pc;
   border-radius: 15px;
   background: #D5E2FF;
 }
@@ -21,7 +20,7 @@
   background: #fff;
   border-radius: 15px;
   height: 72px;
-  width: 65pc;
+  width: 92.5pc;
   margin: 15px 0px 5px;
 }
 
@@ -54,7 +53,7 @@
   background: #fff;
   border-radius: 15px;
   height: 72px;
-  width: 65pc;
+  width: 92.5pc;
   margin: 0px 15px 15px;
 }
 
@@ -84,7 +83,7 @@
           justify-content: center;
   right: 10px;
   height: 42px;
-  width: 42px;
+  width: 43px;
   margin: 15px;
   border-radius: 10px;
   background: #0DA64B;
@@ -104,5 +103,11 @@
   margin: 15px;
   border-radius: 10px;
   background: #df0f2b;
+}
+
+button svg {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 /*# sourceMappingURL=user-panel.css.map */

@@ -1,7 +1,10 @@
 import React, {useState, useEffect, useRef} from 'react'
 import PFP from '.././photos/ProfilePhoto.png';
 import firebase from "../firebase";
-import { useAuth } from '../context/AuthContext' 
+import { useAuth } from '../context/AuthContext'
+import {ArrowXIcon} from '../Icons' 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faUserMinus } from '@fortawesome/free-solid-svg-icons'
 import { collection, getDocs, addDoc } from 'firebase/firestore'
 
 const UserListPage = () => {
@@ -40,6 +43,12 @@ const UserListPage = () => {
 
       }
 
+    /*const deleteUser = async () => {
+            
+        await firebase.db.doc('').delete({Imię: newName, Nazwisko: newUsername, email: newEmailAddress, haslo: newPassword})
+
+      }*/
+
     useEffect(() => {
 
         getData()
@@ -50,7 +59,7 @@ const UserListPage = () => {
 
 return (
         <>
-<div className="admin_panel_itself" style={{position: 'absolute', margin: '5%'}}>
+<div className="admin_panel_itself">
 
 <h1 className="font-bold text-black text-2xl my-8">Lista użytkowników</h1>
 
@@ -58,15 +67,12 @@ return (
 
 
 <div className="container_for_user_options">
-<input onChange={(event) => {setNewName(event.target.value)}} style={{alignSelf: 'center', margin: '5px'}} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 p-4" placeholder="Imię" type="text" />
-<input onChange={(event) => {setNewUsername(event.target.value)}} style={{alignSelf: 'center', margin: '5px'}} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 p-4" placeholder="Nazwisko" type="text" />
-<input onChange={(event) => {setnewEmailAddress(event.target.value)}} ref={emailRef} style={{alignSelf: 'center', margin: '5px'}} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 p-4" placeholder="Adres E-mail" type="text" />
-<input onChange={(event) => {setnewPassword(event.target.value)}} ref={emailRef} style={{alignSelf: 'center', margin: '5px'}} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 p-4" placeholder="Hasło" type="password" />
-</div>
-<div className="container_for_user_options">
-<img style={{marginRight: '20px'}} src={PFP} alt="ProfilePhoto" className="w-34 h-34"/>
-<button onClick={createUser} disabled={loading} style={{ display: 'flex', flexDirection: 'column', color: '#fff', justifyContent: 'center', alignSelf: 'center', fontSize: '12px', width: '30%'}} className="add-user-btn">Dodaj użytkownika</button>
-<button style={{ display: 'flex', flexDirection: 'column', color: '#fff', justifyContent: 'center', alignSelf: 'center', fontSize: '12px', width: '30%'}} className="delete-user-btn">Usuń użytkownika</button>
+<img style={{marginRight: '20px'}} src={PFP} alt="ProfilePhoto" className="w-20 h-20"/>
+<input required onChange={(event) => {setNewName(event.target.value)}} style={{alignSelf: 'center', margin: '5px'}} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 p-4" placeholder="Imię" type="text" />
+<input required onChange={(event) => {setNewUsername(event.target.value)}} style={{alignSelf: 'center', margin: '5px'}} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 p-4" placeholder="Nazwisko" type="text" />
+<input required onChange={(event) => {setnewEmailAddress(event.target.value)}} ref={emailRef} style={{alignSelf: 'center', margin: '5px'}} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 p-4" placeholder="Adres E-mail" type="text" />
+<input required onChange={(event) => {setnewPassword(event.target.value)}} ref={emailRef} style={{alignSelf: 'center', margin: '5px'}} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 p-4" placeholder="Hasło" type="password" />
+<button onClick={createUser} disabled={loading} style={{color: '#fff' }} className="add-user-btn"><FontAwesomeIcon icon={faPlus} /></button>
 </div>
 
 <div className="container-for-label-user-etc">
@@ -78,11 +84,12 @@ return (
 
 {loader === false && (data.map((ActualUser) => (
 <div className="user-panel-with-infos">
-<img src={PFP} alt="ProfilePhoto" className="w-34 h-34"/>
+<img src={PFP} alt="ProfilePhoto" className="w-20 h-20"/>
 <p className="text-500" style={{ marginTop: '0px', marginRight: '100px', marginLeft: '-5px'}}>{ActualUser.Imię} {ActualUser.Nazwisko}</p>
 <p className="text-500" style={{ marginTop: '0px', marginRight: '120px', marginLeft: '65px'}}>{ActualUser.zdawalnosc}%</p>
 <p className="text-500" style={{ marginTop: '0px', marginRight: '100px', marginLeft: '85px'}}>05/03/2021</p>
 <p className="text-green-500" style={{ margin: '15px'}}>Aktywna do Września 2021</p>
+<button style={{ display: 'flex', flexDirection: 'column', color: '#fff', textAlign: 'center', justifyContent: 'center', alignSelf: 'center'}} className="delete-user-btn"><FontAwesomeIcon icon={faUserMinus} /></button>
 </div>
 )))}
 

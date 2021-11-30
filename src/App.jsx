@@ -39,10 +39,7 @@ const App = () => {
                 <Route path="/reset">
                     <ResetPassword/>
                 </Route>
-                <Route path={[
-                "/panel-administratora", 
-                "/zarzadzanie-uztykownikami", 
-                "/panel-administratora/statystyki"]} >
+                <Route path="/panel-administratora" >
                     <AdminPanel/>
                 </Route>
                 <Route>

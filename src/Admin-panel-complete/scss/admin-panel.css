@@ -666,6 +666,75 @@
 
 /* seven component */
 @media (min-width: 999px) {
+  .nav-bar-admin-list {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    height: 793px;
+    width: 266.36px;
+    top: 0px;
+  }
+  .nav-bar-admin-list li {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 270px;
+    height: 25px;
+    color: #678CCE;
+    margin: 15px 0;
+  }
+  .nav-bar-admin-list li:active {
+    color: #3B82F6;
+  }
+  .nav-bar-admin-list li:hover {
+    color: #3B82F6;
+    cursor: pointer;
+  }
+  .nav-bar-admin-list img {
+    margin: 0px 35px 0px 0px;
+  }
+  .nav-bar-admin-list svg {
+    margin: -5.75px 15px;
+  }
+  .nav-bar-admin-list a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 2.5px;
+    width: 230px;
+  }
+  .admin-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: fixed;
+    width: 337px;
+    height: 100%;
+    left: 0px;
+    bottom: 0px;
+    background: #FFFFFF;
+  }
   .container-for-components {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -719,15 +788,6 @@
   .shortcode-list hr {
     position: relative;
     margin: 0px -35px;
-  }
-  .admin-bar {
-    display: block;
-    position: fixed;
-    width: 337px;
-    height: 100%;
-    left: 0px;
-    bottom: 0px;
-    background: #FFFFFF;
   }
   .stat_panel_itself {
     height: 283px;
