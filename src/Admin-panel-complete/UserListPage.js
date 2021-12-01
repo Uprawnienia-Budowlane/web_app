@@ -7,6 +7,7 @@ CollectionReference,
 addDoc,
 getDoc, 
 getDocs, 
+deleteDoc,
 query, 
 doc,
 DocumentReference } from "@firebase/firestore";
@@ -57,8 +58,13 @@ const UserListPage = () => {
     }
 
     const createUser = async () => {
-        await addDoc(usersCollectionRef, { Imię: newName, Nazwisko: newUsername, haslo: newPassword});
+        await addDoc(usersCollectionRef, { Imię: newName, Nazwisko: newUsername, haslo: newPassword, zdawalnosc: 0});
     }
+
+    const deleteUser = async (id) => {
+        const userDoc = doc(db, "użytkownicy", id);
+        await deleteDoc(userDoc);
+      };
 
     const RegisterBtnFn = (e) => {
         e.preventDefault()
@@ -103,10 +109,10 @@ return (
 {users.map((user) => { return <div className="user-panel-with-infos">
 <img src={PFP} alt="ProfilePhoto" className="w-20 h-20"/>
 <p className="text-500 nameusername__individual__user" style={{ marginTop: '0px', marginRight: '100px', marginLeft: '-5px'}}>{user.Imię} {user.Nazwisko}</p>
-<p className="text-500 score__individual__user" style={{ marginTop: '0px', marginRight: '120px', marginLeft: '65px'}}>{user.zdawalnosc} %</p>
+<p className="text-500 score__individual__user" style={{ marginTop: '0px', marginRight: '120px', marginLeft: '65px'}}>{user.zdawalnosc}%</p>
 <p className="text-500 date__individual__user" style={{ marginTop: '0px', marginRight: '100px', marginLeft: '85px'}}>05/03/2021</p>
 <p className="text-green-500 is_active__individual__user" style={{ margin: '15px'}}>Aktywna do Września 2021</p>
-<button style={{ display: 'flex', flexDirection: 'column', color: '#fff', textAlign: 'center', justifyContent: 'center', alignSelf: 'center'}} className="delete-user-btn"><FontAwesomeIcon icon={faUserMinus} /></button>
+<button  onClick={() => {deleteUser(user.id)}} style={{ display: 'flex', flexDirection: 'column', color: '#fff', textAlign: 'center', justifyContent: 'center', alignSelf: 'center'}} className="delete-user-btn"><FontAwesomeIcon icon={faUserMinus} /></button>
 </div>
 })}
 
