@@ -6,29 +6,30 @@ import { useAuth } from '../../context/AuthContext'
 import {ArrowXIcon} from '../../Icons' 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faUserMinus } from '@fortawesome/free-solid-svg-icons'
-import { collection, getDocs, addDoc } from 'firebase/firestore'
+import { collection, getDocs, addDoc, getFirestore } from 'firebase/firestore'
 import { useHistory } from "react-router";
 
 const LearnExamAddPanel = () => {
 
+    const history = useHistory()
+
     const [title, setTitle] = useState('')
 
-    const history = useHistory();
+    const [quizes, setQuizes] = useState([])
 
-    /*const handleQuizSave = async () => {
+    const db = getFirestore()
 
-    const currentQuizId = Math.floor(100000 + Math.random() * 9000).toString();
+    const QuizCollectionRef = collection(db, "egzaminy_probne")
 
-    await CreateQuiz(currentQuizId, title)
+    const createQuiz = async () => {
+        await addDoc(QuizCollectionRef, { 
+        currentQuizId: Math.floor(100000 + Math.random() * 9000).toString(), 
+        tytul_egzaminu_probnego: title})
+    }
 
-    history.push("/panel-administratora/baza-pytan/dodaj-pytanie", {
-        currentQuizId: currentQuizId,
-        currentQuizTitle: title
-    });
-
-    setTitle('')
-
-    }*/
+    const GoToSettQuestion = () => {
+        history.push('/panel-administratora/baza-pytan/dodaj-pytanie')
+    }
 
 return (
 <>
@@ -42,9 +43,10 @@ return (
 
 <div className="add_question_panel-itself">
 <label style={{ alignSelf: 'center', margin: '20px 0px 10px' }}>Nazwa egzaminu próbnego:</label>
-<input type='text' style={{ alignSelf: 'center', margin: '15px', width: '80%' }} onChangeText={val => setTitle(val)} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 p-4" placeholder=""/>
+<input type='text' onChange={(event) => {setTitle(event.target.value)}} style={{ alignSelf: 'center', margin: '15px', width: '80%' }} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 p-4" placeholder=""/>
 
-<button onClick="" style={{color: '#fff' }} className="add_exam_btn"><a>Zapisz egzamin</a></button>
+<button onClick={createQuiz} style={{color: '#fff' }} className="add_exam_btn"><a>Zapisz egzamin</a></button>
+<button onClick={GoToSettQuestion} style={{color: '#fff' }} className="add_exam_btn"><a>Przejdź do egzaminów próbnych</a></button>
 
 </div>
 

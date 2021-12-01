@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router';
 import { onSnapshot, 
     getFirestore, 
     collection, 
@@ -18,7 +19,11 @@ import { faPlus, faUserMinus } from '@fortawesome/free-solid-svg-icons'
 
 const QuestionDataBase = () => {
 
-   
+    const history = useHistory()
+
+    const GoToSettQuestion = () => {
+        history.push('/panel-administratora/baza-pytan/dodaj-egzamin-probny')
+    }
 
 return (
         <>
@@ -34,7 +39,7 @@ return (
 <button className="nav_base_option"><a>Tryb egzaminu pisemnego</a></button>
 <input type="search" className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-100 p-4 search_input_base"
 placeholder="Szukaj strony"/>
-<button className="nav_base_option add_something_btn_base"><Link to="/panel-administratora/baza-pytan/dodaj-pytanie">Dodaj pytanie</Link></button>
+<button onClick={GoToSettQuestion} className="nav_base_option add_something_btn_base"><a>Dodaj egzamin próbny</a></button>
 <button className="nav_base_option others_base"><a>Baza opracowań</a></button>
 </div>
 </div>
