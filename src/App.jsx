@@ -27,7 +27,7 @@ const App = () => {
         <div className="h-full w-full flex justify-center items-center">
         <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
             <GlobalStyles/>
-            <AuthProvider>
+            
             <input className="change-mode-btn mobile-fix-btn" onClick={() => ThemeToggler()} type="checkbox"/>
             <Switch>
                 <Route path="/login">
@@ -46,7 +46,7 @@ const App = () => {
                     <Desktop/>
                 </Route>
             </Switch>
-            </AuthProvider>
+            
             </ThemeProvider>
         </div>
     </div>

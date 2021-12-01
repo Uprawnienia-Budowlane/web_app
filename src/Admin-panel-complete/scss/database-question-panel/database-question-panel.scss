@@ -1,0 +1,162 @@
+.container_for_all_options_base {
+position: relative;
+display: flex;
+flex-direction: column;
+align-self: center;
+background: #fff;
+border-radius: 15px;
+width: 275px;
+margin: 15px;
+}
+
+.container_for_all_nav_iself {
+position: relative;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+}
+
+.nav_base_option {
+position: relative;
+display: flex;
+justify-content: center;
+align-self: center;
+height: 36px;
+width: auto;
+margin: 15px -5px 15px 15px;
+color: #3B82F6;
+border-radius: 10px;
+background: #fff;
+}
+
+
+.nav_base_option:hover {
+    background: #3B82F6;
+    color: #fff;
+}
+
+.nav_base_option:active {
+    background: #3B82F6;
+    color: #fff;
+}
+
+.active_btn {
+    background: #3B82F6;
+    color: #fff;
+}
+
+.nav_base_option a {
+    text-align: center;
+    margin: 5.5px 20px 0px 20px;
+}
+
+.search_input_base {
+    align-self: center;
+}
+
+.add_something_btn_base {
+    background: #263238;
+    color: #fff;
+}
+
+.others_base {
+    background: #D1E7FF;
+    color: #000;
+}
+
+/* first main component */
+
+.database_questions-option-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: center;
+    width: 275px;
+    margin: 0px 15px 15px;
+}
+
+.question-panel-with-infos {
+position: relative;
+display: flex;
+justify-content: space-between;
+align-self: center;
+background: #fff;
+border-radius: 15px;
+height: 72px;
+width: 275px;
+margin: 0px 15px 15px;
+}
+
+.button-container-base-option {
+position: relative;
+display: flex;
+justify-content: center;
+width: 370px;
+}
+
+.number_question {
+    margin:0px 0px 0px 30px;
+}
+
+/* */
+
+
+/* add panel section */
+
+.add_question_panel-itself {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    background: #fff;
+    border-radius: 15px;
+    width: 275px;
+    margin: 15px;
+}
+
+.add_exam_btn {
+position: relative;
+display: flex;
+justify-content: center;
+align-self: center;
+right: 0px;
+height: 43px;
+width: auto;
+margin: 15px;
+border-radius: 10px;
+background: #3B82F6;
+}
+
+.add_exam_btn a {
+    align-self: center;
+    margin: 15px;
+}
+
+/* */
+
+
+@media (min-width: 999px) {
+    
+    .container_for_all_options_base {
+        width: 92.5pc;
+        height: 72px;
+    }
+
+    .database_questions-option-panel {
+        width: 92.5pc;
+    }
+
+    .database_questions-option-panel {
+        width: 100%;
+    }
+
+    .question-panel-with-infos {
+        width: 92.5pc;
+    }
+
+    .add_question_panel-itself {
+        width: 92.5pc;
+    }
+    
+}

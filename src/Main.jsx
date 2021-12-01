@@ -8,34 +8,20 @@ import {
     SaleIcon,
     TestIcon
 } from "./Icons";
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import MainCharts from "./MainCharts";
 import MainCard from "./components/MainCard";
 import {useHistory} from "react-router-dom";
 import Dropdown from "./components/Dropdown";
 import firebase from "./firebase";
+import { collection, getDocs } from "@firebase/firestore";
+import { db } from "./firebase";
 
 const Main = () => {
 
-    const [data, setdata] = useState([])
+    const [username, setUsername] = useState([])
     const [loader, setloader] = useState(true)
-
-    function getData() {
-        firebase.db.onSnapshot((querySnapshot) => {
-            const items = []
-            querySnapshot.forEach((doc) => {
-                items.push(doc.data())
-            })
-            setdata(items)
-            setloader(false)
-        })
-    }
-
-    useEffect(() => {
-
-        getData()
-
-    }, [])
-
+    
     const [category, setCategory] = useState(0);
     const [interval, setInterval] = useState(0);
     const [bar, setBar] = useState(false);
@@ -45,10 +31,11 @@ const Main = () => {
         <div className="h-full w-full rounded-3xl bg-white flex flex-row justify-between md:flex-nowrap">
             <div className="flex flex-col mx-auto px-2 my-8 sm:mx-8 w-1/2 dashboard-css-fix">
                 <p className="text-blue-500">Uprawnienia budowlane</p>
-                {loader === false && (data.map((ActualUser) => (
-                    <h1 className="font-bold text-2xl">Witaj {ActualUser.Imię}</h1>
-                )))}
-
+                {username.map((username) => {
+                    <h1 className="font-bold text-2xl">
+                        return {username.Imię}
+                    </h1>
+                    })}
                 <div className=" mt-6 shadow-md rounded-3xl bg-blue-500 flex flex-row justify-between cursor-pointer headbox-dashboard-css-fix"
                      onClick={() => history.push('/speciality')}>
                     <h1 className="text-2xl 2xl:text-3xl text-white font-bold mx-2 sm:mx-10 my-auto">Wybierz swoją

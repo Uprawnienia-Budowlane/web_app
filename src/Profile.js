@@ -1,14 +1,6 @@
 import React, {useState, useRef, useEffect} from "react";
-import { useAuth } from './context/AuthContext' 
-import {
-    collection,
-    getDocs,
-    addDoc,
-    updateDoc,
-    deleteDoc,
-    doc,
-  } from '@google-cloud/firestore';
 import firebase from "./firebase";
+import { getAuth, onAuthStateChanged } from "@firebase/auth";
 import PFP from './photos/ProfilePhoto.png';
 import {BlueImgIcon, ClockIcon, QuestionMarkInCirceIcon, ShareIcon} from "./Icons";
 import { useHistory } from "react-router";
@@ -28,15 +20,38 @@ function Profile() {
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
 
-    const { currentUser, updatePassword, updateEmail } = useAuth()
-
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
 
     const [data, setdata] = useState([])
     const [loader, setloader] = useState(true)
 
-    function getData() {
+    const [isUser, setIsUser] = useState('')
+
+    const history = useHistory()
+
+    const auth = getAuth();
+    onAuthStateChanged(auth, (isUser) => {
+    if (isUser !== null ) {
+    
+    const uid = isUser.uid
+    const displayName = isUser.displayName
+    const email = isUser.email
+    const photoURL = isUser.photoURL
+    const emailVerified = isUser.emailVerified
+
+    console.log(isUser)
+
+    } else {
+        
+    }
+    });
+
+    onAuthStateChanged(auth, (isUser) => {
+        setIsUser(isUser)
+    })
+
+    /*function getData() {
         firebase.db.onSnapshot((querySnapshot) => {
             const items = []
             querySnapshot.forEach((doc) => {
@@ -53,11 +68,9 @@ function Profile() {
 
     }, [])
 
-    console.log(data)
+    console.log(data)*/
 
-    const history = useHistory()
-
-     function handleSubmit(e) {
+    /* function handleSubmit(e) {
         e.preventDefault()
 
         if(passwordRef.current.value !== passwordConfirmRef.current.value) {
@@ -81,7 +94,7 @@ function Profile() {
         })
 
         
-    }
+    }*/
 
     const [gender, setGender] = useState(0);
 
@@ -93,9 +106,7 @@ function Profile() {
                         <div className="flex flex-row">
                             <img src={PFP} alt="ProfilePhoto" className="w-28 h-28"/>
                             <div className="ml-4 mt-7 flex flex-col">
-                                {loader === false && (data.map((ActualUser) => (
-                                    <h1 className="font-medium text-2xl">{ActualUser.Imię} {ActualUser.Nazwisko}</h1>
-                                )))}
+                                    <h1 className="font-medium text-2xl">{isUser.email}</h1>
                                 <p className="text-blue-500">Edytuj profil</p>
                                 <p></p>
                             </div>
@@ -107,11 +118,11 @@ function Profile() {
                         <div className="flex flex-row justify-between border-b border-opacity-50 text-sm">
                             <p className="pl-6 my-5 text-gray-500">Stopień zdawalności
                                 egzaminów</p>
-                            <p className=" my-auto pr-6 text-green-600 font-bold">80%</p>
+                            <p className=" my-auto pr-6 text-green-600 font-bold">0%</p>
                         </div>
                         <div className="flex flex-row justify-between border-b border-opacity-50 text-sm">
                             <p className="pl-6 my-5 text-gray-500">Stopień zdawalności z nauki</p>
-                            <p className=" my-auto pr-6 text-green-600 font-bold">80%</p>
+                            <p className=" my-auto pr-6 text-green-600 font-bold">0%</p>
                         </div>
                         <div className="flex flex-row justify-between">
                             <div className="my-5 flex flex-row ml-6 text-sm">
@@ -119,7 +130,7 @@ function Profile() {
                                 <p className="pl-4 my-auto text-gray-500">Czas spędzony w
                                     aplikacji:</p>
                             </div>
-                            <p className="my-auto pr-6 text-blue-500 text-sm">34h</p>
+                            <p className="my-auto pr-6 text-blue-500 text-sm">0h</p>
                         </div>
 
                         <div className="bg-blue-200 h-full mt-1">
@@ -154,18 +165,15 @@ function Profile() {
                         <div className="flex flex-col md:flex-row md:space-x-8 my-6">
                             <div className="w-full">
                                 <p className="ml-2 mb-1 text-sm">Imię:</p>
-                                {loader === false && (data.map((ActualUser) => (
                                 <input 
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
-                                    placeholder={ActualUser.Imię}/>)))}
+                                    placeholder=""/>
                             </div>
                             <div className="w-full">
                                 <p className="mt-6 md:mt-0 ml-2 mb-1 text-sm">Nazwisko:</p>
-                                {loader === false && (data.map((ActualUser) => (
                                 <input
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
-                                    placeholder={ActualUser.Nazwisko}/>
-                                )))}
+                                    placeholder=""/>
                             </div>
                         </div>
 
@@ -176,33 +184,33 @@ function Profile() {
                                 <GenderSelector gender={'Kobieta'} selected={gender === 1} onClick={() => setGender(1)}/>
                             </div>
                         </div>
-                        <form onSubmit={handleSubmit}>
+                        <form>
                         <div className="flex flex-col md:flex-row md:space-x-8 my-6">
                             <div className="w-full">
                                 <p className="ml-2 mb-1 text-sm">Zmień e-mail:</p>
-                                <input ref={emailRef}
+                                <input
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
-                                    placeholder={currentUser && currentUser.email}/>
+                                    placeholder={isUser.email}/>
                             </div>
                         </div>
                         <div className="flex flex-col md:flex-row md:space-x-8 my-6">
                             <div className="w-full">
                                 <p className="ml-2 mb-1 text-sm">Nowe hasło:</p>
-                                <input ref={passwordRef}
+                                <input
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
                                     type="password"
-                                    placeholder={currentUser && currentUser.passwordRef}/>
+                                    placeholder=""/>
                             </div>
                             <div className="w-full">
                                 <p className="mt-6 md:mt-0 ml-2 mb-1 text-sm">Potwierdź nowe hasło:</p>
-                                <input ref={passwordConfirmRef}
+                                <input
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
                                     type="password"
-                                    placeholder={currentUser && currentUser.passwordRef}/>
+                                    placeholder=""/>
                             </div>
                         </div>
                         <div className="mr-8 flex flex-row justify-start">
-                            <button disabled={loading}
+                            <button
                                 className="mt-20 bg-blue-500 h-12 w-full md:w-1/2 rounded-2xl text-white font-medium px-10 focus:outline-none">Zapisz
                                 dane
                             </button>

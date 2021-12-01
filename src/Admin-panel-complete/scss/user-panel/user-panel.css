@@ -15,13 +15,22 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-item-align: center;
       align-self: center;
   background: #fff;
   border-radius: 15px;
-  height: 72px;
-  width: 92.5pc;
+  width: 275px;
   margin: 15px 0px 5px;
+}
+
+.container_for_user_options img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .container-for-label-user-etc {
@@ -33,7 +42,12 @@
       justify-content: space-around;
 }
 
+.score__individual__user {
+  display: none;
+}
+
 .container-for-label-user-etc label {
+  display: none;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -53,7 +67,7 @@
   background: #fff;
   border-radius: 15px;
   height: 72px;
-  width: 92.5pc;
+  width: 275px;
   margin: 0px 15px 15px;
 }
 
@@ -81,8 +95,10 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  right: 10px;
-  height: 42px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  right: 0px;
+  height: 43px;
   width: 43px;
   margin: 15px;
   border-radius: 10px;
@@ -109,5 +125,30 @@ button svg {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+@media (min-width: 999px) {
+  .container_for_user_options img {
+    margin-right: 20px;
+  }
+  .container_for_user_options {
+    width: 92.5pc;
+  }
+  .user-panel-with-infos {
+    width: 92.5pc;
+  }
+  .container_for_user_options {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 72px;
+  }
+  .container-for-label-user-etc label {
+    display: block;
+  }
+  .score__individual__user {
+    display: block;
+  }
 }
 /*# sourceMappingURL=user-panel.css.map */

@@ -1,21 +1,39 @@
 import React, {useState, useRef} from "react";
 import HeroImage from "./components/HeroImage";
 import {Link, useHistory } from "react-router-dom";
-import { useAuth } from './context/AuthContext' 
-
+import { signInWithEmailAndPassword } from "@firebase/auth";
 import PrivateRoute from "./PrivateRoute";
+import { auth } from "./firebase";
 
 export default function Login() {
     
     const emailRef = useRef()
     const passwordRef = useRef()
-    const { login } = useAuth()
 
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const history = useHistory()
 
-    async function handleSubmit(e) {
+    const [loginEmail, setLoginEmail] = useState("");
+    const [loginPassword, setLoginPassword] = useState("");
+
+    const login = async (e) => {
+    e.preventDefault()
+    try {
+    const actualUser = await signInWithEmailAndPassword(
+        auth,
+        loginEmail,
+        loginPassword,
+    ) 
+    console.log(actualUser)
+    history.push('/')
+
+    } catch (error) {
+        console.log(error.message)
+    }
+    }       
+
+    /*async function handleSubmit(e) {
         e.preventDefault()
 
         try {
@@ -28,7 +46,7 @@ export default function Login() {
             setError('Wystąpił błąd przy próbie zalogowania')
         }
         setLoading(false)
-    }
+    }*/
 
         return (
             <div className="h-full w-full flex flex-row max-w-screen-2xl">
@@ -49,22 +67,22 @@ export default function Login() {
                     <p className="mt-1 font-light text-center mr-1">Hasło: <span
                         className="font-medium">demo</span></p>
                     {error && <h1 className="text-red-500 mt-6 md:mt-0 text-sm mb-2" style={{ marginTop: '10px', textAlign: 'center' }}>{error}</h1>}
-                    <form onSubmit={handleSubmit} className="mx-2 sm:mx-8 md:mx-16 my-10 flex flex-col">
+                    <form className="mx-2 sm:mx-8 md:mx-16 my-10 flex flex-col">
                         <div className="mx-auto w-96 flex flex-col">
                             <div className="w-full">
                                 <p className="text-blue-500 text-sm mb-2">Adres e-mail:</p>
-                                <input ref={emailRef}
+                                <input onChange={(event) => {setLoginEmail(event.target.value)}}
                                     className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
                             <div className="mt-6 w-full">
                                 <p className="text-blue-500 text-sm mb-2 mt-6 md:mt-0">Hasło:</p>
-                                <input ref={passwordRef}
+                                <input onChange={(event) => {setLoginPassword(event.target.value)}}
                                     className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     type="password" placeholder=""/>
                             </div>
                         </div>
-                        <button disabled={loading}
+                        <button onClick={login} disabled={loading}
                             className="bg-blue-500 mt-12 mx-auto h-12 w-72 rounded-2xl text-white font-medium px-10 focus:outline-none">Zaloguj
                         </button>
                         <Link className="mt-12 font-light text-center" to="/reset">Nie pamiętasz hasła?</Link>

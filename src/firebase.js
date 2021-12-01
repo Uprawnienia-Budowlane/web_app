@@ -1,11 +1,11 @@
-import firebase from 'firebase/app'
-import "firebase/auth"
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { collection, getDoc, getDocs } from "@firebase/firestore";
+import { getAuth } from "@firebase/auth";
 import 'firebase/firestore'
-import 'firebase/analytics'
+import { firestore } from "firebase-admin";
 
-import { firestore } from 'firebase-admin'
-
-const app = firebase.initializeApp({
+const firebaseConfig = {
         apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
         authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
         projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
@@ -13,20 +13,19 @@ const app = firebase.initializeApp({
         messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
         appId: process.env.REACT_APP_FIREBASE_APP_ID,
         measurementId: process.env.REACT_APP_MEASUREMENT_ID
+}
+
+/*const CreateQuiz = (currentQuizId, title) => {
+return  firestore().collection('quizy').doc(currentQuizId).set({
+currentQuizId,
+title,
 })
-
-const db = firebase.firestore().collection('użytkownicy')
-
-/* const create_quiz = (currentQuizId, tytul, pytanie) => {
-return firestore().collection('quizy').doc(CurrentQuizId).set({
-        currentQuizId,
-        tytul,
-        pytanie,
-})
-
 }*/
 
-const quiz_db = firebase.firestore().collection('quizy')
+/* const db = getFirestore().collection('uzytkownicy') */
+/* const quiz_db = getFirestore().collection('quizy') */
 
-export const auth = app.auth()
-export default { app, db, quiz_db }
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app)
+export const db_users = getFirestore()
+export default {app, db_users} 

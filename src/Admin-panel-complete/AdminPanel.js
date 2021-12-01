@@ -32,6 +32,10 @@ import Logo from './components/Logo'
 import MainPanel from "./MainPanel";
 import AdminNavbar from "./components/AdminNavbar";
 import UserListPage from './UserListPage'
+import QuestionDataBase from './QuestionDataBase'
+import QuestionAddPanel from './Manage-Question-Test-complete/QuestionAddPanel' 
+import LearnExamAddPanel from './Manage-Question-Test-complete/LearnExamAddPanel'
+
 /* shortcode */
 
 import NewsIcon from './Images/article-line 2.svg'
@@ -62,12 +66,11 @@ const AdminPanel = () => {
         <AdminNavbar />
         </div>
         <Switch>
-            <Route exact path="/panel-administratora/">
-            <MainPanel />
-            </Route>
-            <Route exact path="/panel-administratora/zarzadzanie-uzytkownikami">
-            <UserListPage />
-            </Route>
+            <Route exact path="/panel-administratora/" component={MainPanel} />
+            <Route exact path="/panel-administratora/zarzadzanie-uzytkownikami" component={UserListPage}/>
+            <Route exact path="/panel-administratora/baza-pytan" component={QuestionDataBase}/>
+            <Route exact path="/panel-administratora/baza-pytan/dodaj-pytanie" component={QuestionAddPanel}/>
+            <Route exact path="/panel-administratora/baza-pytan/dodaj-egzamin-probny" component={LearnExamAddPanel}/>
         </Switch>
         </div>
         </>

@@ -1,5 +1,6 @@
-import React, { useContext, useState, useEffect } from 'react'
-import { auth } from '../firebase'
+/*import React, { useContext, useState, useEffect } from 'react'
+import {getAuth, createUserWithEmailAndPassword } from '@firebase/auth'
+//import { auth } from '../firebase'
 
 const AuthContext = React.createContext()
 
@@ -13,7 +14,7 @@ export function AuthProvider({ children }) {
     const [Loading, setLoading] = useState(true)
 
     function token(token) {
-        auth.signInWithCustomToken(token)
+        Auth.signInWithCustomToken(token)
     }
 
     function signup(email, password) {
@@ -68,3 +69,4 @@ export function AuthProvider({ children }) {
         </AuthContext.Provider>
     )
 }
+ */

@@ -1,4 +1,5 @@
 @import url(c:\Users\kaxow\Desktop\it-job\--strona-budowlana--\web_app\src\Admin-panel-complete\scss\user-panel\user-panel.css);
+@import url(c:\Users\kaxow\Desktop\it-job\--strona-budowlana--\web_app\src\Admin-panel-complete\scss\database-question-panel\database-question-panel.css);
 .admin-bar {
   display: none;
 }
@@ -22,6 +23,60 @@
   z-index: 1;
 }
 
+/* navbar icons */
+.ico_menu {
+  position: relative;
+  height: 32px;
+  width: 32px;
+  margin: -5px 20px;
+}
+
+.users__ {
+  background: no-repeat url(../Images/users__.svg);
+  background-size: 100%;
+}
+
+.stats__ {
+  background: no-repeat url(../Images/stats__.svg);
+  background-size: 100%;
+}
+
+.home__ {
+  background: no-repeat url(../Images/home__.svg);
+  background-size: 100%;
+}
+
+.stats__ {
+  background: no-repeat url(../Images/stats__.svg);
+  background-size: 100%;
+}
+
+.faq__ {
+  background: no-repeat url(../Images/faq__.svg);
+  background-size: 100%;
+}
+
+.shop__ {
+  background: no-repeat url(../Images/shop__.svg);
+  background-size: 100%;
+}
+
+.license__ {
+  background: no-repeat url(../Images/license__.svg);
+  background-size: 100%;
+}
+
+.message__ {
+  background: no-repeat url(../Images/message__.svg);
+  background-size: 100%;
+}
+
+.setting__ {
+  background: no-repeat url(../Images/setting__.svg);
+  background-size: 100%;
+}
+
+/* */
 .container-for-components {
   position: relative;
   -webkit-box-orient: vertical;
@@ -675,14 +730,10 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
     -ms-flex-item-align: start;
         align-self: flex-start;
     height: 793px;
-    width: 266.36px;
-    top: 0px;
+    bottom: 130px;
   }
   .nav-bar-admin-list li {
     position: relative;
@@ -692,7 +743,7 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    width: 270px;
+    width: 280px;
     height: 25px;
     color: #678CCE;
     margin: 15px 0;
