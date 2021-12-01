@@ -21,14 +21,24 @@ const LearnExamAddPanel = () => {
 
     const QuizCollectionRef = collection(db, "egzaminy_probne")
 
+    const ExamId = Math.floor(100000 + Math.random() * 9000).toString()
+
     const createQuiz = async () => {
         await addDoc(QuizCollectionRef, { 
-        currentQuizId: Math.floor(100000 + Math.random() * 9000).toString(), 
+        currentTrialExamId: ExamId, 
         tytul_egzaminu_probnego: title})
+
     }
 
     const GoToSettQuestion = () => {
-        history.push('/panel-administratora/baza-pytan/dodaj-pytanie')
+        history.push({
+            pathname:'/panel-administratora/baza-pytan/dodaj-pytanie',
+            search:`?id-egzaminu=${ExamId}+nazwa-egzaminu-probnego=${title}`,
+            state: { detail: 'some_value' },
+            currentTrialExamId: ExamId,
+            tytul_egzaminu_probnego: title
+        })
+        
     }
 
 return (
@@ -46,7 +56,7 @@ return (
 <input type='text' onChange={(event) => {setTitle(event.target.value)}} style={{ alignSelf: 'center', margin: '15px', width: '80%' }} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 p-4" placeholder=""/>
 
 <button onClick={createQuiz} style={{color: '#fff' }} className="add_exam_btn"><a>Zapisz egzamin</a></button>
-<button onClick={GoToSettQuestion} style={{color: '#fff' }} className="add_exam_btn"><a>Przejdź do egzaminów próbnych</a></button>
+<button onClick={GoToSettQuestion} style={{color: '#fff' }} className="add_exam_btn"><a>Przejdź do dodawania pytań</a></button>
 
 </div>
 
