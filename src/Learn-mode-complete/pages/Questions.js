@@ -158,12 +158,12 @@ const Questions = () => {
         </div>
       )
 
-      const displayMsg = () => {
+    const displayMsg = () => {
         toast(<Msg />, {
         draggable:true
         }
         ) 
-      }
+    }
      
     /* */
 
