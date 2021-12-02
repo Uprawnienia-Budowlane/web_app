@@ -78,7 +78,9 @@ const UserListPage = () => {
             zdawalnosc: 0, 
             rok_rejestracji: fullyear, 
             miesiac_rejestracji: month, 
-            dzien_rejestracji: day});
+            dzien_rejestracji: day,
+            status_licencji: "Brak zakupionej licencji"
+        });
     }
 
     const deleteUser = async (id) => {
@@ -124,14 +126,15 @@ return (
     <label>Zdawalność</label>
     <label>Data Rejestracji</label>
     <label>Status Licencji</label>
+    <label>Usuń użytkownika</label>
 </div>
 
 {users.map((user) => { return <div className="user-panel-with-infos">
 <img src={PFP} alt="ProfilePhoto" className="w-20 h-20"/>
-<p className="text-500 nameusername__individual__user" style={{ marginTop: '0px', marginRight: '100px', marginLeft: '-5px'}}>{user.Imię} {user.Nazwisko}</p>
-<p className="text-500 score__individual__user" style={{ marginTop: '0px', marginRight: '120px', marginLeft: '65px'}}>{user.zdawalnosc}%</p>
-<p className="text-500 date__individual__user" style={{ marginTop: '0px', marginRight: '100px', marginLeft: '85px'}}>{user.dzien_rejestracji}/{user.miesiac_rejestracji}/{user.rok_rejestracji}</p>
-<p className="text-green-500 is_active__individual__user" style={{ margin: '15px'}}>Aktywna do Września 2021</p>
+<p className="text-500 nameusername__individual__user">{user.Imię} {user.Nazwisko}</p>
+<p className="text-500 score__individual__user">{user.zdawalnosc}%</p>
+<p className="text-500 date__individual__user">{user.dzien_rejestracji}/{user.miesiac_rejestracji}/{user.rok_rejestracji}</p>
+<p className="text-red-500 is_active__individual__user">{user.status_licencji}</p>
 <button  onClick={() => {deleteUser(user.id)}} style={{ display: 'flex', flexDirection: 'column', color: '#fff', textAlign: 'center', justifyContent: 'center', alignSelf: 'center'}} className="delete-user-btn"><FontAwesomeIcon icon={faUserMinus} /></button>
 </div>
 })}

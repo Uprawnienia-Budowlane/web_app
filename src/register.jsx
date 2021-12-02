@@ -26,6 +26,9 @@ import { app } from "firebase-admin";
 
 export default function Register() {
 
+        const passwordRef = useRef()
+        const passwordConfirmRef = useRef()
+
         const db = getFirestore()
 
         const usersCollectionRef = collection(db, "użytkownicy");
@@ -44,7 +47,15 @@ export default function Register() {
         }, [])
 
         const createUser = async () => {
-            await addDoc(usersCollectionRef, { Imię: newName, Nazwisko: newUsername, haslo: newPassword});
+
+        await addDoc(usersCollectionRef, {Imię: newName, 
+        Nazwisko: newUsername,  
+        plec: 'nie_ustawiono',
+        zdawalnosc: 0, 
+        rok_rejestracji: fullyear, 
+        miesiac_rejestracji: month, 
+        dzien_rejestracji: day});
+                
         }
         
         const [newUsername, setNewUsername] = useState("")
@@ -65,24 +76,49 @@ export default function Register() {
 
         const history = useHistory()
 
+        /* year/month/day set*/
+
+        const Year = new Date()
+        let fullyear = Year.getFullYear()
+
+        const Month = new Date()
+        let month = Month.getUTCMonth()
+
+        const Day = new Date()
+        let day = Day.getDay()
+
+        /* */
+
+        /* Password meter 
+
+        const passwd_meter = document.getElementById('passwd_meter')
+
+        const passwd_input = document.getElementById('passwd_input')
+
+        if(passwd_input.innerHTML == "") {
+            passwd_meter.ariaValueNow = 50
+        }
+
+        */
+
         const register = async () => {
             try {
             const user = await createUserWithEmailAndPassword(auth, 
             registerEmail, 
             registerPassword
             )
-            history.push('/')
+
+            history.push('/login')
             
             } catch (error) {
-                console.log(error.message)
-
+                setError(error.message)
             }
 
         }
 
-            /*if(passwordRef.current.value !== passwordConfirmRef.current.value) {
-                return setError('Hasło jest nie prawidłowe')
-            } */
+        /*if(passwordRef.current.value !== passwordConfirmRef.current.value) {
+        return setError('Hasło jest nie prawidłowe')
+        } */
 
             /* if(passwordRef.current.value !== passwordConfirmRef.current.value) {
                 return setError('Hasło jest nie prawidłowe')
@@ -97,12 +133,6 @@ export default function Register() {
         }
         */
 
-        const RegisterBtnFn = (e) => {
-            e.preventDefault()
-            register()
-            createUser()
-        }
-
         /*
             try {
                 setError('')
@@ -115,6 +145,12 @@ export default function Register() {
             setLoading(false)
             // {actualUser?.email}
         }*/
+
+        const RegisterBtnFn = (e) => {
+            e.preventDefault()
+            register()
+            createUser()
+        }
 
         return (
             <div className="h-full w-full flex flex-row max-w-screen-2xl">
@@ -144,11 +180,18 @@ export default function Register() {
                         <div className="w-full flex flex-col-reverse md:flex-row mt-6">
                             <div className="w-full">
                                 <p className="text-blue-500 mt-6 md:mt-0 text-sm mb-2">Hasło:</p>
-                                <input onChange={(event) => {setRegisterPassword(event.target.value)}}
+                                <input id="passwd_input" ref={passwordRef} onChange={(event) => {setRegisterPassword(event.target.value)}}
                                     className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     type="password" placeholder=""/>
                                 <div className="mt-1 flex flex-row">
-                                    <meter className="my-auto border h-3 w-full rounded-2xl" style={{margin: '15px 0px'}}/>
+                                    <meter id="passwd_meter"
+                                     min="0" 
+                                     max="100"
+                                     low="33" 
+                                     high="66" 
+                                     optimum="80"
+                                     value="0"
+                                    className="my-auto border h-3 w-full rounded-2xl" style={{margin: '15px 0px'}}/>
                                     <p className="text-green-500 font-medium text-sm ml-2"></p>
                                 </div>
                             </div>
@@ -163,7 +206,7 @@ export default function Register() {
                         <div className="w-full flex flex-col md:flex-row mt-4">
                             <div className="w-full" style={{display: 'none'}}>
                                 <p className="text-blue-500 mt-6 md:mt-0 text-sm mb-2">Powtórz hasło:</p>
-                                <input onChange={(event) => {setRegisterPassword(event.target.value)}}
+                                <input ref={passwordConfirmRef} onChange={(event) => {setRegisterPassword(event.target.value)}}
                                     className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-full p-4"
                                     type="password" placeholder=""/>
                             </div>

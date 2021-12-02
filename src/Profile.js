@@ -40,8 +40,6 @@ function Profile() {
     const photoURL = isUser.photoURL
     const emailVerified = isUser.emailVerified
 
-    console.log(isUser)
-
     } else {
         
     }

@@ -23,12 +23,12 @@ const Shop = () => {
     const [nextLocation, setNextLocation] = useState('');
     const [shouldBlockNavigation, setShouldBlockNavigation] = useState(true);
   
-    const handleBlockedNavigation = (next) => {
+    /*const handleBlockedNavigation = (next) => {
       if (!shouldBlockNavigation) return true;
       setModal(true);
       setNextLocation(next);
       return false;
-  }
+    }*/
 
     const fetchProducts = async () => {
         const { data } = await commerce.products.list();
@@ -92,10 +92,6 @@ const Shop = () => {
     
     return (
       <>
-      <Prompt
-                when={true}
-                message={handleBlockedNavigation}
-            />
         <Router>
           <Switch>
           <Route exact path='/shop'>
@@ -115,10 +111,6 @@ const Shop = () => {
           </Route>
           </Switch>
         </Router>
-        <ExamEnd visible={modal} onClose={(e) => {
-                setModal(false);
-                setShouldBlockNavigation(e)
-            }} nextLocation={nextLocation}/>
         </>        
     );
 }

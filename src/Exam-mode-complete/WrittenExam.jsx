@@ -24,15 +24,18 @@ import FinalScreen from './pages/FinalScreen'
 import SpecialtyCard from "../components/SpecialtyCard";
 import SubSpeciality from "../modals/SubSpeciality";
 import { createBrowserHistory } from "history";
+import ExamEnd from '../modals/ExamEnd'
 
 export const history = createBrowserHistory();
-
-
 
 const WrittenExam = () => {
 
     const [speciality, setSpeciality] = useState("");
     const [subspecialiyModal, setSubspecialiyModal] = useState(false);
+
+    const [modal, setModal] = useState(false);
+    const [nextLocation, setNextLocation] = useState('');
+    const [shouldBlockNavigation, setShouldBlockNavigation] = useState(true);
 
     let [loc, setLoc] = useState('/');
     let location = useLocation();
@@ -41,6 +44,12 @@ const WrittenExam = () => {
         setLoc(location.pathname);
     }, [location]);
 
+    const handleBlockedNavigation = (next) => {
+        if (!shouldBlockNavigation) return true;
+        setModal(true);
+        setNextLocation(next);
+        return false;
+    }
 
     return (
         <>

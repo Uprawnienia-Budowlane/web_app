@@ -105,14 +105,13 @@ width: 370px;
 /* add panel section */
 
 .add_question_panel-itself {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    background: #fff;
-    border-radius: 15px;
-    width: 275px;
-    margin: 15px;
+position: relative;
+display: flex;
+flex-direction: column;
+align-self: center;
+background: #fff;
+border-radius: 15px;
+width: 275px;
 }
 
 .add_exam_btn {
@@ -129,8 +128,8 @@ background: #3B82F6;
 }
 
 .add_exam_btn a {
-    align-self: center;
-    margin: 15px;
+align-self: center;
+margin: 15px;
 }
 
 /* */
@@ -157,6 +156,10 @@ background: #3B82F6;
 
     .add_question_panel-itself {
         width: 92.5pc;
+    }
+
+    .add_question_panel-itself h1 {
+        text-align: center;
     }
     
 }

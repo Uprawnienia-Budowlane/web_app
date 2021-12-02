@@ -19,6 +19,21 @@ import { faPlus, faUserMinus } from '@fortawesome/free-solid-svg-icons'
 
 const QuestionDataBase = () => {
 
+    const [ExamTrial, setExamTrial] = useState([])
+
+    const db = getFirestore()
+
+    const ExamTrialCollectionRef = collection(db, "egzaminy_probne");
+
+    useEffect(() => {
+        const getExamTrial = async () => {
+          const data = await getDocs(ExamTrialCollectionRef);
+          setExamTrial(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        };
+    
+        getExamTrial();
+      }, []);
+
     const history = useHistory()
 
     const GoToSettQuestion = () => {
@@ -46,10 +61,9 @@ placeholder="Szukaj strony"/>
 
 <div className="database_questions-option-panel">
 
-<div className="question-panel-with-infos">
-
-<p className="text-500 number_question" style={{ alignSelf: 'center' }}>1</p>
-<p className="text-500" style={{ alignSelf: 'center' }}>Lorem ipsum</p> 
+{ExamTrial.map((examtrial) => { return <div className="question-panel-with-infos">
+<p className="text-500 number_question" style={{ alignSelf: 'center' }}>{examtrial.currentTrialExamId}</p>
+<p className="text-500" style={{ alignSelf: 'center' }}>{examtrial.tytul_egzaminu_probnego}</p> 
 <div className="button-container-base-option">
 <button style={{color: '#fff' }} className="add-user-btn"><FontAwesomeIcon icon={faPlus} /></button>
 <button style={{color: '#fff' }} className="add-user-btn"><FontAwesomeIcon icon={faPlus} /></button>
@@ -58,6 +72,7 @@ placeholder="Szukaj strony"/>
 <button style={{color: '#fff' }} className="add-user-btn"><FontAwesomeIcon icon={faPlus} /></button>
 </div>
 </div>
+})}
 
 </div>
 

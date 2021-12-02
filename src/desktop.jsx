@@ -67,8 +67,8 @@ const Desktop = () => {
                         </Route>
                         <Route exact path="/oral">
                             <OralExam/>
-                        </Route>
-                        <Route exact path="/acts">
+                        </Route>plec: 'nie_ustawiono',
+                        <Route exact path={["/acts"]}>
                             <Acts/>
                         </Route>
                         <Route exact path="/stats">

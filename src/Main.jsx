@@ -31,11 +31,9 @@ const Main = () => {
         <div className="h-full w-full rounded-3xl bg-white flex flex-row justify-between md:flex-nowrap">
             <div className="flex flex-col mx-auto px-2 my-8 sm:mx-8 w-1/2 dashboard-css-fix">
                 <p className="text-blue-500">Uprawnienia budowlane</p>
-                {username.map((username) => {
                     <h1 className="font-bold text-2xl">
-                        return {username.Imię}
+                        Witaj, użytkowniku
                     </h1>
-                    })}
                 <div className=" mt-6 shadow-md rounded-3xl bg-blue-500 flex flex-row justify-between cursor-pointer headbox-dashboard-css-fix"
                      onClick={() => history.push('/speciality')}>
                     <h1 className="text-2xl 2xl:text-3xl text-white font-bold mx-2 sm:mx-10 my-auto">Wybierz swoją

@@ -149,7 +149,6 @@
   background: #fff;
   border-radius: 15px;
   width: 275px;
-  margin: 15px;
 }
 
 .add_exam_btn {
@@ -194,6 +193,9 @@
   }
   .add_question_panel-itself {
     width: 92.5pc;
+  }
+  .add_question_panel-itself h1 {
+    text-align: center;
   }
 }
 /*# sourceMappingURL=database-question-panel.css.map */

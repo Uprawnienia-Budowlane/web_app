@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 import CheckBox from "./components/CheckBox";
 
 const Rule = (props) => {
@@ -40,10 +42,12 @@ const Acts = () => {
                 <Rule rule="Cum historia ridetis, omnes planetaes carpseris primus, regius orexises. Cur guttus peregrinationes? Gallus, saga, et calcaria. Lotus zetas ducunt ad luna." fill={true}/>
             </div>
 
+            <Link to="/act-mode" style={{ alignSelf: 'center' }}>
             <button
                 className="mx-8 mt-6 mb-8 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-4 px-4 flex-grow ">Rozpocznij
                 naukę
             </button>
+            </Link>
         </div>
     )
 };
