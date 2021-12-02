@@ -129,14 +129,27 @@ const Questions = () => {
 		if (isCorrect) {
 			setScore(score + 1);
 		}
+	}
 
-		const nextQuestion = currentQuestion + 1;
+    const NextPageQuestion = () => {
+        const nextQuestion = currentQuestion + 1;
 		if (nextQuestion < questions.length) {
 			setCurrentQuestion(nextQuestion);
 		} else {
 			setShowScore(true);
 		}
+    }
+
+    const HandleBackToOldQuestion = () => {
+		const earlQuestion = currentQuestion - 1;
+		if (earlQuestion < questions.length) {
+			setCurrentQuestion(earlQuestion);
+		}
 	}
+
+    const Summary = () => {
+        setShowScore(true);
+    }
 
     const Timer = () => {
         const [time, setTime] = useState(60 * 90);
@@ -224,27 +237,31 @@ const Questions = () => {
                 <div className="flex flex-col my-4 mx-8 justify-center xl:flex-row">
                    
                 {questions[currentQuestion].answerOptions.map((answerOption) => (
+                        <>
                         <button style={{ margin: '10px 2.5px', width: '100%' }} 
                         className="rounded-2xl border border-blue-500 text-blue-500 p-1.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200"
                         onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}
                         >{answerOption.answerText}
                         </button>
+                        
+                        </>
                         ))}
 
                 </div>
 
-                <div className="flex flex-row mt-12 mb-8 mx-8 justify-center">
-                <button style={{display: 'none'}}
+                <div className="flex flex-row mt-12 mb-8 mx-8 justify-around">
+                <button onClick={HandleBackToOldQuestion}
                     className="rounded-2xl border border-blue-500 text-blue-500 p-1.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200">
                     <ArrowXIcon/></button>
                 <button style={{ alignSelf: 'center' }}
-                    onClick={() => history.push('/exam/score')}
-                    className="rounded-2xl w-full border border-blue-500 px-2 py-3 md:px-14 text-lg h-full text-blue-500 hover:bg-blue-50 transition-colors duration-200 night-mode-btn">
+                    onClick={Summary}
+                    className="rounded-2xl border border-blue-500 px-2 py-3 md:px-14 text-lg h-full text-blue-500 hover:bg-blue-50 transition-colors duration-200 night-mode-btn">
                     Zakończ Egzamin
                 </button>
-                <button style={{display: 'none'}}
+                <button onClick={NextPageQuestion}
                     className="transform rotate-180 rounded-2xl border border-blue-500 text-blue-500 p-1.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200">
                     <ArrowXIcon/></button>
+                
             </div>
 
             </div>

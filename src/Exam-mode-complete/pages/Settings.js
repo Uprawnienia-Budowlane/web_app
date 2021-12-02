@@ -30,7 +30,7 @@ const Settings = () => {
                 <h1 className="font-bold text-2xl">Kierowanie robotami bez ograniczeń</h1>
             </div>
 
-		   <Link style={{alignSelf: 'center', margin: '20px'}} to="/exam/questions"><button className="mx-4 my-6 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Rozpocznij egzamin próbny</button></Link>
+		   <Link style={{alignSelf: 'center', margin: '20px'}} to="/exam/questions"><button className="mx-4 my-6 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Rozpocznij egzamin pisemny</button></Link>
 
         </div>
     )

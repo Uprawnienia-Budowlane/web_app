@@ -20,6 +20,9 @@ import {
 
 } from "../../Icons";
 
+import { ToastContainer, toast, Zoom, Bounce } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
+
 import { Link } from 'react-router-dom'
 
 import { CircularProgress } from "@material-ui/core";
@@ -32,7 +35,6 @@ import { useDispatch } from "react-redux";
 import { handleScoreChange } from "../../Learn-mode-complete/redux/actions";
 
 import PhotoHint1  from '../../Admin-panel-complete/Manage-Question-Test-complete/QuestionImg/exam-trial-hint-graph-1.svg'
-
 
 import { useHistory } from "react-router";
 
@@ -57,6 +59,7 @@ const Questions = () => {
 			questionText: 'Najmniejsza głębokość usytuowania w ziemi telekomunikacyjnego obiektu budowlanego, dla którego nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego to:',
 			questionImage: 'https://www.grupapsb.com.pl/files/LeadFoto/b8i6t0g0cfdio3/bezpieczna-budowa-domu-kto-odpowiada-za-bezpieczenstwo-na-budowie-2.jpg',
             questionHint: '§ 3. Określenia użyte w rozporządzeniu oznaczają: (...) 3) głębokość podstawowa — najmniejszą głębokość usytuowania w ziemi telekomunikacyjnego obiektu budowlanego, dla którego nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego;',
+            photoHint:PhotoHint1,
             answerOptions: [
 				{ answerText: 'Głębokość specjalna', isCorrect: false },
 				{ answerText: 'Głębokość minimalna', isCorrect: false },
@@ -128,23 +131,49 @@ const Questions = () => {
 		if (isCorrect) {
 			setScore(score + 1);
 		}
+	}
 
-		const nextQuestion = currentQuestion + 1;
+    const NextPageQuestion = () => {
+        const nextQuestion = currentQuestion + 1;
 		if (nextQuestion < questions.length) {
 			setCurrentQuestion(nextQuestion);
 		} else {
 			setShowScore(true);
 		}
+    }
+
+    const HandleBackToOldQuestion = () => {
+		const earlQuestion = currentQuestion - 1;
+		if (earlQuestion < questions.length) {
+			setCurrentQuestion(earlQuestion);
+		}
 	}
 
     /* popup hint */
 
+    const Msg = ({ closeToast, toastProps }) => (
+        <div>
+          {questions[currentQuestion].questionHint}
+          <img style={{alignSelf: 'center', margin: '45px 10px 20px 10px'}} src={questions[currentQuestion].photoHint}></img>
+        </div>
+      )
 
-
+      const displayMsg = () => {
+        toast(<Msg />, {
+        draggable:true
+        }
+        ) 
+      }
+     
     /* */
 
     return (
         <>
+        <ToastContainer 
+                draggable={false}
+                transition={Zoom}
+                autoClose={8000}
+                />
 			{showScore ? (
 				<div className='h-full w-full flex flex-col'>
 					<h1 style={{textAlign: 'center'}}>Twój wynik egzaminu próbnego wynosi: {score} na {questions.length} wszystkich pytań.</h1>
@@ -173,10 +202,6 @@ const Questions = () => {
                     </div>
                 </div>
 
-                <div className="border-b border-opacity-50 flex">
-                    <h1 className="font-bold p-5 md:px-8">{questions[currentQuestion].questionHint}</h1>
-                </div>
-
                 <div
                     className="rounded-2xl border-b border-opacity-50 bg-warmGray-100 flex flex-col md:flex-row justify-center md:space-x-16">
                     <div className="flex flex-row mx-auto md:mx-0 my-2 md:my-5">
@@ -200,7 +225,6 @@ const Questions = () => {
                 <div className="rounded-2xl border bg-200" style={{display: 'flex', overflow: 'hidden', height: '500px' }}>
             <img style={{alignSelf: 'center'}} src={questions[currentQuestion].questionImage}></img>    
             </div>
-                
 
                 <div className="bg-blue-200 rounded-2xl">
                     <p className="p-8 text-sm">{questions[currentQuestion].questionText}</p>
@@ -216,33 +240,33 @@ const Questions = () => {
                         ))}
                 </div>
 
-                <div className="flex flex-row my-4 mx-8 justify-center">
-                    <div className="my-auto text-blue-500" style={{display: 'none'}}>
-                        <div
+                <div className="flex flex-row my-4 mx-8 justify-around">
+                    <div className="my-auto text-blue-500">
+                        <div onClick={HandleBackToOldQuestion} style={{cursor: 'pointer'}}
                             className="rounded-2xl border border-blue-500 p-0.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200">
                             <ArrowXIcon/></div>
                     </div>
-                    <div className="flex flex-row space-x-1 md:space-x-8">
+                    <div className="flex flex-row my-4 mx-8">
                         <div className="my-auto ">
-                            <div
+                            <div style={{cursor: 'pointer'}}
                                 className="rounded-2xl border border-blue-500 p-3 h-14 w-14 hover:bg-blue-50 transition-colors duration-200">
                                 <HeartFill2Icon/></div>
                         </div>
                         <div className="my-auto">
-                            <div
+                            <div onClick={displayMsg} style={{cursor: 'pointer'}}
                                 className="rounded-2xl border border-blue-500 p-3 h-14 w-14 hover:bg-blue-50 transition-colors duration-200">
                                 <QuestionmarkIcon/></div>
                         </div>
                         <div className="my-auto">
-                            <div
+                            <div style={{cursor: 'pointer'}}
                                 className="rounded-2xl border border-blue-500 p-2.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200">
                                 <EyeIcon/></div>
                         </div>
                     </div>
-                    <div className="transform rotate-180 my-auto text-blue-500" style={{display: 'none'}}>
-                        <div
+                    <div className="transform rotate-180 my-auto text-blue-500">
+                        <div onClick={NextPageQuestion} style={{cursor: 'pointer'}}
                             className="rounded-2xl border border-blue-500 p-0.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200">
-                            <Link to="/learn/score"><ArrowXIcon/></Link>
+                            <ArrowXIcon/>
                             </div>
                     </div>
                 </div>
