@@ -1,4 +1,6 @@
 import React, {useState, useRef} from "react";
+import { ToastContainer, toast, Zoom, Bounce } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 import HeroImage from "./components/HeroImage";
 import {Link, useHistory } from "react-router-dom";
 import { signInWithEmailAndPassword } from "@firebase/auth";
@@ -16,20 +18,28 @@ export default function Login() {
 
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
+    
+    const LoginSucc = () => {
+        toast.succes('Zalogowano')
+    }
+
+    const LoginErr = () => {
+        toast.error('Wystąpił błąd podczas logowania')
+    }
 
     const login = async (e) => {
     e.preventDefault()
     try {
     const actualUser = await signInWithEmailAndPassword(
-        auth,
-        loginEmail,
-        loginPassword,
+    auth,
+    loginEmail,
+    loginPassword,
     ) 
     console.log(actualUser)
     history.push('/')
-
+    LoginSucc()
     } catch (error) {
-        console.log(error.message)
+    setError(LoginErr)
     }
     }       
 
@@ -49,7 +59,13 @@ export default function Login() {
     }*/
 
         return (
-            <div className="h-full w-full flex flex-row max-w-screen-2xl">
+            <>
+            <ToastContainer 
+                draggable={false}
+                transition={Zoom}
+                autoClose={8000}
+                />
+            <div className="h-full w-full flex flex-row max-w-screen-2xl" style={{ justifyContent: 'center' }}>
                 <div className="flex flex-col rounded-3xl bg-white mx-4 sm:ml-16 sm:mr-10 my-20 h-full w-full">
                     <div className="mt-14 font-black text-center text-3xl sm:text-4xl">UprawieniaBudowlane.eu</div>
                     <p className="mt-6 px-1 sm:mt-14 font-light text-center">Już dziś zacznij zdobywać wiedzę
@@ -65,7 +81,7 @@ export default function Login() {
                     <p className="mt-1 font-light text-center mr-1">Adres email: <span
                         className="font-medium">demo@demo.pl</span></p>
                     <p className="mt-1 font-light text-center mr-1">Hasło: <span
-                        className="font-medium">demo</span></p>
+                        className="font-medium">haslo-demo</span></p>
                     {error && <h1 className="text-red-500 mt-6 md:mt-0 text-sm mb-2" style={{ marginTop: '10px', textAlign: 'center' }}>{error}</h1>}
                     <form className="mx-2 sm:mx-8 md:mx-16 my-10 flex flex-col">
                         <div className="mx-auto w-96 flex flex-col">
@@ -92,6 +108,7 @@ export default function Login() {
                 </div>
                 <HeroImage />
             </div>
+            </>
         )
     }
 

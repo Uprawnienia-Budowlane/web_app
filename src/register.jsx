@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import HeroImage from "./components/HeroImage";
+import { ToastContainer, toast, Zoom, Bounce } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 import {Link} from "react-router-dom";
 import {
 createUserWithEmailAndPassword,
@@ -8,14 +10,14 @@ onAuthStateChanged,
 import { doc } from 'firebase/firestore'
 import { initializeApp } from "@firebase/app";
 import { onSnapshot, 
-    getFirestore, 
-    collection, 
-    CollectionReference,
-    addDoc,
-    getDoc, 
-    getDocs, 
-    query, 
-    DocumentReference } from "@firebase/firestore";
+getFirestore, 
+collection, 
+CollectionReference,
+addDoc,
+getDoc, 
+getDocs, 
+query, 
+DocumentReference } from "@firebase/firestore";
 import { auth, createUserDocument } from "./firebase";
 import { AddAlertRounded } from "@material-ui/icons";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -40,10 +42,10 @@ export default function Register() {
         const [users, setUsers] = useState("")
 
         useEffect(() => {
-            const getUsers = async () => {
-              const data = await getDocs(usersCollectionRef);
-              setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-            }; getUsers();
+        const getUsers = async () => {
+        const data = await getDocs(usersCollectionRef);
+        setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        }; getUsers();
         }, [])
 
         const createUser = async () => {
@@ -57,6 +59,8 @@ export default function Register() {
         dzien_rejestracji: day,
         status_licencji: "Brak zakupionej licencji"
         });
+
+        toast.succes(`Witamy ${newUsername}, teraz możesz się zalogować`)
                 
         }
         
@@ -103,6 +107,10 @@ export default function Register() {
 
         */
 
+        const RegisterErr = () => {
+            toast.error('Wystąpił błąd podczas tworzenia konta')
+        }
+
         const register = async () => {
             try {
             const user = await createUserWithEmailAndPassword(auth, 
@@ -113,13 +121,13 @@ export default function Register() {
             history.push('/login')
             
             } catch (error) {
-                setError(error.message)
+                setError(RegisterErr)
             }
 
         }
 
         /*if(passwordRef.current.value !== passwordConfirmRef.current.value) {
-        return setError('Hasło jest nie prawidłowe')
+        return setError('Hasło jest nie prawidłowe')error.message
         } */
 
             /* if(passwordRef.current.value !== passwordConfirmRef.current.value) {
@@ -156,6 +164,11 @@ export default function Register() {
 
         return (
             <div className="h-full w-full flex flex-row max-w-screen-2xl">
+                <ToastContainer 
+                draggable={false}
+                transition={Zoom}
+                autoClose={8000}
+                />
                 <div className="flex flex-col rounded-3xl bg-white mx-4 sm:ml-16 sm:mr-10 my-20 h-full w-full">
                     <div className="mt-14 font-black text-center text-3xl sm:text-4xl">UprawieniaBudowlane.eu
                     </div>
