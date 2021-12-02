@@ -169,6 +169,30 @@
   background: #3B82F6;
 }
 
+.database-fn-btn {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  right: 0px;
+  height: 43px;
+  width: 43px;
+  margin: 15px;
+  border-radius: 10px;
+  background: #DEEAFF;
+}
+
+.database-fn-btn img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 .add_exam_btn a {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;

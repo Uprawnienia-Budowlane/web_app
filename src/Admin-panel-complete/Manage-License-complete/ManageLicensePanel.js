@@ -12,22 +12,22 @@ import { onSnapshot,
     query, 
     doc,
     DocumentReference } from "@firebase/firestore";
-import firebase from "../firebase";
-import {ArrowXIcon} from '../Icons' 
+import firebase from "../../firebase";
+import {ArrowXIcon} from '../../Icons' 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faUserMinus } from '@fortawesome/free-solid-svg-icons'
 
 /* icon's */
 
-import download_line from './Images/download_line.svg'
-import eye_icon from './Images/eye_icon.svg'
-import image_line from './Images/image_line.svg'
-import pencil_line from './Images/pencil_line.svg'
-import upload_line from './Images/upload_line.svg'
+import download_line from '../Images/download_line.svg'
+import eye_icon from '../Images/eye_icon.svg'
+import image_line from '../Images/image_line.svg'
+import pencil_line from '../Images/pencil_line.svg'
+import upload_line from '../Images/upload_line.svg'
 
 /* */
 
-const QuestionDataBase = () => {
+const ManageLicensePanel = () => {
 
     const [ExamTrial, setExamTrial] = useState([])
 
@@ -54,7 +54,7 @@ return (
         <>
 <div className="admin_panel_itself">
 
-<h1 className="font-bold text-black text-2xl my-8">Baza pytań</h1>
+<h1 className="font-bold text-black text-2xl my-8">Licencje</h1>
 
 <div className="main-container_on_panel_site">
 
@@ -69,23 +69,17 @@ placeholder="Szukaj strony"/>
 </div>
 </div>
 
-<div className="database_questions-option-panel">
-
-{ExamTrial.map((examtrial) => { return <div className="question-panel-with-infos">
-<p className="text-500 number_question" style={{ alignSelf: 'center' }}>{examtrial.currentTrialExamId}</p>
-<p className="text-500" style={{ alignSelf: 'center' }}>{examtrial.tytul_egzaminu_probnego}</p> 
-<div className="button-container-base-option">
-<button style={{color: '#fff' }} className="database-fn-btn"><img src={eye_icon}></img></button>
-<button style={{color: '#fff' }} className="database-fn-btn"><img src={upload_line}></img></button>
-<button style={{color: '#fff' }} className="database-fn-btn"><img src={download_line}></img></button>
-<button style={{color: '#fff' }} className="database-fn-btn"><img src={image_line}></img></button>
-<button style={{color: '#fff' }} className="database-fn-btn"><img src={pencil_line}></img></button>
-</div>
-</div>
-})}
-
 </div>
 
+<p>Dodaj licencje</p>
+<div className="container_for_add_license_panel">
+<label>Nazwa licencji</label>
+<input type="text" />
+<label>Kod rabatowy</label>
+<input type="text" />
+<label>Kod licencji</label>
+<input type="text" />
+<button></button>
 </div>
 
 </div>
@@ -93,4 +87,4 @@ placeholder="Szukaj strony"/>
     )
 }
 
-export default QuestionDataBase
+export default ManageLicensePanel

@@ -54,7 +54,9 @@ export default function Register() {
         zdawalnosc: 0, 
         rok_rejestracji: fullyear, 
         miesiac_rejestracji: month, 
-        dzien_rejestracji: day});
+        dzien_rejestracji: day,
+        status_licencji: "Brak zakupionej licencji"
+        });
                 
         }
         

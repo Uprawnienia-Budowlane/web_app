@@ -36,6 +36,8 @@ import QuestionDataBase from './QuestionDataBase'
 import QuestionAddPanel from './Manage-Question-Test-complete/QuestionAddPanel' 
 import LearnExamAddPanel from './Manage-Question-Test-complete/LearnExamAddPanel'
 
+import ManageLicensePanel from './Manage-License-complete/ManageLicensePanel'
+
 /* shortcode */
 
 import NewsIcon from './Images/article-line 2.svg'
@@ -71,6 +73,9 @@ const AdminPanel = () => {
             <Route exact path="/panel-administratora/baza-pytan" component={QuestionDataBase}/>
             <Route exact path="/panel-administratora/baza-pytan/dodaj-pytanie" component={QuestionAddPanel}/>
             <Route exact path="/panel-administratora/baza-pytan/dodaj-egzamin-probny" component={LearnExamAddPanel}/>
+            <Route exact path="/panel-administratora/baza-pytan/dodaj-egzamin-probny" component={LearnExamAddPanel}/>
+            
+            <Route exact path="/panel-administratora/wszystkie-licencje/" component={ManageLicensePanel}/>
         </Switch>
         </div>
         </>

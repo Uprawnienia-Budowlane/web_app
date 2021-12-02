@@ -127,6 +127,24 @@ border-radius: 10px;
 background: #3B82F6;
 }
 
+.database-fn-btn {
+position: relative;
+display: flex;
+justify-content: center;
+align-self: center;
+right: 0px;
+height: 43px;
+width: 43px;
+margin: 15px;
+border-radius: 10px;
+background:#DEEAFF;
+}
+
+.database-fn-btn img {
+align-self: center;
+}
+
+
 .add_exam_btn a {
 align-self: center;
 margin: 15px;
