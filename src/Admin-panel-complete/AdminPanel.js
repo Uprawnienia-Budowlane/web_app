@@ -39,6 +39,7 @@ import QuestionAddPanel from './Manage-Question-Test-complete/QuestionAddPanel'
 import LearnExamAddPanel from './Manage-Question-Test-complete/LearnExamAddPanel'
 import ManageLicensePanel from './Manage-License-complete/ManageLicensePanel'
 import NotificationPanel from "./NotificationPanel";
+import Settings from './Settings'
 
 /* shortcode */
 
@@ -94,6 +95,7 @@ const AdminPanel = () => {
             <Route exact path="/panel-administratora/baza-pytan/dodaj-egzamin-probny" component={LearnExamAddPanel}/>
             <Route exact path="/panel-administratora/wszystkie-licencje/" component={ManageLicensePanel}/>
             <Route exact path="/panel-administratora/dodaj-powiadomienie" component={NotificationPanel}/>
+            <Route exact path="/panel-administratora/ustawienia" component={Settings}/>
         </Switch>
         </div>
         </>

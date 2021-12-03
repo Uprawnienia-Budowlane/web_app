@@ -3,7 +3,9 @@ import {DownArrow3Icon} from "./Icons";
 import FavoriteQuestion from "./components/FavoriteQuestion";
 
 const FavoriteQuestions = () => {
+
     const [category, setCategory] = useState(0);
+    
     return (<div className="h-full w-full rounded-3xl bg-white flex flex-col">
         <div className="flex flex-col mx-auto px-2 my-8 sm:mx-8">
             <p className="text-blue-500">Inżynieryjna drogowa</p>
