@@ -37,8 +37,8 @@ const AdminNavbar = () => {
             <li><img src={MenuSelectedIcon}/><Link to={"/panel-administratora/"} ><div className="ico_menu home__"></div>Strona główna</Link></li>
             <li><Link to={"/panel-administratora/zarzadzanie-uzytkownikami"} ><div className="ico_menu users__"></div>Użytkownicy</Link></li>
             <li><Link to={"/panel-administratora/statystyki"} ><div className="ico_menu stats__"></div>Statystyki</Link></li>
-            <li className="submenu_li"><Link to={"/panel-administratora/"} ><div className="ico_menu faq__"></div>Zarządzenie treścią</Link></li>
-            <li className="submenu_li"><Link to={"/panel-administratora/"} ><div className="ico_menu faq__"></div>Zarządzenie stroną</Link></li>
+            <li className="submenu_li" style={{ display: 'none' }} ><Link to={"/panel-administratora/"} ><div className="ico_menu faq__"></div>Zarządzenie treścią</Link></li>
+            <li className="submenu_li" style={{ display: 'none' }} ><Link to={"/panel-administratora/"} ><div className="ico_menu faq__"></div>Zarządzenie stroną</Link></li>
             <li className="submenu_li"><a href="https://dashboard.chec.io/"><div className="ico_menu shop__"></div>Zarządzaj sklepem</a></li>
             <li className="submenu_li"><a href="https://dashboard.stripe.com/test/dashboard/"><FontAwesomeIcon icon={faCreditCard} />Płatności i Stripe</a></li>
             <li className="submenu_li"><Link to={"/panel-administratora/baza-pytan"} ><div className="ico_menu faq__"></div>Baza pytań</Link></li>

@@ -79,8 +79,8 @@ const AdminPanel = () => {
             <li><Link to={"/panel-administratora/"} ><div className="ico_menu home__"></div></Link></li>
             <li><Link to={"/panel-administratora/zarzadzanie-uzytkownikami"} ><div className="ico_menu users__"></div></Link></li>
             <li><Link to={"/panel-administratora/statystyki"} ><div className="ico_menu stats__"></div></Link></li>
-            <li className="submenu_li"><Link to={"/panel-administratora/"} ><div className="ico_menu faq__"></div></Link></li>
-            <li className="submenu_li"><Link to={"/panel-administratora/"} ><div className="ico_menu faq__"></div></Link></li>
+            <li style={{ display: 'none' }} className="submenu_li"><Link to={"/panel-administratora/"} ><div className="ico_menu faq__"></div></Link></li>
+            <li style={{ display: 'none' }} className="submenu_li"><Link to={"/panel-administratora/"} ><div className="ico_menu faq__"></div></Link></li>
             <li className="submenu_li"><a href="https://dashboard.chec.io/"><div className="ico_menu shop__"></div></a></li>
             <li className="submenu_li"><a href="https://dashboard.stripe.com/test/dashboard/"><FontAwesomeIcon icon={faCreditCard} /></a></li>
             <li className="submenu_li"><Link to={"/panel-administratora/baza-pytan"} ><div className="ico_menu faq__"></div></Link></li>
