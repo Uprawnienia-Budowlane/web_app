@@ -44,7 +44,7 @@ const AdminNavbar = () => {
             <li className="submenu_li"><Link to={"/panel-administratora/baza-pytan"} ><div className="ico_menu faq__"></div>Baza pytań</Link></li>
             <li><Link to={"/panel-administratora/wszystkie-licencje/"} ><div className="ico_menu license__"></div>Licencje</Link></li>
             <li><Link to={"/panel-administratora/dodaj-powiadomienie/"} ><div className="ico_menu message__"></div>Wyślij powiadomienie</Link></li>
-            <li><Link to={"/panel-administratora/ustawienia"} ><div className="ico_menu setting__"></div>Ustawienia</Link></li>
+            <li><Link to={"/panel-administratora/ustawienia-ogólne"} ><div className="ico_menu setting__"></div>Ustawienia</Link></li>
             </ul>
         </>
     )

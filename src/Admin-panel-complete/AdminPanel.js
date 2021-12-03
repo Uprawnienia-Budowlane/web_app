@@ -66,6 +66,8 @@ import { faCreditCard } from '@fortawesome/free-solid-svg-icons'
 
 const AdminPanel = () => {
 
+    
+
     return (
         <>
         <div className="h-full w-full flex flex-col">
@@ -84,7 +86,7 @@ const AdminPanel = () => {
             <li className="submenu_li"><Link to={"/panel-administratora/baza-pytan"} ><div className="ico_menu faq__"></div></Link></li>
             <li><Link to={"/panel-administratora/wszystkie-licencje/"} ><div className="ico_menu license__"></div></Link></li>
             <li><Link to={"/panel-administratora/dodaj-powiadomienie/"} ><div className="ico_menu message__"></div></Link></li>
-            <li><Link to={"/panel-administratora/ustawienia"} ><div className="ico_menu setting__"></div></Link></li>
+            <li><Link to={"/panel-administratora/ustawienia-ogólne"} ><div className="ico_menu setting__"></div></Link></li>
         </div>
         <Switch>
             <Route exact path="/panel-administratora/" component={MainPanel} />
@@ -95,7 +97,7 @@ const AdminPanel = () => {
             <Route exact path="/panel-administratora/baza-pytan/dodaj-egzamin-probny" component={LearnExamAddPanel}/>
             <Route exact path="/panel-administratora/wszystkie-licencje/" component={ManageLicensePanel}/>
             <Route exact path="/panel-administratora/dodaj-powiadomienie" component={NotificationPanel}/>
-            <Route exact path="/panel-administratora/ustawienia" component={Settings}/>
+            <Route exact path={["/panel-administratora/ustawienia", "/panel-administratora/ustawienia-ogólne", "/panel-administratora/ustawienia-dyskusji"]} component={Settings}/>
         </Switch>
         </div>
         </>
