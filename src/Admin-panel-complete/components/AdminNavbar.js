@@ -25,13 +25,6 @@ import ArrowMenuIcon from '../Images/arrow_down_line.svg'
 
 const AdminNavbar = () => {
 
-    let [loc, setLoc] = useState('/');
-    let location = useLocation();
-
-    React.useEffect(() => {
-        setLoc(location.pathname);
-    }, [location]);
-
     /*const { loading, error, ...result } = licenseModel.useGetPopulated();*/
     /*if(!loading ) console.log(result);*/
 

@@ -73,7 +73,7 @@ placeholder="Szukaj strony"/>
 
 {ExamTrial.map((examtrial) => { return <div className="question-panel-with-infos">
 <p className="text-500 number_question" style={{ alignSelf: 'center' }}>{examtrial.currentTrialExamId}</p>
-<p className="text-500" style={{ alignSelf: 'center' }}>{examtrial.tytul_egzaminu_probnego}</p> 
+<p className="text-500 name_question" style={{ alignSelf: 'center' }}>{examtrial.tytul_egzaminu_probnego}</p> 
 <div className="button-container-base-option">
 <button style={{color: '#fff' }} className="database-fn-btn"><img src={eye_icon}></img></button>
 <button style={{color: '#fff' }} className="database-fn-btn"><img src={upload_line}></img></button>
@@ -87,7 +87,8 @@ placeholder="Szukaj strony"/>
 </div>
 
 </div>
-
+<div style={{ height: '70px', width: '100%' }}>
+</div>
 </div>
         </>
     )

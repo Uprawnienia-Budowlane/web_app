@@ -159,7 +159,7 @@ autoClose={8000}
 <input required onChange={(event) => {setNewUsername(event.target.value)}} style={{alignSelf: 'center', margin: '5px'}} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 p-4" placeholder="Nazwisko" type="text" />
 <input required onChange={(event) => {setRegisterEmail(event.target.value)}} style={{alignSelf: 'center', margin: '5px'}} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 p-4" placeholder="Adres E-mail" type="text" />
 <input required onChange={(event) => {setRegisterPassword(event.target.value)}} style={{alignSelf: 'center', margin: '5px'}} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 p-4" placeholder="Hasło" type="password" />
-<button onClick={RegisterBtnFn} disabled={loading} style={{display: 'flex', justifyContent: 'center', color: '#3B82F6', margin: '5px', width:'220px', alignSelf: 'center' }} className="rounded-2xl border border-blue-500 text-blue-500 p-1.5 h-12 w-14 hover:bg-blue-50 transition-colors duration-200 add-user-btn"><FontAwesomeIcon icon={faPlus} /><a style={{alignSelf: 'center'}}>Dodaj użytkownika</a></button>
+<button onClick={RegisterBtnFn} disabled={loading} style={{display: 'flex', justifyContent: 'center', color: '#3B82F6', width:'220px', alignSelf: 'center' }} className="rounded-2xl border border-blue-500 text-blue-500 p-1.5 h-12 w-14 hover:bg-blue-50 transition-colors duration-200 add-user-btn"><FontAwesomeIcon icon={faPlus} /><a style={{alignSelf: 'center'}}>Dodaj użytkownika</a></button>
 </div>
 
 <div className="container-for-label-user-etc">
@@ -182,7 +182,8 @@ autoClose={8000}
 })}
 
 </div>
-
+<div style={{ height: '70px', width: '100%' }}>
+</div>
 </div>
 </>
     )

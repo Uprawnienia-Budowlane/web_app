@@ -25,8 +25,9 @@ ListIcon,
 MessageIcon, 
 PenIcon, 
 ShoppingCartIcon,
-SettingsIcon
+SettingsIcon,
 } from "../Icons";
+
 import LicenseLogo from './Images/logo_component.svg'
 import Logo from './components/Logo'
 import MainPanel from "./MainPanel";
@@ -67,6 +68,18 @@ const AdminPanel = () => {
         <div className="hidden md:flex mdd:flex-col w-28 admin-bar" style={{ zIndex: '2' }}>
         <Logo />
         <AdminNavbar />
+        </div>
+        <div className="flex flex-row overflow-x-scroll max-w-full hidden-scrollbar admin-mobile-bar">
+            <li><Link to={"/panel-administratora/"} ><div className="ico_menu home__"></div></Link></li>
+            <li><Link to={"/panel-administratora/zarzadzanie-uzytkownikami"} ><div className="ico_menu users__"></div></Link></li>
+            <li><Link to={"/panel-administratora/statystyki"} ><div className="ico_menu stats__"></div></Link></li>
+            <li className="submenu_li"><Link to={"/panel-administratora/"} ><div className="ico_menu faq__"></div></Link></li>
+            <li className="submenu_li"><Link to={"/panel-administratora/"} ><div className="ico_menu faq__"></div></Link></li>
+            <li className="submenu_li"><a href="https://dashboard.chec.io/"><div className="ico_menu shop__"></div></a></li>
+            <li className="submenu_li"><Link to={"/panel-administratora/baza-pytan"} ><div className="ico_menu faq__"></div></Link></li>
+            <li><Link to={"/panel-administratora/wszystkie-licencje/"} ><div className="ico_menu license__"></div></Link></li>
+            <li><Link to={"/panel-administratora/"} ><div className="ico_menu message__"></div></Link></li>
+            <li><Link to={"/panel-administratora/"} ><div className="ico_menu setting__"></div></Link></li>
         </div>
         <Switch>
             <Route exact path="/panel-administratora/" component={MainPanel} />
