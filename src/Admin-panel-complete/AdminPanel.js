@@ -37,8 +37,8 @@ import AnalyticPanel from './Analytic-panel-complete/AnalyticPanel'
 import QuestionDataBase from './QuestionDataBase'
 import QuestionAddPanel from './Manage-Question-Test-complete/QuestionAddPanel' 
 import LearnExamAddPanel from './Manage-Question-Test-complete/LearnExamAddPanel'
-
 import ManageLicensePanel from './Manage-License-complete/ManageLicensePanel'
+import NotificationPanel from "./NotificationPanel";
 
 /* shortcode */
 
@@ -60,6 +60,9 @@ import { useHistory } from "react-router";
 
 import '../Admin-panel-complete/scss/admin-panel.css'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCreditCard } from '@fortawesome/free-solid-svg-icons'
+
 const AdminPanel = () => {
 
     return (
@@ -76,10 +79,11 @@ const AdminPanel = () => {
             <li className="submenu_li"><Link to={"/panel-administratora/"} ><div className="ico_menu faq__"></div></Link></li>
             <li className="submenu_li"><Link to={"/panel-administratora/"} ><div className="ico_menu faq__"></div></Link></li>
             <li className="submenu_li"><a href="https://dashboard.chec.io/"><div className="ico_menu shop__"></div></a></li>
+            <li className="submenu_li"><a href="https://dashboard.stripe.com/test/dashboard/"><FontAwesomeIcon icon={faCreditCard} /></a></li>
             <li className="submenu_li"><Link to={"/panel-administratora/baza-pytan"} ><div className="ico_menu faq__"></div></Link></li>
             <li><Link to={"/panel-administratora/wszystkie-licencje/"} ><div className="ico_menu license__"></div></Link></li>
-            <li><Link to={"/panel-administratora/"} ><div className="ico_menu message__"></div></Link></li>
-            <li><Link to={"/panel-administratora/"} ><div className="ico_menu setting__"></div></Link></li>
+            <li><Link to={"/panel-administratora/dodaj-powiadomienie/"} ><div className="ico_menu message__"></div></Link></li>
+            <li><Link to={"/panel-administratora/ustawienia"} ><div className="ico_menu setting__"></div></Link></li>
         </div>
         <Switch>
             <Route exact path="/panel-administratora/" component={MainPanel} />
@@ -88,9 +92,8 @@ const AdminPanel = () => {
             <Route exact path="/panel-administratora/baza-pytan" component={QuestionDataBase}/>
             <Route exact path="/panel-administratora/baza-pytan/dodaj-pytanie" component={QuestionAddPanel}/>
             <Route exact path="/panel-administratora/baza-pytan/dodaj-egzamin-probny" component={LearnExamAddPanel}/>
-            <Route exact path="/panel-administratora/baza-pytan/dodaj-egzamin-probny" component={LearnExamAddPanel}/>
-            
             <Route exact path="/panel-administratora/wszystkie-licencje/" component={ManageLicensePanel}/>
+            <Route exact path="/panel-administratora/dodaj-powiadomienie" component={NotificationPanel}/>
         </Switch>
         </div>
         </>

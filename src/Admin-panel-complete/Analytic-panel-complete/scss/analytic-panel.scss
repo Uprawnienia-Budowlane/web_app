@@ -10,63 +10,6 @@ overflow: hidden;
 z-index: 1;
 }
 
-    
-/* navbar icons */
-
-.ico_menu {
-    position: relative;
-    height: 32px;
-    width: 32px;
-    margin: -5px 20px;
-}
-
-.users__ {
-    background: no-repeat url(../../Images/users__.svg);
-    background-size: 100%; 
-}
-
-.stats__ {
-    background: no-repeat url(../../Images/stats__.svg);
-    background-size: 100%; 
-}
-
-.home__ {
-    background: no-repeat url(../../Images/home__.svg);
-    background-size: 100%;
-}
-
-.stats__ {
-    background: no-repeat url(../../Images/stats__.svg);
-    background-size: 100%; 
-}
-
-.faq__ {
-    background: no-repeat url(../../Images/faq__.svg);
-    background-size: 100%; 
-}
-
-.shop__ {
-    background: no-repeat url(../../Images/shop__.svg);
-    background-size: 100%; 
-}
-
-.license__ {
-    background: no-repeat url(../../Images/license__.svg);
-    background-size: 100%; 
-}
-
-.message__ {
-    background: no-repeat url(../../Images/message__.svg);
-    background-size: 100%; 
-}
-
-.setting__ {
-    background: no-repeat url(../../Images/setting__.svg);
-    background-size: 100%; 
-}
-
-/* */
-
     .container-for-components {
     position: relative;
     flex-direction: column;
@@ -543,33 +486,6 @@ z-index: 1;
     .nav-bar-admin-list li:hover {
         color: #3B82F6;
         cursor: pointer;
-    }
-
-    .nav-bar-admin-list img {
-        margin: 0px 35px 0px 0px;
-    }
-
-    .nav-bar-admin-list svg {
-        margin: -5.75px 15px;
-    }
-    
-
-    .nav-bar-admin-list a {
-        display: flex;
-        margin: 2.5px;
-        width: 230px;
-    }
-
-    .admin-bar {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: fixed;
-        width: 337px;
-        height: 100%;
-        left: 0px;
-        bottom: 0px;
-        background: #FFFFFF;
     }
 
     .container-for-components {

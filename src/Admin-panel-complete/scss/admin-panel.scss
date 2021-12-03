@@ -41,6 +41,18 @@
     margin: -5px 20px;
 }
 
+.submenu_li a svg {
+    position: relative;
+    height: 32px;
+    width: 32px;
+    margin: -5px 27.5px;
+}
+
+a svg {
+    height: 32px;
+    color: #678CCE;
+}
+
 .users__ {
     background: no-repeat url(../Images/users__.svg);
     background-size: 100%; 
@@ -265,7 +277,8 @@
 
 .google_play_meter {
     /* background: #96C0FF; */
-    
+    align-self: center;
+    width: 100%;
 }
 
 /* third component */
@@ -572,10 +585,6 @@
 
     .nav-bar-admin-list img {
         margin: 0px 35px 0px 0px;
-    }
-
-    .nav-bar-admin-list svg {
-        margin: -5.75px 15px;
     }
     
 
