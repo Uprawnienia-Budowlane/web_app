@@ -8,22 +8,24 @@ import { ThemeProvider } from "styled-components";*/
 import SettingsFirst from "./SettingsFirst";
 import SettingsSecond from "./SettingsSecond"
 
+const btn_change = document.getElementsByClassName('nav_base_option')
+
 const Settings = () => {
 
     const [settings, setSettings] = useState(0);
 
-    /*const SettingPageSelector = (props) => 
-    <button className={"" + (props.selected ? 'nav_base_option active_btn' : 'nav_base_option')} onClick={() => props.onClick()}>
-    
-    </button>*/
+    const SettingPageSelector = (props) => <button
+        className={"nav_base_option" + (props.selected ? ' nav_base_option' : ' active_btn')} onClick={() => props.onClick()}>
+
+    </button>
 
     return (
         <div className="admin_panel_itself">
         <h1 className="font-bold text-black text-2xl my-8">Ustawienia</h1>
         <div className="container_for_all_options_base" style={{ left: '-1pc' }}>
         <div className="container_for_all_nav_iself" style={{ justifyContent: 'flex-start'}}>
-        <button className="nav_base_option active_btn" ><Link to="/panel-administratora/ustawienia-ogólne">Ustawienia ogólne</Link></button>
-        <button className="nav_base_option active_btn" ><Link to="/panel-administratora/ustawienia-dyskusji">Ustawienia dyskusji</Link></button>
+        <button className="nav_base_option active_btn"><Link to="/panel-administratora/ustawienia-ogólne">Ustawienia ogólne</Link></button>
+        <button className="nav_base_option"><Link to="/panel-administratora/ustawienia-dyskusji">Ustawienia dyskusji</Link></button>
         </div>
         </div>
         <Switch>
