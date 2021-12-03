@@ -1,5 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react'
 import PFP from '.././photos/ProfilePhoto.png';
+import { ToastContainer, toast, Zoom, Bounce } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 import { onSnapshot, 
 getFirestore, 
 collection, 
@@ -15,11 +17,12 @@ import {
 createUserWithEmailAndPassword,
 onAuthStateChanged,
 } from "firebase/auth";
+
 import { auth, createUserDocument } from "../firebase";
 import {ArrowXIcon} from '../Icons' 
 import { useHistory } from "react-router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faUserMinus } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faUserMinus, faImage } from '@fortawesome/free-solid-svg-icons'
 
 const UserListPage = () => {
 
@@ -88,12 +91,6 @@ const UserListPage = () => {
         await deleteDoc(userDoc);
       };
 
-    const RegisterBtnFn = (e) => {
-        e.preventDefault()
-        register()
-        createUser()
-    }
-
     useEffect(() => {
         const getUsers = async () => {
           const data = await getDocs(usersCollectionRef);
@@ -103,8 +100,52 @@ const UserListPage = () => {
         getUsers();
       }, []);
 
+      /* database info */
+
+    const MsgAdduser = ({ closeToast, toastProps }) => (
+        <div style={{ margin: '10px' }}>
+        <h1>Użytkownik został dodany, proszę odświeżyć stronę - żeby zobaczeć zmiany</h1>
+        </div>
+      )
+
+    const MsgDelUser = ({ closeToast, toastProps }) => (
+        <div style={{ margin: '10px' }}>
+        <h1>Użytkownik został usunięty z bazy, proszę odświeżyć stronę - żeby zobaczeć zmiany</h1>
+        </div>
+      )
+
+    const displayMsgAddUser = () => {
+        toast.info(<MsgAdduser />, {
+        draggable:true
+        }
+        ) 
+
+    }
+
+    const displayDelUser = () => {
+        toast.info(<MsgDelUser />, {
+        draggable:true
+        }
+        ) 
+
+    }
+
+    /* */
+
+    const RegisterBtnFn = (e) => {
+        e.preventDefault()
+        register()
+        createUser()
+        displayMsgAddUser()
+    }
+
 return (
 <>
+<ToastContainer 
+draggable={false}
+transition={Zoom}
+autoClose={8000}
+/>
 <div className="admin_panel_itself">
 
 <h1 className="font-bold text-black text-2xl my-8">Lista użytkowników</h1>
@@ -113,15 +154,16 @@ return (
 
 
 <div className="container_for_user_options">
-<img src={PFP} alt="ProfilePhoto" className="w-20 h-20"/>
+<img src={PFP} alt="ProfilePhoto" className="w-20 h-20" style={{alignSelf: 'center'}}/>
 <input required onChange={(event) => {setNewName(event.target.value)}} style={{alignSelf: 'center', margin: '5px'}} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 p-4" placeholder="Imię" type="text" />
 <input required onChange={(event) => {setNewUsername(event.target.value)}} style={{alignSelf: 'center', margin: '5px'}} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 p-4" placeholder="Nazwisko" type="text" />
 <input required onChange={(event) => {setRegisterEmail(event.target.value)}} style={{alignSelf: 'center', margin: '5px'}} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 p-4" placeholder="Adres E-mail" type="text" />
 <input required onChange={(event) => {setRegisterPassword(event.target.value)}} style={{alignSelf: 'center', margin: '5px'}} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 p-4" placeholder="Hasło" type="password" />
-<button onClick={RegisterBtnFn} disabled={loading} style={{color: '#fff' }} className="add-user-btn"><FontAwesomeIcon icon={faPlus} /></button>
+<button onClick={RegisterBtnFn} disabled={loading} style={{display: 'flex', justifyContent: 'center', color: '#3B82F6', margin: '5px', width:'220px', alignSelf: 'center' }} className="rounded-2xl border border-blue-500 text-blue-500 p-1.5 h-12 w-14 hover:bg-blue-50 transition-colors duration-200 add-user-btn"><FontAwesomeIcon icon={faPlus} /><a style={{alignSelf: 'center'}}>Dodaj użytkownika</a></button>
 </div>
 
 <div className="container-for-label-user-etc">
+    <label>Zdjęcie</label>
     <label>Nazwa użytkownika</label>
     <label>Zdawalność</label>
     <label>Data Rejestracji</label>
@@ -130,12 +172,12 @@ return (
 </div>
 
 {users.map((user) => { return <div className="user-panel-with-infos">
-<img src={PFP} alt="ProfilePhoto" className="w-20 h-20"/>
+<img src={PFP} alt="ProfilePhoto" className="w-20 h-20 img-mobile" />
 <p className="text-500 nameusername__individual__user">{user.Imię} {user.Nazwisko}</p>
 <p className="text-500 score__individual__user">{user.zdawalnosc}%</p>
 <p className="text-500 date__individual__user">{user.dzien_rejestracji}/{user.miesiac_rejestracji}/{user.rok_rejestracji}</p>
 <p className="text-red-500 is_active__individual__user">{user.status_licencji}</p>
-<button  onClick={() => {deleteUser(user.id)}} style={{ display: 'flex', flexDirection: 'column', color: '#fff', textAlign: 'center', justifyContent: 'center', alignSelf: 'center'}} className="delete-user-btn"><FontAwesomeIcon icon={faUserMinus} /></button>
+<button  onClick={() => {deleteUser(user.id)}} style={{ display: 'flex', color: '#3B82F6', textAlign: 'center', justifyContent: 'center', alignSelf: 'center', margin: '10px', width:'220px'}} className="rounded-2xl border border-blue-500 text-blue-500 p-1.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200 delete-user-btn"><FontAwesomeIcon icon={faUserMinus} onClick={displayDelUser} /><a style={{ alignSelf: 'center' }}>Usuń użytkownika</a></button>
 </div>
 })}
 

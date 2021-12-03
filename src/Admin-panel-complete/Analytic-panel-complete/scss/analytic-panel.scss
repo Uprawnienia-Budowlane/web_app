@@ -1,0 +1,705 @@
+    .admin-bar {
+    display: none;
+    }
+
+    .admin_panel_itself {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    margin: .5% 1.5%;
+    overflow: hidden;
+    z-index: 1;
+    }
+
+    
+/* navbar icons */
+
+.ico_menu {
+    position: relative;
+    height: 32px;
+    width: 32px;
+    margin: -5px 20px;
+}
+
+.users__ {
+    background: no-repeat url(../../Images/users__.svg);
+    background-size: 100%; 
+}
+
+.stats__ {
+    background: no-repeat url(../../Images/stats__.svg);
+    background-size: 100%; 
+}
+
+.home__ {
+    background: no-repeat url(../../Images/home__.svg);
+    background-size: 100%;
+}
+
+.stats__ {
+    background: no-repeat url(../../Images/stats__.svg);
+    background-size: 100%; 
+}
+
+.faq__ {
+    background: no-repeat url(../../Images/faq__.svg);
+    background-size: 100%; 
+}
+
+.shop__ {
+    background: no-repeat url(../../Images/shop__.svg);
+    background-size: 100%; 
+}
+
+.license__ {
+    background: no-repeat url(../../Images/license__.svg);
+    background-size: 100%; 
+}
+
+.message__ {
+    background: no-repeat url(../../Images/message__.svg);
+    background-size: 100%; 
+}
+
+.setting__ {
+    background: no-repeat url(../../Images/setting__.svg);
+    background-size: 100%; 
+}
+
+/* */
+
+    .container-for-components {
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    /* background: green; */
+    }
+
+/* single component */
+
+    .stat_panel_itself {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        justify-content: center;
+        background: #fff;
+        border-radius: 25px;
+        width: 280px;
+        margin: 4.5%;
+        overflow: hidden;
+        z-index: 1;
+        }
+
+    .stat_panel_desc_p {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 15px;
+        text-align: center;
+    }
+
+    .stat_panel_desc_p {
+        text-align: center;
+    }
+
+    .stats_container {
+        position: relative;
+        flex-direction: column;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        margin: -5px 0px;
+        width: 265px;
+        height: 120px;
+    }
+
+    .stat_component_ico {
+        display: flex;
+    }
+
+    .stat__text {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .stat__text h3 {
+        margin: 1.5px 10px;
+    }
+
+    .stat_ico {
+        display: block;
+        position: relative;
+        align-self: center;
+        border-radius: 50%;
+        height: 7px;
+        width: 7px;
+        margin: 1.5px 10px;
+        background: #0066FF;
+    }
+
+    .stat__itself {
+        display: flex;
+        justify-content: center;
+        height: 5px;
+        width: 85%;
+        margin: 12.5px 5px;
+        border-radius: 25px;
+        background: #0066FF;
+    }
+
+    .container_for_items {
+        position: relative;
+        flex-direction: column;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+    }
+
+    .learn-c {
+        background: #96C0FF;
+    }
+
+/* single component */
+
+/* second component */
+
+.licenses_panel_itself {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 25px;
+    width: 280px;
+    margin: 4.5%;
+    overflow: hidden;
+    z-index: 1;
+    }
+
+.licenses_panel_desc_p {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    text-align: center;
+}
+
+.licenses_panel_desc_p {
+    text-align: center;
+}
+
+.arrow_second_comp {
+    display: block;
+    align-self: center;
+    position: relative;
+    height: 25px;
+    width: 25px;
+    background: no-repeat url(../../Images/arrow_second_comp.svg);
+    background-position:50%;
+}
+
+.container_for_items {
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+
+/* second component */
+
+/* third component */
+
+.google_play_panel_itself {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 25px;
+    width: 280px;
+    margin: 2.5%;
+    overflow: hidden;
+    z-index: 1;
+    }
+
+.google_play_panel_desc_p {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    text-align: center;
+}
+
+
+.container_for_meter svg {
+    align-self: center;
+    margin-top: 30px;
+    color: #96C0FF;
+}
+
+.google_play_meter {
+    /* background: #96C0FF; */
+    
+}
+
+/* third component */
+
+/* fourth component */
+
+.shortcode_panel_itself {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: center;
+    background: #fff;
+    border-radius: 25px;
+    width: 280px;
+    margin: 4.5%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.shortcode_panel_content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.shortcode-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 10px;
+}
+
+.shortcode-list li {
+    display: flex;
+    margin: 10px 0px ;
+    height: 31px;
+    width: 100%;
+}
+
+.shortcode-list li img {
+    margin: 5px 5px 5px 5px;
+}
+.shortcode-list  hr {
+    position: relative;
+    margin: 10px -15px;
+    width: 999%;
+    background: red;
+}
+
+
+/* fourth component */
+
+.container-for-components-bottom {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background: red; */
+}
+
+/* fifth component */
+
+.calendar_panel_itself {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    background: #fff;
+    border-radius: 25px;
+    width: 280px;
+    margin: 2.5%;
+    overflow: hidden;
+    z-index: 1;
+    }
+
+.calendar_panel_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.shortcode_panel_content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar_container {
+    background: green;
+    align-self: center;
+    margin: 2.5px;
+    height: 245px;
+    width: 252px;
+}
+
+.notification-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.notification-list li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    text-align: left;
+    border: 1px solid #96C0FF;
+    border-radius: 15px;
+    margin: .25pc;
+    height: 74px;  
+    width: 255px;
+}
+
+.post-title:first-child {
+    color: #0066FF;
+    font-size: 12px;
+    margin: 2.5px 10px;
+}
+
+.post-title {
+    color: #0066FF;
+    font-size: 10px;
+    margin: 2.5px 10px;
+}
+
+.edit-post-btn {
+    position: absolute;
+    display: flex;
+    justify-content:center;
+    right: 10px;
+    height: 42px;
+    width: 42px;
+    border-radius: 10px;
+    background: #96C0FF;
+
+}
+
+.notes_container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* fifth component */
+
+.container-for-two-last-items {
+    display: flex;
+    flex-direction: column;
+    /* background: gray; */
+}
+
+/* sixth component */
+
+.others_notes_panel_itself {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+    border-radius: 25px;
+    width: 280px;
+    margin: 4.5%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.title-and-button-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.submit-note-btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 37px;
+    width: 128px;
+    border-radius: 15px;
+    font-size: 12px;
+    margin: .5pc;
+    background: #3B82F6;
+    color: #fff;
+}
+
+.notes_panel_all {
+    position: relative;
+    height: 549px;
+}
+
+.notes-all-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.tile-note {
+    margin: 5px;
+}
+
+
+/* sixth component */
+
+.container-for-last-item {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    /* background: yellowgreen; */
+    height: 300px;
+}
+
+/* seven component */
+
+.user_stats_panel_itself {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+    border-radius: 25px;
+    width: 280px;
+    margin: 6%;
+}
+
+.stats-users-online-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    background: green;
+    margin: 15px;
+    height: 60px;
+    width: 132px;
+}
+
+.information-users-online-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: flex-end;
+    text-align: center;
+    margin: 15px;
+    height: 100px;
+    width: 132px;
+}
+
+.arrow-for-last-component {
+    position: relative;
+    height: 28px;
+    width: 28px;
+    background: no-repeat url(../../Images/arrow_for-last-component.svg);
+}
+
+/* seven component */
+
+@media (min-width: 999px) {
+
+    .nav-bar-admin-list {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        height: 793px;
+        bottom: 130px;
+    }
+    
+    .nav-bar-admin-list li {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 280px;
+        height: 25px;
+        color: #678CCE;
+        margin: 15px 0;
+    }
+
+    .nav-bar-admin-list li:active {
+        color: #3B82F6;
+    }
+
+    .nav-bar-admin-list li:hover {
+        color: #3B82F6;
+        cursor: pointer;
+    }
+
+    .nav-bar-admin-list img {
+        margin: 0px 35px 0px 0px;
+    }
+
+    .nav-bar-admin-list svg {
+        margin: -5.75px 15px;
+    }
+    
+
+    .nav-bar-admin-list a {
+        display: flex;
+        margin: 2.5px;
+        width: 230px;
+    }
+
+    .admin-bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: fixed;
+        width: 337px;
+        height: 100%;
+        left: 0px;
+        bottom: 0px;
+        background: #FFFFFF;
+    }
+
+    .container-for-components {
+        flex-direction: row;
+    }
+
+    .container-for-components-bottom {
+        flex-direction: row;
+    }
+
+    .container-for-two-last-items {
+        flex-direction: row;
+    }
+
+    .container-for-last-item {
+        left:780px;
+        width: 50%;
+    }
+
+    .admin_panel_itself {
+        right: 0px;
+    }
+
+    h1 {
+        text-align: left;
+    }
+
+    h2 {
+        text-align: left;
+    }
+
+    p {
+        text-align: left;
+    }
+
+    .shortcode_panel_itself {
+        margin: .5%;
+    }
+
+    .notification-list {
+        margin: 0;
+    }
+    
+    .notification-list li {
+        width: 523px;
+    }
+
+    .shortcode-list {
+        margin: 5px 25px;
+    }
+
+    .shortcode-list li {
+        margin: 5px -5px;
+        width: 550px;
+    }
+
+    .shortcode-list  hr {
+        position: relative;
+        margin: 0px -35px;
+    }
+
+    .stat_panel_itself {
+    height: 283px; 
+    width: 333px;
+    margin: .5%;
+    }
+
+    .stats_container {
+        height: 80px;
+    }
+
+    .licenses_panel_itself {
+        height: 283px;
+        width: 248px;
+        margin: .5%;
+    }
+
+    .google_play_panel_itself {
+        height: 283px;
+        width: 333px;
+        margin: .5%;
+    }
+
+    .shortcode_panel_itself {
+        height: 283px;
+        width: 594px;
+    }
+
+    .shortcode-list ul {
+        height: 200px;
+    }
+
+    .calendar_panel_itself {
+        flex-direction: row;
+        justify-content: space-around;
+        align-self: auto;
+        width: 870px;
+        height: 365px;
+        margin: .5%;
+    }
+
+
+    .calendar_panel_container {
+        align-self: none;
+        margin-top: 5px;
+    }
+
+    .notes_container {
+        width: 60%;
+    }
+
+    .container-for-two-last-items {
+        width: 600px;
+    }
+
+    .others_notes_panel_itself {
+        width: 594px;
+    }
+
+    .others_notes_panel_itself {
+        margin: .5%;
+    }
+
+    /*.user_stats_panel_itself {
+        height: 152px;
+        width: 333px;
+    }*/
+
+
+}

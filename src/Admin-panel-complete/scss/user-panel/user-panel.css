@@ -24,7 +24,7 @@
   background: #fff;
   border-radius: 15px;
   width: 275px;
-  margin: 15px 0px 5px;
+  margin: 15px;
 }
 
 .container_for_user_options img {
@@ -59,6 +59,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -66,7 +70,6 @@
       align-self: center;
   background: #fff;
   border-radius: 15px;
-  height: 72px;
   width: 275px;
   margin: 0px 15px 15px;
 }
@@ -88,37 +91,15 @@
 }
 
 .add-user-btn {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-item-align: center;
-      align-self: center;
-  right: 0px;
-  height: 43px;
-  width: 43px;
-  margin: 15px;
-  border-radius: 10px;
-  background: #0DA64B;
+  margin: 10px 0px;
 }
 
-.delete-user-btn {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  right: 10px;
-  height: 42px;
-  width: 42px;
-  margin: 15px;
-  border-radius: 10px;
-  background: #df0f2b;
+.add-user-btn svg {
+  margin: 0px 10px 0px 10px;
+}
+
+.delete-user-btn svg {
+  margin: 0px 10px 0px 10px;
 }
 
 button svg {
@@ -127,7 +108,27 @@ button svg {
       align-self: center;
 }
 
+.img-mobile {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 @media (min-width: 999px) {
+  .img-mobile {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .add-user-btn {
+    margin: 5px;
+  }
+  .user-panel-with-infos {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 72px;
+  }
   .container_for_user_options img {
     margin-right: 20px;
   }

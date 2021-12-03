@@ -13,7 +13,7 @@
     background: #fff;
     border-radius: 15px;
     width: 275px;
-    margin: 15px 0px 5px;
+    margin: 15px;
 }
 
 .container_for_user_options img {
@@ -40,11 +40,11 @@
 .user-panel-with-infos {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-self: center;
     background: #fff;
     border-radius: 15px;
-    height: 72px;
     width: 275px;
     margin: 0px 15px 15px;
 }
@@ -60,35 +60,39 @@
 }
 
 .add-user-btn {
-position: relative;
-display: flex;
-justify-content: center;
-align-self: center;
-right: 0px;
-height: 43px;
-width: 43px;
-margin: 15px;
-border-radius: 10px;
-background: #0DA64B;
+margin: 10px 0px;
 }
 
-.delete-user-btn {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    right: 10px;
-    height: 42px;
-    width: 42px;
-    margin: 15px;
-    border-radius: 10px;
-    background: #df0f2b;
-    }
+.add-user-btn svg {
+margin: 0px 10px 0px 10px;
+}
+
+.delete-user-btn svg{
+margin: 0px 10px 0px 10px;
+}
 
 button svg {
     align-self: center;
 }
 
+.img-mobile {
+    align-self: center;
+}
+
 @media (min-width: 999px) {
+
+    .img-mobile {
+        align-self: flex-start;
+    }
+
+    .add-user-btn {
+        margin: 5px;
+    }
+
+    .user-panel-with-infos {
+        flex-direction: row;
+        height: 72px;
+    }
 
     .container_for_user_options img {
         margin-right: 20px;

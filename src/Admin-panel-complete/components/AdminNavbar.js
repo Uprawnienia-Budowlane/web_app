@@ -42,7 +42,7 @@ const AdminNavbar = () => {
             <ul className="nav-bar-admin-list">
             <li><img src={MenuSelectedIcon}/><Link to={"/panel-administratora/"} ><div className="ico_menu home__"></div>Strona główna</Link></li>
             <li><Link to={"/panel-administratora/zarzadzanie-uzytkownikami"} ><div className="ico_menu users__"></div>Użytkownicy</Link></li>
-            <li><Link to={"/panel-administratora/"} ><div className="ico_menu stats__"></div>Statystyki</Link></li>
+            <li><Link to={"/panel-administratora/statystyki"} ><div className="ico_menu stats__"></div>Statystyki</Link></li>
             <li className="submenu_li"><Link to={"/panel-administratora/"} ><div className="ico_menu faq__"></div>Zarządzenie treścią</Link><img style={{margin: '0px 20px'}} src={ArrowMenuIcon}></img></li>
             <li className="submenu_li"><Link to={"/panel-administratora/"} ><div className="ico_menu faq__"></div>Zarządzenie stroną</Link><img style={{margin: '0px 20px'}} src={ArrowMenuIcon}></img></li>
             <li className="submenu_li"><a href="https://dashboard.chec.io/"><div className="ico_menu shop__"></div>Zarządzaj sklepem</a><img style={{margin: '0px 20px'}} src={ArrowMenuIcon}></img></li>
