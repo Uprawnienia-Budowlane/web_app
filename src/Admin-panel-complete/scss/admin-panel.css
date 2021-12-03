@@ -426,14 +426,19 @@ li a svg {
 }
 
 .shortcode-list li img {
-  margin: 5px 5px 5px 5px;
+  margin: 5px 15px 10px 5px;
 }
 
 .shortcode-list hr {
   position: relative;
   margin: 10px -15px;
   width: 999%;
-  background: red;
+}
+
+.shortcode-list li a {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 /* fourth component */
@@ -498,7 +503,6 @@ li a svg {
 }
 
 .calendar_container {
-  background: green;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -721,7 +725,6 @@ li a svg {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  background: green;
   margin: 15px;
   height: 60px;
   width: 132px;

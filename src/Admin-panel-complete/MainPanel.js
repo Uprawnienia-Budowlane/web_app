@@ -40,9 +40,11 @@ import ShieldLIst from './Images/shield-keyhole-fill 3.svg'
 
 /* */
 
-/* calendar */
+/* calendar & stats*/
 
 import PenIconC from './Images/pen-icon.svg'
+import StatGraphSmall from './Images/stats_graph.svg'
+import CalendarGraphMedium from './Images/calendar_graph_itself.svg'
 
 /* */
 
@@ -85,7 +87,7 @@ const MainPanel = () => {
                 <div className="stat__itself">
                 </div>
             </div>
-            <div className="stats_container">
+            <div className="stats_container" style={{ margin: '0px 0px 20px' }}>
                 <div className="stat__text">
                 <div className="stat_component_ico"><span className="stat_ico learn-c"></span><h2>Tryb egzaminu pisemnego</h2></div>
                 <h3>85%</h3>
@@ -134,11 +136,11 @@ const MainPanel = () => {
         <h1 className="font-bold text-black text-2xl m-2" style={{ margin: '15px' }}>Panel skrótów</h1>
         <div className="shortcode_panel_desc_content">
         <ul className="shortcode-list">
-            <li> <img src={NewsIcon} ></img>Dodaj wpis na blogu</li><hr></hr>
-            <li> <img src={NotificationList} ></img> Wyślij powiadomienie do użytkowników</li><hr></hr>
-            <li> <img src={LightBuble} ></img> Baza opracowań</li><hr></hr>
-            <li> <img src={ShieldLIst} ></img> Licencje</li><hr></hr>
-            <li> <img src={FileList} ></img> Baza pytań</li>
+            <li> <img src={NewsIcon} ></img><a>Dodaj wpis na blogu</a></li><hr></hr>
+            <li> <img src={NotificationList} ></img><a>Wyślij powiadomienie do użytkowników</a></li><hr></hr>
+            <li> <img src={LightBuble} ></img><a>Baza opracowań</a></li><hr></hr>
+            <li> <img src={ShieldLIst} ></img><a>Licencje</a></li><hr></hr>
+            <li> <img src={FileList} ></img><a>Baza pytań</a></li>
         </ul>
         </div>
         </div>
@@ -152,7 +154,7 @@ const MainPanel = () => {
         <h1 className="font-bold text-black text-2xl m-2">Kalendarz</h1>
          
          <div className="calendar_container">
-
+         <img style={{ margin: '15px 0px' }} src={CalendarGraphMedium}></img>
          </div>
 
          </div>
@@ -186,8 +188,8 @@ const MainPanel = () => {
 
         <div className="others_notes_panel_itself">
         <div className="title-and-button-panel">
-        <h1 className="font-bold text-black text-2xl m-2">Moje notatki</h1>
-        <button className="submit-note-btn">Dodaj notatkę</button>
+        <h1 className="font-bold text-black text-2xl m-4">Moje notatki</h1>
+        <button className="submit-note-btn" style={{ display: 'flex', alignSelf: 'center' }}><a style={{ alignSelf: 'center' }}>Dodaj notatkę</a></button>
         </div>
         <div className="notes_panel_all">
             
@@ -210,9 +212,11 @@ const MainPanel = () => {
         <div className="container-for-last-item">
 
         <div className="user_stats_panel_itself">
-        <h1 className="font-bold text-black text-2xl m-2">Użytkownicy online</h1>
+        <h1 className="font-bold text-black text-2xl m-4" style={{ textAlign: 'center' }}>Użytkownicy online</h1>
        
-        <div className="stats-users-online-container"></div>
+        <div className="stats-users-online-container">
+        <img src={StatGraphSmall}></img>
+        </div>
         
         <div className="information-users-online-container">
         <h1 className="font-bold text-black text-xl mx-2" style={{textAlign: 'end'}} >Wizytatorzy</h1> 

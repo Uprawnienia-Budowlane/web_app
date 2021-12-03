@@ -19,9 +19,10 @@ const SettingsSecond = () => {
 
     return (
         <>
-        <div className="rounded-3xl bg-white flex flex-row flex-wrap" style={{ maxWidth: '92.5pc' }}>
-            <h1 style={{alignSelf: 'flex-start', fontSize: '18px', fontWeight: 'bold', margin: '40px 25px' }}>Ustawienia artykułów</h1>
-            
+        <div className="rounded-3xl bg-white flex flex-row flex-wrap" style={{ maxWidth: '92.5pc', justifyContent: 'center' }}>
+        <div className="flex flex-row border-b border-opacity-50 w-full justify-start">
+        <h1 style={{alignSelf: 'flex-start', fontSize: '18px', fontWeight: 'bold', margin: '40px 25px' }}>Ustawienia artykułów</h1>
+            </div>        
             <div className="flex flex-row border-b border-opacity-50 w-full justify-start">
                 <div className="relative h-6 sm:mr-8 pr-2 my-auto m-10">
                     <input type="checkbox" defaultChecked={true}/>
@@ -40,8 +41,9 @@ const SettingsSecond = () => {
                 </div>
                 <p className="sm:mx-2 m-6 font-medium">Zezwól na komentowanie nowych artykułów</p>
             </div>
+            <div className="flex flex-row border-b border-opacity-50 w-full justify-start">
             <h1 style={{alignSelf: 'flex-start', fontSize: '18px', fontWeight: 'bold', margin: '40px 25px' }}>Ustawienia komentarzy</h1>
-            
+            </div>
             <div className="flex flex-row border-b border-opacity-50 w-full justify-start">
                 <div className="relative h-6 sm:mr-8 pr-2 my-auto m-10">
                     <input type="checkbox" defaultChecked={false}/>
@@ -75,7 +77,7 @@ const SettingsSecond = () => {
             <div className="flex flex-row border-b border-opacity-50 w-full justify-start">
             <h1 style={{alignSelf: 'flex-start', fontSize: '18px', fontWeight: 'bold', margin: '40px 25px' }}>Ustawienia powiadomień</h1>
             </div>
-            <button onClick="" style={{ display: 'flex', color: '#fff', background: '#3B82F6',  justifyContent: 'center', alignSelf: 'center', margin: '10px', width:'208px'}} className="rounded-2xl border border-blue-500 text-blue-500 p-1.5 h-14 hover:bg-blue-50 transition-colors duration-200"><a style={{ alignSelf: 'center' }}>Zapisz</a></button>
+            <button onClick="" style={{ display: 'flex', color: '#fff', background: '#3B82F6',  justifyContent: 'center', alignSelf: 'center', margin: '25px 0px 25px', width:'208px'}} className="rounded-2xl border border-blue-500 text-blue-500 p-1.5 h-14 hover:bg-blue-50 transition-colors duration-200"><a style={{ alignSelf: 'center' }}>Zapisz</a></button>
         </div>
         </>
     );

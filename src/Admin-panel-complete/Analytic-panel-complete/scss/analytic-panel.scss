@@ -17,7 +17,7 @@ z-index: 1;
     display: flex;
     /* background: green; */
     }
-
+    
 /* single component */
 
     .stat_panel_itself {
@@ -229,25 +229,26 @@ z-index: 1;
     width: 100%;
 }
 
-.shortcode-list li img {
-    margin: 5px 5px 5px 5px;
-}
-.shortcode-list  hr {
-    position: relative;
-    margin: 10px -15px;
-    width: 999%;
-    background: red;
-}
-
-
 /* fourth component */
 
-.container-for-components-bottom {
+.second--- {
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+}
+
+.second---same--widget {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
     justify-content: center;
-    /* background: red; */
+    text-align: center;
+    background: #fff;
+    border-radius: 25px;
+    width: 280px;
+    margin: 0;
 }
 
 /* fifth component */
@@ -270,20 +271,13 @@ z-index: 1;
 .calendar_panel_container {
     display: flex;
     flex-direction: column;
+    
 }
 
 .shortcode_panel_content {
     position: relative;
     display: flex;
     flex-direction: column;
-}
-
-.calendar_container {
-    background: green;
-    align-self: center;
-    margin: 2.5px;
-    height: 245px;
-    width: 252px;
 }
 
 .notification-list {
@@ -422,19 +416,6 @@ z-index: 1;
     border-radius: 25px;
     width: 280px;
     margin: 6%;
-}
-
-.stats-users-online-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    justify-content: center;
-    text-align: center;
-    background: green;
-    margin: 15px;
-    height: 60px;
-    width: 132px;
 }
 
 .information-users-online-container {

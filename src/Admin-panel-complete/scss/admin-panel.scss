@@ -321,13 +321,16 @@ li a svg {
 }
 
 .shortcode-list li img {
-    margin: 5px 5px 5px 5px;
+    margin: 5px 15px 10px 5px;
 }
 .shortcode-list  hr {
     position: relative;
     margin: 10px -15px;
     width: 999%;
-    background: red;
+}
+
+.shortcode-list li a {
+    align-self: center;
 }
 
 
@@ -370,7 +373,6 @@ li a svg {
 }
 
 .calendar_container {
-    background: green;
     align-self: center;
     margin: 2.5px;
     height: 245px;
@@ -522,7 +524,6 @@ li a svg {
     align-self: center;
     justify-content: center;
     text-align: center;
-    background: green;
     margin: 15px;
     height: 60px;
     width: 132px;
