@@ -6,7 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const Product = ({ product, onAddToCart }) => {
 
-    console.log(product)
+    //console.log(product)
 
     return(
         <>

@@ -55,7 +55,6 @@ const UserListPage = () => {
         
         } catch (error) {
             console.log(error.message)
-
         }
 
     }
@@ -100,7 +99,7 @@ const UserListPage = () => {
         getUsers();
       }, []);
 
-      /* database info */
+      /* database info mess */
 
     const MsgAdduser = ({ closeToast, toastProps }) => (
         <div style={{ margin: '10px' }}>

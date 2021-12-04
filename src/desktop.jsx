@@ -17,7 +17,6 @@ import LearnMode from "./Learn-mode-complete/LearnMode";
 import ChooseMode from "./ChooseMode";
 import Licenses from "./Licenses";
 import ActMode from "./ActMode";
-import firebase from "./firebase";
 import licenseModel from './models/License';
 
 const Desktop = () => {

@@ -34,6 +34,7 @@ import { handleScoreChange } from "../../Learn-mode-complete/redux/actions";
 
 import PhotoHint1  from '../../Admin-panel-complete/Manage-Question-Test-complete/QuestionImg/exam-trial-hint-graph-1.svg'
 
+import ExamEnd from '../../modals/ExamEnd'
 
 import { useHistory } from "react-router";
 
@@ -125,6 +126,10 @@ const Questions = () => {
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
 
+    const [modal, setModal] = useState(false);
+    const [nextLocation, setNextLocation] = useState('');
+    const [shouldBlockNavigation, setShouldBlockNavigation] = useState(true);
+
 	const handleAnswerOptionClick = (isCorrect) => {
 		if (isCorrect) {
 			setScore(score + 1);
@@ -183,6 +188,13 @@ const Questions = () => {
     }
 
     /* popup hint */
+
+    const handleBlockedNavigation = (next) => {
+      if (!shouldBlockNavigation) return true;
+      setModal(true);
+      setNextLocation(next);
+      return false;
+    }
 
     /* */
 

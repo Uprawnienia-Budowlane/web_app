@@ -1,8 +1,43 @@
-import React, {useState} from "react";
-import {DownArrow3Icon} from "./Icons";
-import FavoriteQuestion from "./components/FavoriteQuestion";
+import React, {useState, useEffect,} from "react";
+import {DownArrow3Icon, Heart2Icon, HeartFillIcon} from "./Icons";
+import { onSnapshot, 
+    getFirestore, 
+    collection, 
+    CollectionReference,
+    addDoc,
+    getDoc, 
+    getDocs, 
+    deleteDoc,
+    query, 
+    doc,
+    DocumentReference } from "@firebase/firestore";
+import {
+    createUserWithEmailAndPassword,
+    onAuthStateChanged,
+    getAuth
+} from "firebase/auth";
 
 const FavoriteQuestions = () => {
+
+    const [favQuestion, setFavQuestion] = useState([])
+
+    const [favorite, setFavorite] = useState(false);
+
+    const db = getFirestore()
+
+    const usersCollectionRefFavQuestion = collection(db, "ulubione_pytania_uzytkownikow");
+
+    useEffect(() => {
+        const getFavQuestion = async () => {
+          const data = await getDocs(usersCollectionRefFavQuestion);
+          setFavQuestion(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        };
+    
+        getFavQuestion();
+      }, []);
+
+
+    const auth = getAuth();
 
     const [category, setCategory] = useState(0);
     
@@ -13,12 +48,7 @@ const FavoriteQuestions = () => {
         </div>
 
         <div className="mx-4 md:mx-12 xl:mx-36 rounded-2xl border border-blue-500 flex flex-col md:flex-row">
-            <p className="p-4 overflow-ellipsis text-sm font-bold">Rozporządzenie Ministra Infrastruktury i
-                Budownictwa
-                z dnia 24.08.2016 r. w sprawie wzorów: wniosku o pozwolenie na budowę lub rozbiórkę, zgłoszenia
-                budowy i przebudowy budynku mieszkalnego jednorodzinnego, oświadczenia o posiadanym prawie do
-                dysponowania nieruchomością na cele budowlane, oraz decyzji o pozwoleniu na budowę lub
-                rozbiórkę.</p>
+            <p className="p-4 overflow-ellipsis text-sm font-bold">Egzamin próbny</p>
             <div className="my-auto ml-auto mx-4"><DownArrow3Icon/></div>
         </div>
 
@@ -33,27 +63,23 @@ const FavoriteQuestions = () => {
                 </tr>
                 </thead>
                 <tbody>
-                <FavoriteQuestion id={'11'}
-                                  question={'Organ administracji architektoniczno-budowlanej zamieszcza w Biuletynie Informacji Publicznej na stronie podmiotowej obsługującego go urzędu informacje o doręczeniu zgłoszenia dotyczącego wolnostojących budynków mieszkalnych jednorodzinnych, których obszar oddziaływania mieści się w całości na działce lub działkach, których zostały zaprojektowane w terminie: '}
-                                  answer={'Organ administracji architektoniczno-budowlanej zamieszcza w Biuletynie Informacji Publicznej na stronie podmiotowej obsługującego go urzędu informacje o doręczeniu zgłoszenia dotyczącego wolnostojących budynków mieszkalnych jednorodzinnych, których obszar oddziaływania mieści się w całości na działce lub działkach, których zostały zaprojektowane w terminie: '}/>
-                <FavoriteQuestion id={'25'}
-                                  question={'Organ administracji architektoniczno-budowlanej zamieszcza w Biuletynie Informacji Publicznej na stronie podmiotowej obsługującego go urzędu informacje o doręczeniu zgłoszenia dotyczącego wolnostojących budynków mieszkalnych jednorodzinnych, których obszar oddziaływania mieści się w całości na działce lub działkach, których zostały zaprojektowane w terminie: '}
-                                  answer={'Organ administracji architektoniczno-budowlanej zamieszcza w Biuletynie Informacji Publicznej na stronie podmiotowej obsługującego go urzędu informacje o doręczeniu zgłoszenia dotyczącego wolnostojących budynków mieszkalnych jednorodzinnych, których obszar oddziaływania mieści się w całości na działce lub działkach, których zostały zaprojektowane w terminie: '}/>
-                <FavoriteQuestion id={'32'}
-                                  question={'Organ administracji architektoniczno-budowlanej zamieszcza w Biuletynie Informacji Publicznej na stronie podmiotowej obsługującego go urzędu informacje o doręczeniu zgłoszenia dotyczącego wolnostojących budynków mieszkalnych jednorodzinnych, których obszar oddziaływania mieści się w całości na działce lub działkach, których zostały zaprojektowane w terminie: '}
-                                  answer={'Organ administracji architektoniczno-budowlanej zamieszcza w Biuletynie Informacji Publicznej na stronie podmiotowej obsługującego go urzędu informacje o doręczeniu zgłoszenia dotyczącego wolnostojących budynków mieszkalnych jednorodzinnych, których obszar oddziaływania mieści się w całości na działce lub działkach, których zostały zaprojektowane w terminie: '}/>
-                <FavoriteQuestion id={'41'}
-                                  question={'Organ administracji architektoniczno-budowlanej zamieszcza w Biuletynie Informacji Publicznej na stronie podmiotowej obsługującego go urzędu informacje o doręczeniu zgłoszenia dotyczącego wolnostojących budynków mieszkalnych jednorodzinnych, których obszar oddziaływania mieści się w całości na działce lub działkach, których zostały zaprojektowane w terminie: '}
-                                  answer={'Organ administracji architektoniczno-budowlanej zamieszcza w Biuletynie Informacji Publicznej na stronie podmiotowej obsługującego go urzędu informacje o doręczeniu zgłoszenia dotyczącego wolnostojących budynków mieszkalnych jednorodzinnych, których obszar oddziaływania mieści się w całości na działce lub działkach, których zostały zaprojektowane w terminie: '}/>
-                <FavoriteQuestion id={'56'}
-                                  question={'Organ administracji architektoniczno-budowlanej zamieszcza w Biuletynie Informacji Publicznej na stronie podmiotowej obsługującego go urzędu informacje o doręczeniu zgłoszenia dotyczącego wolnostojących budynków mieszkalnych jednorodzinnych, których obszar oddziaływania mieści się w całości na działce lub działkach, których zostały zaprojektowane w terminie: '}
-                                  answer={'Organ administracji architektoniczno-budowlanej zamieszcza w Biuletynie Informacji Publicznej na stronie podmiotowej obsługującego go urzędu informacje o doręczeniu zgłoszenia dotyczącego wolnostojących budynków mieszkalnych jednorodzinnych, których obszar oddziaływania mieści się w całości na działce lub działkach, których zostały zaprojektowane w terminie: '}/>
+
+                {favQuestion.map((favquest) => { return  <tr className="border-b border-opacity-50">
+                <td className="text-lg text-center px-5">{favquest.numer_pytania}</td>
+                <td className="text-sm p-4 overflow-ellipsis">{favquest.ulubione_pytanie}</td>
+                <td className="text-sm pr-4 py-4 text-green-600 overflow-ellipsis"> Nie wiem jak pobrać odpowiedź z tablicy :// </td>
+                <td>
+                <div className="pr-4 ml-auto my-auto cursor-pointer"
+                 onClick={() => setFavorite(!favorite)}>{favorite ? HeartFillIcon() : Heart2Icon()}</div>
+                </td>
+                </tr>
+                })}
 
                 </tbody>
             </table>
         </div>
         <div className="mx-auto mt-8 mb-12 flex flex-col space-y-3 md:space-y-0 md:flex-row">
-            <button
+            <button style={{ display:'none' }}
                 onClick={() => setCategory(0)}
                 className={"rounded-2xl border border-blue-500 font-medium text-center text-xl py-3 px-12 md:24 xl:px-32 mx-2 " + (category === 0 ? "bg-blue-500 text-white " : "text-blue-500")}>WSZYSTKIE
             </button>

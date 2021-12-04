@@ -25,29 +25,27 @@ const App = () => {
 
     return (   <div className="App min-h-screen w-full flex bg-blueGray-100">
         <div className="h-full w-full flex justify-center items-center">
-        <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-            <GlobalStyles/>
-            
             <input className="change-mode-btn mobile-fix-btn" onClick={() => ThemeToggler()} type="checkbox"/>
             <Switch>
                 <Route path="/login">
-                    <Login/>
+                <Login/>
                 </Route>
                 <Route path="/register">
-                    <Register/>
+                <Register/>
                 </Route>
                 <Route path="/reset">
-                    <ResetPassword/>
+                <ResetPassword/>
                 </Route>
                 <Route path="/panel-administratora" >
-                    <AdminPanel/>
+                <AdminPanel/>
                 </Route>
                 <Route>
+                    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+                    <GlobalStyles/>
                     <Desktop/>
+                    </ThemeProvider>
                 </Route>
             </Switch>
-            
-            </ThemeProvider>
         </div>
     </div>
     )

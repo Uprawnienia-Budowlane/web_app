@@ -3,7 +3,17 @@ import React, {useEffect, useRef, useState} from "react";
 import { Link, useHistory } from "react-router-dom";
 import { signOut } from 'firebase/auth'
 import { auth } from "../firebase";
-// import { useAuth } from '../context/AuthContext'
+import { onSnapshot, 
+    getFirestore, 
+    collection, 
+    CollectionReference,
+    addDoc,
+    getDoc, 
+    getDocs, 
+    deleteDoc,
+    query, 
+    doc,
+    DocumentReference } from "@firebase/firestore";
 
 const useOutsideAlerter = (ref, props) => {
 
@@ -20,33 +30,18 @@ const useOutsideAlerter = (ref, props) => {
 function DropDown(props) {
 
     const logout = async () => {
-        
         try {
             await signOut(auth);
             history.push('/login')
         } catch {
             
         }
-
     }
 
     const history = useHistory()
     
     const wrapperRef = useRef(null);
     useOutsideAlerter(wrapperRef, props);
-
-    /*async function handleLogout() {
-
-        setError('')
-
-        try {
-            await logout()
-            history.push('/login')
-        } catch {
-            setError('')
-        }
-
-    } */
 
     return (<div
         className={"absolute bg-white rounded-2xl shadow-xl w-64 right-0 mt-4 z-50" + (props.visible ? '' : ' hidden')}
@@ -59,22 +54,39 @@ function DropDown(props) {
 }
 
 const Notifications = (props) => {
+
+    const [notification, setNotification] = useState([])
+
+    const db = getFirestore()
+
+    const notifyCollectionRef = collection(db, "powiadomienia");
+
+    useEffect(() => {
+        const getNotify = async () => {
+          const data = await getDocs(notifyCollectionRef);
+          setNotification(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        };
+        getNotify();
+      }, []);
+
     const wrapperRef = useRef(null);
     useOutsideAlerter(wrapperRef, props);
 
-    return (<div
-        className={"absolute bg-white rounded-2xl shadow-xl w-96 right-0 mt-4 z-50" + (props.visible ? '' : ' hidden')}
-        ref={wrapperRef}>
-        <Link to={'/shop'} className="block py-4 px-4 border-b font-light hover:bg-gray-50 text-sm">
-            <p className="font-medium mb-2">Promocje!</p>
-            <p>Nowa promocja na sklepie ! Skorzystaj z czasowej oferty. Odwiedź: www.uprawnieniabudowlane.eu już
-                dziś!</p>
+    return (
+        <>
+        <div
+        className={"absolute bg-white rounded-2xl shadow-xl w-96 right-0 mt-4 z-50" + (props.visible ? '' : ' hidden')} ref={wrapperRef}>
+        {notification.map((notify_one) => { return <Link className="block py-4 px-4 border-b font-light hover:bg-gray-50 text-sm">
+        <p className="font-medium mb-2">{notify_one.tytul__}</p>
+        <p>{notify_one.wiadomosc__}</p>
         </Link>
+        })}
         <Link to={'/licenses'} className="block py-4 px-4 font-light hover:bg-gray-50 text-sm">
-            <p>Program Uprawnienia Budowlane otrzymał właśnie aktualizację bazy pytań. Opracowania przygotowane pod
-                najnowszą SESJE JESIENNĄ 2021.</p>
+        <p>idź do licencji</p>
         </Link>
-    </div>);
+    </div> 
+    </> 
+      )
 }
 
 const NavBar = () => {

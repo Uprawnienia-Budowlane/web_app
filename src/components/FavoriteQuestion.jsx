@@ -1,4 +1,4 @@
-import {Heart2Icon, HeartFillIcon} from "../Icons";
+/*import {Heart2Icon, HeartFillIcon} from "../Icons";
 import {useState} from "react";
 
 const FavoriteQuestion = (props) => {
@@ -15,4 +15,4 @@ const FavoriteQuestion = (props) => {
     </tr>);
 }
 
-export default FavoriteQuestion;
+export default FavoriteQuestion;*/

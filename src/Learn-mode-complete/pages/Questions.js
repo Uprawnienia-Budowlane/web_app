@@ -23,6 +23,24 @@ import {
 import { ToastContainer, toast, Zoom, Bounce } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 
+import { onSnapshot, 
+    getFirestore, 
+    collection, 
+    CollectionReference,
+    addDoc,
+    getDoc, 
+    getDocs, 
+    deleteDoc,
+    query, 
+    doc,
+    DocumentReference } from "@firebase/firestore";
+
+import {
+    createUserWithEmailAndPassword,
+    onAuthStateChanged,
+    getAuth
+} from "firebase/auth";
+
 import { Link } from 'react-router-dom'
 
 import { CircularProgress } from "@material-ui/core";
@@ -121,6 +139,23 @@ const Questions = () => {
 		},
 	]
 
+
+    const db = getFirestore()
+
+    const usersCollectionRefFavQuestion = collection(db, "ulubione_pytania_uzytkownikow");
+
+    const auth = getAuth();
+
+    let NumberQuestion = 1
+
+    const AddFavQuestion = async () => {
+        await addDoc(usersCollectionRefFavQuestion, { 
+            numer_pytania:currentQuestion + 1,
+            adres_mail_uzytkownika: auth.currentUser.email,
+            ulubione_pytanie: questions[currentQuestion].questionText,
+        });
+    }
+
     const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
@@ -156,14 +191,45 @@ const Questions = () => {
         </div>
       )
 
+    const LittleMsg = ({ closeToast, toastProps }) => (
+        <div>
+          <img style={{alignSelf: 'center', margin: '15px'}} src={questions[currentQuestion].photoHint}></img>
+        </div>
+      )
+
+    const MsgFavQuestion = ({ closeToast, toastProps }) => (
+        <div>
+        <h1 style={{margin: '10px'}} >To pytanie zostało dodane do ulubionych!</h1>  
+        </div>
+      )
+
     const displayMsg = () => {
         toast(<Msg />, {
         draggable:true
         }
         ) 
     }
+
+    const displayAddQuestion = () => {
+        toast.success(<MsgFavQuestion />, {
+        draggable:true
+        }
+        ) 
+    }
+
+    const displayLittleMsg = () => {
+        toast.info(<LittleMsg/>, {
+            draggable:true
+        })
+    }
+    
      
     /* */
+
+    const HandleAddFavQuestion = () => {
+        displayAddQuestion()
+        AddFavQuestion()
+    }
 
     return (
         <>
@@ -246,7 +312,7 @@ const Questions = () => {
                     </div>
                     <div className="flex flex-row my-4 mx-8">
                         <div className="my-auto ">
-                            <div style={{cursor: 'pointer'}}
+                            <div onClick={HandleAddFavQuestion} style={{cursor: 'pointer'}}
                                 className="rounded-2xl border border-blue-500 p-3 h-14 w-14 hover:bg-blue-50 transition-colors duration-200">
                                 <HeartFill2Icon/></div>
                         </div>
@@ -256,7 +322,7 @@ const Questions = () => {
                                 <QuestionmarkIcon/></div>
                         </div>
                         <div className="my-auto">
-                            <div style={{cursor: 'pointer'}}
+                            <div onClick={displayLittleMsg} style={{cursor: 'pointer'}}
                                 className="rounded-2xl border border-blue-500 p-2.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200">
                                 <EyeIcon/></div>
                         </div>

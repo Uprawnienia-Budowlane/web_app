@@ -22,13 +22,6 @@ const Shop = () => {
     const [modal, setModal] = useState(false);
     const [nextLocation, setNextLocation] = useState('');
     const [shouldBlockNavigation, setShouldBlockNavigation] = useState(true);
-  
-    /*const handleBlockedNavigation = (next) => {
-      if (!shouldBlockNavigation) return true;
-      setModal(true);
-      setNextLocation(next);
-      return false;
-    }*/
 
     const fetchProducts = async () => {
         const { data } = await commerce.products.list();
