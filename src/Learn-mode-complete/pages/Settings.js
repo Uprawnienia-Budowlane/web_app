@@ -21,6 +21,8 @@ import { onSnapshot,
   doc,
   DocumentReference } from "@firebase/firestore";
 
+import PhotoMaybeExam from "../../photos/Exammaybe.svg"
+
 const Settings = () => {
 
     return (
@@ -29,7 +31,7 @@ const Settings = () => {
                 <p className="text-blue-500">Egzamin próbny</p>
                 <h1 className="font-bold text-2xl">Kierowanie robotami bez ograniczeń</h1>
             </div>
-
+            <img style={{ height: '195px', width: '177px', alignSelf: 'center', margin: '50px 0px 0px' }} src={PhotoMaybeExam}></img>
 		   <Link style={{alignSelf: 'center', margin: '20px'}} to="/learn/questions"><button className="mx-4 my-6 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Rozpocznij egzamin próbny</button></Link>
 
         </div>

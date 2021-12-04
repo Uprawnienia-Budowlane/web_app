@@ -41,22 +41,7 @@ export default function Login() {
     } catch (error) {
     setError(LoginErr)
     }
-    }       
-
-    /*async function handleSubmit(e) {
-        e.preventDefault()
-
-        try {
-            setError('')
-            setLoading(true)
-            await login(emailRef.current.value, passwordRef.current.value)
-            history.push('/')
-
-        } catch {
-            setError('Wystąpił błąd przy próbie zalogowania')
-        }
-        setLoading(false)
-    }*/
+    }  
 
         return (
             <>

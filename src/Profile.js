@@ -1,11 +1,23 @@
 import React, {useState, useRef, useEffect} from "react";
-import firebase from "./firebase";
-import { getAuth, onAuthStateChanged } from "@firebase/auth";
+import { onSnapshot, 
+    getFirestore, 
+    collection, 
+    CollectionReference,
+    addDoc,
+    getDoc, 
+    getDocs, 
+    query, 
+    DocumentReference } from "@firebase/firestore";
+import { getAuth, onAuthStateChanged, updateEmail, updatePassword } from "@firebase/auth";
 import PFP from './photos/ProfilePhoto.png';
 import {BlueImgIcon, ClockIcon, QuestionMarkInCirceIcon, ShareIcon} from "./Icons";
 import { useHistory } from "react-router";
 
+import { ToastContainer, toast, Zoom, Bounce } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
+
 import '../src/scss/profile.css'
+import { setDoc } from "@firebase/firestore";
 
 const GenderSelector = (props) => <button
         className={"mt-2 rounded-2xl border border-blue-500 flex flex-row justify-between text-sm py-3 px-4 focus:outline-none" + (props.selected ? ' text-blue-500' : ' text-black')} onClick={() => props.onClick()}>
@@ -16,19 +28,80 @@ const GenderSelector = (props) => <button
 
 function Profile() {
 
-    const emailRef = useRef()
-    const passwordRef = useRef()
-    const passwordConfirmRef = useRef()
-
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
 
+    const [newUserName, setNewUserName] = useState("")
+    const [newUserSurname, setNewUserSurname] = useState("")
+
+    const [gender, setGender] = useState(0);
+
+    const [registerEmail, setRegisterEmail] = useState("")
+    const [registerPassword, setRegisterPassword] = useState("")
+    
     const [data, setdata] = useState([])
     const [loader, setloader] = useState(true)
 
     const [isUser, setIsUser] = useState('')
 
     const history = useHistory()
+
+    const db = getFirestore()
+
+    const usersCollectionRef = collection(db, "użytkownicy");
+
+    const UpdateUserName = async () => {
+        await addDoc(usersCollectionRef, {
+        Imię: newUserName
+        })      
+    }
+
+    const UpdateUserSurname = async () => {
+        await addDoc(usersCollectionRef, {
+        Nazwisko: newUserSurname
+        })      
+    }
+
+    const UpdateGender = async () => {
+        await addDoc(usersCollectionRef, {
+        plec: gender
+        })      
+    }
+
+    const HandleUpdateEmail = async () => {
+        try {
+        const user = await updateEmail(auth, 
+        registerEmail, 
+        )
+        } catch (error) {
+            //setError(RegisterErr)
+        }
+    }
+
+    const HandleUpdatePassWd = async () => {
+        try {
+        const user = await updatePassword(auth, 
+        registerPassword, 
+        )
+        } catch (error) {
+            //setError(RegisterErr)
+        }
+    }
+
+    const HandleUpdateChanges = (e) => {
+        e.preventDefault();
+        UpdateUserName()
+        UpdateUserSurname()
+        HandleUpdateEmail()
+        HandleUpdatePassWd()
+        toast.success(<ConfirmationChanges />)
+    }
+
+    const ConfirmationChanges = () => (
+        <div style={{ margin: '10px' }}>
+        <h1>Zmiany zostały zapisane!</h1>
+        </div>
+      )
 
     const auth = getAuth();
     onAuthStateChanged(auth, (isUser) => {
@@ -49,54 +122,13 @@ function Profile() {
         setIsUser(isUser)
     })
 
-    /*function getData() {
-        firebase.db.onSnapshot((querySnapshot) => {
-            const items = []
-            querySnapshot.forEach((doc) => {
-                items.push(doc.data())
-            })
-            setdata(items)
-            setloader(false)
-        })
-    }
-
-    useEffect(() => {
-
-        getData()
-
-    }, [])
-
-    console.log(data)*/
-
-    /* function handleSubmit(e) {
-        e.preventDefault()
-
-        if(passwordRef.current.value !== passwordConfirmRef.current.value) {
-            return setError('Hasło jest nie prawidłowe')
-        }
-
-        const promises = []
-        if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-            promises.push(updateEmail(emailRef.current.value))
-        }
-        if (passwordRef.current.value) {
-            promises.push(updatePassword(passwordRef.current.value))
-        }
-
-        Promise.all(promises).then(() => {
-            history.push('/')
-        }).catch(() => {
-            setError('Wystąpił błąd podczas aktualizacji profilu')
-        }).finally(() => {
-            setLoading(false)
-        })
-
-        
-    }*/
-
-    const [gender, setGender] = useState(0);
-
     return (
+        <>
+        <ToastContainer 
+            draggable={false}
+            transition={Zoom}
+            autoClose={8000}
+            />
         <div className="h-full w-full rounded-3xl bg-white flex flex-col xl:flex-row">
             <div className="xl:border-r border-gray-300">
                 <div className="m-8 flex flex-col">
@@ -163,13 +195,13 @@ function Profile() {
                         <div className="flex flex-col md:flex-row md:space-x-8 my-6">
                             <div className="w-full">
                                 <p className="ml-2 mb-1 text-sm">Imię:</p>
-                                <input 
+                                <input onChange={(event) => {setNewUserName(event.target.value)}}
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
                             <div className="w-full">
                                 <p className="mt-6 md:mt-0 ml-2 mb-1 text-sm">Nazwisko:</p>
-                                <input
+                                <input onChange={(event) => {setNewUserSurname(event.target.value)}}
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
@@ -186,7 +218,7 @@ function Profile() {
                         <div className="flex flex-col md:flex-row md:space-x-8 my-6">
                             <div className="w-full">
                                 <p className="ml-2 mb-1 text-sm">Zmień e-mail:</p>
-                                <input
+                                <input onChange={(event) => {setRegisterEmail(event.target.value)}}
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder={isUser.email}/>
                             </div>
@@ -194,12 +226,12 @@ function Profile() {
                         <div className="flex flex-col md:flex-row md:space-x-8 my-6">
                             <div className="w-full">
                                 <p className="ml-2 mb-1 text-sm">Nowe hasło:</p>
-                                <input
+                                <input onChange={(event) => {setRegisterPassword(event.target.value)}}
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
                                     type="password"
                                     placeholder=""/>
                             </div>
-                            <div className="w-full">
+                            <div className="w-full" style={{ display: 'none' }}>
                                 <p className="mt-6 md:mt-0 ml-2 mb-1 text-sm">Potwierdź nowe hasło:</p>
                                 <input
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
@@ -208,7 +240,7 @@ function Profile() {
                             </div>
                         </div>
                         <div className="mr-8 flex flex-row justify-start">
-                            <button
+                            <button onClick={HandleUpdateChanges}
                                 className="mt-20 bg-blue-500 h-12 w-full md:w-1/2 rounded-2xl text-white font-medium px-10 focus:outline-none">Zapisz
                                 dane
                             </button>
@@ -218,7 +250,9 @@ function Profile() {
 
                 </div>
             </div>
-        </div>);
+        </div>
+        </>
+        );
 }
 
 export default Profile;

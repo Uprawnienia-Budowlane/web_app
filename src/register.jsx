@@ -49,7 +49,6 @@ export default function Register() {
         }, [])
 
         const createUser = async () => {
-
         await addDoc(usersCollectionRef, {Imię: newName, 
         Nazwisko: newUsername,  
         plec: 'nie_ustawiono',
@@ -58,10 +57,7 @@ export default function Register() {
         miesiac_rejestracji: month, 
         dzien_rejestracji: day,
         status_licencji: "Brak zakupionej licencji"
-        });
-
-        toast.succes(`Witamy ${newUsername}, teraz możesz się zalogować`)
-                
+        })      
         }
         
         const [newUsername, setNewUsername] = useState("")
@@ -117,14 +113,18 @@ export default function Register() {
             registerEmail, 
             registerPassword
             )
-
+            toast.succes(<MsgConfirmationRegister/>)
             history.push('/login')
-            
             } catch (error) {
-                setError(RegisterErr)
+            setError(RegisterErr)
             }
-
         }
+
+        const MsgConfirmationRegister = () => (
+            <div style={{ margin: '10px' }}>
+            <h1>Pomyślnie zarejestrowano!</h1>
+            </div>
+          )
 
         /*if(passwordRef.current.value !== passwordConfirmRef.current.value) {
         return setError('Hasło jest nie prawidłowe')error.message
