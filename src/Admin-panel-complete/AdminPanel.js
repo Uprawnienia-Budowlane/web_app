@@ -41,6 +41,8 @@ import ManageLicensePanel from './Manage-License-complete/ManageLicensePanel'
 import NotificationPanel from "./NotificationPanel";
 import Settings from './Settings'
 
+import MessageCentrum from './MessageCentrum'
+
 /* shortcode */
 
 import NewsIcon from './Images/article-line 2.svg'
@@ -98,6 +100,11 @@ const AdminPanel = () => {
             <Route exact path="/panel-administratora/wszystkie-licencje/" component={ManageLicensePanel}/>
             <Route exact path="/panel-administratora/dodaj-powiadomienie" component={NotificationPanel}/>
             <Route exact path={["/panel-administratora/ustawienia", "/panel-administratora/ustawienia-ogólne", "/panel-administratora/ustawienia-dyskusji"]} component={Settings}/>
+
+
+            <Route exact path={["/panel-administratora/centrum-wiadomosci"]} component={MessageCentrum}/>
+
+
         </Switch>
         </div>
         </>

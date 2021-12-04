@@ -71,6 +71,8 @@ import '../scss/questions.css'
 const Questions = () => {
 
     const history = useHistory();
+
+    /* Trzeba tą tablice jakoś podpiąć pod firebase'a żeby się wyświetlały pytania ze stworzonej bazy danych */
     
     const questions = [
 		{

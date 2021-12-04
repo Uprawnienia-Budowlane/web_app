@@ -21,6 +21,13 @@ const FavoriteQuestions = () => {
 
     const [favQuestion, setFavQuestion] = useState([])
 
+    /* do naprawienia to usuwanie jest */
+
+    /*const deleteFavQuestion = async (test) => {
+        const favDoc = doc(db, "ulubione_pytania_uzytkownikow", test);
+        await deleteDoc(favDoc);
+      };*/
+
     const [favorite, setFavorite] = useState(false);
 
     const db = getFirestore()
@@ -69,8 +76,9 @@ const FavoriteQuestions = () => {
                 <td className="text-sm p-4 overflow-ellipsis">{favquest.ulubione_pytanie}</td>
                 <td className="text-sm pr-4 py-4 text-green-600 overflow-ellipsis"> Nie wiem jak pobrać odpowiedź z tablicy :// </td>
                 <td>
-                <div className="pr-4 ml-auto my-auto cursor-pointer"
-                 onClick={() => setFavorite(!favorite)}>{favorite ? HeartFillIcon() : Heart2Icon()}</div>
+                <div className="pr-4 ml-auto my-auto cursor-pointer" onClick="{deleteFavQuestion}">
+                <HeartFillIcon />
+                </div>
                 </td>
                 </tr>
                 })}
