@@ -12,12 +12,14 @@
     bottom: -10px;
     height: 70px;
     background: white;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.3); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.3);
     z-index: 2;
     }
 
     .admin-mobile-bar li {
-        list-style: none;
-        align-self: center;
+    list-style: none;
+    align-self: center;
     }
 
     .admin_panel_itself {
@@ -80,6 +82,11 @@ li a svg {
 
 .shop__ {
     background: no-repeat url(../Images/shop__.svg);
+    background-size: 100%; 
+}
+
+.card__ {
+    background: no-repeat url(../Images/card__.svg);
     background-size: 100%; 
 }
 

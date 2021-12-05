@@ -40,7 +40,7 @@ const AdminNavbar = () => {
             <li className="submenu_li" style={{ display: 'none' }} ><Link to={"/panel-administratora/"} ><div className="ico_menu faq__"></div>Zarządzenie treścią</Link></li>
             <li className="submenu_li" style={{ display: 'none' }} ><Link to={"/panel-administratora/"} ><div className="ico_menu faq__"></div>Zarządzenie stroną</Link></li>
             <li className="submenu_li"><a href="https://dashboard.chec.io/"><div className="ico_menu shop__"></div>Zarządzaj sklepem</a></li>
-            <li className="submenu_li"><a href="https://dashboard.stripe.com/test/dashboard/"><FontAwesomeIcon icon={faCreditCard} />Płatności i Stripe</a></li>
+            <li className="submenu_li"><a href="https://dashboard.stripe.com/test/dashboard/"><div className="ico_menu card__"></div>Płatności i Stripe</a></li>
             <li className="submenu_li"><Link to={"/panel-administratora/baza-pytan"} ><div className="ico_menu faq__"></div>Baza pytań</Link></li>
             <li><Link to={"/panel-administratora/wszystkie-licencje/"} ><div className="ico_menu license__"></div>Licencje</Link></li>
             <li><Link to={"/panel-administratora/dodaj-powiadomienie/"} ><div className="ico_menu message__"></div>Wyślij powiadomienie</Link></li>

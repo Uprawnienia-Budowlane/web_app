@@ -79,7 +79,7 @@ const Questions = () => {
 			questionText: 'Najmniejsza głębokość usytuowania w ziemi telekomunikacyjnego obiektu budowlanego, dla którego nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego to:',
 			questionImage: 'https://www.grupapsb.com.pl/files/LeadFoto/b8i6t0g0cfdio3/bezpieczna-budowa-domu-kto-odpowiada-za-bezpieczenstwo-na-budowie-2.jpg',
             questionHint: '§ 3. Określenia użyte w rozporządzeniu oznaczają: (...) 3) głębokość podstawowa — najmniejszą głębokość usytuowania w ziemi telekomunikacyjnego obiektu budowlanego, dla którego nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego;',
-            photoHint:'https://www.grupapsb.com.pl/files/LeadFoto/b8i6t0g0cfdio3/bezpieczna-budowa-domu-kto-odpowiada-za-bezpieczenstwo-na-budowie-2.jpg',
+            photoHint:'https://firebasestorage.googleapis.com/v0/b/uprawnienia-budowlane-net.appspot.com/o/Przyk%C5%82adowa%20grafika%20podpowiedzi%20nr%201.svg?alt=media&token=d040318e-8d63-4c81-a981-54f5cae1e6e6',
             answerOptions: [
 				{ answerText: 'Głębokość specjalna', isCorrect: false },
 				{ answerText: 'Głębokość minimalna', isCorrect: false },
@@ -91,6 +91,7 @@ const Questions = () => {
 			questionText: 'Czy usytuowanie budowli telekomunikacyjnej w odległości podstawowej od innego obiektu budowlanego:',
             questionImage: 'https://www.grupapsb.com.pl/files/LeadFoto/b8i6t0g0cfdio3/bezpieczna-budowa-domu-kto-odpowiada-za-bezpieczenstwo-na-budowie-2.jpg',
             questionHint: '§ 3. Określenia użyte w rozporządzeniu oznaczają:(…) 10) odległość podstawowa — najmniejszą odległość budowli telekomunikacyjnej od skrajni innego obiektu budowlanego, przy której nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego, na odcinkach zbliżeń i skrzyżowań;',
+            photoHint:'https://firebasestorage.googleapis.com/v0/b/uprawnienia-budowlane-net.appspot.com/o/Przyk%C5%82adowa%20grafika%20podpowiedzi%20nr%202.svg?alt=media&token=a6e36c42-f065-4c2e-b00e-048237306d3c',
 			answerOptions: [
 				{ answerText: 'Nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego', isCorrect: true },
 				{ answerText: 'Wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego', isCorrect: false },
@@ -102,6 +103,7 @@ const Questions = () => {
 			questionText: 'Czym jest antenowa konstrukcja wsporcza, bez odciągów?',
             questionImage: 'https://www.grupapsb.com.pl/files/LeadFoto/b8i6t0g0cfdio3/bezpieczna-budowa-domu-kto-odpowiada-za-bezpieczenstwo-na-budowie-2.jpg',
             questionHint: '§ 3. Określenia użyte w rozporządzeniu oznaczają:(…) 14) wieża antenowa — antenową konstrukcję wsporczą, bez odciągów;',
+            photoHint:'https://firebasestorage.googleapis.com/v0/b/uprawnienia-budowlane-net.appspot.com/o/Przyk%C5%82adowa%20grafika%20podpowiedzi%20nr%203.svg?alt=media&token=97ce4ed2-7bee-48f0-88ca-2acafdf2a60d',
 			answerOptions: [
 				{ answerText: 'Wieżą antenową', isCorrect: true },
 				{ answerText: 'Masztem antenowym', isCorrect: false },
@@ -109,14 +111,13 @@ const Questions = () => {
 			],
 		},
 		{
-			questionText: 'How many Harry Potter books are there?',
+			questionText: 'Czym jest antenowa konstrukcja wsporcza z odciągami?',
             questionImage: 'https://www.grupapsb.com.pl/files/LeadFoto/b8i6t0g0cfdio3/bezpieczna-budowa-domu-kto-odpowiada-za-bezpieczenstwo-na-budowie-2.jpg',
             questionHint: '§ 3. Określenia użyte w rozporządzeniu oznaczają:(…) 14) wieża antenowa — antenową konstrukcję wsporczą, bez odciągów;',
 			answerOptions: [
-				{ answerText: '1', isCorrect: false },
-				{ answerText: '4', isCorrect: false },
-				{ answerText: '6', isCorrect: false },
-				{ answerText: '7', isCorrect: true },
+				{ answerText: 'Wieżą antenową', isCorrect: false },
+				{ answerText: 'Wspornikiem', isCorrect: false },
+				{ answerText: 'Masztem antenowym', isCorrect: true },
 			],
 		},
         {
@@ -298,10 +299,10 @@ const Questions = () => {
 
                 <div className="flex flex-col my-4 mx-8 justify-center xl:flex-row">
                 {questions[currentQuestion].answerOptions.map((answerOption) => (
-                        <button style={{ margin: '10px 2.5px', width: '100%' }} 
+                        <button style={{display: 'flex', justifyContent: 'center', margin: '10px 2.5px', width: '100%' }} 
                         className="rounded-2xl border border-blue-500 text-blue-500 p-1.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200"
                         onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}
-                        >{answerOption.answerText}
+                        ><p style={{alignSelf: 'center', margin: '5px', textAlign: 'center' }}>{answerOption.answerText}</p>
                         </button>
                         ))}
                 </div>

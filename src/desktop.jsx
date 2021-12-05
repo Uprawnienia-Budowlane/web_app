@@ -36,14 +36,14 @@ const Desktop = () => {
             <div className="flex flex-row mt-10 mb-10 css-margin-bottom-mobile">
                 <div className="hidden md:flex mdd:flex-col mt-8 ml-3 w-28 mobile-navigation-md-fix">
                     <div className="mx-auto flex flex-col space-y-12 2xl:space-y-16 mobile-navigation" style={{ marginTop: '100px' }}>
-                        <Link to="/" style={{ marginTop: '20px'}}> <MenuItem icon={HomeIcon} active={loc === '/'}/></Link>
-                        <Link to="/speciality"> <MenuItem icon={ListIcon} active={loc === '/speciality'}/></Link>
-                        <Link class="mobile-hide-option" to="/written"> <MenuItem icon={PenIcon} active={loc === '/written'}/></Link>
-                        <Link class="mobile-hide-option" to="/oral"> <MenuItem icon={MessageIcon} active={loc === '/oral'}/></Link>
-                        <Link class="mobile-hide-option" to="/acts"> <MenuItem icon={BookIcon} active={loc === '/acts'}/></Link>
-                        <Link to="/stats"> <MenuItem icon={ChartIcon} active={loc === '/stats'}/></Link>
-                        <Link class="mobile-hide-option" to="/favorite"> <MenuItem icon={HeartIcon} active={loc === '/favorite'}/></Link>
-                        <Link to="/shop" className="desktop-fix-icon"> <MenuItem icon={ShoppingCartIcon} active={loc === '/shop'}/></Link>
+                        <Link to="/" style={{ marginTop: '42px'}}> <MenuItem icon={HomeIcon} active={loc === '/'}/></Link>
+                        <Link to="/speciality" style={{ alignSelf: 'center' }}> <MenuItem icon={ListIcon} active={loc === '/speciality'}/></Link>
+                        <Link class="mobile-hide-option" style={{ alignSelf: 'center' }} to="/written"> <MenuItem icon={PenIcon} active={loc === '/written'}/></Link>
+                        <Link class="mobile-hide-option" style={{ alignSelf: 'center' }} to="/oral"> <MenuItem icon={MessageIcon} active={loc === '/oral'}/></Link>
+                        <Link class="mobile-hide-option" style={{ alignSelf: 'center' }} to="/acts"> <MenuItem icon={BookIcon} active={loc === '/acts'}/></Link>
+                        <Link to="/stats" style={{ alignSelf: 'center' }}> <MenuItem icon={ChartIcon} active={loc === '/stats'}/></Link>
+                        <Link class="mobile-hide-option" style={{ alignSelf: 'center' }} to="/favorite"> <MenuItem icon={HeartIcon} active={loc === '/favorite'}/></Link>
+                        <Link to="/shop" className="desktop-fix-icon" style={{ alignSelf: 'center' }}> <MenuItem icon={ShoppingCartIcon} active={loc === '/shop'}/></Link>
                     </div>
                 </div>
 
