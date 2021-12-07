@@ -65,6 +65,10 @@
 }
 
 @media (min-width: 999px) {
+  .container_for_add_license_panel {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
   .container_for_add_license_panel label {
     margin: 5px 20px -20px;
   }

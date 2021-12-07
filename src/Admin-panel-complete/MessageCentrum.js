@@ -35,14 +35,13 @@ const MessageCentrum = () => {
 
     const UsersMessagesCollectionRef = collection(db, "wiadomosci_od_uzytkownikow");
 
-    useEffect(() => {
-        const getUsersMessages = async () => {
-          const data = await getDocs(UsersMessagesCollectionRef);
-          setUsersMessages(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-        };
-    
-        getUsersMessages();
-      }, []);
+    useEffect(
+      () => 
+      onSnapshot(collection(db, "wiadomosci_od_uzytkownikow"), (snapshot) => 
+      setUsersMessages(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+      ),
+      []
+    )
 
     const history = useHistory()
 

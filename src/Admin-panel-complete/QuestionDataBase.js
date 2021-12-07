@@ -35,14 +35,13 @@ const QuestionDataBase = () => {
 
     const ExamTrialCollectionRef = collection(db, "egzaminy_probne");
 
-    useEffect(() => {
-        const getExamTrial = async () => {
-          const data = await getDocs(ExamTrialCollectionRef);
-          setExamTrial(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-        };
-    
-        getExamTrial();
-      }, []);
+      useEffect(
+        () => 
+        onSnapshot(collection(db, "egzaminy_probne"), (snapshot) => 
+        setExamTrial(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+        ),
+        []
+      )
 
     const history = useHistory()
 
@@ -56,22 +55,35 @@ return (
 
 <h1 className="font-bold text-black text-2xl my-8">Baza pytań</h1>
 
-<div className="main-container_on_panel_site">
-
 <div className="container_for_all_options_base">
 <div className="container_for_all_nav_iself">
+<div className="container_for_btns__"
+style={{
+  display: 'flex',
+}}
+>
 <button className="nav_base_option active_btn"><a>Tryb nauki</a></button>
 <button className="nav_base_option"><a>Tryb egzaminu pisemnego</a></button>
+</div>
 <input type="search" className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-100 p-4 search_input_base"
 placeholder="Szukaj strony"/>
+<div className="container_for_btns__"
+style={{
+  display: 'flex'
+}}
+>
 <button onClick={GoToSettQuestion} className="nav_base_option add_something_btn_base"><a>Dodaj egzamin próbny</a></button>
 <button className="nav_base_option others_base"><a>Baza opracowań</a></button>
 </div>
 </div>
+</div>
+
+<div className="main-container_on_panel_site">
 
 <div className="database_questions-option-panel">
 
-{ExamTrial.map((examtrial) => { return <div className="question-panel-with-infos">
+{ExamTrial.map((examtrial) => ( 
+<div className="question-panel-with-infos">
 <p className="text-500 number_question" style={{ alignSelf: 'center' }}>{examtrial.currentTrialExamId}</p>
 <p className="text-500 name_question" style={{ alignSelf: 'center' }}>{examtrial.tytul_egzaminu_probnego}</p> 
 <div className="button-container-base-option">
@@ -82,7 +94,7 @@ placeholder="Szukaj strony"/>
 <button style={{color: '#fff' }} className="database-fn-btn"><img src={pencil_line}></img></button>
 </div>
 </div>
-})}
+))}
 
 </div>
 

@@ -4,6 +4,11 @@
     flex-direction: column;
     border-radius: 15px;
     background: #D5E2FF;
+    width: 1499px;
+}
+
+.main-container_on_panel_site.medium {
+    width: auto;
 }
 
 .container_for_user_options {
@@ -12,8 +17,18 @@
     align-self: center;
     background: #fff;
     border-radius: 15px;
+    height: 74px;
     width: 275px;
     margin: 15px;
+}
+
+.desktop-hide {
+    display: block;
+}
+
+.container-for_subwigets {
+    display: flex;
+    flex-direction: column;
 }
 
 .container_for_user_options img {
@@ -46,6 +61,7 @@
     background: #fff;
     border-radius: 15px;
     width: 275px;
+    height: 74px;
     margin: 0px 15px 15px;
 }
 
@@ -81,6 +97,23 @@ button svg {
 
 @media (min-width: 999px) {
 
+    .desktop-hide {
+        display: none;
+    }
+
+    .main-container_on_panel_site.medium {
+        width: 1499px;
+    }
+
+    .main-container_on_panel_site.medium {
+        width: 867px;
+        height: 773px;
+    }
+
+    .container_for_add_license_panel {
+        align-self: flex-start;
+    }
+
     .img-mobile {
         align-self: flex-start;
     }
@@ -91,24 +124,31 @@ button svg {
 
     .user-panel-with-infos {
         flex-direction: row;
-        height: 72px;
     }
 
     .container_for_user_options img {
         margin-right: 20px;
     }
 
+    .container-for_subwigets {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
     .container_for_user_options {
-        width: 92.5pc;
+        width: 1430px;
     }
 
     .user-panel-with-infos {
-        width: 92.5pc;
+        width: 819px;
+    }
+
+    .normalver {
+        width: 1430px;
     }
 
     .container_for_user_options {
         flex-direction: row;
-        height: 72px;
     }
 
     .container-for-label-user-etc label {
