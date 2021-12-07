@@ -35,6 +35,7 @@ import AdminNavbar from "./components/AdminNavbar";
 import UserListPage from './UserListPage'
 import AnalyticPanel from './Analytic-panel-complete/AnalyticPanel'
 import QuestionDataBase from './QuestionDataBase'
+import QuestionWrittenDataBase from './QuestionWrittenDataBase'
 import QuestionAddPanel from './Manage-Question-Test-complete/QuestionAddPanel' 
 import LearnExamAddPanel from './Manage-Question-Test-complete/LearnExamAddPanel'
 import ManageLicensePanel from './Manage-License-complete/ManageLicensePanel'
@@ -44,6 +45,9 @@ import OtherSites from './OtherSites'
 import MessageCentrum from './MessageCentrum'
 import Blog from './Blog-complete/Blog'
 import NewsManagment from './NewsManagment'
+import SiteArticleManagment from './SiteArticleManagment'
+import AddAnotherWebsite from './AddAnotherWebiste'
+import AddAnotherLink from './AddAnotherLink'
 
 /* shortcode */
 
@@ -97,9 +101,14 @@ const AdminPanel = () => {
             <Route exact path="/panel-administratora/zarządzanie-aktualnościami" component={NewsManagment}/>
             <Route exact path="/panel-administratora/blog" component={Blog}/>
             <Route exact path="/panel-administratora/podstrony" component={OtherSites}/>
+            <Route exact path="/panel-administratora/nawigacja" component={AddAnotherLink}/>
+            <Route exact path="/panel-administratora/dodaj-podstrone" component={AddAnotherWebsite}/>
+            <Route exact path="/panel-administratora/dodaj-wpis" component={SiteArticleManagment}/>
             <Route exact path="/panel-administratora/baza-pytan" component={QuestionDataBase}/>
+            <Route exact path="/panel-administratora/baza-opracowan-ustnych" component={QuestionWrittenDataBase}/>
             <Route exact path="/panel-administratora/baza-pytan/dodaj-pytanie" component={QuestionAddPanel}/>
             <Route exact path="/panel-administratora/baza-pytan/dodaj-egzamin-probny" component={LearnExamAddPanel}/>
+            <Route exact path="/panel-administratora/zarzadzanie-uzytkownikami" component={UserListPage}/>
             <Route exact path="/panel-administratora/wszystkie-licencje/" component={ManageLicensePanel}/>
             <Route exact path="/panel-administratora/dodaj-powiadomienie" component={NotificationPanel}/>
             <Route exact path={["/panel-administratora/centrum-wiadomosci"]} component={MessageCentrum}/>

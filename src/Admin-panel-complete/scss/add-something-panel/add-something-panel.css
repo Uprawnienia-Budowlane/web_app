@@ -1,0 +1,209 @@
+.add_something_panel_itself_first {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  background: #fff;
+  border-radius: 15px;
+  width: auto;
+  margin: 0px 15px 15px;
+}
+
+.add_something_panel_itself_second {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  background: #fff;
+  border-radius: 15px;
+  width: auto;
+  margin: 0px 15px 15px;
+}
+
+.add_something_panel_itself_second {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-align: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  background: #fff;
+  border-radius: 15px;
+  width: auto;
+  margin: 0px 15px 15px;
+}
+
+.add_something_panel_itself_last {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-align: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  background: #fff;
+  border-radius: 15px;
+  width: auto;
+  margin: 0px 0px 15px 15px;
+}
+
+.container_for_checkboxes_and_label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.add_something_panel_itself_first label {
+  color: #000;
+  margin: 5px 20px;
+}
+
+.container_for_checkboxes_and_label label {
+  margin: 0 -10px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.add_act_question_btn {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #678CCE;
+  border-radius: 8px;
+  font-size: 12px;
+  height: 32px;
+  width: 179px;
+}
+
+.add_act_question_btn a {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.Add_quest_btn {
+  position: relative;
+  color: #fff;
+  height: 32px;
+  width: 126px;
+  border-radius: 8px;
+  margin: 5px 5px;
+}
+
+.Add_quest_btn a {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 12px;
+}
+
+.save {
+  background: #0DA64B;
+  margin: 5px 5px;
+}
+
+.save_copy {
+  background: #428DFF;
+}
+
+.tag_area {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  height: 38px;
+  width: 359px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #3B82F6;
+}
+
+.one_tag {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 23px;
+  width: 92px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: 12px;
+  background: #EAEAEA;
+}
+
+.one_tag p {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 5px;
+}
+
+.close_icon_tag {
+  height: 15px;
+  width: 15px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background: url(../../Images/close-line_5.svg);
+}
+
+@media (min-width: 999px) {
+  .add_something_panel_itself_first {
+    height: 400px;
+    width: 415px;
+  }
+  .add_something_panel_itself_second {
+    height: 213px;
+    width: 415px;
+  }
+  .add_something_panel_itself_last {
+    height: 869px;
+    width: 1075px;
+  }
+}
+/*# sourceMappingURL=add-something-panel.css.map */

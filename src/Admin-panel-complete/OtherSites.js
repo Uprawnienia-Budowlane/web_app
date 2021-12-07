@@ -28,28 +28,22 @@ import share_line_3 from './Images/share_line_3.svg'
 
 const OtherSites = () => {
 
-    const [ExamTrial, setExamTrial] = useState([])
+  const [ExamTrial, setExamTrial] = useState([])
 
-    const db = getFirestore()
+  const db = getFirestore()
 
-    const ExamTrialCollectionRef = collection(db, "egzaminy_probne");
+  const ExamTrialCollectionRef = collection(db, "egzaminy_probne");
 
-      useEffect(
+  useEffect(
         () => 
         onSnapshot(collection(db, "egzaminy_probne"), (snapshot) => 
         setExamTrial(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-        ),
-        []
-      )
-
-    const history = useHistory()
-
-    const GoToSettQuestion = () => {
-        history.push('/panel-administratora/baza-pytan/dodaj-egzamin-probny')
-    }
+      ),
+    []
+  )
 
 return (
-        <>
+<>
 <div className="admin_panel_itself">
 
 <h1 className="font-bold text-black text-2xl my-8">Podstrony</h1>
@@ -73,7 +67,7 @@ borderRadius: '10px',
 justifyContent: 'center', 
 color: '#fff',
 margin: '15px 20px 5px 15px'
-}}><a style={{ alignSelf: 'center' }}>Dodaj podstronę</a></button>
+}}><Link to="/panel-administratora/dodaj-podstrone" style={{ alignSelf: 'center' }}>Dodaj podstronę</Link></button>
 </div>
 </div>
 
@@ -111,7 +105,7 @@ width: '100%'
 <div style={{ height: '70px', width: '100%' }}>
 </div>
 </div>
-        </>
+</>
     )
 }
 

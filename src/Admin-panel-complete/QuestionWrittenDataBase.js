@@ -27,7 +27,7 @@ import upload_line from './Images/upload_line.svg'
 
 /* */
 
-const QuestionDataBase = () => {
+const QuestionWrittenDataBase = () => {
 
     const [ExamTrial, setExamTrial] = useState([])
 
@@ -49,47 +49,43 @@ const QuestionDataBase = () => {
         history.push('/panel-administratora/baza-pytan/dodaj-egzamin-probny')
     }
 
-    const GoToWrittenDataBase = () => {
-      history.push('/panel-administratora/baza-opracowan-ustnych')
-  }
-
-
 return (
         <>
 <div className="admin_panel_itself">
 
-<h1 className="font-bold text-black text-2xl my-8">Baza pytań</h1>
+<h1 className="font-bold text-black text-2xl my-8">Baza opracowań ustnych</h1>
 
 <div className="container_for_all_options_base">
-<div className="container_for_all_nav_iself">
-<div className="container_for_btns__"
->
-<button className="nav_base_option active_btn"><a>Tryb nauki</a></button>
-<button className="nav_base_option"><a>Tryb egzaminu pisemnego</a></button>
-</div>
-<input type="search" className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-100 p-4 search_input_base"
+<div className="container_for_all_nav_iself"  style={{ alignSelf: 'center' }}>
+
+<input type="search" style={{ alignSelf: 'center', margin: '10px', width: '743px' }} className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-100 p-4 search_input_base"
 placeholder="Szukaj strony"/>
-<div className="container_for_btns__second">
-<button onClick={GoToSettQuestion} className="nav_base_option add_something_btn_base"><a>Dodaj egzamin próbny</a></button>
-<button onClick={GoToWrittenDataBase} className="nav_base_option others_base"><a>Baza opracowań</a></button>
-</div>
+
 </div>
 </div>
 
 <div className="main-container_on_panel_site">
 
 <div className="database_questions-option-panel">
-
+<div style={{ 
+display: 'flex', 
+alignSelf: 'flex-start',  
+justifyContent: 'space-between',
+width: '100%'
+}}>
+<h1 style={{ margin: '0px 0px 20px 30px' }}>Nr</h1>
+<h1 style={{ margin: '0px 330px 20px 400px' }}>Pytanie</h1>
+<h1 style={{ margin: '0px 25px 20px' }}>Odpowiedź</h1>
+</div>
 {ExamTrial.map((examtrial) => ( 
 <div className="question-panel-with-infos">
 <p className="text-500 number_question" style={{ alignSelf: 'center' }}>{examtrial.currentTrialExamId}</p>
 <p className="text-500 name_question" style={{ alignSelf: 'center' }}>{examtrial.tytul_egzaminu_probnego}</p> 
-<div className="button-container-base-option">
-<button className="database-fn-btn"><img src={eye_icon}></img></button>
-<button className="database-fn-btn"><img src={upload_line}></img></button>
-<button className="database-fn-btn"><img src={download_line}></img></button>
-<button className="database-fn-btn"><img src={image_line}></img></button>
-<button className="database-fn-btn"><img src={pencil_line}></img></button>
+<div className="button-container-base-option" style={{margin: '10px'}}>
+<button style={{ margin: '5px' }} className="database-fn-btn"><img src={eye_icon}></img></button>
+<button style={{ margin: '5px' }} className="database-fn-btn"><img src={upload_line}></img></button>
+<button style={{ margin: '5px' }} className="database-fn-btn"><img src={download_line}></img></button>
+<button style={{ margin: '5px' }} className="database-fn-btn"><img src={pencil_line}></img></button>
 </div>
 </div>
 ))}
@@ -104,4 +100,4 @@ placeholder="Szukaj strony"/>
     )
 }
 
-export default QuestionDataBase
+export default QuestionWrittenDataBase
