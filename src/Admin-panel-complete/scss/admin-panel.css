@@ -79,13 +79,33 @@ li a svg {
   background-size: 100%;
 }
 
-.stats__ {
-  background: no-repeat url(../Images/stats__.svg);
+.newsfeed__ {
+  background: no-repeat url(../Images/newsfeed__.svg);
   background-size: 100%;
 }
 
 .faq__ {
   background: no-repeat url(../Images/faq__.svg);
+  background-size: 100%;
+}
+
+.artcicle_line_1__ {
+  background: no-repeat url(../Images/article-line_1__.svg);
+  background-size: 100%;
+}
+
+.navigation__ {
+  background: no-repeat url(../Images/navigation__.svg);
+  background-size: 100%;
+}
+
+.pages_line_1__ {
+  background: no-repeat url(../Images/pages_line_1__.svg);
+  background-size: 100%;
+}
+
+.setting__ {
+  background: no-repeat url(../Images/setting__.svg);
   background-size: 100%;
 }
 

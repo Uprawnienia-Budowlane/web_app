@@ -18,6 +18,8 @@ import ChooseMode from "./ChooseMode";
 import Licenses from "./Licenses";
 import ActMode from "./ActMode";
 import licenseModel from './models/License';
+import { lightTheme, darkTheme, GlobalStyles } from './theme'
+import { ThemeProvider } from "styled-components";
 
 const Desktop = () => {
     let [loc, setLoc] = useState('/');
@@ -30,9 +32,21 @@ const Desktop = () => {
     const { loading, error, ...result } = licenseModel.useGetPopulated();
     if(!loading ) console.log(result);
 
-    return (<div className="h-full w-full flex flex-col max-w-screen-3xl" style={{maxWidth: 1650}}>
-            <NavBar/>
+    const [theme, setTheme] = useState('light')
 
+    const ThemeToggler = () => {
+
+        theme === 'light' ? setTheme('dark') : setTheme('light') 
+
+    }
+
+    return (
+    <>
+    <NavBar/>
+    <div className="h-full w-full flex flex-col max-w-screen-3xl" style={{maxWidth: 1650}}>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+    <GlobalStyles/>
+    <input className="change-mode-btn mobile-fix-btn" onClick={() => ThemeToggler()} type="checkbox"/>
             <div className="flex flex-row mt-10 mb-10 css-margin-bottom-mobile">
                 <div className="hidden md:flex mdd:flex-col mt-8 ml-3 w-28 mobile-navigation-md-fix">
                     <div className="mx-auto flex flex-col space-y-12 2xl:space-y-16 mobile-navigation" style={{ marginTop: '100px' }}>
@@ -46,11 +60,11 @@ const Desktop = () => {
                         <Link to="/shop" className="desktop-fix-icon" style={{ alignSelf: 'center' }}> <MenuItem icon={ShoppingCartIcon} active={loc === '/shop'}/></Link>
                     </div>
                 </div>
-
+                
                 <div className="h-full w-full mx-4 md:pl-5 md:mr-12 desktop-css-fix">
                     <Switch>
                         <Route exact path="/">
-                            <Main/>
+                        <Main/>
                         </Route>
                         <Route exact path="/speciality">
                             <Specialty/>
@@ -94,7 +108,9 @@ const Desktop = () => {
                     </Switch>
                 </div>
             </div>
+        </ThemeProvider>
         </div>
+        </>
     )
 };
 

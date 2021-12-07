@@ -24,9 +24,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .nav_base_option {
@@ -45,6 +45,34 @@
   color: #3B82F6;
   border-radius: 10px;
   background: #fff;
+}
+
+.container_for_btns__ {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.container_for_btns__second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
 }
 
 .nav_base_option:hover {
@@ -100,6 +128,10 @@
       align-self: center;
   width: 275px;
   margin: 0px 15px 15px;
+}
+
+.database_questions-option-panel:nth-child(1) {
+  margin: 20px;
 }
 
 .question-panel-with-infos {
@@ -214,6 +246,26 @@
 
 /* */
 @media (min-width: 999px) {
+  .container_for_btns__ {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 380px;
+  }
+  .container_for_btns__second {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 430px;
+  }
   .search_input_base {
     width: 325px;
   }
@@ -235,9 +287,12 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .container_for_all_options_base {
-    width: 1450px;
+    width: 1430px;
     height: 72px;
   }
   .database_questions-option-panel {

@@ -38,7 +38,6 @@ export default function ResetPassword() {
         )
         toast.info(<MsgConfirmationMail />)
         } catch (error) {
-        //setMessage(error.message)
         toast.error(<MsgError />)
         }
     }

@@ -15,17 +15,8 @@ import './scss/app.css'
 
 const App = () => {
 
-    const [theme, setTheme] = useState('light')
-
-    const ThemeToggler = () => {
-
-        theme === 'light' ? setTheme('dark') : setTheme('light') 
-
-    }
-
     return (   <div className="App min-h-screen w-full flex bg-blueGray-100">
         <div className="h-full w-full flex justify-center items-center">
-            <input className="change-mode-btn mobile-fix-btn" onClick={() => ThemeToggler()} type="checkbox"/>
             <Switch>
                 <Route path="/login">
                 <Login/>
@@ -40,10 +31,7 @@ const App = () => {
                 <AdminPanel/>
                 </Route>
                 <Route>
-                    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-                    <GlobalStyles/>
-                    <Desktop/>
-                    </ThemeProvider>
+                <Desktop/>
                 </Route>
             </Switch>
         </div>

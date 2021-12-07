@@ -46,7 +46,7 @@ const MessageCentrum = () => {
     const history = useHistory()
 
 return (
-        <>
+<>
 <div className="admin_panel_itself">
 
 <h1 className="font-bold text-black text-2xl my-8">Centrum wiadomości</h1>
@@ -84,7 +84,7 @@ placeholder="wiadomości"/>
 <div style={{ height: '70px', width: '100%' }}>
 </div>
 </div>
-        </>
+</>
     )
 }
 
