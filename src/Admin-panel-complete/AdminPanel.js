@@ -36,6 +36,7 @@ import UserListPage from './UserListPage'
 import AnalyticPanel from './Analytic-panel-complete/AnalyticPanel'
 import QuestionDataBase from './QuestionDataBase'
 import QuestionWrittenDataBase from './QuestionWrittenDataBase'
+import ActWrittenDataBase from './ActWrittenDataBase'
 import QuestionAddPanel from './Manage-Question-Test-complete/QuestionAddPanel' 
 import LearnExamAddPanel from './Manage-Question-Test-complete/LearnExamAddPanel'
 import ManageLicensePanel from './Manage-License-complete/ManageLicensePanel'
@@ -44,10 +45,12 @@ import Settings from './Settings'
 import OtherSites from './OtherSites'
 import MessageCentrum from './MessageCentrum'
 import Blog from './Blog-complete/Blog'
+import BlogAnalityc from './Blog-complete/Blog-analityc'
 import NewsManagment from './NewsManagment'
 import SiteArticleManagment from './SiteArticleManagment'
 import AddAnotherWebsite from './AddAnotherWebiste'
 import AddAnotherLink from './AddAnotherLink'
+import ListOfLinks from './ListOfLinks'
 
 /* shortcode */
 
@@ -100,12 +103,15 @@ const AdminPanel = () => {
             <Route exact path="/panel-administratora/statystyki" component={AnalyticPanel}/>
             <Route exact path="/panel-administratora/zarządzanie-aktualnościami" component={NewsManagment}/>
             <Route exact path="/panel-administratora/blog" component={Blog}/>
+            <Route exact path="/panel-administratora/blog-statystyki" component={BlogAnalityc}/>
             <Route exact path="/panel-administratora/podstrony" component={OtherSites}/>
             <Route exact path="/panel-administratora/nawigacja" component={AddAnotherLink}/>
+            <Route exact path="/panel-administratora/wszystkie-podstrony" component={ListOfLinks}/>
             <Route exact path="/panel-administratora/dodaj-podstrone" component={AddAnotherWebsite}/>
             <Route exact path="/panel-administratora/dodaj-wpis" component={SiteArticleManagment}/>
             <Route exact path="/panel-administratora/baza-pytan" component={QuestionDataBase}/>
             <Route exact path="/panel-administratora/baza-opracowan-ustnych" component={QuestionWrittenDataBase}/>
+            <Route exact path="/panel-administratora/baza-aktów-prawnych-do-czytania" component={ActWrittenDataBase}/>
             <Route exact path="/panel-administratora/baza-pytan/dodaj-pytanie" component={QuestionAddPanel}/>
             <Route exact path="/panel-administratora/baza-pytan/dodaj-egzamin-probny" component={LearnExamAddPanel}/>
             <Route exact path="/panel-administratora/zarzadzanie-uzytkownikami" component={UserListPage}/>
