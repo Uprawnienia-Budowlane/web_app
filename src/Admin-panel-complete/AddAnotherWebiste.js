@@ -63,7 +63,7 @@ const AddAnotherWebiste = ({ push, route }) => {
 
 return (
 <>
-<div className="admin_panel_itself">
+<div className="admin_panel_itself analtyic_panel_width_fix">
 <div className="container_for_all_widgets">
 
 <h1 className="font-bold text-black text-2xl my-8" style={{ marginLeft: '15px' }}>Dodaj Podstronę</h1>

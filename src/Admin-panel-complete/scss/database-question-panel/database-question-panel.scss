@@ -186,6 +186,10 @@ margin: 15px;
         width: 380px;
     }
 
+    .messages_centrum_desktop {
+        width: 950px;
+    }
+
     .container_for_btns__second {
         display: flex;
         flex-direction: row;
@@ -212,10 +216,11 @@ margin: 15px;
     .container_for_all_nav_iself {
     flex-direction: row;
     justify-content: space-between;
+    width: 1500px;
     }
     
     .container_for_all_options_base {
-        width: 1430px;
+        width: 1500px;
         height: 72px;
     }
 
@@ -228,7 +233,7 @@ margin: 15px;
     }
 
     .add_question_panel-itself {
-        width: 1430px;
+        width: 1500px;
     }
 
     .add_question_panel-itself h1 {

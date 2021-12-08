@@ -51,20 +51,22 @@ return (
 
 <h1 className="font-bold text-black text-2xl my-8">Centrum wiadomości</h1>
 
-<div className="main-container_on_panel_site">
-
 <div className="container_for_all_options_base">
 <div className="container_for_all_nav_iself">
-<button className="nav_base_option"><a>Wszystkie</a></button>
-<button className="nav_base_option"><a>Formularz kontaktowy</a></button>
-<button className="nav_base_option"><a>Zgłoszenia nowych pytań</a></button>
-<button className="nav_base_option"><a>Zgłoszenia błędów</a></button>
-<button className="nav_base_option"><a>Inne</a></button>
-<button className="nav_base_option"><a>Usunięte</a></button>
-<input type="search" className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-100 p-4 search_input_base"
+<div className="container_for_btns__ messages_centrum_desktop">
+<button className="nav_base_option active_btn"><a>Wszystkie</a></button>
+<button className="nav_base_option active_btn"><a>Formularz kontaktowy</a></button>
+<button className="nav_base_option active_btn"><a>Zgłoszenia nowych pytań</a></button>
+<button className="nav_base_option active_btn"><a>Zgłoszenia błędów</a></button>
+<button className="nav_base_option active_btn"><a>Inne</a></button>
+<button className="nav_base_option active_btn"><a>Usunięte</a></button>
+</div>
+<input style={{ margin: '0 15px' }} type="search" className="border-blue-500 bg-blue-50 rounded-2xl border outline-none h-12 w-100 p-4 search_input_base"
 placeholder="wiadomości"/>
 </div>
 </div>
+
+<div className="main-container_on_panel_site">
 
 <div className="database_questions-option-panel">
 

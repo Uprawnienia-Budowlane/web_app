@@ -52,7 +52,7 @@ const ActWrittenDataBase = () => {
 
 return (
         <>
-<div className="admin_panel_itself">
+<div className="admin_panel_itself analtyic_panel_width_fix">
 
 <h1 className="font-bold text-black text-2xl my-8">Baza aktów prawnych do czytania</h1>
 

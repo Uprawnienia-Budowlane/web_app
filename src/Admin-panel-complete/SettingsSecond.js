@@ -19,7 +19,7 @@ const SettingsSecond = () => {
 
     return (
         <>
-        <div className="rounded-3xl bg-white flex flex-row flex-wrap" style={{ maxWidth: '92.5pc', justifyContent: 'center' }}>
+        <div className="rounded-3xl bg-white flex flex-row flex-wrap" style={{ maxWidth: '1500px', justifyContent: 'center' }}>
         <div className="flex flex-row border-b border-opacity-50 w-full justify-start">
         <h1 style={{alignSelf: 'flex-start', fontSize: '18px', fontWeight: 'bold', margin: '40px 25px' }}>Ustawienia artykułów</h1>
             </div>        

@@ -4,7 +4,7 @@ const SettingsFirst = () => {
 
     return (
         <>
-        <div className="rounded-3xl bg-white flex flex-row justify-center flex-wrap" style={{ maxWidth: '92.5pc' }}>
+        <div className="rounded-3xl bg-white flex flex-row justify-center flex-wrap" style={{ maxWidth: '1500px' }}>
             <div className="flex flex-col border-b border-opacity-50 w-full justify-start panel-site-change">
             <label>Nazwa strony</label>
             <input type="text" className="border-blue-500 rounded-2xl border outline-none h-12 w-100 p-4" placeholder=""/>

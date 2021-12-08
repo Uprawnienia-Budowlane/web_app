@@ -146,6 +146,12 @@ button svg {
   .desktop-hide {
     display: none;
   }
+  .main-container_on_panel_site {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 1499px;
+  }
   .main-container_on_panel_site.medium {
     width: 1499px;
   }
@@ -172,6 +178,7 @@ button svg {
     height: 74px;
   }
   .container_for_user_options {
+    width: 1500px;
     height: 74px;
   }
   .container_for_user_options img {
@@ -185,9 +192,6 @@ button svg {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
-  }
-  .container_for_user_options {
-    width: 1430px;
   }
   .user-panel-with-infos {
     width: 819px;

@@ -5,6 +5,10 @@
     margin: .15% 0;
 }
 
+.blog_fix_first_btn {
+    width: 230px;
+}
+
 .analytic_panel_iself {
     position: relative;
     display: flex;
@@ -54,6 +58,14 @@
 }
 
 @media (min-width:999px) {
+
+    .blog_fix_first {
+        width: 700px;
+    }
+
+    .blog_fix {
+        width: 800px;
+    }
 
     .analytic_panel_iself img {
         display: block;

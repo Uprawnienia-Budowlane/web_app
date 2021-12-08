@@ -653,6 +653,13 @@
     height: 793px;
     bottom: 130px;
   }
+  .stat_panel_itself {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .analtyic_panel_width_fix {
+    width: 1515px;
+  }
   .nav-bar-admin-list li {
     position: relative;
     display: -webkit-box;

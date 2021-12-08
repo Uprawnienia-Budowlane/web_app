@@ -17,13 +17,13 @@ const Settings = () => {
     return (
         <div className="admin_panel_itself">
         <h1 className="font-bold text-black text-2xl my-8">Zarządzaj blogiem</h1>
-        <div className="container_for_all_options_base" style={{ left: '-1pc',height: '58px', width: '1500px' }}>
+        <div className="container_for_all_options_base" style={{ left: '-1pc',height: '58px', width: '1500px', justifyContent: 'center' }}>
         <div className="container_for_all_nav_iself" style={{ justifyContent: 'flex-start' }}>
-        <button style={{ alignSelf: 'center' }} className="nav_base_option"><Link to="/panel-administratora/ustawienia-ogólne">Wpisy na blogu</Link></button>
+        <button style={{ alignSelf: 'center' }} className="nav_base_option active_btn"><Link to="/panel-administratora/ustawienia-ogólne">Wpisy na blogu</Link></button>
         <button style={{ alignSelf: 'center' }} className="nav_base_option active_btn"><Link to="/panel-administratora/ustawienia-dyskusji">Statystyki bloga</Link></button>
-        <button style={{ alignSelf: 'center' }} className="nav_base_option"><Link to="/panel-administratora/ustawienia-dyskusji">Dodaj wpis</Link></button>
-        <button style={{ alignSelf: 'center' }} className="nav_base_option"><Link to="/panel-administratora/ustawienia-dyskusji">Ustawienia bloga</Link></button>
-        <button style={{ alignSelf: 'center' }} className="nav_base_option"><Link to="/panel-administratora/ustawienia-dyskusji">Kategorie wpisów</Link></button>
+        <button style={{ alignSelf: 'center' }} className="nav_base_option active_btn"><Link to="/panel-administratora/ustawienia-dyskusji">Dodaj wpis</Link></button>
+        <button style={{ alignSelf: 'center' }} className="nav_base_option active_btn"><Link to="/panel-administratora/ustawienia-dyskusji">Ustawienia bloga</Link></button>
+        <button style={{ alignSelf: 'center' }} className="nav_base_option active_btn"><Link to="/panel-administratora/ustawienia-dyskusji">Kategorie wpisów</Link></button>
         </div>
         </div>
         

@@ -114,7 +114,6 @@ const AdminPanel = () => {
             <Route exact path="/panel-administratora/baza-aktów-prawnych-do-czytania" component={ActWrittenDataBase}/>
             <Route exact path="/panel-administratora/baza-pytan/dodaj-pytanie" component={QuestionAddPanel}/>
             <Route exact path="/panel-administratora/baza-pytan/dodaj-egzamin-probny" component={LearnExamAddPanel}/>
-            <Route exact path="/panel-administratora/zarzadzanie-uzytkownikami" component={UserListPage}/>
             <Route exact path="/panel-administratora/wszystkie-licencje/" component={ManageLicensePanel}/>
             <Route exact path="/panel-administratora/dodaj-powiadomienie" component={NotificationPanel}/>
             <Route exact path={["/panel-administratora/centrum-wiadomosci"]} component={MessageCentrum}/>

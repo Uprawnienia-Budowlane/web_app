@@ -29,6 +29,11 @@ const AdminNavbar = () => {
     /*const { loading, error, ...result } = licenseModel.useGetPopulated();*/
     /*if(!loading ) console.log(result);
     <img src={MenuSelectedIcon}/>
+
+    to tak jakby komus chcialo sie rozwijana liste robic
+
+    <li className="submenu_li"><Link to={"/panel-administratora/zarządzanie-treścią"} ><div className="ico_menu faq__"></div>Zarządzenie treścią</Link></li>
+    <li className="submenu_li"><Link to={"/panel-administratora/zarządzanie-stroną"} ><div className="ico_menu faq__"></div>Zarządzenie stroną</Link></li>
     */
 
     return (
@@ -37,10 +42,10 @@ const AdminNavbar = () => {
             <li><Link to={"/panel-administratora/"} ><div className="ico_menu home__"></div>Strona główna</Link></li>
             <li><Link to={"/panel-administratora/zarzadzanie-uzytkownikami"} ><div className="ico_menu users__"></div>Użytkownicy</Link></li>
             <li><Link to={"/panel-administratora/statystyki"} ><div className="ico_menu stats__"></div>Statystyki</Link></li>
-            <li className="submenu_li"><Link to={"/panel-administratora/zarządzanie-treścią"} ><div className="ico_menu faq__"></div>Zarządzenie treścią</Link></li>
+            
             <li className="submenu_li"><Link to={"/panel-administratora/zarządzanie-aktualnościami"} ><div className="ico_menu newsfeed__"></div>Aktualności</Link></li>
             <li className="submenu_li"><Link to={"/panel-administratora/blog"} ><div className="ico_menu artcicle_line_1__"></div>Blog</Link></li>
-            <li className="submenu_li"><Link to={"/panel-administratora/zarządzanie-stroną"} ><div className="ico_menu faq__"></div>Zarządzenie stroną</Link></li>
+            
             <li className="submenu_li"><Link to={"/panel-administratora/nawigacja"} ><div className="ico_menu navigation__"></div>Nawigacja</Link></li>
             <li className="submenu_li"><Link to={"/panel-administratora/podstrony"} ><div className="ico_menu pages_line_1__"></div>Podstrony</Link></li>
             <li className="submenu_li"><a href="https://dashboard.chec.io/"><div className="ico_menu shop__"></div>Zarządzaj sklepem</a></li>

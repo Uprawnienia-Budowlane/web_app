@@ -109,6 +109,11 @@ button svg {
         display: none;
     }
 
+    .main-container_on_panel_site {
+        align-self: center;
+        width: 1499px;
+    }
+
     .main-container_on_panel_site.medium {
         width: 1499px;
     }
@@ -136,6 +141,7 @@ button svg {
     }
 
     .container_for_user_options {
+        width: 1500px;
         height: 74px;
     }
 
@@ -146,10 +152,6 @@ button svg {
     .container-for_subwigets {
         display: flex;
         flex-direction: row-reverse;
-    }
-
-    .container_for_user_options {
-        width: 1430px;
     }
 
     .user-panel-with-infos {

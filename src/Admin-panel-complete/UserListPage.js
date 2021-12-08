@@ -138,7 +138,7 @@ draggable={false}
 transition={Zoom}
 autoClose={8000}
 />
-<div className="admin_panel_itself">
+<div className="admin_panel_itself analtyic_panel_width_fix">
 
 <h1 className="font-bold text-black text-2xl my-8">Lista użytkowników</h1>
 

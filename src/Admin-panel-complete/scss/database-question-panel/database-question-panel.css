@@ -256,6 +256,9 @@
             flex-direction: row;
     width: 380px;
   }
+  .messages_centrum_desktop {
+    width: 950px;
+  }
   .container_for_btns__second {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -290,9 +293,10 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    width: 1500px;
   }
   .container_for_all_options_base {
-    width: 1430px;
+    width: 1500px;
     height: 72px;
   }
   .database_questions-option-panel {
@@ -302,7 +306,7 @@
     width: 1430px;
   }
   .add_question_panel-itself {
-    width: 1430px;
+    width: 1500px;
   }
   .add_question_panel-itself h1 {
     text-align: center;

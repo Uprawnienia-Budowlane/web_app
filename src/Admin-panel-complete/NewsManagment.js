@@ -54,7 +54,7 @@ const NewsManagment = () => {
 
 return (
 <>
-<div className="admin_panel_itself">
+<div className="admin_panel_itself analtyic_panel_width_fix">
 
 <h1 className="font-bold text-black text-2xl my-8">Zarządzaj aktualnościami</h1>
 
@@ -68,7 +68,7 @@ width: '161px',
 borderRadius: '8px',
 justifyContent: 'center'
 }}
-><a style={{ alignSelf: 'center'}}>Aktualności</a></button>
+><a style={{ alignSelf: 'center', margin: '0' }}>Aktualności</a></button>
 </div>
 <div className="container_for_btns__" style={{ width: '210px' }}>
 <button onClick={GoToSettQuestion} className="nav_base_option add_something_btn_base"
@@ -78,20 +78,20 @@ width: '161px',
 borderRadius: '8px',
 justifyContent: 'center'
 }}
-><a style={{ alignSelf: 'center'}}>Dodaj newsa</a></button>
+><a style={{ alignSelf: 'center', margin: '0' }}>Dodaj newsa</a></button>
 </div>
 </div>
 </div>
 
 <div className="container_for_all_options_base" style={{ margin: '0px 5px 15px' }}>
-<div className="container_for_all_nav_iself" style={{ justifyContent: 'space-around' }}>
-<div className="container_for_btns__" style={{ width: '800px' }}>
-<button className="nav_base_option" style={{ width:'165px' }}><a>Opublikowane ()</a></button>
-<button className="nav_base_option" style={{ width:'115px' }}><a>Szkice ()</a></button>
-<button className="nav_base_option" style={{ width:'155px' }}><a>Zaplanowane ()</a></button>
-<button className="nav_base_option" style={{ width:'125px' }}><a>Usunięte ()</a></button>
+<div className="container_for_all_nav_iself" style={{ justifyContent: 'space-between' }}>
+<div className="container_for_btns__ blog_fix_first">
+<button className="nav_base_option active_btn blog_fix_first_btn"><a>Opublikowane (0)</a></button>
+<button className="nav_base_option active_btn blog_fix_first_btn"><a>Szkice (0)</a></button>
+<button className="nav_base_option active_btn blog_fix_first_btn"><a>Zaplanowane (0)</a></button>
+<button className="nav_base_option active_btn blog_fix_first_btn"><a>Usunięte (0)</a></button>
 </div>
-<input type="search" className="border-blue-500 rounded-2xl border outline-none h-12 w-100 p-4 search_input_base"
+<input style={{ margin:'0 15px'}} type="search" className="border-blue-500 rounded-2xl border outline-none h-12 w-100 p-4 search_input_base"
 placeholder="Szukaj strony"/>
 </div>
 </div>

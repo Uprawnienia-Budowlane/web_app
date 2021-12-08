@@ -63,13 +63,13 @@ const AddAnotherLink = ({ push, route }) => {
 
 return (
 <>
-<div className="admin_panel_itself">
+<div className="admin_panel_itself ">
 <div className="container_for_all_widgets">
 
-<h1 className="font-bold text-black text-2xl my-8" style={{ marginLeft: '15px' }}>Dodaj link do menu</h1>
+<h1 className="font-bold text-black text-2xl my-8">Dodaj link do menu</h1>
 <div className="container-for_subwigets">
 
-<div className="container_for_add_license_panel" style={{ margin: '0' }}>
+<div className="container_for_add_license_panel" style={{ margin: '0 0px' }}>
 <div className="add_something_panel_itself_first">
 <label>Specjalność</label>
 <div className="container_for_checkboxes_and_label">

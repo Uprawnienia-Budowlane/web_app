@@ -84,7 +84,7 @@ return (
 <h1 className="font-bold text-black text-2xl my-8" style={{ marginLeft: '15px' }}>Dodaj pytanie</h1>
 <div className="container-for_subwigets">
 
-<div className="container_for_add_license_panel" style={{ margin: '0' }}>
+<div className="container_for_add_license_panel" style={{ margin: '0 0px' }}>
 <div className="add_something_panel_itself_first">
 <label>Specjalność</label>
 <div className="container_for_checkboxes_and_label">
