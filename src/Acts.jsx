@@ -41,13 +41,14 @@ const Acts = () => {
                 <Rule rule="Est talis extum, cesaris. Salvus, velox eras recte acquirere de rusticus, secundus musa. Cur messor studere? Eheu, bubo!" fill={true}/>
                 <Rule rule="Cum historia ridetis, omnes planetaes carpseris primus, regius orexises. Cur guttus peregrinationes? Gallus, saga, et calcaria. Lotus zetas ducunt ad luna." fill={true}/>
             </div>
-
-            <Link to="/act-mode" style={{ alignSelf: 'center' }}>
+            <div className="mx-8 flex w-full">
+            <Link to="/act-mode" style={{display: 'block', alignSelf: 'center', width: '100%' }}>
             <button
                 className="mx-8 mt-6 mb-8 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-4 px-4 flex-grow ">Rozpocznij
                 naukę
             </button>
             </Link>
+            </div>
         </div>
     )
 };

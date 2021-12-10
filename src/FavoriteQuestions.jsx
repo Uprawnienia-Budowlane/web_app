@@ -87,7 +87,7 @@ const FavoriteQuestions = () => {
             </table>
         </div>
         <div className="mx-auto mt-8 mb-12 flex flex-col space-y-3 md:space-y-0 md:flex-row">
-            <button style={{ display:'none' }}
+            <button
                 onClick={() => setCategory(0)}
                 className={"rounded-2xl border border-blue-500 font-medium text-center text-xl py-3 px-12 md:24 xl:px-32 mx-2 " + (category === 0 ? "bg-blue-500 text-white " : "text-blue-500")}>WSZYSTKIE
             </button>

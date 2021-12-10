@@ -50,6 +50,7 @@ import '../scss/questions.css'
 
 /* */
 
+
 const Questions = () => {
 
     const history = useHistory();
@@ -59,9 +60,9 @@ const Questions = () => {
 			questionText: 'Najmniejsza głębokość usytuowania w ziemi telekomunikacyjnego obiektu budowlanego, dla którego nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego to:',
 			questionImage: 'https://www.grupapsb.com.pl/files/LeadFoto/b8i6t0g0cfdio3/bezpieczna-budowa-domu-kto-odpowiada-za-bezpieczenstwo-na-budowie-2.jpg',
             answerOptions: [
-				{ answerText: 'Głębokość specjalna', isCorrect: false },
-				{ answerText: 'Głębokość minimalna', isCorrect: false },
-				{ answerText: 'Głębokość podstawowa', isCorrect: true },
+				{Nr: 'A', answerText: 'Głębokość specjalna', isCorrect: false },
+				{Nr: 'B', answerText: 'Głębokość minimalna', isCorrect: false },
+				{Nr: 'C', answerText: 'Głębokość podstawowa', isCorrect: true },
 			],
 		},
 
@@ -69,9 +70,9 @@ const Questions = () => {
 			questionText: 'Czy usytuowanie budowli telekomunikacyjnej w odległości podstawowej od innego obiektu budowlanego:',
             questionImage: 'https://www.grupapsb.com.pl/files/LeadFoto/b8i6t0g0cfdio3/bezpieczna-budowa-domu-kto-odpowiada-za-bezpieczenstwo-na-budowie-2.jpg',
 			answerOptions: [
-				{ answerText: 'Nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego', isCorrect: true },
-				{ answerText: 'Wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego', isCorrect: false },
-				{ answerText: 'Wymaga się stosowania zabezpieczenia szczególnego', isCorrect: false },
+				{Nr: 'A', answerText: 'Nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego', isCorrect: true },
+				{Nr: 'B', answerText: 'Wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego', isCorrect: false },
+				{Nr: 'C', answerText: 'Wymaga się stosowania zabezpieczenia szczególnego', isCorrect: false },
 			],
 		},
 
@@ -79,39 +80,47 @@ const Questions = () => {
 			questionText: 'Czym jest antenowa konstrukcja wsporcza, bez odciągów?',
             questionImage: 'https://www.grupapsb.com.pl/files/LeadFoto/b8i6t0g0cfdio3/bezpieczna-budowa-domu-kto-odpowiada-za-bezpieczenstwo-na-budowie-2.jpg',
 			answerOptions: [
-				{ answerText: 'Wieżą antenową', isCorrect: true },
-				{ answerText: 'Masztem antenowym', isCorrect: false },
-				{ answerText: 'Wspornikiem', isCorrect: false },
+				{Nr: 'A', answerText: 'Wieżą antenową', isCorrect: true },
+				{Nr: 'B', answerText: 'Masztem antenowym', isCorrect: false },
+				{Nr: 'C', answerText: 'Wspornikiem', isCorrect: false },
 			],
 		},
 		{
 			questionText: 'Czym jest antenowa konstrukcja wsporcza z odciągami?',
             questionImage: 'https://www.grupapsb.com.pl/files/LeadFoto/b8i6t0g0cfdio3/bezpieczna-budowa-domu-kto-odpowiada-za-bezpieczenstwo-na-budowie-2.jpg',
 			answerOptions: [
-				{ answerText: 'Wieżą antenową', isCorrect: false },
-				{ answerText: 'Wspornikiem', isCorrect: false },
-				{ answerText: 'Masztem antenowym', isCorrect: true },
+				{Nr: 'A', answerText: 'Wieżą antenową', isCorrect: false },
+				{Nr: 'B', answerText: 'Wspornikiem', isCorrect: false },
+				{Nr: 'C', answerText: 'Masztem antenowym', isCorrect: true },
 			],
 		},
         {
 			questionText: 'Najmniejsza głębokość usytuowania w ziemi telekomunikacyjnego obiektu budowlanego, dla którego nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego to:',
             questionImage: 'https://www.grupapsb.com.pl/files/LeadFoto/b8i6t0g0cfdio3/bezpieczna-budowa-domu-kto-odpowiada-za-bezpieczenstwo-na-budowie-2.jpg',
 			answerOptions: [
-				{ answerText: 'Głębokość specjalna', isCorrect: false },
-				{ answerText: 'Głębokość minimalna', isCorrect: false },
-				{ answerText: 'Głębokość podstawowa', isCorrect: true },
+				{Nr: 'A', answerText: 'Głębokość specjalna', isCorrect: false },
+				{Nr: 'B', answerText: 'Głębokość minimalna', isCorrect: false },
+				{Nr: 'C', answerText: 'Głębokość podstawowa', isCorrect: true },
 			],
 		},
         {
 			questionText: 'Najmniejsza głębokość usytuowania w ziemi telekomunikacyjnego obiektu budowlanego, dla którego nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego to:',
             questionImage: 'https://www.grupapsb.com.pl/files/LeadFoto/b8i6t0g0cfdio3/bezpieczna-budowa-domu-kto-odpowiada-za-bezpieczenstwo-na-budowie-2.jpg',
 			answerOptions: [
-				{ answerText: 'Głębokość specjalna', isCorrect: false },
-				{ answerText: 'Głębokość minimalna', isCorrect: false },
-				{ answerText: 'Głębokość podstawowa', isCorrect: true },
+				{Nr: 'A', answerText: 'Głębokość specjalna', isCorrect: false },
+				{Nr: 'B', answerText: 'Głębokość minimalna', isCorrect: false },
+				{Nr: 'C', answerText: 'Głębokość podstawowa', isCorrect: true },
 			],
 		},
 	]
+
+    const [BgcBtn_true, setBgcBtn_true] = ("green")
+    const [BgcBtn_false, setBgcBtn_false] = ("red")
+
+    const SetBgcOption = (BgcBtn_true, BgcBtn_false) => {
+        setBgcBtn_true(BgcBtn_true)
+        setBgcBtn_false(BgcBtn_false)
+    }
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
@@ -148,6 +157,7 @@ const Questions = () => {
     }
 
     const Timer = () => {
+
         const [time, setTime] = useState(60 * 90);
     
         useEffect(() => {
@@ -189,18 +199,28 @@ const Questions = () => {
 
     /* */
 
+    /* */
+
+    const Backtomenu = () => {
+        
+        history.push('/')
+
+    }
+
+    /* */
+
     return (
         <>
 			{showScore ? (
 				<div className='h-full w-full flex flex-col'>
-					<h1 style={{textAlign: 'center'}}>Twój wynik egzaminu próbnego wynosi: {score} na {questions.length} wszystkich pytań.</h1>
-                    <Link style={{alignSelf: 'center', margin: '20px'}} to="/exam/"><button className="mx-4 my-6 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Powrót</button></Link>
+					<h1 style={{textAlign: 'center'}}>Twój wynik egzaminu wynosi: {score} na {questions.length} wszystkich pytań.</h1>
+                    <button onClick={Backtomenu} className="mx-4 my-6 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Powrót</button>
 				</div>
 			) : (
 
         <div className="h-full w-full rounded-3xl bg-white flex flex-col overflow-hidden">
         <div className="h-full w-full flex flex-col xl:flex-row">
-            <div className="rounded-3xl bg-white flex flex-col overflow-hidden">
+            <div className="rounded-3xl w-full bg-white flex flex-col overflow-hidden">
 
                 <div className="border-b border-opacity-50 flex flex-col xl:flex-row justify-between">
                     <div className="flex flex-col px-2 ml-2 xl:ml-8 my-5">
@@ -228,28 +248,22 @@ const Questions = () => {
                 </div>
                 </div>
 
-                <div className="rounded-2xl border bg-200" style={{display: 'flex', overflow: 'hidden', height: '500px' }}>
-            <img style={{alignSelf: 'center' }} src={questions[currentQuestion].questionImage}></img>    
-            </div>
                 
 
-                <div className="bg-blue-200 rounded-2xl">
+                <div className="bg-blue-200">
                     <p className="p-8 text-sm">{questions[currentQuestion].questionText}</p>
                 </div>                
 
-                <div className="flex flex-col my-4 mx-8 justify-center xl:flex-row">
-                   
+                <div className="flex flex-col my-4 mx-8 justify-center">
                 {questions[currentQuestion].answerOptions.map((answerOption) => (
-                        <>
-                        <button style={{ margin: '10px 2.5px', width: '100%' }} 
-                        className="rounded-2xl border border-blue-500 text-blue-500 p-1.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200"
+                        <div style={{display: 'flex', justifyContent: 'start', height: '118px', cursor: 'pointer' }} 
+                        className="border border-grey-500 p-1.5 hover:bg-blue-50 transition-colors duration-200"
+                        id={answerOption.isCorrect}
                         onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}
-                        >{answerOption.answerText}
-                        </button>
-                        
-                        </>
+                        ><h1 style={{alignSelf: 'center', margin: '40px', textAlign: 'center', fontWeight: 'bold', fontSize: '23px' }} >{answerOption.Nr}</h1>
+                        <p style={{alignSelf: 'center', margin: '20px', textAlign: 'center' }}>{answerOption.answerText}</p>
+                        </div>
                         ))}
-
                 </div>
 
                 <div className="flex flex-row mt-12 mb-8 mx-8 justify-around">

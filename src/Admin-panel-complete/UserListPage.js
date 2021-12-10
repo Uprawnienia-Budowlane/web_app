@@ -10,6 +10,7 @@ addDoc,
 getDoc, 
 getDocs, 
 deleteDoc,
+updateDoc,
 query, 
 doc,
 DocumentReference } from "@firebase/firestore";
@@ -22,7 +23,7 @@ import { auth, createUserDocument } from "../firebase";
 import {ArrowXIcon} from '../Icons' 
 import { useHistory } from "react-router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faUserMinus, faImage } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faUserMinus, faUserEdit ,faImage } from '@fortawesome/free-solid-svg-icons'
 
 const UserListPage = () => {
 
@@ -84,6 +85,25 @@ const UserListPage = () => {
             status_licencji: "Brak zakupionej licencji"
         });
     }
+
+    const updateUser = async (id, Imię, Nazwisko) => {
+        const userDoc = doc(db, "użytkownicy", id);
+
+        const newFieldsName = { 
+            Imię: newName,         
+        };
+
+        const newFieldsNameUsername = { 
+            Nazwisko: newUsername,         
+        };
+
+        const newFieldsPasswd = { 
+            haslo: newPassword,         
+        };
+
+        await updateDoc(userDoc, newFieldsName, newFieldsNameUsername, newFieldsPasswd);
+      };
+    
 
     const deleteUser = async (id) => {
         const userDoc = doc(db, "użytkownicy", id);
@@ -159,7 +179,8 @@ autoClose={8000}
     <label>Zdawalność</label>
     <label>Data Rejestracji</label>
     <label>Status Licencji</label>
-    <label>Usuń użytkownika</label>
+    <label>Usuń</label>
+    <label>Edytuj</label>
 </div>
 
 {users.map((user) => ( 
@@ -169,7 +190,10 @@ autoClose={8000}
 <p className="text-500 score__individual__user">{user.zdawalnosc}%</p>
 <p className="text-500 date__individual__user">{user.dzien_rejestracji}/{user.miesiac_rejestracji}/{user.rok_rejestracji}</p>
 <p className="text-red-500 is_active__individual__user">{user.status_licencji}</p>
-<button onClick={() => {deleteUser(user.id, toast.info(<MsgDelUser />))}} style={{ display: 'flex', color: '#3B82F6', textAlign: 'center', justifyContent: 'center', alignSelf: 'center', margin: '10px', width:'220px'}} className="rounded-2xl border border-blue-500 text-blue-500 p-1.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200 delete-user-btn"><FontAwesomeIcon icon={faUserMinus} /><a style={{ alignSelf: 'center' }}>Usuń użytkownika</a></button>
+<div style={{ position: 'relative', display: 'flex', alignSelf: 'center' }}>
+<button onClick={() => {deleteUser(user.id, toast.info(<MsgDelUser />))}} style={{ display: 'flex', color: '#3B82F6', textAlign: 'center', justifyContent: 'center', alignSelf: 'center', margin: '10px', width:'60px'}} className="rounded-2xl border border-blue-500 text-blue-500 p-1.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200 delete-user-btn"><FontAwesomeIcon icon={faUserMinus} /></button>
+<button onClick={() => {updateUser(user.id, user.age);}} style={{ display: 'flex', color: '#3B82F6', textAlign: 'center', justifyContent: 'center', alignSelf: 'center', margin: '10px', width:'60px'}} className="rounded-2xl border border-blue-500 text-blue-500 p-1.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200 delete-user-btn"><FontAwesomeIcon icon={faUserEdit} /></button>
+</div>
 </div>
 ))}
 

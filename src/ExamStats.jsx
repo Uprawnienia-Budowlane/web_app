@@ -18,9 +18,12 @@ const ExamStats = () => {
 
             <div className="px-4 md:px-12 xl:px-0 xl:ml-12 xl:flex-grow">
                 <div className="mx-4 mt-4 md:mt-2">
-                    <Dropdown name={'Wybierz specjalność'} options={[{
-                        name: 'Test'
-                    }]}/>
+                <Dropdown name={'Wybierz specjalność'} options={[{
+                                name: 'Architektoniczna',
+                                name: 'Konstrukcyjno-Budowlana',
+                                name: 'Instalacjna sanitarna',
+                                name: 'Instalacjna elektryczna',
+                            }]}/>
                 </div>
 
                 <div className="flex flex-col mt-4">

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {ExchangeDolarIcon, FullScreenIcon, LoupeIcon} from "./Icons";
 import {Document, Page} from "react-pdf";
-
+import PdfViewerComponent from "./PdfViewerComponent"
 
 const ActMode = () => {
     const [zoom, setZoom] = useState(1.4);
@@ -12,17 +12,9 @@ const ActMode = () => {
         <div className="h-full w-full flex flex-col xl:flex-row">
             <div className="relative w-full rounded-3xl bg-white flex flex-col overflow-hidden">
                 <div className="relative h-full overflow-scroll" style={{maxHeight: 'calc(100vh - 10rem)'}}>
-
-                    <Document
-                        file="/57.pdf"
-                        renderMode={'canvas'}
-                        className="flex justify-center"
-                        onLoadSuccess={(pdf) => setNumPages(pdf.numPages)}>
-                        <Page pageNumber={pageNumber}
-                              className="test"
-                              scale={zoom}
-                              renderTextLayer={false}/>
-                    </Document>
+                <PdfViewerComponent
+                document={"Przykładowy_akt prawny_nr_3.pdf"}
+                />
                 </div>
             </div>
 

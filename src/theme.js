@@ -7,6 +7,7 @@ export const lightTheme = {
 
 export const darkTheme = {
     div:'#292929',
+    Bg_wiget: '#3B5379',
     div_second:'#575757',
     fontColor: '#dedede',
     BgBlueGray: '#1f1f1f',
@@ -18,6 +19,10 @@ export const darkTheme = {
 }
 
 export const GlobalStyles = createGlobalStyle`
+
+.dark-mode-color_widget {
+    background-color: ${props => props.theme.Bg_wiget};
+}
 
 .bg-blueGray-100 {
     background-color: ${props => props.theme.BgBlueGray};

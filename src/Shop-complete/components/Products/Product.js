@@ -27,9 +27,10 @@ const Product = ({ product, onAddToCart }) => {
      <img style={{height: '65px', width: '200px', alignSelf: 'center', margin: '20px 0px -10px'}} src={ImageShopItem}></img>
 
     <div className="mx-auto mt-4"></div>
-    <button className="mx-4 my-6 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4" component={Link} to="/cart" onClick={() => onAddToCart(product.id, 1)}>
-        Zakup produkt
-    </button>
+    <Link className="mx-4 my-6 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4" to="/shop/checkout">
+    <a style={{ width: '100%', height: '100%' }} component={Link} to="/cart" onClick={() => onAddToCart(product.id, 1)}>
+    Zakup produkt
+    </a></Link>
     </div>
         </> 
     )

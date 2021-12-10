@@ -10702,6 +10702,11 @@
   "resolved" "https://registry.npmjs.org/psl/-/psl-1.8.0.tgz"
   "version" "1.8.0"
 
+"pspdfkit@^2021.6.1":
+  "integrity" "sha512-EIOq2h9AwT+q9cw1E0x6uVP1U8wLeawxJv8Q2pD2Ka7QLfUSWMAOPjYyCEqC+/hnT9ja/h/jxW3v9Axa9TRN4Q=="
+  "resolved" "https://registry.npmjs.org/pspdfkit/-/pspdfkit-2021.6.1.tgz"
+  "version" "2021.6.1"
+
 "public-encrypt@^4.0.0":
   "integrity" "sha512-zVpa8oKZSz5bTMTFClc1fQOnyyEzpl5ozpi1B5YcvBrdohMjH2rfsBtyXcuNuwjsDIXmBYlF2N5FlJYhR29t8Q=="
   "resolved" "https://registry.npmjs.org/public-encrypt/-/public-encrypt-4.0.3.tgz"

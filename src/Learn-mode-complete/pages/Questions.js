@@ -19,6 +19,7 @@ import {
     
 
 } from "../../Icons";
+import KeyShortcuts from "../../modals/KeyShortcuts";
 
 import { ToastContainer, toast, Zoom, Bounce } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
@@ -70,8 +71,6 @@ import '../scss/questions.css'
 
 const Questions = () => {
 
-    const history = useHistory();
-
     /* Trzeba tą tablice jakoś podpiąć pod firebase'a żeby się wyświetlały pytania ze stworzonej bazy danych */
     
     const questions = [
@@ -79,45 +78,42 @@ const Questions = () => {
 			questionText: 'Najmniejsza głębokość usytuowania w ziemi telekomunikacyjnego obiektu budowlanego, dla którego nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego to:',
 			questionImage: 'https://www.grupapsb.com.pl/files/LeadFoto/b8i6t0g0cfdio3/bezpieczna-budowa-domu-kto-odpowiada-za-bezpieczenstwo-na-budowie-2.jpg',
             questionHint: '§ 3. Określenia użyte w rozporządzeniu oznaczają: (...) 3) głębokość podstawowa — najmniejszą głębokość usytuowania w ziemi telekomunikacyjnego obiektu budowlanego, dla którego nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego;',
-            photoHint:'https://firebasestorage.googleapis.com/v0/b/uprawnienia-budowlane-net.appspot.com/o/Przyk%C5%82adowa%20grafika%20podpowiedzi%20nr%201.svg?alt=media&token=d040318e-8d63-4c81-a981-54f5cae1e6e6',
             answerOptions: [
-				{ answerText: 'Głębokość specjalna', isCorrect: false },
-				{ answerText: 'Głębokość minimalna', isCorrect: false },
-				{ answerText: 'Głębokość podstawowa', isCorrect: true },
+				{Nr: 'A', answerText: 'Głębokość specjalna', isCorrect: false },
+				{Nr: 'B', answerText: 'Głębokość minimalna', isCorrect: false },
+				{Nr: 'C', answerText: 'Głębokość podstawowa', isCorrect: true },
 			],
 		},
 
 		{
 			questionText: 'Czy usytuowanie budowli telekomunikacyjnej w odległości podstawowej od innego obiektu budowlanego:',
             questionImage: 'https://www.grupapsb.com.pl/files/LeadFoto/b8i6t0g0cfdio3/bezpieczna-budowa-domu-kto-odpowiada-za-bezpieczenstwo-na-budowie-2.jpg',
-            questionHint: '§ 3. Określenia użyte w rozporządzeniu oznaczają:(…) 10) odległość podstawowa — najmniejszą odległość budowli telekomunikacyjnej od skrajni innego obiektu budowlanego, przy której nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego, na odcinkach zbliżeń i skrzyżowań;',
-            photoHint:'https://firebasestorage.googleapis.com/v0/b/uprawnienia-budowlane-net.appspot.com/o/Przyk%C5%82adowa%20grafika%20podpowiedzi%20nr%202.svg?alt=media&token=a6e36c42-f065-4c2e-b00e-048237306d3c',
+            questionHint: '§ 3. Określenia użyte w rozporządzeniu oznaczają: (...) 3) głębokość podstawowa — najmniejszą głębokość usytuowania w ziemi telekomunikacyjnego obiektu budowlanego, dla którego nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego;',
 			answerOptions: [
-				{ answerText: 'Nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego', isCorrect: true },
-				{ answerText: 'Wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego', isCorrect: false },
-				{ answerText: 'Wymaga się stosowania zabezpieczenia szczególnego', isCorrect: false },
+				{Nr: 'A', answerText: 'Nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego', isCorrect: true },
+				{Nr: 'B', answerText: 'Wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego', isCorrect: false },
+				{Nr: 'C', answerText: 'Wymaga się stosowania zabezpieczenia szczególnego', isCorrect: false },
 			],
 		},
 
 		{
 			questionText: 'Czym jest antenowa konstrukcja wsporcza, bez odciągów?',
             questionImage: 'https://www.grupapsb.com.pl/files/LeadFoto/b8i6t0g0cfdio3/bezpieczna-budowa-domu-kto-odpowiada-za-bezpieczenstwo-na-budowie-2.jpg',
-            questionHint: '§ 3. Określenia użyte w rozporządzeniu oznaczają:(…) 14) wieża antenowa — antenową konstrukcję wsporczą, bez odciągów;',
-            photoHint:'https://firebasestorage.googleapis.com/v0/b/uprawnienia-budowlane-net.appspot.com/o/Przyk%C5%82adowa%20grafika%20podpowiedzi%20nr%203.svg?alt=media&token=97ce4ed2-7bee-48f0-88ca-2acafdf2a60d',
+            questionHint: '§ 3. Określenia użyte w rozporządzeniu oznaczają: (...) 3) głębokość podstawowa — najmniejszą głębokość usytuowania w ziemi telekomunikacyjnego obiektu budowlanego, dla którego nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego;',
 			answerOptions: [
-				{ answerText: 'Wieżą antenową', isCorrect: true },
-				{ answerText: 'Masztem antenowym', isCorrect: false },
-				{ answerText: 'Wspornikiem', isCorrect: false },
+				{Nr: 'A', answerText: 'Wieżą antenową', isCorrect: true },
+				{Nr: 'B', answerText: 'Masztem antenowym', isCorrect: false },
+				{Nr: 'C', answerText: 'Wspornikiem', isCorrect: false },
 			],
 		},
 		{
 			questionText: 'Czym jest antenowa konstrukcja wsporcza z odciągami?',
             questionImage: 'https://www.grupapsb.com.pl/files/LeadFoto/b8i6t0g0cfdio3/bezpieczna-budowa-domu-kto-odpowiada-za-bezpieczenstwo-na-budowie-2.jpg',
-            questionHint: '§ 3. Określenia użyte w rozporządzeniu oznaczają:(…) 14) wieża antenowa — antenową konstrukcję wsporczą, bez odciągów;',
+            questionHint: '§ 3. Określenia użyte w rozporządzeniu oznaczają: (...) 3) głębokość podstawowa — najmniejszą głębokość usytuowania w ziemi telekomunikacyjnego obiektu budowlanego, dla którego nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego;',
 			answerOptions: [
-				{ answerText: 'Wieżą antenową', isCorrect: false },
-				{ answerText: 'Wspornikiem', isCorrect: false },
-				{ answerText: 'Masztem antenowym', isCorrect: true },
+				{Nr: 'A', answerText: 'Wieżą antenową', isCorrect: false },
+				{Nr: 'B', answerText: 'Wspornikiem', isCorrect: false },
+				{Nr: 'C', answerText: 'Masztem antenowym', isCorrect: true },
 			],
 		},
         {
@@ -125,9 +121,9 @@ const Questions = () => {
             questionImage: 'https://www.grupapsb.com.pl/files/LeadFoto/b8i6t0g0cfdio3/bezpieczna-budowa-domu-kto-odpowiada-za-bezpieczenstwo-na-budowie-2.jpg',
             questionHint: '§ 3. Określenia użyte w rozporządzeniu oznaczają: (...) 3) głębokość podstawowa — najmniejszą głębokość usytuowania w ziemi telekomunikacyjnego obiektu budowlanego, dla którego nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego;',
 			answerOptions: [
-				{ answerText: 'Głębokość specjalna', isCorrect: false },
-				{ answerText: 'Głębokość minimalna', isCorrect: false },
-				{ answerText: 'Głębokość podstawowa', isCorrect: true },
+				{Nr: 'A', answerText: 'Głębokość specjalna', isCorrect: false },
+				{Nr: 'B', answerText: 'Głębokość minimalna', isCorrect: false },
+				{Nr: 'C', answerText: 'Głębokość podstawowa', isCorrect: true },
 			],
 		},
         {
@@ -135,19 +131,20 @@ const Questions = () => {
             questionImage: 'https://www.grupapsb.com.pl/files/LeadFoto/b8i6t0g0cfdio3/bezpieczna-budowa-domu-kto-odpowiada-za-bezpieczenstwo-na-budowie-2.jpg',
             questionHint: '§ 3. Określenia użyte w rozporządzeniu oznaczają: (...) 3) głębokość podstawowa — najmniejszą głębokość usytuowania w ziemi telekomunikacyjnego obiektu budowlanego, dla którego nie wymaga się stosowania zabezpieczenia specjalnego bądź szczególnego;',
 			answerOptions: [
-				{ answerText: 'Głębokość specjalna', isCorrect: false },
-				{ answerText: 'Głębokość minimalna', isCorrect: false },
-				{ answerText: 'Głębokość podstawowa', isCorrect: true },
+				{Nr: 'A', answerText: 'Głębokość specjalna', isCorrect: false },
+				{Nr: 'B', answerText: 'Głębokość minimalna', isCorrect: false },
+				{Nr: 'C', answerText: 'Głębokość podstawowa', isCorrect: true },
 			],
 		},
 	]
-
 
     const db = getFirestore()
 
     const usersCollectionRefFavQuestion = collection(db, "ulubione_pytania_uzytkownikow");
 
     const auth = getAuth();
+
+    const history = useHistory()
 
     let NumberQuestion = 1
 
@@ -162,6 +159,30 @@ const Questions = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
+
+    const [keyboardModal, setKeyboardModal] = useState(false);
+
+    /*const AnswerOptionClickKeyboard = (e) => {
+
+            if(e.keyCode === 27) {
+
+            console.log('ok')
+
+            const handleAnswerOptionClickKeyboard = (isCorrect) => {
+    
+                if (isCorrect) {
+                    setScore(score + 1);
+                }
+            
+            }
+
+            handleAnswerOptionClickKeyboard()
+            
+            }
+
+        onKeyDown={() => AnswerOptionClickKeyboard(answerOption.isCorrect)}
+
+        }*/
 
 	const handleAnswerOptionClick = (isCorrect) => {
 		if (isCorrect) {
@@ -234,6 +255,16 @@ const Questions = () => {
         AddFavQuestion()
     }
 
+    /* */
+
+    const Backtomenu = () => {
+        
+        history.push('/')
+
+    }
+
+    /* */
+
     return (
         <>
         <ToastContainer 
@@ -244,13 +275,13 @@ const Questions = () => {
 			{showScore ? (
 				<div className='h-full w-full flex flex-col'>
 					<h1 style={{textAlign: 'center'}}>Twój wynik egzaminu próbnego wynosi: {score} na {questions.length} wszystkich pytań.</h1>
-                    <Link style={{alignSelf: 'center', margin: '20px'}} to="/learn/"><button className="mx-4 my-6 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Powrót</button></Link>
+                    <button onClick={Backtomenu} className="mx-4 my-6 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Powrót</button>
 				</div>
 			) : (
 
         <div className="h-full w-full rounded-3xl bg-white flex flex-col overflow-hidden">
         <div className="h-full w-full flex flex-col xl:flex-row">
-            <div className="rounded-3xl bg-white flex flex-col overflow-hidden">
+            <div className="rounded-3xl w-full bg-white flex flex-col overflow-hidden">
 
                 <div className="border-b border-opacity-50 flex flex-col xl:flex-row justify-between">
                     <div className="flex flex-col px-2 ml-2 xl:ml-8 my-5">
@@ -262,7 +293,10 @@ const Questions = () => {
 
                     <div className="flex flex-col md:flex-row mx-4 md:mr-8 justify-end">
                         <div className="my-auto flex flex-row">
-                            <div className="my-auto ml-auto md:ml-8 cursor-pointer"><LightbulbIcon/></div>
+                            <div className="my-auto ml-auto md:ml-8 cursor-pointer"
+                             onClick={() => setKeyboardModal(true)}>
+                            <LightbulbIcon/>
+                            </div>
                             <div className="my-auto ml-8 cursor-pointer" onClick={() => history.push('/learn')}>
                                 <SettingsIcon/></div>
                         </div>
@@ -270,10 +304,10 @@ const Questions = () => {
                 </div>
 
                 <div
-                    className="rounded-2xl border-b border-opacity-50 bg-warmGray-100 flex flex-col md:flex-row justify-center md:space-x-16">
+                    className=" border-b border-opacity-50 bg-warmGray-100 flex flex-col md:flex-row justify-center md:space-x-16">
                     <div className="flex flex-row mx-auto md:mx-0 my-2 md:my-5">
                         <p className="mr-6 font-bold text-blue-500">Pytanie</p>
-                        <p className="font-bold">{currentQuestion + 1}</p>
+                        <p className="font-bold">{currentQuestion + 1}/{questions.length}</p>
                     </div>
                     <div className="flex flex-row mx-auto md:mx-0 my-2 md:my-5">
                         <p className="mr-6 font-bold text-blue-500">Poprawne</p>
@@ -288,22 +322,18 @@ const Questions = () => {
                         <p className="font-bold">%</p>
                     </div>
                 </div>
-
-                <div className="rounded-2xl border bg-200" style={{display: 'flex', overflow: 'hidden', height: '500px' }}>
-            <img style={{alignSelf: 'center'}} src={questions[currentQuestion].questionImage}></img>    
-            </div>
-
-                <div className="bg-blue-200 rounded-2xl">
+                <div className="bg-blue-200">
                     <p className="p-8 text-sm">{questions[currentQuestion].questionText}</p>
                 </div>                
 
-                <div className="flex flex-col my-4 mx-8 justify-center xl:flex-row">
+                <div className="flex flex-col my-4 mx-8 justify-center">
                 {questions[currentQuestion].answerOptions.map((answerOption) => (
-                        <button style={{display: 'flex', justifyContent: 'center', margin: '10px 2.5px', width: '100%' }} 
-                        className="rounded-2xl border border-blue-500 text-blue-500 p-1.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200"
+                        <div style={{display: 'flex', justifyContent: 'start', height: '118px', cursor: 'pointer' }} 
+                        className="border border-grey-500 p-1.5 hover:bg-blue-50 transition-colors duration-200"
                         onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}
-                        ><p style={{alignSelf: 'center', margin: '5px', textAlign: 'center' }}>{answerOption.answerText}</p>
-                        </button>
+                        ><h1 style={{alignSelf: 'center', margin: '40px', textAlign: 'center', fontWeight: 'bold', fontSize: '23px' }} >{answerOption.Nr}</h1>
+                        <p style={{alignSelf: 'center', margin: '20px', textAlign: 'center' }}>{answerOption.answerText}</p>
+                        </div>
                         ))}
                 </div>
 
@@ -343,6 +373,7 @@ const Questions = () => {
             </div>
             </div>
             )}
+        <KeyShortcuts visible={keyboardModal} onClose={() => setKeyboardModal(false)}/>
         </>
         
     )

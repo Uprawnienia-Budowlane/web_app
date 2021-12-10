@@ -9,7 +9,7 @@ import NavBar from "./components/NavBar";
 import Shop from "./Shop-complete/Shop";
 import Acts from "./Acts";
 import ExamStats from "./ExamStats";
-import OralExam from "./OralExam";
+import OralExam from './Learn-Oral-Exam/OralExam'
 import WrittenExam from './Exam-mode-complete/WrittenExam'
 import FavoriteQuestions from "./FavoriteQuestions";
 import Specialty from "./Specialty";
@@ -35,9 +35,7 @@ const Desktop = () => {
     const [theme, setTheme] = useState('light')
 
     const ThemeToggler = () => {
-
         theme === 'light' ? setTheme('dark') : setTheme('light') 
-
     }
 
     return (

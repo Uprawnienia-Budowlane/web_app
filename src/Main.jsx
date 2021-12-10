@@ -34,7 +34,7 @@ const Main = () => {
                     <h1 className="font-bold text-2xl">
                         Witaj, użytkowniku
                     </h1>
-                <div className=" mt-6 shadow-md rounded-3xl bg-blue-500 flex flex-row justify-between cursor-pointer headbox-dashboard-css-fix"
+                <div className=" mt-6 shadow-md rounded-3xl bg-blue-500 flex flex-row justify-between cursor-pointer headbox-dashboard-css-fix dark-mode-color_widget"
                      onClick={() => history.push('/speciality')}>
                     <h1 className="text-2xl 2xl:text-3xl text-white font-bold mx-2 sm:mx-10 my-auto">Wybierz swoją
                         specjalność</h1>
@@ -53,12 +53,12 @@ const Main = () => {
                 </div>
             </div>
 
-            <div className="my-6 mx-2 md:mr-8 shadow-md rounded-3xl bg-blue-500 flex-col w-1/2 stats-mobile-fix-css">
-                <div className="flex-col mx-6 my-8 main-stats-dark-mode">
+            <div className="my-6 mx-2 md:mr-8 shadow-md rounded-3xl bg-blue-500 flex-col w-1/2 stats-mobile-fix-css dark-mode-color_widget">
+                <div className="flex-col mx-6 my-8 dark-mode-color_widget">
                     <p className="text-white">Podgląd</p>
                     <h1 className="font-bold text-white text-2xl">Twoich Statystyk</h1>
 
-                    <div className="mt-8 py-4 rounded-3xl bg-white flex-col main-stats-dark-mode">
+                    <div className="mt-8 py-4 rounded-3xl bg-white flex-col dark-mode-color_widget">
                         <div className="mx-4 flex flex-col md:flex-row justify-between">
                             <button
                                 onClick={() => setCategory(0)}
@@ -71,7 +71,10 @@ const Main = () => {
                         </div>
                         <div className="mx-4 mt-4 md:mt-2">
                             <Dropdown name={'Wybierz specjalność'} options={[{
-                                name: 'Test'
+                                name: 'Architektoniczna',
+                                name: 'Konstrukcyjno-Budowlana',
+                                name: 'Instalacjna sanitarna',
+                                name: 'Instalacjna elektryczna',
                             }]}/>
                         </div>
 

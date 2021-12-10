@@ -17,8 +17,16 @@
 }
 
 .step label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 10px;
     color: #fff;
+}
+
+.step label a {
+    align-self: center;
+    font-size: 12px;
 }
 
 .step:nth-child(2) {

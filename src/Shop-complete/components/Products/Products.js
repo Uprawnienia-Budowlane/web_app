@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Product from './Product'
 import { ThreeInOneIcon } from "../../../Icons";
 import { Link } from 'react-router-dom';
 
 const Products = ({ products, onAddToCart, totalItems  }) => {
+
+    const [category, setCategory] = useState(0);
 
     return (
         <>
@@ -22,28 +24,22 @@ const Products = ({ products, onAddToCart, totalItems  }) => {
           </div>
             <div className="mx-auto mb-8 flex flex-col space-y-3 md:space-y-0 md:flex-row w-5/6">
                 <button
-                    /* onClick={() => setCategory(0)} */
+                    /*onClick={() => setCategory(0)}*/
                     className={"rounded-2xl border border-blue-500 font-medium text-center text-xl py-3 px-6 mx-2 w-full "/* + (category === 0 ? 'bg-blue-500 text-white' : 'text-blue-500')*/}>PAKIETY
                     3w1
                 </button>
                 <button
-                    /* onClick={() => setCategory(1)} */
+                    /*onClick={() => setCategory(1)}*/
                     className={"rounded-2xl border border-blue-500 font-medium text-center text-xl py-3 px-6 mx-2 w-full "/* + (category === 1 ? 'bg-blue-500 text-white' : 'text-blue-500')*/}>PAKIETY
                     2w1
                 </button>
                 <button
-                    /* onClick={() => setCategory(2)} */
+                    /*onClick={() => setCategory(2)}*/
                     className={"rounded-2xl border border-blue-500 font-medium text-center text-xl py-3 px-6 mx-2 w-full "/* + (category === 2 ? 'bg-blue-500 text-white' : 'text-blue-500')*/}>PAKIETY
                     2x
                 </button>
 
             </div> 
-           
-         <div className="mx-auto mb-8 flex flex-col space-y-3 md:space-y-0 md:flex-row w-/6">
-         <button id="cart_btn" className={"rounded-2xl border border-blue-500 font-medium text-center text-xl py-3 px-24 mx-2 w-full "/* + (category === 2 ? 'bg-blue-500 text-white' : 'text-blue-500')*/}>
-         <Link to="/shop/checkout">Przejdź do finalizacji zakupu</Link>
-         </button> 
-         </div>
          </div>
          </>
     )

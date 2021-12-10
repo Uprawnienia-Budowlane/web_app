@@ -84,7 +84,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
         <div className="steps">
           {steps.map((label) => (
               <div className="step" key={label}>
-                <label>{label}</label>
+                <label><a>{label}</a></label>
               </div>
             ))}
         </div>
