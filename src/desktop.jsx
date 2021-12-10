@@ -9,7 +9,7 @@ import NavBar from "./components/NavBar";
 import Shop from "./Shop-complete/Shop";
 import Acts from "./Acts";
 import ExamStats from "./ExamStats";
-import OralExam from './Learn-Oral-Exam/OralExam'
+import OralExam from './Learn-Oral-Exam-complete/OralExam'
 import WrittenExam from './Exam-mode-complete/WrittenExam'
 import FavoriteQuestions from "./FavoriteQuestions";
 import Specialty from "./Specialty";

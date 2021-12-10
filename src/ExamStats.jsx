@@ -42,11 +42,11 @@ const ExamStats = () => {
             <div className="mx-auto xl:mx-0 px-4 flex flex-col">
                 <button
                     onClick={() => setCategory(0)}
-                    className={"mt-4 rounded-2xl border border-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto " + (category === 0 ? "bg-blue-500 text-white" : "bg-white text-blue-500")}>Nauka
+                    className={"mt-4 rounded-2xl border border-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto " + (category === 0 ? "bg-blue-500 dark-mode-color_widget text-white" : "div text-blue-500")}>Nauka
                 </button>
                 <button
                     onClick={() => setCategory(1)}
-                    className={"mt-4 rounded-2xl border border-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto " + (category === 1 ? "bg-blue-500 text-white" : "bg-white text-blue-500")}>Egzamin
+                    className={"mt-4 rounded-2xl border border-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto " + (category === 1 ? "bg-blue-500 dark-mode-color_widget text-white" : "div text-blue-500")}>Egzamin
                 </button>
                 <button
                     className="mt-4 rounded-2xl bg-gray-300 border text-black font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto">Resetuj

@@ -19,13 +19,29 @@
           justify-content: center;
   height: 100%;
   width: 50%;
-  font-size: 12px;
   background: #3b82f6;
 }
 
 .step label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 10px;
   color: #fff;
+}
+
+.step label a {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 12px;
 }
 
 .step:nth-child(2) {
