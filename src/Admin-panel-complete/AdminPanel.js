@@ -39,6 +39,12 @@ import QuestionWrittenDataBase from './QuestionWrittenDataBase'
 import ActWrittenDataBase from './ActWrittenDataBase'
 import QuestionAddPanel from './Manage-Question-Test-complete/QuestionAddPanel' 
 import LearnExamAddPanel from './Manage-Question-Test-complete/LearnExamAddPanel'
+
+import Payments from "./Shop-panel-complete/Payments";
+import Bookkeeping from "./Shop-panel-complete/Bookkeeping";
+import ProductList from "./Shop-panel-complete/ProductList";
+import AddProduct from "./Shop-panel-complete/AddProduct"
+
 import ManageLicensePanel from './Manage-License-complete/ManageLicensePanel'
 import NotificationPanel from "./NotificationPanel";
 import Settings from './Settings'
@@ -109,6 +115,12 @@ const AdminPanel = () => {
             <Route exact path="/panel-administratora/wszystkie-podstrony" component={ListOfLinks}/>
             <Route exact path="/panel-administratora/dodaj-podstrone" component={AddAnotherWebsite}/>
             <Route exact path="/panel-administratora/dodaj-wpis" component={SiteArticleManagment}/>
+
+            <Route exact path="/panel-administratora/płatności" component={Payments}/>
+            <Route exact path="/panel-administratora/centrum-księgowości" component={Bookkeeping}/>
+            <Route exact path="/panel-administratora/produkty" component={ProductList}/>
+            <Route exact path="/panel-administratora/dodaj-produkt" component={AddProduct}/>
+
             <Route exact path="/panel-administratora/baza-pytan" component={QuestionDataBase}/>
             <Route exact path="/panel-administratora/baza-opracowan-ustnych" component={QuestionWrittenDataBase}/>
             <Route exact path="/panel-administratora/baza-aktów-prawnych-do-czytania" component={ActWrittenDataBase}/>

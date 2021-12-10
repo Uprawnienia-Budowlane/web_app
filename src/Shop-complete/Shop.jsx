@@ -19,10 +19,6 @@ const Shop = () => {
     const [cart, setCart] = useState({})
     const [errorMessage,  setErrorMessage] = useState('')
 
-    const [modal, setModal] = useState(false);
-    const [nextLocation, setNextLocation] = useState('');
-    const [shouldBlockNavigation, setShouldBlockNavigation] = useState(true);
-
     const fetchProducts = async () => {
         const { data } = await commerce.products.list();
     
