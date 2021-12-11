@@ -16,6 +16,13 @@ import Dropdown from "./components/Dropdown";
 import firebase from "./firebase";
 import { collection, getDocs } from "@firebase/firestore";
 import { db } from "./firebase";
+import PFP from './photos/ProfilePhoto.png'
+
+/* speciality icon's */
+
+import hand_with_gear_icon from './speciality-photos/hand_with_gear_icon.svg'
+
+/* */
 
 const Main = () => {
 
@@ -30,26 +37,53 @@ const Main = () => {
     return (
         <div className="h-full w-full rounded-3xl bg-white flex flex-row justify-between md:flex-nowrap">
             <div className="flex flex-col mx-auto px-2 my-8 sm:mx-8 w-1/2 dashboard-css-fix">
-                <p className="text-blue-500">Uprawnienia budowlane</p>
-                    <h1 className="font-bold text-2xl">
-                        Witaj, użytkowniku
-                    </h1>
-                <div className=" mt-6 shadow-md rounded-3xl bg-blue-500 flex flex-row justify-between cursor-pointer headbox-dashboard-css-fix dark-mode-color_widget"
+                <div className="user_info_main_site">
+                <div className="user_info_main_site_desc">
+                <p className="text-blue-500 mx-4">Uprawnienia budowlane</p>
+                <h1 className="font-bold text-2xl mx-4">Witaj, użytkowniku</h1>
+                </div>
+                <div className="user_info_main_site_pfp">
+                <img src={PFP} height='54px' width='54px'></img>
+                </div>
+                </div>
+                <div className=" mt-6 shadow-md rounded-3xl bg-blue-500 flex flex-row justify-between cursor-pointer headbox-dashboard-css-fix 
+                mobile_addon_speciality
+                dark-mode-color_widget"
                      onClick={() => history.push('/speciality')}>
-                    <h1 className="text-2xl 2xl:text-3xl text-white font-bold mx-2 sm:mx-10 my-auto">Wybierz swoją
+                    <h1 className="text-2xl 2xl:text-3xl text-white font-bold my-auto
+                    mobile_addon_speciality
+                    ">Wybierz swoją
                         specjalność</h1>
                     <div className="mr-4 sm:mr-16 my-4">
+                        <img className="mobile_addon_card" src={hand_with_gear_icon}></img>
                         <HandWithGearIcon/>
                     </div>
                 </div>
 
-                <div className="mt-6 mb-3 mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 w-full">
+                <div className="mt-6 mb-3 mx-auto grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-3 gap-4 w-full">
                     <MainCard icon={TestIcon} title={"Egzamin pisemny"} link={"/written"}/>
                     <MainCard icon={ChildWithBookIcon} title={"Egzamin ustny"} link={"/oral"}/>
                     <MainCard icon={DocumentsIcon} title={"Akty prawne"} link={"/acts"}/>
                     <MainCard icon={Chart2Icon} title={"Statystyki"} link={"/stats"}/>
-                    <MainCard icon={DocumentWithHeartIcon} title={"Ulubione pytania"} link={"/favorite"}/>
-                    <MainCard icon={SaleIcon} title={"Pakiety promocyjne"} link={"/shop"}/>
+                
+                    <div
+                    className="bg-blueGray-100 rounded-3xl flex flex-col hover:bg-blueGray-200 transition-colors duration-200 cursor-pointer 
+                    Button-landscape-fix
+                    Mobile_hide
+                    " onClick={() => history.push("/favorite")}>
+                    <div className="mx-auto mt-2 mb-10 h-24 w-24 main-change-dark-mode"><MainCard icon={DocumentWithHeartIcon} /></div>
+                    <p className="mb-4 text-blue-500 text-center font-medium">Ulubione pytania</p>
+                    </div>
+
+                    <div
+                    className="bg-blueGray-100 rounded-3xl flex flex-col hover:bg-blueGray-200 transition-colors duration-200 cursor-pointer 
+                    Button-landscape-fix
+                    Mobile_hide
+                    " onClick={() => history.push("/shop")}>
+                    <div className="mx-auto mt-2 mb-10 h-24 w-24 main-change-dark-mode"><MainCard icon={SaleIcon} /></div>
+                    <p className="mb-4 text-blue-500 text-center font-medium">Pakiety promocyjne</p>
+                    </div>
+
                 </div>
             </div>
 

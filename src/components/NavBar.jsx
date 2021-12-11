@@ -95,6 +95,14 @@ const NavBar = () => {
     const [dropdown, setDropdown] = useState(false);
     const [notificationsDropdown, setNotificationsDropdown] = useState(false);
 
+    /* 
+
+    <div className="mt-10 mr-6 md:hidden" style={{position: 'fixed', right: '0'}}>
+        <MenuIcon/>
+        </div>
+
+    /* */
+
     return (
         <>
         <Logo/>
@@ -109,9 +117,6 @@ const NavBar = () => {
             <DownArrowIcon/>
             <DropDown visible={dropdown} onClose={() => setDropdown(false)}/>
             </div>
-        </div>
-        <div className="mt-10 mr-6 md:hidden" style={{position: 'fixed', right: '0'}}>
-        <MenuIcon/>
         </div>
     </div>
     </>

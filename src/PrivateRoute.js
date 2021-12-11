@@ -1,4 +1,4 @@
-import React from "react"
+/*import React from "react"
 import { Route, Redirect } from "react-router-dom"
 import { useAuth } from "./context/AuthContext"
 import { getAuth } from "@firebase/auth"
@@ -14,4 +14,4 @@ export default function PrivateRoute({ component: Component, ...rest }) {
       }}
     ></Route>
   )
-}
+}*/
