@@ -4,6 +4,9 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import { handleAmountChange, handleScoreChange } from "../redux/actions";
 
+import PhotoFailedExam from "../../photos/exam_failed.svg"
+import PhotoPassedExam from "../../photos/exam_passed.svg"
+
 import { Button } from '@material-ui/core';
 
 const FinalScreen = () => {

@@ -14,15 +14,14 @@ const ExamStats = () => {
             <h1 className="font-bold text-2xl">Sprawdź swoje statystyki</h1>
         </div>
 
-        <div className="mx-auto xl:mx-0 px-4 flex flex-row">
-        
+        <div className="mx-auto xl:mx-0 flex w-full flex-row justify-content-center px-4 Desktop_hide">
         <button
                     onClick={() => setCategory(0)}
-                    className={"mt-4 rounded-2xl border border-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto " + (category === 0 ? "bg-blue-500 dark-mode-color_widget text-white Mobile_hide" : "div text-blue-500 Mobile_hide")}>Nauka
+                    className={"mt-4 rounded-2xl border border-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto " + (category === 0 ? "bg-blue-500 dark-mode-color_widget text-white" : "div text-blue-500")}>Nauka
                 </button>
                 <button
                     onClick={() => setCategory(1)}
-                    className={"mt-4 rounded-2xl border border-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto " + (category === 1 ? "bg-blue-500 dark-mode-color_widget text-white Mobile_hide" : "div text-blue-500 Mobile_hide")}>Egzamin
+                    className={"mt-4 rounded-2xl border border-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto " + (category === 1 ? "bg-blue-500 dark-mode-color_widget text-white" : "div text-blue-500")}>Egzamin
                 </button>
                 
         </div>

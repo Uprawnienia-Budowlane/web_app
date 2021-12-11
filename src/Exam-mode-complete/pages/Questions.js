@@ -48,6 +48,9 @@ import '../scss/questions.css'
 
 /* graph's */
 
+import PhotoFailedExam from "../../photos/exam_failed.svg"
+import PhotoPassedExam from "../../photos/exam_passed.svg"
+
 /* */
 
 
@@ -213,8 +216,30 @@ const Questions = () => {
         <>
 			{showScore ? (
 				<div className='h-full w-full flex flex-col'>
-					<h1 style={{textAlign: 'center'}}>Twój wynik egzaminu wynosi: {score} na {questions.length} wszystkich pytań.</h1>
-                    <button onClick={Backtomenu} className="mx-4 my-6 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Powrót</button>
+
+                <div className="w-full bg-white flex flex-col">
+                <div className="flex justify-content-between">
+                <h1 className="font-bold text-xl text-center">CAŁKOWITA LICZBA PYTAŃ</h1>
+                <span className='mx-2 align-self-center'>0</span>
+                </div>
+                <div className="flex justify-content-between">
+                <h1 className="font-bold text-xl text-center">PRÓG ZDAWALNOŚCI</h1>
+                <span className='mx-2 align-self-center'>0</span>
+                </div>
+                <div className="flex justify-content-between">
+                <h1 className="font-bold text-xl text-center">CAŁKOWITY CZAS EGZAMINU</h1>
+                <span className='mx-2 align-self-center'>0</span>
+                </div>
+                <div className="flex justify-content-between">
+                <h1 className="font-bold text-xl text-center">POZOSTAŁY CZAS EGZAMINU</h1>
+                <span className='mx-2 align-self-center'>0</span>
+                </div>
+                </div>
+                
+				<h1 style={{textAlign: 'center'}}>Twój wynik egzaminu wynosi: {score} na {questions.length} wszystkich pytań.</h1>
+                <button onClick={Backtomenu} className="mx-4 mt-12 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Podgląd podpowiedzi</button>
+                <button onClick={Backtomenu} className="mx-4 my-4 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Rozpocznij ponownie</button>
+                <button onClick={Backtomenu} className="mx-4 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Wróć do menu głównego</button>
 				</div>
 			) : (
 

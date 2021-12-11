@@ -67,6 +67,9 @@ import '../scss/questions.css'
 
 /* graph's */
 
+import PhotoFailedExam from "../../photos/exam_failed.svg"
+import PhotoPassedExam from "../../photos/exam_passed.svg"
+
 /* */
 
 const Questions = () => {
@@ -274,8 +277,27 @@ const Questions = () => {
                 />
 			{showScore ? (
 				<div className='h-full w-full flex flex-col'>
-					<h1 style={{textAlign: 'center'}}>Twój wynik egzaminu próbnego wynosi: {score} na {questions.length} wszystkich pytań.</h1>
-                    <button onClick={Backtomenu} className="mx-4 my-6 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Powrót</button>
+
+                <div className="w-full bg-white flex flex-col">
+                <div className="flex justify-content-between">
+                <h1 className="font-bold text-xl text-center">Wynik egzaminu:</h1>
+                <span className='mx-2 text-green-500 text-xl align-self-center'>0</span>
+                </div>
+                <div className="flex justify-content-between">
+                <h1 className="font-bold text-xl text-center">Dobre odpowiedzi:</h1>
+                <span className='mx-2 text-green-500 text-xl align-self-center'>{score}</span>
+                </div>
+                <div className="flex justify-content-between">
+                <h1 className="font-bold text-xl text-center">Złe odpowiedzi:</h1>
+                <span className='mx-2 text-red-500 text-xl align-self-center'>0</span>
+                </div>
+                </div>
+
+
+
+				<h1 style={{textAlign: 'center'}}>Twój wynik egzaminu próbnego wynosi: {score} na {questions.length} wszystkich pytań.</h1>
+                <button onClick={Backtomenu} className="mx-4 mt-12 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Rozpocznij ponownie</button>
+                <button onClick={Backtomenu} className="mx-4 my-4 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Wróć do menu głównego</button>
 				</div>
 			) : (
 
