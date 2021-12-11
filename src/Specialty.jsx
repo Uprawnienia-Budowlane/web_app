@@ -27,7 +27,7 @@ const Specialty = () => {
             </div>
 
             <div className="flex mx-auto justify-center mt-16 mb-24">
-                <div className="mt-3 mb-8 mx-8 md:mx-16 flex flex-col sm:flex-row flex-wrap gap-8 justify-start">
+                <div className="mt-3 mb-8 md:mx-16 flex flex-col sm:flex-row flex-wrap gap-8 justify-start">
                     <SpecialtyCard icon={ArchitectureIcon} title={'Architektoniczna'} onClick={(t) => {setSpeciality(t);setSubspecialiyModal(true)}}/>
                     <SpecialtyCard icon={CraneIcon} title={'Konstrukcyjno-Budowlana'} onClick={(t) => {setSpeciality(t);setSubspecialiyModal(true)}}/>
                     <SpecialtyCard icon={SanitaryIcon} title={'Instalacjna sanitarna'} onClick={(t) => {setSpeciality(t);setSubspecialiyModal(true)}}/>

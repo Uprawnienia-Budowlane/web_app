@@ -14,6 +14,19 @@ const ExamStats = () => {
             <h1 className="font-bold text-2xl">Sprawdź swoje statystyki</h1>
         </div>
 
+        <div className="mx-auto xl:mx-0 px-4 flex flex-row">
+        
+        <button
+                    onClick={() => setCategory(0)}
+                    className={"mt-4 rounded-2xl border border-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto " + (category === 0 ? "bg-blue-500 dark-mode-color_widget text-white Mobile_hide" : "div text-blue-500 Mobile_hide")}>Nauka
+                </button>
+                <button
+                    onClick={() => setCategory(1)}
+                    className={"mt-4 rounded-2xl border border-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto " + (category === 1 ? "bg-blue-500 dark-mode-color_widget text-white Mobile_hide" : "div text-blue-500 Mobile_hide")}>Egzamin
+                </button>
+                
+        </div>
+
         <div className="flex flex-col xl:flex-row justify-between mb-4">
 
             <div className="px-4 md:px-12 xl:px-0 xl:ml-12 xl:flex-grow">
@@ -42,14 +55,14 @@ const ExamStats = () => {
             <div className="mx-auto xl:mx-0 px-4 flex flex-col">
                 <button
                     onClick={() => setCategory(0)}
-                    className={"mt-4 rounded-2xl border border-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto " + (category === 0 ? "bg-blue-500 dark-mode-color_widget text-white" : "div text-blue-500")}>Nauka
+                    className={"mt-4 rounded-2xl border border-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto " + (category === 0 ? "bg-blue-500 dark-mode-color_widget text-white Mobile_hide" : "div text-blue-500 Mobile_hide")}>Nauka
                 </button>
                 <button
                     onClick={() => setCategory(1)}
-                    className={"mt-4 rounded-2xl border border-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto " + (category === 1 ? "bg-blue-500 dark-mode-color_widget text-white" : "div text-blue-500")}>Egzamin
+                    className={"mt-4 rounded-2xl border border-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto " + (category === 1 ? "bg-blue-500 dark-mode-color_widget text-white Mobile_hide" : "div text-blue-500 Mobile_hide")}>Egzamin
                 </button>
                 <button
-                    className="mt-4 rounded-2xl bg-gray-300 border text-black font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto">Resetuj
+                    className="mt-4 rounded-2xl bg-gray-300 border text-black font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto Mobile_hide">Resetuj
                     statystyki dla wybranej specialności
                 </button>
                 <div className="flex flex-row justify-center gap-4 mt-4">

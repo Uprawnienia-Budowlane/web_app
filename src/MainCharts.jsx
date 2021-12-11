@@ -100,13 +100,13 @@ const verticalLinePlugin = {
 const MainCharts = props => {
     if (props.bar) {
         return (
-            <div className="pt-4">
+            <div className="pt-4 mobile-stats__">
                 <Bar data={data[props.period]} options={options} height={400} plugins={[verticalLinePlugin]}/>
             </div>
         );
     } else {
         return (
-            <div className="pt-4">
+            <div className="pt-4 mobile-stats__">
                 <Line data={data[props.period]} options={options} height={400} plugins={[verticalLinePlugin]}/>
             </div>
         );

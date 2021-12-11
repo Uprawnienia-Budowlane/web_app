@@ -1,21 +1,4 @@
 import React, {useState, useEffect} from "react";
-import { 
-onSnapshot, 
-getFirestore, 
-collection, 
-CollectionReference,
-addDoc,
-getDoc, 
-getDocs, 
-deleteDoc,
-query, 
-doc,
-DocumentReference } from "@firebase/firestore";
-import {
-createUserWithEmailAndPassword,
-onAuthStateChanged,
-getAuth
-} from "firebase/auth";
 
 const Licenses = () => {
 
@@ -25,20 +8,6 @@ const Licenses = () => {
 
     const [licenses, setLicenses] = useState([])
 
-    const db = getFirestore()
-
-    const auth = getAuth()
-
-    const licenseCollectionRef = collection(db, "licencje");
-
-    useEffect(() => {
-        const getLicenses = async () => {
-          const data = await getDocs(licenseCollectionRef);
-          setLicenses(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-        };
-    
-        getLicenses();
-      }, []);
 
     return (
         <div className="h-full w-full rounded-3xl bg-white flex flex-col justify-between flex-wrap">
@@ -69,8 +38,8 @@ const Licenses = () => {
             <div
                 className="mt-4 md:mt-16 flex flex-col md:flex-row flex-wrap space-x-8 justify-center md:justify-evenly border-b border-opacity-50">
                 
-                {licenses.map((license) => { return <div className="flex flex-col mx-8">
-                    <p className="text-lg text-blue-500 font-bold text-center">{license.nazwa_licencji}</p>
+            <div className="flex flex-col mx-8">
+                    <p className="text-lg text-blue-500 font-bold text-center">licenzja</p>
                     <p className="text-sm text-center">{(() => {
                         if(writtenActive)
                             return "Posiadasz aktywowaną licencję do 11.09.2021";
@@ -81,7 +50,7 @@ const Licenses = () => {
                         <p className="text-center text-white my-4 px-12">Wykup Licencje</p>
                     </div>
                 </div>
-                })}
+
 
                 <div className="flex flex-col pr-8">
                     <p className="text-lg text-blue-500 font-bold text-center">Licencja do nauki na Egzamin Ustny</p>
@@ -107,7 +76,7 @@ const Licenses = () => {
                     <div className="rounded-2xl bg-blue-500 w-full mt-4">
                         <p className="text-center text-white my-4 px-12">{(() => {
                             if(actsActive)
-                                return <>{auth.currentUser.email}<br/><small>wi29mdfsf##3r334r33r34R#R#R#R#k@SS22e2</small></>;
+                                return <>juzek@juzek.pl<br/><small>wi29mdfsf##3r334r33r34R#R#R#R#k@SS22e2</small></>;
                             else
                                 return "Wykup licencję";
                         })()}</p>

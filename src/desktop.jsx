@@ -69,29 +69,29 @@ const Desktop = () => {
                 <div className="mobile_nav">
                 <ul>
                     <li>
-                        <a className="m-3">
+                        <Link to="/" className="m-3">
                         <img src={home_fill_1}></img>
-                        </a> 
+                        </Link> 
                     </li>
                     <li>
-                        <a className="m-3">
+                        <Link to="/speciality" className="m-3">
                         <img src={list_icon_mobile}></img>
-                        </a> 
+                        </Link> 
                     </li>
                     <li>
-                        <a className="m-3">
+                        <Link to="/shop" className="m-3">
                         <img src={notification_2_line_1}></img>
-                        </a> 
+                        </Link> 
                     </li>
                     <li>
-                        <a className="m-3">
+                        <Link to="/stats" className="m-3">
                         <img src={stats_mobile}></img>
-                        </a> 
+                        </Link> 
                     </li>
                     <li>
-                        <a className="m-3">
+                        <Link to="/speciality" className="m-3">
                         <img src={bell_notifyy}></img>
-                        </a> 
+                        </Link> 
                     </li>
                 </ul>
                 </div>

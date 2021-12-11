@@ -45,6 +45,10 @@
 
 /* hide mobile */
 
+.Desktop_hide {
+    display: none;
+}
+
 .mobile_nav {
     display: none;
 }
@@ -63,7 +67,28 @@
     display: block;
 }
 
+@media (min-width:539px) and (orientation:landscape) {
+
+    .stats-mobile-fix-css {
+        display:block;
+    }
+
+}
+
 @media (min-width:0px) and (max-width: 999px) {
+
+    .Desktop_hide {
+        display: block;
+    }
+
+    .speciality_card_mobile {
+        height: 77px;
+        width: 95vw;
+    }
+
+    .mobile_margin_box {
+        margin: 0 10px;
+    }
 
     .desktop-css-fix {
         margin: 0px;
@@ -81,6 +106,14 @@
     .mobile_addon_speciality {
         font-size: 18px;
         height: 104px;
+    }
+
+    .Mobile-bgc {
+        background:white;
+    }
+
+    .mobile-stats__ {
+        height: 286px;
     }
 
     .mobile_addon_card{
@@ -122,6 +155,8 @@
         width: 100%;
         left: 0;
         background: white;
+        -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2); 
+        box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
         z-index: 999;
     }
 
@@ -158,7 +193,7 @@
     }
     
 .css-margin-bottom-mobile {
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 .headbox-dashboard-css-fix {
@@ -191,11 +226,4 @@
 
 }
 
-@media (min-width:539px) and (orientation:landscape) {
-
-    .stats-mobile-fix-css {
-        display:block;
-    }
-
-}
 

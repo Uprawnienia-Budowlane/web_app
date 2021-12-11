@@ -1,24 +1,7 @@
 import React, {useState} from "react";
+import { useHistory } from "react-router-dom";
 import {ArrowXSmallIcon, HeartFill2Icon, LightbulbIcon} from "../Icons";
 import KeyShortcuts from "../modals/KeyShortcuts";
-import { useHistory } from "react-router-dom";
-import { onSnapshot, 
-    getFirestore, 
-    collection, 
-    CollectionReference,
-    addDoc,
-    getDoc, 
-    getDocs, 
-    deleteDoc,
-    query, 
-    doc,
-    DocumentReference } from "@firebase/firestore";
-
-import {
-    createUserWithEmailAndPassword,
-    onAuthStateChanged,
-    getAuth
-} from "firebase/auth";
 
 const OralExam = () => {
 
@@ -90,24 +73,9 @@ const OralExam = () => {
                 ],
             },
         ]
-    
-        const db = getFirestore()
-    
-        const usersCollectionRefFavQuestion = collection(db, "ulubione_pytania_uzytkownikow");
-    
-        const auth = getAuth();
+
     
         const history = useHistory()
-    
-        let NumberQuestion = 1
-    
-        const AddFavQuestion = async () => {
-            await addDoc(usersCollectionRefFavQuestion, { 
-                numer_pytania:currentQuestion + 1,
-                adres_mail_uzytkownika: auth.currentUser.email,
-                ulubione_pytanie: questions[currentQuestion].questionText,
-            });
-        }
     
         const [currentQuestion, setCurrentQuestion] = useState(0);
         const [showScore, setShowScore] = useState(false);

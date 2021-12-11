@@ -1,7 +1,6 @@
 import React, {useState, useRef, useEffect} from "react";
 import {Router, Route, Switch, useLocation, Link } from 'react-router-dom'
 import licenseModel from '../models/License';
-import { useAuth } from '../context/AuthContext' 
 import {
     collection,
     getDocs,

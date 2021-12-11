@@ -8,14 +8,10 @@ import {
     SaleIcon,
     TestIcon
 } from "./Icons";
-import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import MainCharts from "./MainCharts";
 import MainCard from "./components/MainCard";
 import {useHistory} from "react-router-dom";
 import Dropdown from "./components/Dropdown";
-import firebase from "./firebase";
-import { collection, getDocs } from "@firebase/firestore";
-import { db } from "./firebase";
 import PFP from './photos/ProfilePhoto.png'
 
 /* speciality icon's */

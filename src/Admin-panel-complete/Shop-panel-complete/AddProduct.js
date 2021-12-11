@@ -13,7 +13,6 @@ import { onSnapshot,
     doc,
     DocumentReference } from "@firebase/firestore";
 import firebase from "../../firebase";
-import { useAuth } from '../../context/AuthContext'
 import {ArrowXIcon} from '../../Icons' 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faUserMinus } from '@fortawesome/free-solid-svg-icons'
