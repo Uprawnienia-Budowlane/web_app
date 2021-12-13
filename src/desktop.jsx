@@ -12,6 +12,7 @@ NotificationIcon
 import {Link, Route, Switch, useLocation} from "react-router-dom";
 import MenuItem from "./components/MenuItem";
 import Profile from "./Profile";
+import MobileProfileChange from "./MobileProfileChange";
 import Settings from "./Settings";
 import Main from "./Main";
 import NavBar from "./components/NavBar";
@@ -26,6 +27,7 @@ import LearnMode from "./Learn-mode-complete/LearnMode";
 import ChooseMode from "./ChooseMode";
 import Licenses from "./Licenses";
 import ActMode from "./ActMode";
+import MobileNotify from "./MobileNotify"
 import licenseModel from './models/License';
 import { lightTheme, darkTheme, GlobalStyles } from './theme'
 import { ThemeProvider } from "styled-components";
@@ -89,7 +91,7 @@ const Desktop = () => {
                         </Link> 
                     </li>
                     <li>
-                        <Link to="/speciality" className="m-3">
+                        <Link to="/powiadomienia" className="m-3">
                         <img src={bell_notifyy}></img>
                         </Link> 
                     </li>
@@ -147,11 +149,17 @@ const Desktop = () => {
                         <Route exact path="/profile">
                             <Profile/>
                         </Route>
+                        <Route exact path="/edycja-profilu">
+                            <MobileProfileChange/>
+                        </Route>
                         <Route exact path="/act-mode">
                             <ActMode/>
                         </Route>
                         <Route exact path="/licenses">
                             <Licenses/>
+                        </Route>
+                        <Route exact path="/powiadomienia">
+                            <MobileNotify/>
                         </Route>
                     </Switch>
                 </div>

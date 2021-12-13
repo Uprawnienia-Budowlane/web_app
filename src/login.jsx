@@ -4,6 +4,8 @@ import 'react-toastify/dist/ReactToastify.css'
 import HeroImage from "./components/HeroImage";
 import {Link, useHistory } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
+import logo_mobile from './photos/logo_mobile.svg'
+import text_logo_mobile from './photos/text_logo_mobile.svg'
 
 
 export default class login extends Component {
@@ -29,7 +31,20 @@ export default class login extends Component {
     }
     */
 
+    
+
     render() {
+
+        const MobileLogo = () => (
+            <>
+            <div className="d-flex flex-col justify-center mx-5 Desktop_hide" style={{ alignSelf: 'center' }}>
+            <img style={{ display: 'block' }} src={logo_mobile}></img>
+            <img style={{ display: 'block' }} src={text_logo_mobile}></img>
+            </div>
+            </>
+            )
+        
+
         return (
             <>
             <ToastContainer 
@@ -39,6 +54,7 @@ export default class login extends Component {
                 />
             <div className="h-full w-full flex flex-row max-w-screen-2xl" style={{ justifyContent: 'center' }}>
                 <div className="flex flex-col rounded-3xl bg-white mx-4 sm:ml-16 sm:mr-10 my-20 h-full w-full">
+                    <MobileLogo/>
                     <div className="mt-14 font-black text-center text-3xl sm:text-4xl">UprawieniaBudowlane.eu</div>
                     <p className="mt-6 px-1 sm:mt-14 font-light text-center">Już dziś zacznij zdobywać wiedzę
                         potrzebną do egzaminu

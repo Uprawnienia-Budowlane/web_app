@@ -44,7 +44,8 @@ const Main = () => {
                 </div>
                 <div className=" mt-6 shadow-md rounded-3xl bg-blue-500 flex flex-row justify-between cursor-pointer headbox-dashboard-css-fix 
                 mobile_addon_speciality
-                dark-mode-color_widget"
+                dark-mode-color_widget
+                "
                      onClick={() => history.push('/speciality')}>
                     <h1 className="text-2xl 2xl:text-3xl text-white font-bold my-auto
                     mobile_addon_speciality
@@ -57,10 +58,44 @@ const Main = () => {
                 </div>
 
                 <div className="mt-6 mb-3 mx-auto grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-3 gap-4 w-full">
-                    <MainCard icon={TestIcon} title={"Egzamin pisemny"} link={"/written"}/>
-                    <MainCard icon={ChildWithBookIcon} title={"Egzamin ustny"} link={"/oral"}/>
-                    <MainCard icon={DocumentsIcon} title={"Akty prawne"} link={"/acts"}/>
-                    <MainCard icon={Chart2Icon} title={"Statystyki"} link={"/stats"}/>
+                   
+                    <div
+                    className="bg-blueGray-100 rounded-3xl flex flex-col hover:bg-blueGray-200 transition-colors duration-200 cursor-pointer 
+                    Button-landscape-fix
+                    mobile_margin_box
+                    " onClick={() => history.push("/written")}>
+                    <div className="mx-auto mt-2 mb-10 h-24 w-24 main-change-dark-mode"><MainCard icon={TestIcon}/></div>
+                    <p className="mb-4 text-blue-500 text-center font-medium">Egzamin pisemny</p>
+                    </div>
+
+                    <div
+                    className="bg-blueGray-100 rounded-3xl flex flex-col hover:bg-blueGray-200 transition-colors duration-200 cursor-pointer 
+                    Button-landscape-fix
+                    mobile_margin_box
+                    " onClick={() => history.push("/oral")}>
+                    <div className="mx-auto mt-2 mb-10 h-24 w-24 main-change-dark-mode"><MainCard icon={ChildWithBookIcon}/></div>
+                    <p className="mb-4 text-blue-500 text-center font-medium">Egzamin ustny</p>
+                    </div>
+
+
+                    <div
+                    className="bg-blueGray-100 rounded-3xl flex flex-col hover:bg-blueGray-200 transition-colors duration-200 cursor-pointer 
+                    Button-landscape-fix
+                    mobile_margin_box
+                    " onClick={() => history.push("/acts")}>
+                    <div className="mx-auto mt-2 mb-10 h-24 w-24 main-change-dark-mode"><MainCard icon={DocumentsIcon}/></div>
+                    <p className="mb-4 text-blue-500 text-center font-medium">Akty prawne</p>
+                    </div>
+
+
+                    <div
+                    className="bg-blueGray-100 rounded-3xl flex flex-col hover:bg-blueGray-200 transition-colors duration-200 cursor-pointer 
+                    Button-landscape-fix
+                    mobile_margin_box
+                    " onClick={() => history.push("/stats")}>
+                    <div className="mx-auto mt-0 mb-12 h-24 w-24 main-change-dark-mode"><MainCard icon={Chart2Icon} /></div>
+                    <p className="mb-4 text-blue-500 text-center font-medium">Statystyki</p>
+                    </div>
                 
                     <div
                     className="bg-blueGray-100 rounded-3xl flex flex-col hover:bg-blueGray-200 transition-colors duration-200 cursor-pointer 

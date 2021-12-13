@@ -7,6 +7,14 @@
     z-index:199;
 }
 
+.mobile_bar_itself {
+    display: none;
+}
+
+.mobile_notify_itself {
+    height: 85px;
+}
+
 .desktop-css-fix {
     margin-top: 120px;
 }
@@ -77,6 +85,20 @@
 
 @media (min-width:0px) and (max-width: 999px) {
 
+    .mobile_bar_itself {
+        display: flex;
+        position: relative;
+        background: white;
+        height: 105px;
+    }
+
+    .mobile_bar_itself img {
+        align-self: center;
+        height: 31px;
+        width: 31px;
+        margin: 10px;
+    }
+
     .Desktop_hide {
         display: block;
     }
@@ -84,12 +106,11 @@
     .speciality_card_mobile {
         height: 77px;
         width: 95vw;
+        margin: -10.5px;
+        -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2); 
+        box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
     }
-
-    .mobile_margin_box {
-        margin: 0 10px;
-    }
-
+    
     .desktop-css-fix {
         margin: 0px;
         margin-top: -50px;

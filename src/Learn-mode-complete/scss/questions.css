@@ -22,7 +22,9 @@
   width: 80%;
 }
 
-.learn-page div {
-  margin: 2.5px;
+@media (min-width: 0px) and (max-width: 999px) {
+  .learn-page {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=questions.css.map */

@@ -1,23 +1,15 @@
 import React, {useState, useRef, useEffect} from "react";
-import { onSnapshot, 
-    getFirestore, 
-    collection, 
-    CollectionReference,
-    addDoc,
-    getDoc, 
-    getDocs, 
-    query, 
-    DocumentReference } from "@firebase/firestore";
-import { getAuth, onAuthStateChanged, updateEmail, updatePassword } from "@firebase/auth";
 import PFP from './photos/ProfilePhoto.png';
 import {BlueImgIcon, ClockIcon, QuestionMarkInCirceIcon, ShareIcon} from "./Icons";
 import { useHistory } from "react-router";
+
+import mobile_arrow_ from './photos/mobile_arrow.svg'
+import shield_keyhole_fill_ from './photos/shield_keyhole_fill_.svg'
 
 import { ToastContainer, toast, Zoom, Bounce } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 
 import '../src/scss/profile.css'
-import { setDoc } from "@firebase/firestore";
 
 const GenderSelector = (props) => <button
         className={"mt-2 rounded-2xl border border-blue-500 flex flex-row justify-between text-sm py-3 px-4 focus:outline-none" + (props.selected ? ' text-blue-500' : ' text-black')} onClick={() => props.onClick()}>
@@ -46,81 +38,11 @@ function Profile() {
 
     const history = useHistory()
 
-    const db = getFirestore()
-
-    const usersCollectionRef = collection(db, "użytkownicy");
-
-    const UpdateUserName = async () => {
-        await addDoc(usersCollectionRef, {
-        Imię: newUserName
-        })      
-    }
-
-    const UpdateUserSurname = async () => {
-        await addDoc(usersCollectionRef, {
-        Nazwisko: newUserSurname
-        })      
-    }
-
-    const UpdateGender = async () => {
-        await addDoc(usersCollectionRef, {
-        plec: gender
-        })      
-    }
-
-    const HandleUpdateEmail = async () => {
-        try {
-        const user = await updateEmail(auth, 
-        registerEmail, 
-        )
-        } catch (error) {
-            //setError(RegisterErr)
-        }
-    }
-
-    const HandleUpdatePassWd = async () => {
-        try {
-        const user = await updatePassword(auth, 
-        registerPassword, 
-        )
-        } catch (error) {
-            //setError(RegisterErr)
-        }
-    }
-
-    const HandleUpdateChanges = (e) => {
-        e.preventDefault();
-        UpdateUserName()
-        UpdateUserSurname()
-        HandleUpdateEmail()
-        HandleUpdatePassWd()
-        toast.success(<ConfirmationChanges />)
-    }
-
     const ConfirmationChanges = () => (
         <div style={{ margin: '10px' }}>
         <h1>Zmiany zostały zapisane!</h1>
         </div>
       )
-
-    const auth = getAuth();
-    onAuthStateChanged(auth, (isUser) => {
-    if (isUser !== null ) {
-    
-    const uid = isUser.uid
-    const displayName = isUser.displayName
-    const email = isUser.email
-    const photoURL = isUser.photoURL
-    const emailVerified = isUser.emailVerified
-
-    } else {
-        
-    }
-    });
-
-    onAuthStateChanged(auth, (isUser) => {
-        setIsUser(isUser)
-    })
 
     return (
         <>
@@ -129,14 +51,25 @@ function Profile() {
             transition={Zoom}
             autoClose={8000}
             />
+
+    <div className="mobile_bar_itself justify-between">
+    <img className="mr-3" src={mobile_arrow_}></img>
+    <div className="flex flex-col px-2 my-10 ml-0 mx-6">
+    <p className="text-black-500">Wróć do aplikacji</p>
+    </div>
+    <div className="flex flex-col px-2 my-7 mr-1 ml-0 mx-6">
+    <img src={shield_keyhole_fill_}></img>
+    </div>
+    </div>
+
         <div className="h-full w-full rounded-3xl bg-white flex flex-col xl:flex-row">
             <div className="xl:border-r border-gray-300">
-                <div className="m-8 flex flex-col">
-                    <div className="w-80">
+                <div className="my-0 flex flex-col">
+                    <div className="w-full">
                         <div className="flex flex-row">
                             <img src={PFP} alt="ProfilePhoto" className="w-28 h-28"/>
                             <div className="ml-4 mt-7 flex flex-col">
-                                    <h1 className="font-medium text-2xl">{isUser.email}</h1>
+                                    <h1 className="font-medium text-2xl mr-10">Andrzej Józefiok</h1>
                                 <p className="text-blue-500">Edytuj profil</p>
                                 <p></p>
                             </div>
@@ -182,7 +115,7 @@ function Profile() {
                 </div>
             </div>
 
-            <div className="m-8 flex flex-col flex-grow">
+            <div className="m-8 flex flex-col flex-grow Mobile_hide">
                 <p className="font-medium text-blue-500">Edycja profilu</p>
                 <div className="mt-12 flex flex-col md:flex-row">
                     <div className="flex flex-shrink-0">
@@ -195,13 +128,13 @@ function Profile() {
                         <div className="flex flex-col md:flex-row md:space-x-8 my-6">
                             <div className="w-full">
                                 <p className="ml-2 mb-1 text-sm">Imię:</p>
-                                <input onChange={(event) => {setNewUserName(event.target.value)}}
+                                <input onChange=""
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
                             <div className="w-full">
                                 <p className="mt-6 md:mt-0 ml-2 mb-1 text-sm">Nazwisko:</p>
-                                <input onChange={(event) => {setNewUserSurname(event.target.value)}}
+                                <input onChange=""
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
@@ -218,20 +151,20 @@ function Profile() {
                         <div className="flex flex-col md:flex-row md:space-x-8 my-6">
                             <div className="w-full">
                                 <p className="ml-2 mb-1 text-sm">Zmień e-mail:</p>
-                                <input onChange={(event) => {setRegisterEmail(event.target.value)}}
+                                <input onChange=""
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
-                                    placeholder={isUser.email}/>
+                                    placeholder=""/>
                             </div>
                         </div>
                         <div className="flex flex-col md:flex-row md:space-x-8 my-6">
                             <div className="w-full">
                                 <p className="ml-2 mb-1 text-sm">Nowe hasło:</p>
-                                <input onChange={(event) => {setRegisterPassword(event.target.value)}}
+                                <input onChange=""
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
                                     type="password"
                                     placeholder=""/>
                             </div>
-                            <div className="w-full" style={{ display: 'none' }}>
+                            <div className="w-full">
                                 <p className="mt-6 md:mt-0 ml-2 mb-1 text-sm">Potwierdź nowe hasło:</p>
                                 <input
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
@@ -240,7 +173,7 @@ function Profile() {
                             </div>
                         </div>
                         <div className="mr-8 flex flex-row justify-start">
-                            <button onClick={HandleUpdateChanges}
+                            <button onClick=""
                                 className="mt-20 bg-blue-500 h-12 w-full md:w-1/2 rounded-2xl text-white font-medium px-10 focus:outline-none">Zapisz
                                 dane
                             </button>

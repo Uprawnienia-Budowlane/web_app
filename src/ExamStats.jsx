@@ -3,23 +3,38 @@ import {DownArrow2Icon} from "./Icons";
 import MainCharts from "./MainCharts";
 import Dropdown from "./components/Dropdown";
 
+import mobile_arrow_ from './photos/mobile_arrow.svg'
+
 const ExamStats = () => {
     const [category, setCategory] = useState(0);
     const [interval, setInterval] = useState(0);
     const [bar, setBar] = useState(false);
 
-    return (<div className="h-full w-full rounded-3xl bg-white flex flex-col">
-        <div className="flex flex-col mx-auto px-2 my-8 sm:mx-8">
+    return (
+    <>
+        <div className="mobile_bar_itself shadow-xl">
+        <img src={mobile_arrow_}></img>
+        <div className="flex flex-col px-2 my-8 ml-0 mx-6">
+        <p className="text-blue-500">Twoje statystyki</p>
+        <h1 className="font-bold text-2xl">Sprawdź swoje statystyki</h1>
+        </div>
+        </div>
+    
+    <div className="h-full w-full rounded-3xl bg-white flex flex-col">
+
+        <div className="flex flex-col mx-auto px-2 my-8 sm:mx-8 Mobile_hide">
             <p className="text-blue-500">Twoje statystyki</p>
             <h1 className="font-bold text-2xl">Sprawdź swoje statystyki</h1>
         </div>
 
-        <div className="mx-auto xl:mx-0 flex w-full flex-row justify-content-center px-4 Desktop_hide">
-        <button
+        <div className="mx-auto xl:mx-0 mt-5 flex w-full justify-content-center px-4 Desktop_hide"
+        style={{ display: 'flex' }}
+        >
+        <button style={{ margin: '4.5px' }}
                     onClick={() => setCategory(0)}
                     className={"mt-4 rounded-2xl border border-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto " + (category === 0 ? "bg-blue-500 dark-mode-color_widget text-white" : "div text-blue-500")}>Nauka
                 </button>
-                <button
+                <button style={{ margin: '4.5px' }}
                     onClick={() => setCategory(1)}
                     className={"mt-4 rounded-2xl border border-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto " + (category === 1 ? "bg-blue-500 dark-mode-color_widget text-white" : "div text-blue-500")}>Egzamin
                 </button>
@@ -74,7 +89,9 @@ const ExamStats = () => {
                 </div>
             </div>
         </div>
-    </div>);
+    </div>
+    
+    </>);
 }
 
 export default ExamStats;

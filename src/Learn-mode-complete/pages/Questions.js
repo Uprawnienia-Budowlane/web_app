@@ -326,20 +326,20 @@ const Questions = () => {
                 </div>
 
                 <div
-                    className=" border-b border-opacity-50 bg-warmGray-100 flex flex-col md:flex-row justify-center md:space-x-16">
-                    <div className="flex flex-row mx-auto md:mx-0 my-2 md:my-5">
+                    className=" border-b border-opacity-50 bg-warmGray-100 flex md:flex-row justify-center md:space-x-16">
+                    <div className="flex mx-auto md:mx-0 my-2 md:my-5">
                         <p className="mr-6 font-bold text-blue-500">Pytanie</p>
                         <p className="font-bold">{currentQuestion + 1}/{questions.length}</p>
                     </div>
-                    <div className="flex flex-row mx-auto md:mx-0 my-2 md:my-5">
+                    <div className="flex mx-auto md:mx-0 my-2 md:my-5">
                         <p className="mr-6 font-bold text-blue-500">Poprawne</p>
                         <p className="font-bold text-green-500">{score}</p>
                     </div>
-                    <div className="flex flex-row mx-auto md:mx-0 my-2 md:my-5">
+                    <div className="flex mx-auto md:mx-0 my-2 md:my-5">
                         <p className="mr-6 font-bold text-blue-500">Błędne</p>
                         <p className="font-bold text-red-500">0</p>
                     </div>
-                    <div className="flex flex-row mx-auto md:mx-0 my-2 md:my-5">
+                    <div className="flex mx-auto md:mx-0 my-2 md:my-5">
                         <p className="mr-6 font-bold text-blue-500">Wynik</p>
                         <p className="font-bold">%</p>
                     </div>
@@ -348,10 +348,10 @@ const Questions = () => {
                     <p className="p-8 text-sm">{questions[currentQuestion].questionText}</p>
                 </div>                
 
-                <div className="flex flex-col my-4 mx-8 justify-center">
+                <div className="flex flex-col justify-center">
                 {questions[currentQuestion].answerOptions.map((answerOption) => (
                         <div style={{display: 'flex', justifyContent: 'start', height: '118px', cursor: 'pointer' }} 
-                        className="border border-grey-500 p-1.5 hover:bg-blue-50 transition-colors duration-200"
+                        className="border w-full border-grey-500 p-1.5 hover:bg-blue-50 transition-colors duration-200"
                         onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}
                         ><h1 style={{alignSelf: 'center', margin: '40px', textAlign: 'center', fontWeight: 'bold', fontSize: '23px' }} >{answerOption.Nr}</h1>
                         <p style={{alignSelf: 'center', margin: '20px', textAlign: 'center' }}>{answerOption.answerText}</p>
@@ -359,7 +359,7 @@ const Questions = () => {
                         ))}
                 </div>
 
-                <div className="flex flex-row my-4 mx-8 justify-around">
+                <div className="flex flex-row my-6 mx-8 justify-around">
                     <div className="my-auto text-blue-500">
                         <div onClick={HandleBackToOldQuestion} style={{cursor: 'pointer'}}
                             className="rounded-2xl border border-blue-500 p-0.5 h-14 w-14 hover:bg-blue-50 transition-colors duration-200">
