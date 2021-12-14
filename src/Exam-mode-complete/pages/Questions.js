@@ -217,29 +217,28 @@ const Questions = () => {
 			{showScore ? (
 				<div className='h-full w-full flex flex-col'>
 
-                <div className="w-full bg-white flex flex-col">
-                <div className="flex justify-content-between">
+                <div className="w-full bg-white flex flex-col  justify-center">
+                <div className="flex justify-content-between my-2" style={{ alignSelf: 'center' }}>
                 <h1 className="font-bold text-xl text-center">CAŁKOWITA LICZBA PYTAŃ</h1>
                 <span className='mx-2 align-self-center'>0</span>
                 </div>
-                <div className="flex justify-content-between">
+                <div className="flex justify-content-between my-2" style={{ alignSelf: 'center' }}>
                 <h1 className="font-bold text-xl text-center">PRÓG ZDAWALNOŚCI</h1>
                 <span className='mx-2 align-self-center'>0</span>
                 </div>
-                <div className="flex justify-content-between">
+                <div className="flex justify-content-between my-2" style={{ alignSelf: 'center' }}>
                 <h1 className="font-bold text-xl text-center">CAŁKOWITY CZAS EGZAMINU</h1>
                 <span className='mx-2 align-self-center'>0</span>
                 </div>
-                <div className="flex justify-content-between">
+                <div className="flex justify-content-between my-2" style={{ alignSelf: 'center' }}>
                 <h1 className="font-bold text-xl text-center">POZOSTAŁY CZAS EGZAMINU</h1>
                 <span className='mx-2 align-self-center'>0</span>
                 </div>
                 </div>
-                
-				<h1 style={{textAlign: 'center'}}>Twój wynik egzaminu wynosi: {score} na {questions.length} wszystkich pytań.</h1>
-                <button onClick={Backtomenu} className="mx-4 mt-12 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Podgląd podpowiedzi</button>
-                <button onClick={Backtomenu} className="mx-4 my-4 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Rozpocznij ponownie</button>
-                <button onClick={Backtomenu} className="mx-4 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Wróć do menu głównego</button>
+
+                <button onClick={Backtomenu} className="mt-12 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4 w-full">Podgląd podpowiedzi</button>
+                <button onClick={Backtomenu} className="my-4 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4 w-full">Rozpocznij ponownie</button>
+                <button onClick={Backtomenu} className="rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4 w-full">Wróć do menu głównego</button>
 				</div>
 			) : (
 
@@ -255,7 +254,7 @@ const Questions = () => {
                             ograniczonym zakresie</h1>
                     </div>
 
-                    <div className="flex flex-col md:flex-row mx-4 bg-warmGray-100 mb-2 md:mb-0 md:mr-8 justify-between">
+                    <div className="flex flex-col md:flex-row mx-4 mb-2 md:mb-0 md:mr-8 justify-between">
                     <h1 className="font-bold Desktop_hide">Inżynieria hydrotechniczna - Projektowanie oraz kierowanie
                             robotami w
                             ograniczonym zakresie</h1>
@@ -285,13 +284,13 @@ const Questions = () => {
                 <div className="flex flex-col justify-center">
                 {questions[currentQuestion].answerOptions.map((answerOption) => (
                         <div style={{display: 'flex', justifyContent: 'start', height: '118px', cursor: 'pointer' }} 
-                        className="border border-grey-500 p-1.5 hover:bg-blue-50 transition-colors duration-200"
+                        className="isCorrect_Answer border border-grey-500 p-1.5 hover:bg-blue-50 transition-colors duration-200"
                         id={answerOption.isCorrect}
                         onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}
                         ><h1 style={{alignSelf: 'center', margin: '40px', textAlign: 'center', fontWeight: 'bold', fontSize: '23px' }} >{answerOption.Nr}</h1>
                         <p style={{alignSelf: 'center', margin: '20px', textAlign: 'center' }}>{answerOption.answerText}</p>
                         </div>
-                        ))}
+                ))}
                 </div>
 
                 <div className="flex flex-row mt-12 mb-8 mx-8 justify-around">

@@ -103,7 +103,7 @@ const AddressForm = ({ checkoutToken, next }) => {
             <FormInput required name="city" label="City" />
             <label>kod pocztowy</label>
             <FormInput required name="zip" label="Zip / Postal code" />
-            <Grid item xs={12} sm={12}>
+            <Grid style={{ display: 'none' }} item xs={12} sm={12}>
               <InputLabel>Kraj dostawy</InputLabel>
               <Select value={shippingCountry} fullWidth onChange={(e) => setShippingCountry(e.target.value)}>
                 {Object.entries(shippingCountries).map(([code, name]) => ({ id: code, label: name })).map((item) => (
@@ -135,7 +135,7 @@ const AddressForm = ({ checkoutToken, next }) => {
             </Grid>
           </form>
           <br />
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '60px' }}>
             <Cart 
             cart={cart} 
             handleEmptyCart={handleEmptyCart}

@@ -13,7 +13,7 @@
     justify-content: center;
     height: 100%;
     width: 50%;
-    background: rgb(59, 130, 246);
+    background: #3b82f6;
 }
 
 .step label {
@@ -30,7 +30,7 @@
 }
 
 .step:nth-child(2) {
-    background: rgba(59, 131, 246, 0.589);
+    background: #3b83f696;
 }
 
 /* address */
@@ -47,9 +47,6 @@
     align-self: center;
     width: 100%;
     margin: 2.5px;
-}
-.--form label {
-
 }
 
 .--form h1 {
@@ -69,4 +66,16 @@
     padding: 10px;
     margin: 10px;
     background: rgba(59, 131, 246, 0.589);
+}
+
+@media (min-width: 0px) and (max-width: 999px) {
+
+    .checkout-form {
+        margin: 0px;
+    }
+
+    .--form {
+        margin: 20px;
+    }
+
 }

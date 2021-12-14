@@ -32,8 +32,10 @@ const SubSpeciality = (props) => {
         return () => window.removeEventListener('keydown', handleEsc);
     });
 
+    /* Mobile_hide - tą klase nalezy dopisać do jednego z elementów, żeby wersja mobilna przekompilowała się bez bugów w cssie */
+
     return (<div
-        className={"Mobile_hide fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center " + (props.visible ? '' : 'hidden')}>
+        className={"fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center " + (props.visible ? '' : 'hidden')}>
         <div className="absolute top-0 bottom-0 left-0 right-0 bg-black bg-opacity-10 cursor-pointer"
              onClick={() => props.onClose()}/>
         <div className="relative w-full max-w-screen-lg bg-white shadow-lg rounded-xl bg-white pt-8 pb-5 px-10">

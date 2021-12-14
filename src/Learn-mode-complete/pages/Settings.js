@@ -22,15 +22,15 @@ const Settings = () => {
                 <h2 className="font-bold text-xl"> Projektowanie oraz kierowanie robotami bez ograniczeń</h2>
             </div>
             <div className="h-full bg-white flex flex-col">
-            <button className="d-flex bg-blue-500 mt-4 mx-auto xl:mx-4 h-12 rounded-2xl w-full text-white font-medium focus:outline-none"><a>Pytanie losowe / Pytanie po kolei</a></button>
-            <button className=" d-flex bg-white-500 border border-blue-500 mt-2 mx-auto xl:mx-4 h-12 rounded-2xl w-full text-black font-medium focus:outline-none"><a>Pytania z ulubionych</a></button>
-            <button className=" d-flex bg-white-500 border border-blue-500 mt-2 mx-auto xl:mx-4 h-12 rounded-2xl w-full text-black font-medium focus:outline-none"><a>Pytanie do skutku</a></button>
-            <button className=" d-flex bg-white-500 border border-blue-500 mt-2 mx-auto xl:mx-4 h-12 rounded-2xl w-full text-black font-medium focus:outline-none"><a>Przejdź do pytania:</a></button>
-            <button className=" d-flex bg-white-500 border border-blue-500 mt-2 mx-auto xl:mx-4 h-12 rounded-2xl w-full text-black font-medium focus:outline-none"><a>Zmień specjalność</a></button>
-            <button className=" d-flex bg-white-500 border border-blue-500 mt-2 mx-auto xl:mx-4 h-12 rounded-2xl w-full text-black font-medium focus:outline-none"><a>Zmień zestaw pytań</a></button>
-            <button className=" d-flex bg-white-500 border border-blue-500 mt-2 mx-auto xl:mx-4 h-12 rounded-2xl w-full text-black font-medium focus:outline-none"><a>Zgłoś błąd w opracowanym pytaniu</a></button>
+            <button className="d-flex bg-blue-500 mt-4 mx-auto xl:mx-4 h-12 rounded-2xl w-full text-white font-medium focus:outline-none" style={{ width: '98%' }}><a>Pytanie losowe / Pytanie po kolei</a></button>
+            <button className=" d-flex bg-white-500 border border-blue-500 mt-2 mx-auto xl:mx-4 h-12 rounded-2xl text-black font-medium focus:outline-none" style={{ width: '98%' }}><a>Pytania z ulubionych</a></button>
+            <button className=" d-flex bg-white-500 border border-blue-500 mt-2 mx-auto xl:mx-4 h-12 rounded-2xl text-black font-medium focus:outline-none" style={{ width: '98%' }}><a>Pytanie do skutku</a></button>
+            <button className=" d-flex bg-white-500 border border-blue-500 mt-2 mx-auto xl:mx-4 h-12 rounded-2xl text-black font-medium focus:outline-none" style={{ width: '98%' }}><a>Przejdź do pytania:</a></button>
+            <button className=" d-flex bg-white-500 border border-blue-500 mt-2 mx-auto xl:mx-4 h-12 rounded-2xl text-black font-medium focus:outline-none" style={{ width: '98%' }}><a>Zmień specjalność</a></button>
+            <button className=" d-flex bg-white-500 border border-blue-500 mt-2 mx-auto xl:mx-4 h-12 rounded-2xl text-black font-medium focus:outline-none" style={{ width: '98%' }}><a>Zmień zestaw pytań</a></button>
+            <button className=" d-flex bg-white-500 border border-blue-500 mt-2 mx-auto xl:mx-4 h-12 rounded-2xl text-black font-medium focus:outline-none" style={{ width: '98%' }}><a>Zgłoś błąd w opracowanym pytaniu</a></button>
             </div>
-		        <Link style={{alignSelf: 'center', margin: '20px'}} to="/learn/questions"><button style={{ fontSize: '16px' }} className="mx-4 my-6 rounded-2xl border bg-gray-500 text-white font-medium text-center text-lg py-2 px-4">Wróć do menu głównego</button></Link>
+		    <Link style={{alignSelf: 'center', margin: '20px'}} to="/learn/questions"><button style={{ fontSize: '16px' }} className="mx-4 my-6 rounded-2xl border bg-gray-500 text-white font-medium text-center text-lg py-2 px-4">Wróć do menu głównego</button></Link>
         </div>
     )
 }

@@ -45,7 +45,7 @@
 }
 
 .step:nth-child(2) {
-  background: rgba(59, 131, 246, 0.589);
+  background: #3b83f696;
 }
 
 /* address */
@@ -96,6 +96,15 @@
   padding: 10px;
   margin: 10px;
   background: rgba(59, 131, 246, 0.589);
+}
+
+@media (min-width: 0px) and (max-width: 999px) {
+  .checkout-form {
+    margin: 0px;
+  }
+  .--form {
+    margin: 20px;
+  }
 }
 
 #cart_btn {

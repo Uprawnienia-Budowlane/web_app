@@ -54,10 +54,7 @@ const Acts = () => {
             </div>
             <div className="mx-8 flex">
             <Link to="/act-mode" style={{display: 'block', alignSelf: 'center', width: '100%' }}>
-            <button
-                className="mx-8 mt-6 mb-8 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-4 px-4 flex-grow ">Rozpocznij
-                naukę
-            </button>
+            <button style={{ width: '100%' }} className="mt-6 mb-8 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-4 px-4 flex-grow ">Rozpocznij naukę</button>
             </Link>
             </div>
         </div>

@@ -10,10 +10,10 @@
     position: relative;
 }
 
-.learn-page {
-    position: relative;
-    width: 80%;
+.isCorrect_Answer:active{
+background:#96C0FF;
 }
+
 @media (min-width:0px) and (max-width: 999px) {
     .learn-page {
         width: 100%;

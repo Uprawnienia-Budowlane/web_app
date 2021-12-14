@@ -42,7 +42,7 @@ const Products = ({ products, onAddToCart, totalItems  }) => {
                     ))} 
           
           </div>
-            <div className="mx-auto mb-8 flex flex-col space-y-3 md:space-y-0 md:flex-row w-5/6">
+            <div className="mx-auto mb-8 flex flex-col space-y-3 md:space-y-0 md:flex-row w-5/6 Mobile_flex_hide">
                 <button
                     /*onClick={() => setCategory(0)}*/
                     className={"rounded-2xl border border-blue-500 font-medium text-center text-xl py-3 px-6 mx-2 w-full "/* + (category === 0 ? 'bg-blue-500 text-white' : 'text-blue-500')*/}>PAKIETY

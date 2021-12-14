@@ -11,11 +11,10 @@ import 'react-toastify/dist/ReactToastify.css'
 
 import '../src/scss/profile.css'
 
-const GenderSelector = (props) => <button
-        className={"mt-2 rounded-2xl border border-blue-500 flex flex-row justify-between text-sm py-3 px-4 focus:outline-none" + (props.selected ? ' text-blue-500' : ' text-black')} onClick={() => props.onClick()}>
-        <p>{props.gender}</p>
-        <div className={"w-4 h-4 bg-blue-500 my-auto rounded-full ml-2" + (props.selected ? '' : ' opacity-0')}/>
-    </button>
+const GenderSelector = (props) => <button className={"mt-2 rounded-2xl border border-blue-500 flex flex-row justify-between text-sm py-3 px-4 focus:outline-none" + (props.selected ? ' text-blue-500' : ' text-black')} onClick={() => props.onClick()}>
+<p>{props.gender}</p>
+<div className={"w-4 h-4 bg-blue-500 my-auto rounded-full ml-2" + (props.selected ? '' : ' opacity-0')}/>
+</button>
 ;
 
 function Profile() {
@@ -45,12 +44,12 @@ function Profile() {
       )
 
     return (
-        <>
-        <ToastContainer 
-            draggable={false}
-            transition={Zoom}
-            autoClose={8000}
-            />
+    <>
+    <ToastContainer 
+    draggable={false}
+    transition={Zoom}
+    autoClose={8000}
+    />
 
     <div className="mobile_bar_itself justify-between">
     <img className="mr-3" src={mobile_arrow_}></img>
@@ -155,8 +154,14 @@ function Profile() {
                                     className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
                                     placeholder=""/>
                             </div>
+                            <div className="w-full">
+                                <p className="ml-2 mb-1 text-sm">Potwierdź nowy e-mail:</p>
+                                <input onChange=""
+                                    className="border-blue-500 rounded-2xl border outline-none h-12 w-full p-4"
+                                    placeholder=""/>
+                            </div>
                         </div>
-                        <div className="flex flex-col md:flex-row md:space-x-8 my-6">
+                        <div className="flex flex-col md:flex-row md:space-x-8">
                             <div className="w-full">
                                 <p className="ml-2 mb-1 text-sm">Nowe hasło:</p>
                                 <input onChange=""
@@ -184,8 +189,8 @@ function Profile() {
                 </div>
             </div>
         </div>
-        </>
-        );
+    </>
+    );
 }
 
 export default Profile;

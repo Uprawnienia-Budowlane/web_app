@@ -27,7 +27,7 @@ const ExamStats = () => {
             <h1 className="font-bold text-2xl">Sprawdź swoje statystyki</h1>
         </div>
 
-        <div className="mx-auto xl:mx-0 mt-5 flex w-full justify-content-center px-4 Desktop_hide_flex" style={{ flexDirection: 'row' }}>
+        <div className="mx-auto xl:mx-0 mt-5 flex w-full justify-content-center px-4 Mobile_flex" style={{ flexDirection: 'row' }}>
         <button style={{ margin: '4.5px' }}
                     onClick={() => setCategory(0)}
                     className={"mt-4 rounded-2xl border border-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto " + (category === 0 ? "bg-blue-500 dark-mode-color_widget text-white" : "div text-blue-500")}>Nauka

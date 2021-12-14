@@ -53,6 +53,10 @@
     z-index:199;
 }
 
+.Mobile_flex {
+    display: none;
+}
+
 .mobile_bar_itself {
     display: none;
 }
@@ -64,6 +68,15 @@
 #cart_btn {
     width: 100%;
 }
+
+.Desktop_hide_flex {
+    display: flex;
+}
+
+.Mobile_flex_hide {
+    display: flex;
+}
+
 
 .desktop-fix-icon {
     margin-bottom: 20px;
@@ -127,6 +140,14 @@
 
 @media (min-width:0px) and (max-width: 999px) {
 
+    .Mobile_flex {
+        display: flex;
+    }
+
+    .Mobile_flex_hide {
+        display: none;
+    }
+
     .Margin_right-mobile {
         margin-right: .5rem;
     }
@@ -151,10 +172,6 @@
 
     .Desktop_hide {
         display: block;
-    }
-
-    .Desktop_hide_flex {
-        display: flex;
     }
 
     .speciality_card_mobile {

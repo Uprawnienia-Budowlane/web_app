@@ -22,6 +22,6 @@ useEffect(() => {
 }, []);
 
 return (
-	<div className="PDF_component" ref={containerRef} style={{ width: "100%", height: "100vh"}}/>
+	<div className="PDF_component" ref={containerRef} style={{ width: "100%", height: "100%"}}/>
 );
 }

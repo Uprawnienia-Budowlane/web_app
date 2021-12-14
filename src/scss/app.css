@@ -53,6 +53,10 @@
   z-index: 199;
 }
 
+.Mobile_flex {
+  display: none;
+}
+
 .mobile_bar_itself {
   display: none;
 }
@@ -63,6 +67,18 @@
 
 #cart_btn {
   width: 100%;
+}
+
+.Desktop_hide_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Mobile_flex_hide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .desktop-fix-icon {
@@ -136,6 +152,14 @@
 }
 
 @media (min-width: 0px) and (max-width: 999px) {
+  .Mobile_flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .Mobile_flex_hide {
+    display: none;
+  }
   .Margin_right-mobile {
     margin-right: .5rem;
   }
@@ -160,11 +184,6 @@
   }
   .Desktop_hide {
     display: block;
-  }
-  .Desktop_hide_flex {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
   }
   .speciality_card_mobile {
     height: 77px;

@@ -23,7 +23,6 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
           setCheckoutToken(token);
         } catch (error) {
           
-          
         }
       };
 
@@ -80,7 +79,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
 
 
     return (
-      <div className="h-full w-full rounded-3xl bg-white flex flex-col overflow-hidden border-box checkout-form">
+      <div className="h-full w-full xl:rounded-3xl bg-white flex flex-col overflow-hidden border-box checkout-form">
         <div className="steps">
           {steps.map((label) => (
               <div className="step" key={label}>

@@ -38,7 +38,7 @@ const Settings = () => {
             </div>
             </div>
             <img style={{ height: '195px', width: '177px', alignSelf: 'center', margin: '50px 0px 0px' }} src={PhotoMaybeExam}></img>
-		        <Link className="mx-4 my-6 rounded-2xl bg-gray-500 text-black font-medium text-center text-sm py-3 px-2" to="/exam/questions">Przerwij egzamin i wróć do menu głównego</Link>
+		        <Link className="mx-4 my-6 rounded-2xl bg-gray-500 text-white font-medium text-center text-sm py-3 px-2" to="/exam/questions">Przerwij egzamin i wróć do menu głównego</Link>
         </div>
     )
 }

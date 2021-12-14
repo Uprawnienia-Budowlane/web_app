@@ -35,7 +35,7 @@ const LearnMode = () => {
     return (
         <>
         <div className="h-full w-full rounded-3xl bg-white flex flex-col">
-            <div className="flex mx-auto justify-center mt-16 mb-24 learn-page">
+            <div className="flex justify-center mt-10 learn-page">
 
                     <Router history={history}>
                         <Switch>

@@ -16,30 +16,25 @@ import {
     SettingsIcon,
     ArrowXIcon, 
     EyeIcon,
-    
-
 } from "../../Icons";
 import KeyShortcuts from "../../modals/KeyShortcuts";
-
 import { ToastContainer, toast, Zoom, Bounce } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
-
 import { onSnapshot, 
-    getFirestore, 
-    collection, 
-    CollectionReference,
-    addDoc,
-    getDoc, 
-    getDocs, 
-    deleteDoc,
-    query, 
-    doc,
-    DocumentReference } from "@firebase/firestore";
-
+getFirestore, 
+collection, 
+CollectionReference,
+addDoc,
+getDoc, 
+getDocs, 
+deleteDoc,
+query, 
+doc,
+DocumentReference } from "@firebase/firestore";
 import {
-    createUserWithEmailAndPassword,
-    onAuthStateChanged,
-    getAuth
+createUserWithEmailAndPassword,
+onAuthStateChanged,
+getAuth
 } from "firebase/auth";
 
 import { Link } from 'react-router-dom'
@@ -152,41 +147,20 @@ const Questions = () => {
     let NumberQuestion = 1
 
     const AddFavQuestion = async () => {
-        await addDoc(usersCollectionRefFavQuestion, { 
-            numer_pytania:currentQuestion + 1,
-            adres_mail_uzytkownika: auth.currentUser.email,
-            ulubione_pytanie: questions[currentQuestion].questionText,
-        });
+    await addDoc(usersCollectionRefFavQuestion, { 
+    numer_pytania:currentQuestion + 1,
+    ulubione_pytanie: questions[currentQuestion].questionText,
+    });
     }
+
+    /* adres_mail_uzytkownika: auth.currentUser.email, */
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
 
     const [keyboardModal, setKeyboardModal] = useState(false);
-
-    /*const AnswerOptionClickKeyboard = (e) => {
-
-            if(e.keyCode === 27) {
-
-            console.log('ok')
-
-            const handleAnswerOptionClickKeyboard = (isCorrect) => {
     
-                if (isCorrect) {
-                    setScore(score + 1);
-                }
-            
-            }
-
-            handleAnswerOptionClickKeyboard()
-            
-            }
-
-        onKeyDown={() => AnswerOptionClickKeyboard(answerOption.isCorrect)}
-
-        }*/
-
 	const handleAnswerOptionClick = (isCorrect) => {
 		if (isCorrect) {
 			setScore(score + 1);
@@ -206,6 +180,7 @@ const Questions = () => {
 		const earlQuestion = currentQuestion - 1;
 		if (earlQuestion < questions.length) {
 			setCurrentQuestion(earlQuestion);
+
 		}
 	}
 
@@ -233,38 +208,88 @@ const Questions = () => {
     const displayMsg = () => {
         toast(<Msg />, {
         draggable:true
-        }
-        ) 
+    }
+    ) 
     }
 
     const displayAddQuestion = () => {
-        toast.success(<MsgFavQuestion />, {
-        draggable:true
-        }
-        ) 
+    toast.success(<MsgFavQuestion />, {
+    draggable:true
+    }
+    ) 
     }
 
     const displayLittleMsg = () => {
-        toast.info(<LittleMsg/>, {
-            draggable:true
-        })
+    toast.info(<LittleMsg/>, {
+    draggable:true
+    })
     }
     
      
     /* */
 
+    /* keyboard navigation */
+
+    useEffect(() => {
+
+        const handleNextPageKeyboard = (event) => {
+            if (event.keyCode === 39) NextPageQuestion()
+        };
+        window.addEventListener('keydown', handleNextPageKeyboard);
+
+        return () => window.removeEventListener('keydown', handleNextPageKeyboard);
+
+    });
+
+    useEffect(() => {
+
+        const handleBackPageKeyboard = (event) => {
+            if (event.keyCode === 37) HandleBackToOldQuestion()
+        };
+        window.addEventListener('keydown', handleBackPageKeyboard);
+
+        return () => window.removeEventListener('keydown', handleBackPageKeyboard);
+
+    });
+
+    useEffect(() => {
+
+        const handleAddToFavouriteQuest = (event) => {
+            if (event.keyCode === 85) HandleAddFavQuestion()
+        };
+        window.addEventListener('keydown', handleAddToFavouriteQuest);
+
+        return () => window.removeEventListener('keydown', handleAddToFavouriteQuest);
+
+    });
+
+    useEffect(() => {
+
+        const handledisplayMsgKey = (event) => {
+            if (event.keyCode === 32) displayMsg()
+        };
+        window.addEventListener('keydown', handledisplayMsgKey);
+
+        return () => window.removeEventListener('keydown', handledisplayMsgKey);
+
+    });
+
+    /* */
+
     const HandleAddFavQuestion = () => {
-        displayAddQuestion()
-        AddFavQuestion()
+    displayAddQuestion()
+    AddFavQuestion()
     }
 
     /* */
 
-    const Backtomenu = () => {
-        
+    const Backtomenu = () => { 
         history.push('/')
-
     }
+
+    /* */
+
+    /* <h1 style={{textAlign: 'center'}}>Twój wynik egzaminu próbnego wynosi: {score} na {questions.length} wszystkich pytań.</h1> */
 
     /* */
 
@@ -278,24 +303,21 @@ const Questions = () => {
 			{showScore ? (
 				<div className='h-full w-full flex flex-col'>
 
-                <div className="w-full bg-white flex flex-col">
-                <div className="flex justify-content-between">
+                <div className="w-full bg-white flex flex-col justify-center">
+                <div className="flex justify-content-between my-2" style={{ alignSelf: 'center' }}>
                 <h1 className="font-bold text-xl text-center">Wynik egzaminu:</h1>
                 <span className='mx-2 text-green-500 text-xl align-self-center'>0</span>
                 </div>
-                <div className="flex justify-content-between">
+                <div className="flex justify-content-between my-2" style={{ alignSelf: 'center' }}>
                 <h1 className="font-bold text-xl text-center">Dobre odpowiedzi:</h1>
                 <span className='mx-2 text-green-500 text-xl align-self-center'>{score}</span>
                 </div>
-                <div className="flex justify-content-between">
+                <div className="flex justify-content-between my-2" style={{ alignSelf: 'center' }}>
                 <h1 className="font-bold text-xl text-center">Złe odpowiedzi:</h1>
                 <span className='mx-2 text-red-500 text-xl align-self-center'>0</span>
                 </div>
                 </div>
 
-
-
-				<h1 style={{textAlign: 'center'}}>Twój wynik egzaminu próbnego wynosi: {score} na {questions.length} wszystkich pytań.</h1>
                 <button onClick={Backtomenu} className="mx-4 mt-12 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Rozpocznij ponownie</button>
                 <button onClick={Backtomenu} className="mx-4 my-4 rounded-2xl border border-blue-500 bg-blue-500 text-white font-medium text-center text-lg py-2 px-4">Wróć do menu głównego</button>
 				</div>
@@ -351,7 +373,7 @@ const Questions = () => {
                 <div className="flex flex-col justify-center">
                 {questions[currentQuestion].answerOptions.map((answerOption) => (
                         <div style={{display: 'flex', justifyContent: 'start', height: '118px', cursor: 'pointer' }} 
-                        className="border w-full border-grey-500 p-1.5 hover:bg-blue-50 transition-colors duration-200"
+                        className=" isCorrect_Answer border w-full border-grey-500 p-1.5 hover:bg-blue-50 transition-colors duration-200"
                         onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}
                         ><h1 style={{alignSelf: 'center', margin: '40px', textAlign: 'center', fontWeight: 'bold', fontSize: '23px' }} >{answerOption.Nr}</h1>
                         <p style={{alignSelf: 'center', margin: '20px', textAlign: 'center' }}>{answerOption.answerText}</p>
