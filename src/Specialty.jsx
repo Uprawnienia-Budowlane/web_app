@@ -22,14 +22,14 @@ const Specialty = () => {
         <div className="h-full w-full rounded-3xl bg-white flex flex-col">
         <div className="mobile_bar_itself shadow-xl">
         <div className="flex flex-col px-2 my-8 mx-6">
-                <p className="text-blue-500">Uprawnienia budowlane</p>
-                <h1 className="font-bold text-blue-500 text-2xl">Wybierz specjalność</h1>
+        <p className="text-blue-500">Uprawnienia budowlane</p>
+        <h1 className="font-bold text-blue-500 text-2xl">Wybierz specjalność</h1>
         </div>
         </div>
 
-            <div className="flex flex-col px-2 my-8 sm:mx-8 Mobile_hide">
-                <p className="text-blue-500">Uprawnienia budowlane</p>
-                <h1 className="font-bold text-2xl">Wybierz specjalność</h1>
+            <div className="flex flex-col px-2 my-8 sm:mx-8">
+            <p className="text-blue-500">Uprawnienia budowlane</p>
+            <h1 className="font-bold text-2xl">Wybierz specjalność</h1>
             </div>
 
             <div className="flex mx-auto justify-center mt-6 mb-6">

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* bootstrap app fix */
-/* nie należy uzywac tych stylow podczas build'u aplikacji mobilnej - jedynie podczas poprawiania/usprawniania wersji mobilnej
+/* nie należy uzywac tych stylow podczas build'u aplikacji mobilnej - jedynie podczas poprawiania/usprawniania wersji mobilnej 
 
 .mb-4 {
     margin-bottom: 1rem;
