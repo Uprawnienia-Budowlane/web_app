@@ -22,9 +22,8 @@ const MobileNotify = () => {
     <div className="h-full w-full rounded-3xl bg-white flex flex-col">
 
     <NotifyItself/>
-    <NotifyItself/>
-    <NotifyItself/>
-
+    <div style={{ height: '30px', width: '100%' }}>
+    </div>
     </div>
 
     </>

@@ -313,7 +313,7 @@ const Questions = () => {
                             ograniczonym zakresie</h1>
                     </div>
 
-                    <div className="flex flex-col md:flex-row mx-4 md:mr-8 justify-end">
+                    <div className="Mobile_hide flex flex-col md:flex-row mx-4 md:mr-8 justify-end">
                         <div className="my-auto flex flex-row">
                             <div className="my-auto ml-auto md:ml-8 cursor-pointer"
                              onClick={() => setKeyboardModal(true)}>
@@ -326,22 +326,22 @@ const Questions = () => {
                 </div>
 
                 <div
-                    className=" border-b border-opacity-50 bg-warmGray-100 flex md:flex-row justify-center md:space-x-16">
-                    <div className="flex mx-auto md:mx-0 my-2 md:my-5">
-                        <p className="mr-6 font-bold text-blue-500">Pytanie</p>
-                        <p className="font-bold">{currentQuestion + 1}/{questions.length}</p>
+                    className="flex border-b border-opacity-50 bg-warmGray-100 flex md:flex-row justify-center md:space-x-16">
+                    <div className="flex flex-col mx-auto md:mx-0 my-1 md:my-1">
+                        <p className="mr-0 font-bold text-blue-500 text-center">Pytanie</p>
+                        <p className="font-bold text-center">{currentQuestion + 1}/{questions.length}</p>
                     </div>
-                    <div className="flex mx-auto md:mx-0 my-2 md:my-5">
-                        <p className="mr-6 font-bold text-blue-500">Poprawne</p>
-                        <p className="font-bold text-green-500">{score}</p>
+                    <div className="flex flex-col mx-auto md:mx-0 my-1 md:my-1">
+                        <p className="mr-0 font-bold text-blue-500 text-center">Poprawne</p>
+                        <p className="font-bold text-center text-green-500">{score}</p>
                     </div>
-                    <div className="flex mx-auto md:mx-0 my-2 md:my-5">
-                        <p className="mr-6 font-bold text-blue-500">Błędne</p>
-                        <p className="font-bold text-red-500">0</p>
+                    <div className="flex flex-col mx-auto md:mx-0 my-1 md:my-1">
+                        <p className="mr-0 font-bold text-blue-500 text-center">Błędne</p>
+                        <p className="font-bold text-center text-red-500">0</p>
                     </div>
-                    <div className="flex mx-auto md:mx-0 my-2 md:my-5">
-                        <p className="mr-6 font-bold text-blue-500">Wynik</p>
-                        <p className="font-bold">%</p>
+                    <div className="flex flex-col mx-auto md:mx-0 my-1 md:my-1">
+                        <p className="mr-0 font-bold text-blue-500 text-center">Wynik</p>
+                        <p className="font-bold text-center">%</p>
                     </div>
                 </div>
                 <div className="bg-blue-200">

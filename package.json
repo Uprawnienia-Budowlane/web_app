@@ -4,6 +4,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@capacitor/android": "^3.3.3",
+    "@capacitor/cli": "^3.3.3",
+    "@capacitor/core": "^3.3.3",
+    "@capacitor/ios": "^3.3.3",
     "@chec/commerce.js": "^2.8.0",
     "@craco/craco": "^6.2.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",

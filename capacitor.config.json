@@ -1,0 +1,6 @@
+{
+  "appId": "com.example.app",
+  "appName": "aplikacja_edukacja",
+  "webDir": "build",
+  "bundledWebRuntime": false
+}

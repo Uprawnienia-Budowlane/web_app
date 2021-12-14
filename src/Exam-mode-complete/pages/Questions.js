@@ -250,20 +250,23 @@ const Questions = () => {
                 <div className="border-b border-opacity-50 flex flex-col xl:flex-row justify-between">
                     <div className="flex flex-col px-2 ml-2 xl:ml-8 my-5">
                         <p className="text-blue-500">Tryb egzaminu pisemnego</p>
-                        <h1 className="font-bold ">Inżynieria hydrotechniczna - Projektowanie oraz kierowanie
+                        <h1 className="font-bold Mobile_hide">Inżynieria hydrotechniczna - Projektowanie oraz kierowanie
                             robotami w
                             ograniczonym zakresie</h1>
                     </div>
 
-                    <div className="flex flex-col md:flex-row mx-4 mb-2 md:mb-0 md:mr-8 justify-between">
+                    <div className="flex flex-col md:flex-row mx-4 bg-warmGray-100 mb-2 md:mb-0 md:mr-8 justify-between">
+                    <h1 className="font-bold Desktop_hide">Inżynieria hydrotechniczna - Projektowanie oraz kierowanie
+                            robotami w
+                            ograniczonym zakresie</h1>
                     <p className="mb-8 mt-auto font-medium" style={{ margin: '10px' }}>WYMAGANY WYNIK: 45/90</p>
                     <p className="mb-8 mt-auto md:ml-4 mr-5 font-medium" style={{ margin: '10px' }}>Czas: 90 minut</p>
-                    <div className="my-auto ml-auto cursor-pointer"
+                    <div className="my-auto ml-auto cursor-pointer Mobile_hide"
                          onClick={() => history.push('/exam/')}><SettingsIcon/></div>
                 </div>
                 </div>
 
-                <div className="border-b border-opacity-50 bg-warmGray-100 flex flex-row justify-center h-16 relative">
+                <div className="border-b border-opacity-50 bg-warmGray-100 flex flex-col justify-center h-16 relative">
                 <div className="flex flex-row my-auto" style={{ margin: '20px' }}>
                     <p className="mr-6 font-bold text-blue-500">Pytanie</p>
                     <p className="font-bold" >{score}/{currentQuestion + 1}</p>
@@ -279,7 +282,7 @@ const Questions = () => {
                     <p className="p-8 text-sm">{questions[currentQuestion].questionText}</p>
                 </div>                
 
-                <div className="flex flex-col my-4 mx-8 justify-center">
+                <div className="flex flex-col justify-center">
                 {questions[currentQuestion].answerOptions.map((answerOption) => (
                         <div style={{display: 'flex', justifyContent: 'start', height: '118px', cursor: 'pointer' }} 
                         className="border border-grey-500 p-1.5 hover:bg-blue-50 transition-colors duration-200"

@@ -47,7 +47,7 @@ const Main = () => {
                 dark-mode-color_widget
                 "
                      onClick={() => history.push('/speciality')}>
-                    <h1 className="text-2xl 2xl:text-3xl text-white font-bold my-auto
+                    <h1 className="text-xl 2xl:text-3xl text-white font-bold my-auto
                     mobile_addon_speciality
                     ">Wybierz swoją
                         specjalność</h1>
@@ -63,6 +63,7 @@ const Main = () => {
                     className="bg-blueGray-100 rounded-3xl flex flex-col hover:bg-blueGray-200 transition-colors duration-200 cursor-pointer 
                     Button-landscape-fix
                     mobile_margin_box
+                    Margin_left-mobile
                     " onClick={() => history.push("/written")}>
                     <div className="mx-auto mt-2 mb-10 h-24 w-24 main-change-dark-mode"><MainCard icon={TestIcon}/></div>
                     <p className="mb-4 text-blue-500 text-center font-medium">Egzamin pisemny</p>
@@ -72,6 +73,7 @@ const Main = () => {
                     className="bg-blueGray-100 rounded-3xl flex flex-col hover:bg-blueGray-200 transition-colors duration-200 cursor-pointer 
                     Button-landscape-fix
                     mobile_margin_box
+                    Margin_right-mobile
                     " onClick={() => history.push("/oral")}>
                     <div className="mx-auto mt-2 mb-10 h-24 w-24 main-change-dark-mode"><MainCard icon={ChildWithBookIcon}/></div>
                     <p className="mb-4 text-blue-500 text-center font-medium">Egzamin ustny</p>
@@ -82,6 +84,7 @@ const Main = () => {
                     className="bg-blueGray-100 rounded-3xl flex flex-col hover:bg-blueGray-200 transition-colors duration-200 cursor-pointer 
                     Button-landscape-fix
                     mobile_margin_box
+                    Margin_left-mobile
                     " onClick={() => history.push("/acts")}>
                     <div className="mx-auto mt-2 mb-10 h-24 w-24 main-change-dark-mode"><MainCard icon={DocumentsIcon}/></div>
                     <p className="mb-4 text-blue-500 text-center font-medium">Akty prawne</p>
@@ -92,6 +95,7 @@ const Main = () => {
                     className="bg-blueGray-100 rounded-3xl flex flex-col hover:bg-blueGray-200 transition-colors duration-200 cursor-pointer 
                     Button-landscape-fix
                     mobile_margin_box
+                    Margin_right-mobile
                     " onClick={() => history.push("/stats")}>
                     <div className="mx-auto mt-0 mb-12 h-24 w-24 main-change-dark-mode"><MainCard icon={Chart2Icon} /></div>
                     <p className="mb-4 text-blue-500 text-center font-medium">Statystyki</p>

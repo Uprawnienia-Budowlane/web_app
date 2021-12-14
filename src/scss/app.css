@@ -1,3 +1,50 @@
+@charset "UTF-8";
+/* bootstrap app fix */
+/* nie należy uzywac tych stylow podczas build'u aplikacji mobilnej - jedynie podczas poprawiania/usprawniania wersji mobilnej
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.m-3 {
+    margin: 0.75rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.bg-blueGray-100 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(241, 245, 249, var(--tw-bg-opacity));
+}
+.rounded-3xl {
+    border-radius: 1.5rem;
+}
+.flex-col {
+    flex-direction: column;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+.items-center {
+    align-items: center;
+}
+.w-full {
+    width: 100%;
+}
+.h-full {
+    height: 100%;
+}
+
+/* */
 .change-mode-btn {
   position: absolute;
   top: 45px;
@@ -8,10 +55,6 @@
 
 .mobile_bar_itself {
   display: none;
-}
-
-.mobile_notify_itself {
-  height: 85px;
 }
 
 .desktop-css-fix {
@@ -93,6 +136,12 @@
 }
 
 @media (min-width: 0px) and (max-width: 999px) {
+  .Margin_right-mobile {
+    margin-right: .5rem;
+  }
+  .Margin_left-mobile {
+    margin-left: .5rem;
+  }
   .mobile_bar_itself {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -111,6 +160,11 @@
   }
   .Desktop_hide {
     display: block;
+  }
+  .Desktop_hide_flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .speciality_card_mobile {
     height: 77px;

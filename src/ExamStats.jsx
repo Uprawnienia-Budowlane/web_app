@@ -16,7 +16,7 @@ const ExamStats = () => {
         <img src={mobile_arrow_}></img>
         <div className="flex flex-col px-2 my-8 ml-0 mx-6">
         <p className="text-blue-500">Twoje statystyki</p>
-        <h1 className="font-bold text-2xl">Sprawdź swoje statystyki</h1>
+        <h1 className="font-bold text-xl">Sprawdź swoje statystyki</h1>
         </div>
         </div>
     
@@ -27,9 +27,7 @@ const ExamStats = () => {
             <h1 className="font-bold text-2xl">Sprawdź swoje statystyki</h1>
         </div>
 
-        <div className="mx-auto xl:mx-0 mt-5 flex w-full justify-content-center px-4 Desktop_hide"
-        style={{ display: 'flex' }}
-        >
+        <div className="mx-auto xl:mx-0 mt-5 flex w-full justify-content-center px-4 Desktop_hide_flex" style={{ flexDirection: 'row' }}>
         <button style={{ margin: '4.5px' }}
                     onClick={() => setCategory(0)}
                     className={"mt-4 rounded-2xl border border-blue-500 font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto " + (category === 0 ? "bg-blue-500 dark-mode-color_widget text-white" : "div text-blue-500")}>Nauka
@@ -79,7 +77,7 @@ const ExamStats = () => {
                     className="mt-4 rounded-2xl bg-gray-300 border text-black font-medium text-center text-lg py-3 px-4 w-full md:w-96 mx-auto Mobile_hide">Resetuj
                     statystyki dla wybranej specialności
                 </button>
-                <div className="flex flex-row justify-center gap-4 mt-4">
+                <div className="flex flex-row justify-center gap-4 mt-4 mb-6">
                     <div className={"rounded-lg border border-blue-500 cursor-pointer w-full text-center " + (!bar ? "bg-blue-500 text-white" : "text-blue-500")} onClick={() => setBar(false)}>
                         <p className="mx-4 my-1 text-sm">LINIOWY</p>
                     </div>

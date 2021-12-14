@@ -32,7 +32,7 @@ const Specialty = () => {
                 <h1 className="font-bold text-2xl">Wybierz specjalność</h1>
             </div>
 
-            <div className="flex mx-auto justify-center mt-6 mb-24">
+            <div className="flex mx-auto justify-center mt-6 mb-6">
                 <div className="mt-3 mb-8 md:mx-16 flex flex-col sm:flex-row flex-wrap gap-8 justify-start">
                     <SpecialtyCard icon={ArchitectureIcon} title={'Architektoniczna'} onClick={(t) => {setSpeciality(t);setSubspecialiyModal(true)}}/>
                     <SpecialtyCard icon={CraneIcon} title={'Konstrukcyjno-Budowlana'} onClick={(t) => {setSpeciality(t);setSubspecialiyModal(true)}}/>
